@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MenuNextPrev : MonoBehaviour
@@ -54,10 +55,10 @@ public class MenuNextPrev : MonoBehaviour
     [ContextMenu("Toggle On Off")]
     public void ToggleOnOff()
     {
-        //if (isOpen)
-            //CloseMenu();
-        //else
-            //OpenMenu();
+        if (isOpen)
+            CloseMenu();
+        else
+            OpenMenu();
     }
 
     [ContextMenu("Open Menu")]
@@ -67,12 +68,84 @@ public class MenuNextPrev : MonoBehaviour
             return;
 
         isOpen = true;
-        //OnOpenMenu?.Invoke();
+		//OnOpenMenu?.Invoke();
 
         if (animateMenuCoroutine != null)
             StopCoroutine(animateMenuCoroutine);
 
-        //animateMenuCoroutine = StartCoroutine(AnimateMenu);
+        animateMenuCoroutine = StartCoroutine(AnimateMenu(true));
+    }
+
+    [ContextMenu("Close Menu")]
+    public void CloseMenu()
+    {
+        if (!isOpen) 
+            return;
+
+        isOpen = false;
+        //OnCloseWindow?.Invoke();
+
+        animateMenuCoroutine = StartCoroutine(AnimateMenu(false));
+    }
+
+    private Vector2 GetOffset(AnimateToDirection direction)
+    {
+        switch (direction)
+        {
+            case AnimateToDirection.Top:
+                return upOffset;
+            case AnimateToDirection.Bottom:
+                return downOffset;
+            case AnimateToDirection.Left:
+                return leftOffset;
+            case AnimateToDirection.Right:
+                return rightOffset;
+            default:
+                return Vector3.zero;
+        }
+    }
+
+    private IEnumerator AnimateMenu(bool open)
+    {
+        if (open)
+            menu.gameObject.SetActive(true);
+
+        currentPosition = menu.transform.position;
+
+        float elapsedTime = 0;
+
+        Vector2 targetPostion = currentPosition;
+
+        if (open)
+            targetPostion = currentPosition * GetOffset(openDirection);
+        else 
+            targetPostion = currentPosition * GetOffset(closeDirection);
+
+        while (elapsedTime < animationDuration)
+        {
+            float evaluationAtTime = easingCurve.Evaluate(elapsedTime / animationDuration);
+
+            menu.transform.position = Vector2.Lerp(currentPosition, targetPostion, evaluationAtTime);
+
+            menuCanvasGroup.alpha = open 
+                ? Mathf.Lerp(0f, 1f, evaluationAtTime)
+                : Mathf.Lerp(1f, 0f, evaluationAtTime);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        menu.transform.position = targetPostion;
+
+        menuCanvasGroup.alpha = open ? 1 : 0;
+        menuCanvasGroup.interactable = open;
+        menuCanvasGroup.blocksRaycasts = open;
+
+        if (!open)
+        {
+            menu.gameObject.SetActive(false);
+            menu.transform.position = initialPosition;
+        }
     }
 
     // Update is called once per frame
