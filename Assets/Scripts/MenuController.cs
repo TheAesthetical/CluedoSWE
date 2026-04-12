@@ -3,7 +3,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MenuNextPrev : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
     [Header("Menu Setup")]
     [SerializeField] private GameObject menu;
@@ -19,8 +19,8 @@ public class MenuNextPrev : MonoBehaviour
     [Header("Animation Setup")]
     [SerializeField] private AnimateToDirection openDirection = AnimateToDirection.Top;
     [SerializeField] private AnimateToDirection closeDirection = AnimateToDirection.Bottom;
-
-    [SerializeField] private Vector2 distanceToAnimate = new Vector2(x:100, y:100);
+    [Space]
+    [SerializeField] private Vector2 distanceToAnimate = new Vector2(x:0, y:200);
     [SerializeField] private AnimationCurve easingCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 	[Range(0, 1f)][SerializeField] private float animationDuration = 0.5f;
 
@@ -35,25 +35,36 @@ public class MenuNextPrev : MonoBehaviour
 
     private Coroutine animateMenuCoroutine;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //public static event Action OnOpenMenu;
+    //public static event Action OnCloseMenu;
+
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
     {
+		if (menu.CompareTag("Menu1"))
+		{
+            OpenMenu();
+		}
+		if (!menu.CompareTag("Menu1"))
+        {
+            CloseMenu();
+        }
+
         initialPosition = menu.transform.position;
 
 		InitializedOffsetPositions();
     }
 
-    private void InitializedOffsetPositions()
-    {
-        upOffset = new Vector2(0, distanceToAnimate.y);
-        downOffset = new Vector2(0, -distanceToAnimate.y);
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Return))
+		{
+            NextPrevMenu("MenuCanvas1", true);
+		}
+	}
 
-        rightOffset = new Vector2(distanceToAnimate.x, 0);
-        leftOffset = new Vector2(-distanceToAnimate.x, 0);
-    }
-
-    [ContextMenu("Toggle On Off")]
-    public void ToggleOnOff()
+    [ContextMenu("Toggle Open Close")]
+    public void ToggleOpenClose()
     {
         if (isOpen)
             CloseMenu();
@@ -64,31 +75,65 @@ public class MenuNextPrev : MonoBehaviour
     [ContextMenu("Open Menu")]
     public void OpenMenu()
     {
-        if (isOpen)
-            return;
+        //if (isOpen)
+        //    return;
 
-        isOpen = true;
+        MenuState(true);
 		//OnOpenMenu?.Invoke();
 
-        if (animateMenuCoroutine != null)
-            StopCoroutine(animateMenuCoroutine);
+		//      if (animateMenuCoroutine != null)
+		//          StopCoroutine(animateMenuCoroutine);
 
-        animateMenuCoroutine = StartCoroutine(AnimateMenu(true));
-    }
+		//      animateMenuCoroutine = StartCoroutine(AnimateMenu(true));
+	}
 
     [ContextMenu("Close Menu")]
     public void CloseMenu()
     {
-        if (!isOpen) 
-            return;
+        //if (!isOpen)
+        //    return;
+        
+        MenuState(false);
+		//OnCloseMenu?.Invoke();
 
-        isOpen = false;
-        //OnCloseWindow?.Invoke();
+		//if (animateMenuCoroutine != null)
+		//	StopCoroutine(animateMenuCoroutine);
 
-        animateMenuCoroutine = StartCoroutine(AnimateMenu(false));
+		//animateMenuCoroutine = StartCoroutine(AnimateMenu(false));
+	}
+
+    private void MenuState(bool state)
+    {
+		isOpen = state;
+		menuCanvasGroup.alpha = state ? 1 : 0;
+		menuCanvasGroup.interactable = state;
+        menuCanvasGroup.blocksRaycasts = state;
+	}
+
+    public static void NextPrevMenu(string tag, bool direction)
+    {
+        GameObject currentMenu = GameObject.FindWithTag(tag);
+
+		currentMenu.GetComponent<MenuController>().CloseMenu();
+
+        int nextNum = tag[^1] - '0';
+        if (direction)
+            nextNum++;
+        else
+            nextNum--;
+		GameObject.FindWithTag(tag[..(tag.Length - 1)] + nextNum).GetComponent<MenuController>().OpenMenu();
     }
 
-    private Vector2 GetOffset(AnimateToDirection direction)
+	private void InitializedOffsetPositions()
+	{
+		upOffset = new Vector2(0, distanceToAnimate.y);
+		downOffset = new Vector2(0, -distanceToAnimate.y);
+
+		rightOffset = new Vector2(+distanceToAnimate.x, 0);
+		leftOffset = new Vector2(-distanceToAnimate.x, 0);
+	}
+
+	private Vector2 GetOffset(AnimateToDirection direction)
     {
         switch (direction)
         {
@@ -117,9 +162,9 @@ public class MenuNextPrev : MonoBehaviour
         Vector2 targetPostion = currentPosition;
 
         if (open)
-            targetPostion = currentPosition * GetOffset(openDirection);
+            targetPostion = currentPosition + GetOffset(openDirection);
         else 
-            targetPostion = currentPosition * GetOffset(closeDirection);
+            targetPostion = currentPosition + GetOffset(closeDirection);
 
         while (elapsedTime < animationDuration)
         {
@@ -148,12 +193,6 @@ public class MenuNextPrev : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnValidate()
     {
         if (menu != null)
@@ -165,6 +204,6 @@ public class MenuNextPrev : MonoBehaviour
         distanceToAnimate.x = Mathf.Max(0, distanceToAnimate.x);
         distanceToAnimate.y = Mathf.Max(0, distanceToAnimate.y);
 
-        
-    }
+		initialPosition = menu.transform.position;
+	}
 }
