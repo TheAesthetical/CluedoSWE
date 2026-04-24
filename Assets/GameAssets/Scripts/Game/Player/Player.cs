@@ -1,34 +1,61 @@
 using UnityEngine;
 
-public class Player
+/// <summary>
+/// Class <c> Player </c> is an abstract class that represents a generic card. It provides the base for each card type. 
+/// </summary>
+public abstract class Player
 {
     private int ID;
-    // private CharacterCard character; // maybe
+    private CharacterCard character; // maybe in a PlayerController class instead
     private int position;
-    // private Card[] hand;
-    private bool eliminated; // maybe
+    private Card[] hand;
+    private bool eliminated; // maybe, might use a queue and dequeue when eliminated
 
-    public void makeSuggestion()
+    /// <summary>
+    /// Makes a suggestion.
+    /// </summary>
+    public void MakeSuggestion()
     {
 
     }
 
-    public void makeAccusation()
+    /// <summary>
+    /// Makes an accusation.
+    /// </summary>
+    public void MakeAccusation()
     {
 
     }
 
-    public void showCard()
+    /// <summary>
+    /// Shows the card from the suggestion
+    /// </summary>
+    public void ShowCard()
     {
-
+        // maybe not needed if we just return the card from canDisprove()?
     }
 
-    public void canDisprove(string suggestion) // string is placeholder until suggestion class
+    /// <summary>
+    /// Returns whether the Player can disprove the accusation against them.
+    /// </summary>
+    /// <param name="suggestion">The suggestion being made.</param>
+    /// <returns>Returns a bool representing whether the player matches the accusation.</returns>
+    public bool CanDisprove(string suggestion) // string is placeholder until suggestion class
     {
-
+        foreach (Card card in hand)
+        {
+            // if (card == suggestion.getCharacter() || card == suggestion.getWeapon() || card == suggestion.getLocation())
+            // {
+            //  return false;
+            // }
+        }
+        return true;
     }
 
-    public void eliminate()
+    /// <summary>
+    /// Eliminates the Player.
+    /// </summary>
+    public void Eliminate()
     {
         eliminated = true;
     }
