@@ -50,9 +50,9 @@ public class MenuController : MonoBehaviour
             CloseMenu();
         }
 
-        initialPosition = menu.transform.position;
+        //initialPosition = menu.transform.position;
 
-		InitializedOffsetPositions();
+		//InitializedOffsetPositions();
     }
 
 	private void Update()
@@ -63,6 +63,9 @@ public class MenuController : MonoBehaviour
 		}
 	}
 
+    /// <summary>
+    /// Toggles whether the menu is open or closed
+    /// </summary>
     [ContextMenu("Toggle Open Close")]
     public void ToggleOpenClose()
     {
@@ -72,6 +75,9 @@ public class MenuController : MonoBehaviour
             OpenMenu();
     }
 
+    /// <summary>
+    /// Opens the menu
+    /// </summary>
     [ContextMenu("Open Menu")]
     public void OpenMenu()
     {
@@ -87,6 +93,9 @@ public class MenuController : MonoBehaviour
 		//      animateMenuCoroutine = StartCoroutine(AnimateMenu(true));
 	}
 
+    /// <summary>
+    /// Closes the menu
+    /// </summary>
     [ContextMenu("Close Menu")]
     public void CloseMenu()
     {
@@ -102,6 +111,10 @@ public class MenuController : MonoBehaviour
 		//animateMenuCoroutine = StartCoroutine(AnimateMenu(false));
 	}
 
+    /// <summary>
+    /// Sets the menu into either open or closed
+    /// </summary>
+    /// <param name="state">True = open, False = closed</param>
     private void MenuState(bool state)
     {
 		isOpen = state;
@@ -110,6 +123,11 @@ public class MenuController : MonoBehaviour
         menuCanvasGroup.blocksRaycasts = state;
 	}
 
+    /// <summary>
+    /// Changes the menu to either the next or previous one
+    /// </summary>
+    /// <param name="tag">The tag of the current menu</param>
+    /// <param name="direction">True = next menu, False = previous menu</param>
     public static void NextPrevMenu(string tag, bool direction)
     {
         GameObject currentMenu = GameObject.FindWithTag(tag);
@@ -123,6 +141,9 @@ public class MenuController : MonoBehaviour
             nextNum--;
 		GameObject.FindWithTag(tag[..(tag.Length - 1)] + nextNum).GetComponent<MenuController>().OpenMenu();
     }
+
+
+    // Everything below this point was from an attempt at animations and isn't used
 
 	private void InitializedOffsetPositions()
 	{
