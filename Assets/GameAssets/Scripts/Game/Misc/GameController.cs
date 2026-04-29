@@ -31,7 +31,6 @@ public class GameController : MonoBehaviour
         players = new List<Player>();
         deck = new Deck();
         murderEnvelope = new MurderEnvelope();
-        dice = new Dice();
 
         currentPlayerIndex = 0;
         gameOver = false;
