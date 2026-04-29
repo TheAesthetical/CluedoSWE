@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+/// <summary>
+///  Controls running the two dice, and handles the animation.
+/// </summary>
 public class DiceController : MonoBehaviour
 {
     private Dice dice;
@@ -10,17 +12,27 @@ public class DiceController : MonoBehaviour
     [SerializeField] private Image diceImage2;
     [SerializeField] private Sprite[] diceSprites;
 
+    /// <summary>
+    /// Unity Start() method.
+    /// </summary>
     void Start()
     {
         dice = new Dice();
     
     }
 
+
+    /// <summary>
+    /// Called when Roll button is pressed.
+    /// </summary>
     public void RollDice()
     {   
         StartCoroutine(RollAnimation());
     }
-
+    
+    /// <summary>
+    /// Animates both dice and shows the final results.
+    /// </summary>
     private IEnumerator RollAnimation()
     {
         int dice1Result = dice.Roll();
@@ -35,7 +47,7 @@ public class DiceController : MonoBehaviour
             diceImage1.sprite = diceSprites[rand1];
             diceImage2.sprite = diceSprites[rand2];
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f + i * 0.02f);
         }
 
 
