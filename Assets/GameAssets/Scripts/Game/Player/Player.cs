@@ -59,4 +59,13 @@ public abstract class Player
     {
         eliminated = true;
     }
+
+    /// <summary>
+    /// A method to return the Character card of the current player.
+    /// </summary>
+    /// <returns>A CharacterCard. </returns>
+    public CharacterCard GetCharacter()
+    {
+        return character;
+    }
 }

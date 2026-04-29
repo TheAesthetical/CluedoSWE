@@ -10,9 +10,10 @@ public class GameController : MonoBehaviour
     private Deck deck;
     private MurderEnvelope murderEnvelope;
     private Dice dice;
-
     private int currentPlayerIndex;
     private bool gameOver;
+
+    private static Player winner;
 
     /// <summary>
     /// Unity Start() method
@@ -115,11 +116,23 @@ public class GameController : MonoBehaviour
     /// <summary>
     /// Ends the game and announces the winner.
     /// </summary>
-    /// <param name="winner">The winning Player.</param>
-    private void EndGame(Player winner)
+    /// <param name="winnerIn">The winning Player.</param>
+    private void EndGame(Player winnerIn)
     {
         gameOver = true;
-        Debug.Log("Game Over! Winner: " + winner);
+        SetWinner(winnerIn);
+
+        Debug.Log("Game Over! Winner: " + winnerIn);
+    }
+
+    public static void SetWinner(Player player)
+    {
+        winner = player;
+    }
+
+    public static Player GetWinner()
+    {   
+        return winner;
     }
 
 }
