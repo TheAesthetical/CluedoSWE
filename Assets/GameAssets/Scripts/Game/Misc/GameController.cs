@@ -82,6 +82,68 @@ public class GameController : MonoBehaviour
     }
 
     /// <summary>
+    /// Executes the current player's turn
+    /// </summary>
+    private void TakeTurn()
+    {
+        Player currentPlayer = players[currentPlayerIndex];
+
+        // TODO:
+        // - Handle Dice Roll
+        // - Handle Movement
+        // - Handle Accusation
+        // - Handle Suggestion
+        // - End Turn
+
+    }
+
+    /// <summary>
+    /// Begins the game loop.
+    /// </summary>
+    private void StartGame()
+    {
+        Debug.Log("Game Started");
+
+        // TODO:
+        // - Begin First Turn
+        // - Game Loop?
+    }
+
+    /// <summary>
+    /// Handles a player's suggestion.
+    /// </summary>
+    /// <param name="suggestion">The <c>Suggestion</c> the player makes. </param>
+    private void HandleSuggestion(Suggestion suggestion)
+    {
+        // TODO:
+        // - Ask other player's to disprove
+        // - Reveal one matching card (if possible)
+        // - End Suggestion phase
+
+    }
+
+    /// <summary>
+    /// Handles a player's accusation. 
+    /// </summary>
+    /// <param name="currentPlayer"> The current player. </param>
+    /// <param name="accusation">The <c>Suggestion</c> class is used to represent the Accusation. </param>
+    private void HandleAccusation(Player currentPlayer, Suggestion accusation)
+    {   
+
+        bool correct = murderEnvelope.CheckAccusation(accusation.GetCharacter(), accusation.GetWeapon(), accusation.GetRoom());
+
+        if (correct)
+        {
+            EndGame(currentPlayer);
+        } else
+        {
+            //TODO:
+            // - Eliminate the player
+            
+        }
+    }
+
+    /// <summary>
     /// A helper function that initialises the cards. The cards are put into three separate decks that are unshuffled.
     /// </summary>
     private void LoadCards()
@@ -132,68 +194,6 @@ public class GameController : MonoBehaviour
 
         murderEnvelope.SetCards(character, weapon, room);
 
-    }
-
-    /// <summary>
-    /// Begins the game loop.
-    /// </summary>
-    private void StartGame()
-    {
-        Debug.Log("Game Started");
-
-        // TODO:
-        // - Begin First Turn
-        // - Game Loop?
-    }
-
-    /// <summary>
-    /// Executes the current player's turn
-    /// </summary>
-    private void TakeTurn()
-    {
-        Player currentPlayer = players[currentPlayerIndex];
-
-        // TODO:
-        // - Handle Dice Roll
-        // - Handle Movement
-        // - Handle Accusation
-        // - Handle Suggestion
-        // - End Turn
-
-    }
-
-    /// <summary>
-    /// Handles a player's suggestion.
-    /// </summary>
-    /// <param name="suggestion">The <c>Suggestion</c> the player makes. </param>
-    private void HandleSuggestion(Suggestion suggestion)
-    {
-        // TODO:
-        // - Ask other player's to disprove
-        // - Reveal one matching card (if possible)
-        // - End Suggestion phase
-
-    }
-
-    /// <summary>
-    /// Handles a player's accusation. 
-    /// </summary>
-    /// <param name="currentPlayer"> The current player. </param>
-    /// <param name="accusation">The <c>Suggestion</c> class is used to represent the Accusation. </param>
-    private void HandleAccusation(Player currentPlayer, Suggestion accusation)
-    {   
-
-        bool correct = murderEnvelope.CheckAccusation(accusation.GetCharacter(), accusation.GetWeapon(), accusation.GetRoom());
-
-        if (correct)
-        {
-            EndGame(currentPlayer);
-        } else
-        {
-            //TODO:
-            // - Eliminate the player
-            
-        }
     }
 
     /// <summary>
