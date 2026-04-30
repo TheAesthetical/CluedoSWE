@@ -112,9 +112,9 @@ public class AIPlayer : Player
     /// <param name="suggestionIndex">Index of player made the suggestion</param>
     /// <param name="suggestion">Suggestion made</param>
     /// <param name="disproverIndex">Index of the disporver or -1 if nobody disproved</param>
-    /// <param name="showCard">The card shown (if Known) or null</param>
+    /// <param name="shownCard">The card shown (if Known) or null</param>
     public void OnSuggestionMade(int suggestionIndex, Suggestion suggestion,
-    int disproverIndex, Card showCard)
+    int disproverIndex, Card shownCard)
     {
         if (suggestion == null || detectiveSheet == null) return;
 
@@ -140,9 +140,9 @@ public class AIPlayer : Player
         // If we acctually saw which card, its auto crossed out
         if (disproverIndex >= 0)
         {
-            if (showCard != null)
+            if (shownCard != null)
             {
-                detectiveSheet.MarkAuto(showCard, disproverIndex);
+                detectiveSheet.MarkAuto(shownCard, disproverIndex);
             }
             else
             {
