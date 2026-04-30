@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
+
 /// <summary>
 ///  Controls running the two dice, and handles the animation.
 /// </summary>
 public class DiceController : MonoBehaviour
 {
     private Dice dice;
+    
+    public Action<int> OnRollComplete;
 
     [SerializeField] private Image diceImage1;
     [SerializeField] private Image diceImage2;
@@ -61,6 +65,7 @@ public class DiceController : MonoBehaviour
         // Output
         Debug.Log("Rolled Dice 1 Result: " + dice1Result);
         Debug.Log("Rolled Dice 2 Result: " + dice2Result);
-        Debug.Log("Total Result: " + total);
+
+        OnRollComplete?.Invoke(total);
     }
 }

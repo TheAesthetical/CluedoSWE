@@ -13,9 +13,12 @@ public class GameController : MonoBehaviour
     private Deck charactersDeck;
 
     private MurderEnvelope murderEnvelope;
-    private Dice dice;
+    
     private int currentPlayerIndex;
     private bool gameOver;
+
+    // Dice Controller
+    [SerializeField] private DiceController diceController;
 
     // WEAPON CARD SPRITES -----
     [SerializeField] private Sprite candlestickCardSprite;
@@ -53,6 +56,8 @@ public class GameController : MonoBehaviour
     /// </summary>
     void Start()
     {
+        diceController.OnRollComplete += HandleDiceResult;
+
         InitialiseGame();
         StartGame();
     }
@@ -97,7 +102,15 @@ public class GameController : MonoBehaviour
     /// </summary>
     private void TakeTurn()
     {
+        if (gameOver)
+        {
+            return;
+        }
+
         Player currentPlayer = players[currentPlayerIndex];
+
+        
+        
 
         // TODO:
         // - Handle Dice Roll
@@ -114,6 +127,7 @@ public class GameController : MonoBehaviour
     private void StartGame()
     {
         Debug.Log("Game Started");
+
 
         // TODO:
         // - Begin First Turn
@@ -222,7 +236,7 @@ public class GameController : MonoBehaviour
         deck.Shuffle();
     }
 
-    public void DealCards()
+    private void DealCards()
     {
     
         int playerIndex = 0;
@@ -283,6 +297,20 @@ public class GameController : MonoBehaviour
         SetWinner(winnerIn);
 
         Debug.Log("Game Over! Winner: " + winnerIn);
+    }
+
+    private void HandleDiceResult(int roll)
+    {
+        
+
+        Debug.Log("rolled " + roll);
+
+        //HandleMovement(currentPlayer, roll);
+    }
+
+    public void OnRollDicePressed()
+    {
+        diceController.RollDice();
     }
 
     public static void SetWinner(Player player)
