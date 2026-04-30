@@ -50,7 +50,13 @@ public class MenuButton : MonoBehaviour
 		controllers[1].CloseMenu();
 		menuUI.GetComponent<MenuUI>().SetBackground(0);
 	}
-
+	/// <summary>
+	/// Cycles the assignment of this toggle button between AI and valid players. 
+	/// Ensures that:
+	/// - No duplicate human players are assigned
+	/// - Player indices remain sequential
+	/// - Ai can be selected multiple times. 
+	/// </summary>
 	public void ToggleButtonClick()
 	{
 		int playerCount = menuUI.GetComponent<MenuUI>().getPlayerNum();
@@ -78,6 +84,10 @@ public class MenuButton : MonoBehaviour
 		UpdateToggleSprite();
 	}
 
+	/// <summary>
+	/// Updates the sprite displayed on the toggle button based on the current assignment.
+	/// AI is represented by index -1, whilst human players use indices starting from 0.
+	/// </summary>
 	private void UpdateToggleSprite()
 	{
 		// update sprite
@@ -91,6 +101,12 @@ public class MenuButton : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Checks whether a given player index is already assigned to another toggle button. 
+	/// AI (-1) is excluded from this check and can be assigned multiple times.
+	/// </summary>
+	/// <param name="playerIndex"> The player index to check. </param>
+	/// <returns>True if the player is already assigned, false otherwise. </returns>
 	private bool IsPlayerAlreadyAssigned(int playerIndex)
 	{
 		if (playerIndex == -1)
@@ -111,6 +127,16 @@ public class MenuButton : MonoBehaviour
 		return false;
 	}
 
+	/// <summary>
+	/// Determines whether assigning a given player index would maintain a valid selection state.
+	/// 
+	/// A valid state requires that all selected human players form a continuous sequence.
+	/// Starting from player 1 (index 0) with no gaps. 
+	/// 
+	/// AI (-1) is ignored in this validation.
+	/// </summary>
+	/// <param name="proposedIndex">The player index being tested </param>
+	/// <returns>True if the resulting selection would be valid, false otherwise. </returns>
 	private bool WouldPlayerSelectionBeValid(int proposedIndex)
 	{
 		int playerCount = menuUI.GetComponent<MenuUI>().getPlayerNum();
