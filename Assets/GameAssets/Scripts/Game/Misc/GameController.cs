@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 /// <summary>
 /// Class <c>GameController</c> controls the flow of the game, including the setup, turns and win conditions. 
@@ -16,6 +17,7 @@ public class GameController : MonoBehaviour
     
     private int currentPlayerIndex;
     private bool gameOver;
+    private bool canRoll = false;
 
     // Dice Controller
     [SerializeField] private DiceController diceController;
@@ -69,6 +71,23 @@ public class GameController : MonoBehaviour
     {
         players = SceneCommunication.GetPlayers();
 
+        //REMOVE LATER THIS BACKUP FOR FALLBACK IF THERE NO PLAYERS
+        //create some default test players so the game loop has something to iterate over
+        if (players == null || players.Count == 0)
+        {
+            Debug.LogWarning("[GameController] No players from SceneCommunication — creating test players");
+            players = new List<Player>
+            {
+                new HumanPlayer(0, new CharacterCard("Miss Scarlett", scarlettCardSprite)),
+                new HumanPlayer(1, new CharacterCard("Colonel Mustard", mustardCardSprite)),
+                new HumanPlayer(2, new CharacterCard("Mrs Peacock", peacockCardSprite))
+            };
+        }
+
+        //REMOVE LATER THIS BACKUP FOR FALLBACK IF THERE NO PLAYERS
+
+
+
 		murderEnvelope = new MurderEnvelope();
 
         currentPlayerIndex = 0;
@@ -105,10 +124,10 @@ public class GameController : MonoBehaviour
         }
 
         Player currentPlayer = players[currentPlayerIndex];
+        Debug.Log("Its player " + currentPlayerIndex + " turn (" + currentPlayer.GetCharacter().CardName + ")");
 
+        canRoll = true;
         
-        
-
         // TODO:
         // - Handle Dice Roll
         // - Handle Movement
@@ -118,17 +137,24 @@ public class GameController : MonoBehaviour
 
     }
 
+    // TEMPORARY: lets us test the game loop without a Roll Dice button
+    // Press SPACE to simulate a dice roll 
+    // Remove when UI setup
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnRollDicePressed();
+        }
+    }
+
     /// <summary>
     /// Begins the game loop.
     /// </summary>
     private void StartGame()
     {
         Debug.Log("Game Started");
-
-
-        // TODO:
-        // - Begin First Turn
-        // - Game Loop?
+        TakeTurn();
     }
 
     /// <summary>
@@ -308,8 +334,9 @@ public class GameController : MonoBehaviour
     private void HandleDiceResult(int roll)
     {
         
-
-        Debug.Log("rolled " + roll);
+        Player currentPlayer = players[currentPlayerIndex];
+        Debug.Log("Player " + currentPlayerIndex + " (" + currentPlayer.GetCharacter() + ") rolled " + roll);
+        Debug.Log("Movement skipped -> board not implemented");
 
         //HandleMovement(currentPlayer, roll);
 
@@ -320,6 +347,11 @@ public class GameController : MonoBehaviour
 
     public void OnRollDicePressed()
     {
+        if (!canRoll)
+        {
+            return;
+        }
+        canRoll = false;
         diceController.RollDice();
     }
 
