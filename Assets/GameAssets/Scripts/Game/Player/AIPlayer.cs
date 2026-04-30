@@ -15,12 +15,6 @@ public class AIPlayer : Player
     private int totalActivePlayers;
     private List<Card> ownHand = new List<Card>();
  
-	private int ID;
-	private CharacterCard character;
-	private int position;
-	private List<Card> hand = new List<Card>();
-	private bool eliminated;
-
     private DetectiveSheet detectiveSheet;
     private List<UnknownDisproval> unknownDisprovals = new List<UnknownDisproval>();
 
@@ -46,17 +40,10 @@ public class AIPlayer : Player
 
     public AIPlayer(int ID, CharacterCard character) : base(ID, character)
     {
-		this.ID = ID;
-		this.character = character;
-		this.position = 0;
-		this.eliminated = false;
-
-		detectiveSheet = new DetectiveSheet();
-
-        suspectConfidence = 0;
-        weaponConfidence = 0;
-        roomConfidence = 0;
-        strategyType = StrategyType.Safe;
+    suspectConfidence = 0;
+    weaponConfidence = 0;
+    roomConfidence = 0;
+    strategyType = StrategyType.Safe;
     }
 
 
@@ -67,7 +54,7 @@ public class AIPlayer : Player
     /// </summary>
     /// <param name="playerIndex">Player postion</param>
     /// <param name="totalActivePlayers">How many active players</param>
-    public void Initialise(int playerIndex, int totalActivePlayers)
+    public override void Initialise(int playerIndex, int totalActivePlayers)
     {
         this.ownPlayerIndex = playerIndex;
         this.totalActivePlayers = totalActivePlayers;
@@ -91,7 +78,7 @@ public class AIPlayer : Player
     /// This auto crosses out all cards in player own hand
     /// </summary>
     /// <param name="dealtCards">Cards dealt</param>
-    public void OnHandDealt(List<Card> dealtCards)
+    public override void OnHandDealt(List<Card> dealtCards)
     {
         if (dealtCards == null) return;
         ownHand = new List<Card>(dealtCards);
@@ -116,7 +103,8 @@ public class AIPlayer : Player
     }
 
     /// <summary>
-    /// Call after every suggestion by anyone. Helps the deduction
+    /// Call after every suggestion by anyone
+    /// Helps the deduction
     /// disproverIndex == -1 means nobody could disprove
     /// shownCard: only not null if Ai was suggesster/disprover
     /// Null being passed means well record the disproval as "unknwn which card"
@@ -125,7 +113,7 @@ public class AIPlayer : Player
     /// <param name="suggestion">Suggestion made</param>
     /// <param name="disproverIndex">Index of the disporver or -1 if nobody disproved</param>
     /// <param name="shownCard">The card shown (if Known) or null</param>
-    public void OnSuggestionMade(int suggestionIndex, Suggestion suggestion,
+    public override void OnSuggestionMade(int suggestionIndex, Suggestion suggestion,
     int disproverIndex, Card shownCard)
     {
         if (suggestion == null || detectiveSheet == null) return;
@@ -174,7 +162,7 @@ public class AIPlayer : Player
 
     //TurnLOOP
 
-    public void TakeTurn(GameController gameController, Dice dice)
+    public override void TakeTurn(GameController gameController, Dice dice)
     {
         int diceRoll = dice.Roll();
         List<Vector2Int> legalMoves = GetLegalMoves(diceRoll);
@@ -646,10 +634,6 @@ public class AIPlayer : Player
         public int DisproverIndex;
         public string[] CardNames; // [character, weapon, room] — any may be null
     }
-
-
-
-
 
 }
 
