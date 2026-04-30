@@ -101,4 +101,43 @@ public abstract class Player
         return hand;
     }
 
+    /// <summary>
+    /// Sets up the player at game start
+    /// Call once berfore cards are delt
+    /// </summary>
+    /// <param name="playerIndex">Player index</param>
+    /// <param name="totalActivePlayers">How many active players</param>
+    public virtual void Initialise(int playerIndex, int totalActivePlayers) { }
+    
+    /// <summary>
+    /// Call once cards are dealt
+    /// This auto crosses out all cards in player own hand
+    /// Override to react to your hand
+    /// </summary>
+    /// <param name="dealtCards">Cards dealt</param>
+    public virtual void OnHandDealt(List<Card> cards) { }
+
+    /// <summary>
+    /// Call after every suggestion by anyone
+    /// Helps the deduction
+    /// disproverIndex == -1 means nobody could disprove
+    /// shownCard: only not null if Ai was suggesster/disprover
+    /// Null being passed means well record the disproval as "unknwn which card"
+    /// Override to track deduction
+    /// </summary>
+    /// <param name="suggestionIndex">Index of player made the suggestion</param>
+    /// <param name="suggestion">Suggestion made</param>
+    /// <param name="disproverIndex">Index of the disporver or -1 if nobody disproved</param>
+    /// <param name="shownCard">The card shown (if Known) or null</param>
+    public virtual void OnSuggestionMade(int suggesterIndex, Suggestion suggestion,
+    int disproverIndex, Card shownCard) { }
+
+    /// <summary>
+    /// Call when its this players turn
+    /// Override to drive the turn
+    /// </summary>
+    /// <param name="gameController"></param>
+    /// <param name="dice"></param>
+    public virtual void TakeTurn(GameController gameController, Dice dice) { }
+                
 }
