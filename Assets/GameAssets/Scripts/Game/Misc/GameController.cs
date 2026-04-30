@@ -63,12 +63,17 @@ public class GameController : MonoBehaviour
     private void InitialiseGame()
     {
         players = new List<Player>();
-        deck = new Deck();
+        
         murderEnvelope = new MurderEnvelope();
 
         currentPlayerIndex = 0;
         gameOver = false;
 
+        // Decks:
+        weaponsDeck = new Deck();
+        charactersDeck = new Deck();
+        roomsDeck = new Deck();
+        deck = new Deck();  
        
         // Call helper function to load the cards into three separate Unshuffled decks.
         LoadCards();
@@ -194,6 +199,31 @@ public class GameController : MonoBehaviour
 
         murderEnvelope.SetCards(character, weapon, room);
 
+    }
+
+    /// <summary>
+    /// Helper function to setup the main deck. Should only be called AFTER setting up Murder Envelope.
+    /// </summary>
+    private void SetupMainDeck()
+    {
+        AddAllCards(deck, charactersDeck);
+        AddAllCards(deck, weaponsDeck);
+        AddAllCards(deck, roomsDeck);
+
+        deck.Shuffle();
+    }
+
+    /// <summary>
+    /// Helper function to add all cards from one deck into another.
+    /// </summary>
+    /// <param name="target"> The destination of the cards. </param>
+    /// <param name="source"> The source of the cards. </param>
+    private void AddAllCards(Deck target, Deck source)
+    {
+        while (source.Count() > 0)
+        {
+            target.AddCard(source.DrawCard());
+        }
     }
 
     /// <summary>

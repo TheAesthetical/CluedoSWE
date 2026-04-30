@@ -2,7 +2,7 @@ using UnityEngine;
 /// <summary>
 /// Class <c> Card </c> is an abstract class that represents a generic card. It provides the base for each card type. 
 /// </summary>
-public abstract class Card : MonoBehaviour
+public abstract class Card 
 {
     public string CardName {get; private set;}
 
