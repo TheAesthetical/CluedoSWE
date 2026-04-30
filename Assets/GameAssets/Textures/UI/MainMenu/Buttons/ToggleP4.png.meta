@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 417dfd09f31e100499488e604efb4b13
+guid: 5e60a82b78cac1e448efc05e98bd72fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1380384937864173184
-    second: Character1ColonelMustard_0
+      213: -4215917712541222365
+    second: ToggleP4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character1ColonelMustard_0
+      name: ToggleP4_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 194
-        height: 318
+        width: 122
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0896e4d6633e7dce0800000000000000
-      internalID: -1380384937864173184
+      spriteID: 32af3b56d2d0e75c0800000000000000
+      internalID: -4215917712541222365
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Character1ColonelMustard_0: -1380384937864173184
+      ToggleP4_0: -4215917712541222365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
