@@ -288,6 +288,15 @@ public class GameController : MonoBehaviour
     }
 
     /// <summary>
+    /// Moves to the next player, and starts the next turn. 
+    /// </summary>
+    private void EndTurn()
+    {
+        NextPlayer();
+        TakeTurn();
+    }
+
+    /// <summary>
     /// Ends the game and announces the winner.
     /// </summary>
     /// <param name="winnerIn">The winning Player.</param>
@@ -306,6 +315,10 @@ public class GameController : MonoBehaviour
         Debug.Log("rolled " + roll);
 
         //HandleMovement(currentPlayer, roll);
+
+
+        // move to the next player, and start their turn.
+        EndTurn();
     }
 
     public void OnRollDicePressed()
