@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class MainMenuButtons : MonoBehaviour
+public class MenuButton : MonoBehaviour
 {
 	private Button button;
 	private GameObject menuUI;
+
+	// -1 represents AI
+	private int assignedPlayerIndex = -1;
 
 	private void Start()
 	{
@@ -50,38 +53,106 @@ public class MainMenuButtons : MonoBehaviour
 
 	public void ToggleButtonClick()
 	{
-		Sprite currentSprite = button.GetComponent<Image>().sprite;
-		int currentToggleNum = currentSprite.name[7] - '0';
+		int playerCount = menuUI.GetComponent<MenuUI>().getPlayerNum();
+		int attempts = 0;
 
-		if (currentToggleNum > 10)
+		do
 		{
-			currentToggleNum = 0;
-		}
-		else if (currentToggleNum == 6)
-		{
-			currentToggleNum = -1;
-		}
+			assignedPlayerIndex++;
 
-		List<string> toggleList = new List<string> { "0" };
-		for (int i = 1; i < menuUI.GetComponent<MenuUI>().getPlayerNum(); i++)
-		{
-			toggleList.Add(menuUI.transform.GetChild(3).transform.GetChild(1).transform.GetChild(i-1).transform.GetChild(0).GetComponent<Image>().sprite.name);
-		}
-
-		GameObject targetToggle = menuUI.transform.GetChild(3).transform.GetChild(1).transform.GetChild(currentToggleNum).transform.GetChild(0).gameObject;
-		while (toggleList.Contains(targetToggle.GetComponent<Image>().sprite.name))
-		{
-			currentToggleNum++;
-			
-			if (currentToggleNum > menuUI.GetComponent<MenuUI>().getPlayerNum())
+			if (assignedPlayerIndex >= playerCount)
 			{
-				currentToggleNum = 0;
+				assignedPlayerIndex = -1; // CPU
 			}
-		}
-		
-		button.GetComponent<Image>().sprite = menuUI.GetComponent<MenuUI>().GetToggleSprite(currentToggleNum + 1);
+
+			attempts++;
+
+		} while (
+			attempts <= playerCount + 1 &&
+			(
+				IsPlayerAlreadyAssigned(assignedPlayerIndex) ||
+				!WouldPlayerSelectionBeValid(assignedPlayerIndex)
+			)
+		);
+
+		UpdateToggleSprite();
 	}
 
+	private void UpdateToggleSprite()
+	{
+		// update sprite
+
+		if (assignedPlayerIndex == -1)
+		{
+			button.GetComponent<Image>().sprite = menuUI.GetComponent<MenuUI>().GetToggleSprite(0);
+		} else
+		{
+			button.GetComponent<Image>().sprite = menuUI.GetComponent<MenuUI>().GetToggleSprite(assignedPlayerIndex+1);
+		}
+	}
+
+	private bool IsPlayerAlreadyAssigned(int playerIndex)
+	{
+		if (playerIndex == -1)
+		{
+			return false; // AI can be reused
+		}
+
+		MenuButton[] toggles = FindObjectsOfType<MenuButton>();
+
+		foreach (MenuButton toggle in toggles)
+		{
+			if (toggle != this && toggle.assignedPlayerIndex == playerIndex)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	private bool WouldPlayerSelectionBeValid(int proposedIndex)
+	{
+		int playerCount = menuUI.GetComponent<MenuUI>().getPlayerNum();
+		bool[] selectedPlayers = new bool[playerCount];
+
+		MenuButton[] toggles = FindObjectsOfType<MenuButton>();
+
+		foreach (MenuButton toggle in toggles)
+		{
+			int index = toggle == this ? proposedIndex : toggle.GetAssignedPlayerIndex();
+
+			// Ignore CPU
+			if (index == -1)
+			{
+				continue;
+			}
+
+			selectedPlayers[index] = true;
+		}
+
+		// Once we find a missing player, no later player can be selected
+		bool foundGap = false;
+
+		for (int i = 0; i < selectedPlayers.Length; i++)
+		{
+			if (!selectedPlayers[i])
+			{
+				foundGap = true;
+			}
+			else if (foundGap)
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	public int GetAssignedPlayerIndex()
+	{
+		return assignedPlayerIndex;
+	}
 	public void BeginButtonClick()
 	{
 		SceneManager.LoadScene(1);
