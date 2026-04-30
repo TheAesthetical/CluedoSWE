@@ -73,9 +73,11 @@ public class GameController : MonoBehaviour
         // Call helper function to load the cards into three separate Unshuffled decks.
         LoadCards();
 
+        // Call helper func. to setup the Murder Envelope
+        SetupMurderEnvelope();
+
         // TODO:
         // - Create Players
-        // - Initialise Murder Envelope
         // - Shuffle and Deal Cards
     }
 
@@ -109,6 +111,26 @@ public class GameController : MonoBehaviour
         roomsDeck.AddCard(new RoomCard("Library", libraryCardSprite));
         roomsDeck.AddCard(new RoomCard("Lounge", loungeCardSprite));
         roomsDeck.AddCard(new RoomCard("Study", studyCardSprite));
+
+    }
+
+    /// <summary>
+    /// A helper function that shuffles the three decks, and draws one card from each,
+    /// and setting the contents of the murderEnvelope
+    /// </summary>
+    private void SetupMurderEnvelope()
+    {   
+        // Shuffle the decks
+        weaponsDeck.Shuffle();
+        roomsDeck.Shuffle();
+        charactersDeck.Shuffle();
+
+        // Draw one card from each
+        CharacterCard character = (CharacterCard)charactersDeck.DrawCard();
+        WeaponCard weapon = (WeaponCard)weaponsDeck.DrawCard();
+        RoomCard room = (RoomCard)roomsDeck.DrawCard();
+
+        murderEnvelope.SetCards(character, weapon, room);
 
     }
 
