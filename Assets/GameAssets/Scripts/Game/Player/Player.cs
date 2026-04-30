@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// Class <c> Player </c> is an abstract class that represents a generic card. It provides the base for each card type. 
+/// Class <c> Player </c> is an abstract class that represents a generic card. It provides the base for each player type. 
 /// </summary>
 public abstract class Player
 {
@@ -13,7 +13,12 @@ public abstract class Player
     private List<Card> hand = new List<Card>();
     private bool eliminated;
 
-    protected Player(int ID, CharacterCard character)
+	/// <summary>
+	/// Initialises a new instance of the Card class. Set to protected as this should not be instantiated directly!
+	/// </summary>
+	/// <param name="ID">The player's ID.</param>
+	/// <param name="character">The player's <c>CharacterCard</c>.</param>
+	protected Player(int ID, CharacterCard character)
     {
         this.ID = ID;
         this.character = character;
@@ -24,9 +29,9 @@ public abstract class Player
     /// <summary>
     /// Makes a suggestion.
     /// </summary>
-    public void MakeSuggestion()
+    public Suggestion MakeSuggestion(CharacterCard character, RoomCard room, WeaponCard weapon)
     {
-
+        return new Suggestion(character, room, weapon);
     }
 
     /// <summary>
@@ -34,7 +39,7 @@ public abstract class Player
     /// </summary>
     public void MakeAccusation()
     {
-
+        // empty for now, probably the same as suggestion
     }
 
     /// <summary>
@@ -50,14 +55,14 @@ public abstract class Player
     /// </summary>
     /// <param name="suggestion">The suggestion being made.</param>
     /// <returns>Returns a bool representing whether the player matches the accusation.</returns>
-    public bool CanDisprove(string suggestion) // string is placeholder until suggestion class
+    public bool CanDisprove(Suggestion suggestion) // string is placeholder until suggestion class
     {
         foreach (Card card in hand)
         {
-            // if (card == suggestion.getCharacter() || card == suggestion.getWeapon() || card == suggestion.getLocation())
-            // {
-            //  return false;
-            // }
+            if (card == suggestion.GetCharacter() || card == suggestion.GetWeapon() || card == suggestion.GetRoom())
+            {
+                return false;
+            }
         }
         return true;
     }

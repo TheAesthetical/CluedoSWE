@@ -27,6 +27,11 @@ public class MenuUI : MonoBehaviour
     {
         
     }
+
+	/// <summary>
+	/// Returns the number of players to be used ingame.
+	/// </summary>
+	/// <returns>The number of players to be used ingame.</returns>
 	public int getPlayerNum()
 	{
 		return playerNum;
