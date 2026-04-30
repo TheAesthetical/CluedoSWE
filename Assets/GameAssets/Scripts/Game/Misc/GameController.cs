@@ -67,9 +67,9 @@ public class GameController : MonoBehaviour
     /// </summary>
     private void InitialiseGame()
     {
-        players = new List<Player>();
-        
-        murderEnvelope = new MurderEnvelope();
+        players = SceneCommunication.GetPlayers();
+
+		murderEnvelope = new MurderEnvelope();
 
         currentPlayerIndex = 0;
         gameOver = false;

@@ -11,10 +11,20 @@ using System.Collections.Generic;
 /// </summary>
 public class AIPlayer : Player
 {
+<<<<<<< Updated upstream
     private int ownPlayerIndex;
     private int totalActivePlayers;
     private List<Card> ownHand = new List<Card>();
  
+=======
+	private int ID;
+	private CharacterCard character;
+	private int position;
+	private List<Card> hand = new List<Card>();
+	private bool eliminated;
+
+	private RoomCard currentTargetRoom;
+>>>>>>> Stashed changes
     private DetectiveSheet detectiveSheet;
     private List<UnknownDisproval> unknownDisprovals = new List<UnknownDisproval>();
 
@@ -26,6 +36,7 @@ public class AIPlayer : Player
     private StrategyType strategyType;
     private Dictionary<string, int> cardBiases = new Dictionary<string, int>();
 
+<<<<<<< Updated upstream
     //Card name reference data (Could be gone later)
     private static readonly string[] AllSuspectNames = {
         "Miss Scarlett", "Colonel Mustard", "Mrs White",
@@ -41,6 +52,17 @@ public class AIPlayer : Player
 
     public AIPlayer()
     {
+=======
+    public AIPlayer(int ID, CharacterCard character) : base(ID, character)
+    {
+		this.ID = ID;
+		this.character = character;
+		this.position = 0;
+		this.eliminated = false;
+
+		detectiveSheet = new DetectiveSheet();
+
+>>>>>>> Stashed changes
         suspectConfidence = 0;
         weaponConfidence = 0;
         roomConfidence = 0;

@@ -181,6 +181,26 @@ public class MenuButton : MonoBehaviour
 	}
 	public void BeginButtonClick()
 	{
+		for (int i = 0; i < menuUI.GetComponent<MenuUI>().getPlayerNum(); i++)
+		{
+			GameObject card = menuUI.transform.GetChild(3).transform.GetChild(1).transform.GetChild(i).gameObject;
+			int playerID = card.transform.GetChild(0).GetComponent<Image>().sprite.name[7] - '0';
+			string cardName = card.transform.GetChild(1).GetComponent<Image>().sprite.name[10..];
+			cardName = cardName[..^2];
+			Sprite cardSprite = card.transform.GetChild(1).GetComponent<Image>().sprite;
+
+			CharacterCard characterCard = new CharacterCard(cardName, cardSprite);
+
+			if (playerID > 6)
+			{
+				SceneCommunication.AddPlayer(playerID, characterCard, false);
+			}
+			else
+			{
+				SceneCommunication.AddPlayer(playerID, characterCard, true);
+			}
+		}
+		
 		SceneManager.LoadScene(1);
 	}
 }

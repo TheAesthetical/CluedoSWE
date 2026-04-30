@@ -57,7 +57,7 @@ public class MenuController : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Return))
+		if (Input.GetKeyDown(KeyCode.Return) && GameObject.FindWithTag("MenuCanvas1").GetComponent<MenuController>().menuCanvasGroup.alpha == 1)
 		{
             NextPrevMenu("MenuCanvas1", true);
 		}

@@ -8,10 +8,18 @@ using System.Collections.Generic;
 public abstract class Player
 {
     private int ID;
-    private CharacterCard character; // maybe in a PlayerController class instead
+    private CharacterCard character;
     private int position;
     private List<Card> hand = new List<Card>();
-    private bool eliminated; // maybe, might use a queue and dequeue when eliminated
+    private bool eliminated;
+
+    protected Player(int ID, CharacterCard character)
+    {
+        this.ID = ID;
+        this.character = character;
+        this.position = 0;
+        this.eliminated = false;
+    }
 
     /// <summary>
     /// Makes a suggestion.
