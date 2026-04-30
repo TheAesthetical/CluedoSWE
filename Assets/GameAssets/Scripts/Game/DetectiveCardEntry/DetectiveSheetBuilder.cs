@@ -85,7 +85,7 @@ public class DetectiveSheetBuilder : MonoBehaviour
         BuildSection(new string[]
         {
             "Candlestick",
-            "Dagger",
+            "Knife",
             "Lead Pipe",
             "Revolver",
             "Rope",
@@ -100,7 +100,7 @@ public class DetectiveSheetBuilder : MonoBehaviour
             "Ballroom",
             "Conservatory",
             "Dining Room",
-            "Billiard Room",
+            "Billiards Room",
             "Library",
             "Lounge",
             "Hall",
