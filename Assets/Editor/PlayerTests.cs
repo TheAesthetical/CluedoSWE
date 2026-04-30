@@ -9,7 +9,8 @@ public class PlayerTests
     [Test]
     public void HumanPlayer_CanBeCreated()
     {
-        HumanPlayer player = new HumanPlayer();
+        CharacterCard character = new CharacterCard("Miss Scarlett", null);
+        HumanPlayer player = new HumanPlayer(0, character);
 
         Assert.IsNotNull(player);
     }
@@ -17,7 +18,9 @@ public class PlayerTests
     [Test]
     public void AddCard_AddsCardToPlayerHand()
     {
-        HumanPlayer player = new HumanPlayer();
+        CharacterCard character = new CharacterCard("Miss Scarlett", null);
+
+        HumanPlayer player = new HumanPlayer(0, character);
 
         WeaponCard card = new WeaponCard("Knife", null);
 
@@ -29,7 +32,9 @@ public class PlayerTests
     [Test]
     public void AddCard_StoresCorrectCard()
     {
-        HumanPlayer player = new HumanPlayer();
+        CharacterCard character = new CharacterCard("Miss Scarlett", null);
+
+        HumanPlayer player = new HumanPlayer(0, character);
 
         WeaponCard card = new WeaponCard("Knife", null);
 

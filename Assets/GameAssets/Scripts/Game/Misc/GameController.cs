@@ -89,9 +89,6 @@ public class GameController : MonoBehaviour
         // Call helper func. to setup main deck
         SetupMainDeck();
 
-        // TODO:
-        // - Create Players
-
         // Call function to deal the cards amongst the players
         DealCards();
 
