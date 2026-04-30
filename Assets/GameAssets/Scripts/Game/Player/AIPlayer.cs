@@ -79,7 +79,7 @@ public class AIPlayer : Player
     /// This auto crosses out all cards in player own hand
     /// </summary>
     /// <param name="dealtCards">Cards dealt</param>
-    public void onHandDealt(List<Card> dealtCards)
+    public void OnHandDealt(List<Card> dealtCards)
     {
         if (dealtCards == null) return;
         ownHand = new List<Card>(dealtCards);
