@@ -18,7 +18,7 @@ public class AIPlayerIntegrationTest
     [Test]
     public void OnHandDealt_AutoCrossesOwnHand()
     {
-        AIPlayer ai = new AIPlayer();
+        AIPlayer ai = new AIPlayer(0, MakeChar("Miss Scarlett"));
         ai.Initialise(playerIndex: 0, totalActivePlayers: 3);
 
         ai.OnHandDealt(new List<Card> {
@@ -45,7 +45,7 @@ public class AIPlayerIntegrationTest
     [Test]
     public void OnSuggestionMade_DeductsFromPassersAndShownCards()
     {
-        AIPlayer ai = new AIPlayer();
+        AIPlayer ai = new AIPlayer(0, MakeChar("Miss Scarlett"));
         ai.Initialise(playerIndex: 0, totalActivePlayers: 3);
         ai.OnHandDealt(new List<Card>());
 
@@ -82,7 +82,7 @@ public class AIPlayerIntegrationTest
     public void FullGameFlow_IntegrationExample()
     {
         //GameStart
-        AIPlayer ai = new AIPlayer();
+        AIPlayer ai = new AIPlayer(0, MakeChar("Miss Scarlett"));
         ai.Initialise(playerIndex: 0, totalActivePlayers: 3);
         ai.SetStrategy(StrategyType.Safe);
         ai.OnHandDealt(new List<Card> {
