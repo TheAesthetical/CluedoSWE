@@ -80,4 +80,12 @@ public abstract class Player
         hand.Add(card);
     }
 
+    /// <summary>
+    /// Returns the hand.
+    /// </summary>
+    public List<Card> GetHand()
+    {
+        return hand;
+    }
+
 }
