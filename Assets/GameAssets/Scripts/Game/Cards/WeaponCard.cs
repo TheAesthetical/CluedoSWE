@@ -8,7 +8,7 @@ public class WeaponCard : Card
     /// Instantiates a new instance of the <c>WeaponCard</c> class. 
     /// </summary>
     /// <param name="CardNameIn"> The name of the weapon. </param>
-    public WeaponCard(string CardNameIn) : base(CardNameIn)
+    public WeaponCard(string CardNameIn, Sprite spriteIn) : base(CardNameIn, spriteIn)
     {
     }
 

@@ -13,6 +13,35 @@ public class GameController : MonoBehaviour
     private int currentPlayerIndex;
     private bool gameOver;
 
+    // WEAPON CARD SPRITES -----
+    [SerializeField] private Sprite candlestickCardSprite;
+    [SerializeField] private Sprite knifeCardSprite;
+    [SerializeField] private Sprite leadpipeCardSprite;
+    [SerializeField] private Sprite revolverCardSprite;
+    [SerializeField] private Sprite ropeCardSprite;
+    [SerializeField] private Sprite wrenchCardSprite;
+
+    // CHARACTER CARD SPRITES -------
+    [SerializeField] private Sprite mustardCardSprite;
+    [SerializeField] private Sprite scarlettCardSprite;
+    [SerializeField] private Sprite peacockCardSprite;
+    [SerializeField] private Sprite whiteCardSprite;
+    [SerializeField] private Sprite plumCardSprite;
+    [SerializeField] private Sprite greenCardSprite;
+
+    // ROOM CARD SPRITES -----
+    [SerializeField] private Sprite ballroomCardSprite;
+    [SerializeField] private Sprite billiardsCardSprite;
+    [SerializeField] private Sprite conservatoryCardSprite;
+    [SerializeField] private Sprite diningCardSprite;
+    [SerializeField] private Sprite hallCardSprite; 
+    [SerializeField] private Sprite kitchenCardSprite;
+    [SerializeField] private Sprite libraryCardSprite;
+    [SerializeField] private Sprite loungeCardSprite;
+    [SerializeField] private Sprite studyCardSprite;
+
+    // ------------------
+
     private static Player winner;
 
     /// <summary>
@@ -36,11 +65,25 @@ public class GameController : MonoBehaviour
         currentPlayerIndex = 0;
         gameOver = false;
 
-        // TODO: 
-        // - Load Cards
+       
+        // Call helper function to load the cards.
+        LoadCards();
+
+        // TODO:
         // - Create Players
         // - Initialise Murder Envelope
         // - Shuffle and Deal Cards
+    }
+
+    /// <summary>
+    /// A helper function that initialises the cards. 
+    /// </summary>
+    private void LoadCards()
+    {
+        
+
+
+
     }
 
     /// <summary>

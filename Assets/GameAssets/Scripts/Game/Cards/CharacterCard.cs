@@ -8,7 +8,7 @@ public class CharacterCard : Card
     /// Instantiates a new instance of the <c>CharacterCard</c> class.
     /// </summary>
     /// <param name="CardNameIn"> The name of the character. </param>
-    public CharacterCard(string CardNameIn) : base(CardNameIn)
+    public CharacterCard(string CardNameIn, Sprite spriteIn) : base(CardNameIn, spriteIn)
     {
     }
 

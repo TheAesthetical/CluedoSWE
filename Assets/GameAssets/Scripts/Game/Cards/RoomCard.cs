@@ -8,7 +8,7 @@ public class RoomCard : Card
     /// Instantiates a new instance of the <c> RoomCard</c> class. 
     /// </summary>
     /// <param name="CardNameIn"> The name of the room. </param>
-    public RoomCard(string CardNameIn) : base(CardNameIn)
+    public RoomCard(string CardNameIn, Sprite spriteIn) : base(CardNameIn, spriteIn)
     {
     }
 
