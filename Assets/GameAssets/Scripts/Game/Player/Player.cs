@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 /// <summary>
 /// Class <c> Player </c> is an abstract class that represents a generic card. It provides the base for each card type. 
@@ -8,7 +10,7 @@ public abstract class Player
     private int ID;
     private CharacterCard character; // maybe in a PlayerController class instead
     private int position;
-    private Card[] hand;
+    private List<Card> hand;
     private bool eliminated; // maybe, might use a queue and dequeue when eliminated
 
     /// <summary>
@@ -67,5 +69,14 @@ public abstract class Player
     public CharacterCard GetCharacter()
     {
         return character;
+    }
+
+    /// <summary>
+    /// A method to add a card to the player's hand.
+    /// </summary>
+    /// <param name="card"> The card to be added. </param>
+    public void AddCard(Card card)
+    {
+        hand.Add(card);
     }
 }

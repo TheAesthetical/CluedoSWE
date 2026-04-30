@@ -84,6 +84,8 @@ public class GameController : MonoBehaviour
         // TODO:
         // - Create Players
         // - Shuffle and Deal Cards
+
+        DealCards();
     }
 
     /// <summary>
@@ -211,6 +213,22 @@ public class GameController : MonoBehaviour
         AddAllCards(deck, roomsDeck);
 
         deck.Shuffle();
+    }
+
+    public void DealCards()
+    {
+        int playerIndex = 0;
+
+        while (deck.Count() > 0)
+        {
+            Card card = deck.DrawCard();
+
+            players[playerIndex].AddCard(card);
+
+            playerIndex = (playerIndex + 1) % players.Count; // wraps around once end reached
+        }
+
+        Debug.Log("Cards deal to players");
     }
 
     /// <summary>
