@@ -3,8 +3,8 @@ guid: 5eeb6688a5231984a956da9992362e7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3392582626300758187
-    second: CharacterMrsPeacock_0
+      213: 9045589582073357896
+    second: Character1MrsPeacock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CharacterMrsPeacock_0
+      name: Character1MrsPeacock_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 207
-        height: 328
+        width: 193
+        height: 315
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5577e2873102be0d0800000000000000
-      internalID: -3392582626300758187
+      spriteID: 846e47f9cc3688d70800000000000000
+      internalID: 9045589582073357896
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CharacterMrsPeacock_0: -3392582626300758187
+      Character1MrsPeacock_0: 9045589582073357896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

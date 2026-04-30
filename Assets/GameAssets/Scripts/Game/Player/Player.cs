@@ -10,7 +10,7 @@ public abstract class Player
     private int ID;
     private CharacterCard character; // maybe in a PlayerController class instead
     private int position;
-    private List<Card> hand;
+    private List<Card> hand = new List<Card>();
     private bool eliminated; // maybe, might use a queue and dequeue when eliminated
 
     /// <summary>
@@ -79,4 +79,13 @@ public abstract class Player
     {
         hand.Add(card);
     }
+
+    /// <summary>
+    /// Returns the hand.
+    /// </summary>
+    public List<Card> GetHand()
+    {
+        return hand;
+    }
+
 }

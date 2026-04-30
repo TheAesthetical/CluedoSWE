@@ -49,11 +49,11 @@ public class MenuController : MonoBehaviour
         {
             CloseMenu();
         }
-
-        //initialPosition = menu.transform.position;
+		
+		//initialPosition = menu.transform.position;
 
 		//InitializedOffsetPositions();
-    }
+	}
 
 	private void Update()
 	{

@@ -3,8 +3,8 @@ guid: bc63ee5df3b7fe44d93b46c1a0b0a38b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 20121707258657255
-    second: CharacterReverendGreen_0
+      213: -8432995854874631305
+    second: Character1ReverendGreen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CharacterReverendGreen_0
+      name: Character1ReverendGreen_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 208
-        height: 330
+        width: 195
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e93d6d069c774000800000000000000
-      internalID: 20121707258657255
+      spriteID: 7732bdd23faf7fa80800000000000000
+      internalID: -8432995854874631305
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CharacterReverendGreen_0: 20121707258657255
+      Character1ReverendGreen_0: -8432995854874631305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
