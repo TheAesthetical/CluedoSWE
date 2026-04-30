@@ -8,6 +8,10 @@ public class GameController : MonoBehaviour
 {
     private List<Player> players;
     private Deck deck;
+    private Deck weaponsDeck;
+    private Deck roomsDeck;
+    private Deck charactersDeck;
+
     private MurderEnvelope murderEnvelope;
     private Dice dice;
     private int currentPlayerIndex;
@@ -66,7 +70,7 @@ public class GameController : MonoBehaviour
         gameOver = false;
 
        
-        // Call helper function to load the cards.
+        // Call helper function to load the cards into three separate Unshuffled decks.
         LoadCards();
 
         // TODO:
@@ -76,13 +80,35 @@ public class GameController : MonoBehaviour
     }
 
     /// <summary>
-    /// A helper function that initialises the cards. 
+    /// A helper function that initialises the cards. The cards are put into three separate decks that are unshuffled.
     /// </summary>
     private void LoadCards()
     {
-        
+        // Weapons:
+        weaponsDeck.AddCard(new WeaponCard("Candlestick", candlestickCardSprite));
+        weaponsDeck.AddCard(new WeaponCard("Knife", knifeCardSprite));
+        weaponsDeck.AddCard(new WeaponCard("Lead Pipe", leadpipeCardSprite));
+        weaponsDeck.AddCard(new WeaponCard("Revolver", revolverCardSprite));
+        weaponsDeck.AddCard(new WeaponCard("Rope", ropeCardSprite));
+        weaponsDeck.AddCard(new WeaponCard("Wrench", wrenchCardSprite));
 
+        // Characters:
+        charactersDeck.AddCard(new CharacterCard("Colonel Mustard", mustardCardSprite));
+        charactersDeck.AddCard(new CharacterCard("Miss Scarlett", scarlettCardSprite));
+        charactersDeck.AddCard(new CharacterCard("Mrs Peacock", peacockCardSprite));
+        charactersDeck.AddCard(new CharacterCard("Mrs White", whiteCardSprite));
+        charactersDeck.AddCard(new CharacterCard("Professor Plum", plumCardSprite));
+        charactersDeck.AddCard(new CharacterCard("Reverend Green", greenCardSprite));
 
+        // Rooms:
+        roomsDeck.AddCard(new RoomCard("Ballroom", ballroomCardSprite));
+        roomsDeck.AddCard(new RoomCard("Billiards Room", billiardsCardSprite));
+        roomsDeck.AddCard(new RoomCard("Dining Room", diningCardSprite));
+        roomsDeck.AddCard(new RoomCard("Hall", hallCardSprite));
+        roomsDeck.AddCard(new RoomCard("Kitchen", kitchenCardSprite));
+        roomsDeck.AddCard(new RoomCard("Library", libraryCardSprite));
+        roomsDeck.AddCard(new RoomCard("Lounge", loungeCardSprite));
+        roomsDeck.AddCard(new RoomCard("Study", studyCardSprite));
 
     }
 
