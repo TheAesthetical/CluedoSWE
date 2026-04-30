@@ -100,7 +100,7 @@ public class MenuUI : MonoBehaviour
 		for (int i = 0; i < 6; i++)
 		{
 			GameObject cardCanvas = cardPanel.transform.GetChild(i).gameObject;
-			cardCanvas.transform.GetChild(0).GetComponent<Image>().sprite = toggleSprites[i+1];
+			cardCanvas.transform.GetChild(0).GetComponent<Image>().sprite = toggleSprites[0];
 		}
 	}
 }
