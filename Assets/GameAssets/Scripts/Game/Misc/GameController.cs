@@ -81,11 +81,15 @@ public class GameController : MonoBehaviour
         // Call helper func. to setup the Murder Envelope
         SetupMurderEnvelope();
 
+        // Call helper func. to setup main deck
+        SetupMainDeck();
+
         // TODO:
         // - Create Players
-        // - Shuffle and Deal Cards
 
+        // Call function to deal the cards amongst the players
         DealCards();
+
     }
 
     /// <summary>
@@ -181,6 +185,7 @@ public class GameController : MonoBehaviour
         roomsDeck.AddCard(new RoomCard("Lounge", loungeCardSprite));
         roomsDeck.AddCard(new RoomCard("Study", studyCardSprite));
 
+
     }
 
     /// <summary>
@@ -208,6 +213,8 @@ public class GameController : MonoBehaviour
     /// </summary>
     private void SetupMainDeck()
     {
+        Debug.Log("Character Deck: " + charactersDeck.ToString());
+
         AddAllCards(deck, charactersDeck);
         AddAllCards(deck, weaponsDeck);
         AddAllCards(deck, roomsDeck);
@@ -217,18 +224,30 @@ public class GameController : MonoBehaviour
 
     public void DealCards()
     {
+    
         int playerIndex = 0;
+
+        Debug.Log("Deck: " + deck.ToString());
+
+        if (players.Count == 0)
+        {
+            Debug.Log("No players!!");
+            return;
+        }
 
         while (deck.Count() > 0)
         {
-            Card card = deck.DrawCard();
+        
+            Card card = deck.DrawCard();  
 
             players[playerIndex].AddCard(card);
 
+
             playerIndex = (playerIndex + 1) % players.Count; // wraps around once end reached
+
         }
 
-        Debug.Log("Cards deal to players");
+        Debug.Log("Cards dealt to players");
     }
 
     /// <summary>
@@ -238,10 +257,12 @@ public class GameController : MonoBehaviour
     /// <param name="source"> The source of the cards. </param>
     private void AddAllCards(Deck target, Deck source)
     {
+
         while (source.Count() > 0)
         {
             target.AddCard(source.DrawCard());
         }
+
     }
 
     /// <summary>

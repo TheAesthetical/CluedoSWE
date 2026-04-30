@@ -64,7 +64,8 @@ public class Deck
         cards.RemoveAt(0);
         return top;
     }
-    
+   
+
     /// <summary>
     /// Gets the number of cards currently in the deck.
     /// </summary>
@@ -72,5 +73,10 @@ public class Deck
     public int Count()
     {
         return cards.Count;
+    }
+
+    public override string ToString()
+    {
+        return string.Join(", ", cards);
     }
 }
