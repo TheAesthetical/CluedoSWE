@@ -4,8 +4,8 @@ using TMPro;
 
 /// <summary>
 /// Handles a single row in the deticive sheet UI
-/// Each Row represents one card (suspect, weapon or room)
-/// and allows buttons toggle cross show that its been seen
+/// Each Row represents one card (suspect, weapon or room) per player column
+/// Clicking button toggles the manual cross out
 /// </summary>
 public class DetectiveRowUI : MonoBehaviour
 {
@@ -13,44 +13,79 @@ public class DetectiveRowUI : MonoBehaviour
     [SerializeField] private TMP_Text cardNameText;
     [SerializeField] private Button[] crossButtons;
     [SerializeField] private GameObject[] xImages;
-    private string cardName;
+    private DetectiveSheet sheet;
+    private DetectiveCardEntry entry;
 
     /// <summary>
-    /// Initialise the row with a card name and 
-    /// sets up buttons. Also set all crosses to hidden
+    /// Initialise this row for a specific card in a specific sheet
     /// </summary>
-    /// <param name="cardName">The name of the card ("Knife")</param>
-    public void Setup(string cardName)
+    /// <param name="sheet">The DetectiveSheet this row reads from / writes to</param>
+    /// <param name="cardName">Name of the card this row represents</param>
+    public void Setup(DetectiveSheet sheet, string cardName)
     {
         if (crossButtons.Length != xImages.Length)
         {
-            Debug.LogError("Buttons and XImages length mismatch!");
+            Debug.LogError("DetectiveRowUI: crossButtons and xImages length mismatch on " + cardName);
+            return;
         }
-        this.cardName = cardName;
+        this.sheet = sheet;
+        this.entry = sheet.GetEntryByName(cardName);
+
+        if (entry == null)
+        {
+            Debug.LogError("DetectiveRowUI: no entry found for card " + cardName);
+            return;
+        }
+
         cardNameText.text = cardName;
 
-        for (int i = 0; i < crossButtons.Length; i++)
+        //Hook up each button to toggle the manual cross for its column
+        //Inactive columns get disabled so the user can't click them
+        int columnsToShow = Mathf.Min(crossButtons.Length, entry.GetColumnCount());
+        for (int i = 0; i < columnsToShow; i++)
         {
-            int buttonIndex = i;
+            int columnIndex = i; // capture for closure
+            Button button = crossButtons[columnIndex];
 
-            //Stops duplicate listners
-            crossButtons[buttonIndex].onClick.RemoveAllListeners();
+            button.onClick.RemoveAllListeners();
 
-            //Add click behaviour 
-            crossButtons[buttonIndex].onClick.AddListener(() => ToggleCross(buttonIndex));
+            if (entry.IsColumnActive(columnIndex))
+            {
+                button.interactable = true;
+                button.onClick.AddListener(() => OnButtonClicked(columnIndex));
+            }
+            else
+            {
+                button.interactable = false;
+            }
+        }
+        Refresh();
+    }
 
-            //Hide all crosses at the start
-            xImages[buttonIndex].SetActive(false);
+    public void Refresh()
+    {
+        if (entry == null) return;
+        int coloumToShow = Mathf.Min(xImages.Length, entry.GetColumnCount());
+        for (int i = 0; i < coloumToShow; i++)
+        {
+            xImages[i].SetActive(entry.ShouldDisplayCross(i));
         }
     }
 
-/// <summary>
-/// Toggle the visisbility of the cross for a given player coloum
-/// </summary>
-/// <param name="index">The index of player column</param>
-private void ToggleCross(int index)
-{
-    Debug.Log(cardName + " button " + index + " clicked");
-    xImages[index].SetActive(!xImages[index].activeSelf);
-}
+    /// <summary>
+    /// The card name this row represents
+    /// </summary>
+    public string GetCardName()
+    {
+        return entry != null ? entry.GetCardName() : null;
+    }
+
+    private void OnButtonClicked(int columnIndex)
+    {
+        if (sheet == null || entry == null) return;
+
+        sheet.ToggleManualCrossOut(entry, columnIndex);
+        Refresh();
+    }
+
 }
