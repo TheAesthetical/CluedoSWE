@@ -1551,6 +1551,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434435769}
   m_CullTransparentMesh: 1
+--- !u!1 &1696253724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1696253726}
+  - component: {fileID: 1696253725}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1696253725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696253724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b732764f6a24b348d32892d6b01c4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candlestickCardSprite: {fileID: 2246248454637204993, guid: a36f9aa5cf3cab74aa8e60dd110c0803, type: 3}
+  knifeCardSprite: {fileID: 2221005748761447707, guid: 0a26fd503dbb71440ad18bfb09b07bb5, type: 3}
+  leadpipeCardSprite: {fileID: 328022691098617399, guid: 2729895ad79e7cd45b34ae264630a1a5, type: 3}
+  revolverCardSprite: {fileID: 5014325426183993713, guid: 3553b3633e2f49444a2b6a1d15e80b6e, type: 3}
+  ropeCardSprite: {fileID: 1419909950825670122, guid: a80dd720e0e1b2047b88ed8f3642bf6c, type: 3}
+  wrenchCardSprite: {fileID: -6242956176441711889, guid: 62f0f49205976564aa52028f60161a15, type: 3}
+  mustardCardSprite: {fileID: 5268037576738463508, guid: 3193184aa95d20d41a4973dfb46bf097, type: 3}
+  scarlettCardSprite: {fileID: -3957458847714236175, guid: c650fb09b6eff204ba62a89a439dc8b6, type: 3}
+  peacockCardSprite: {fileID: -970739325617689622, guid: aef6743c5e79f63468ec0163bb774f2c, type: 3}
+  whiteCardSprite: {fileID: 1352977060779092529, guid: 8ad7b46be874aa34a80851b5f81ec1f8, type: 3}
+  plumCardSprite: {fileID: -2512526818621968533, guid: 4b1bc6cdbe565a7418fd7bf481dc9365, type: 3}
+  greenCardSprite: {fileID: 4130064471520797028, guid: 626e1674ae149e44a947e0ff750de70e, type: 3}
+  ballroomCardSprite: {fileID: 3001918662718745364, guid: f328499c78f81074d8b4b280ef5587d6, type: 3}
+  billiardsCardSprite: {fileID: -2563957912312369341, guid: 0475e965538ee05428722f87a2e6c8a9, type: 3}
+  conservatoryCardSprite: {fileID: -9172488644421786736, guid: b5acb683d6e7d0e499bde605875541e0, type: 3}
+  diningCardSprite: {fileID: 2845268857729813302, guid: 3b25408bf8013cc42bf90ffc126bbba7, type: 3}
+  hallCardSprite: {fileID: -4118116707407637115, guid: b41eaba07fa873f46b481b0e3a58552c, type: 3}
+  kitchenCardSprite: {fileID: -3264510561402194078, guid: c8ad77fe2e5573746b505252be077fd2, type: 3}
+  libraryCardSprite: {fileID: -8188539009771921497, guid: 59d3be1a0f754da4ea7a00709a8a316d, type: 3}
+  loungeCardSprite: {fileID: 8415205668339330056, guid: 9a4206e060ffd374bb3be52ea6e135c3, type: 3}
+  studyCardSprite: {fileID: -5053740506455869142, guid: 18323a1e54c2cec4fac60e99e25d9062, type: 3}
+--- !u!4 &1696253726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696253724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1416.167, y: 717.1507, z: -12.179663}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938546994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,3 +1716,4 @@ SceneRoots:
   - {fileID: 345523049}
   - {fileID: 394950978}
   - {fileID: 1025392293}
+  - {fileID: 1696253726}
