@@ -89,7 +89,6 @@ public class AIPlayer : Player
         {
             detectiveSheet.InitialiseFromHand(ownHand, ownPlayerIndex);
         }
-        UpdateConfidence();
 
             string handStr = "";
         for (int i = 0; i < ownHand.Count; i++)
@@ -141,11 +140,14 @@ public class AIPlayer : Player
         //After suggestion made, its chance for other players to disprove this claim
         //so it keep going until one players can disprove the suggestion (they have one of the cards)
         //If disproverIndex is -1, every other active player passed i.e so nobody could disprove the claim
-        for (int offset =1; offset < totalActivePlayers; offset++)
+
+
+        //The disprover, has at least one the three
+        // If we acctually saw which card, its auto crossed out
+        for (int offset = 1; offset < totalActivePlayers; offset++)
         {
             int index = (suggestionIndex + offset) % totalActivePlayers;
             if (index == disproverIndex) break;
-            //The player has passed, they dont have one the cards
             if (cName != null) detectiveSheet.MarkNotHeldBy(cName, index);
             if (wName != null) detectiveSheet.MarkNotHeldBy(wName, index);
             if (rName != null) detectiveSheet.MarkNotHeldBy(rName, index);
@@ -158,8 +160,8 @@ public class AIPlayer : Player
             }
         }
 
-        //The disprover, has at least one the three
-        // If we acctually saw which card, its auto crossed out
+        //The disprover  has at least one the three
+        // If we acctually saw which card its auto crossed out
         if (disproverIndex >= 0)
         {
             if (shownCard != null)
@@ -168,7 +170,7 @@ public class AIPlayer : Player
                 if (suggestionIndex == ownPlayerIndex || disproverIndex == ownPlayerIndex)
                 {
                     Debug.Log("[AI " + ownPlayerIndex + "] deduction: P" + disproverIndex +
-                    " has " + shownCard + " — ruled out of envelope.");
+                    " has " + shownCard + "  ruled out of envelope.");
                 }
             }
             else
@@ -180,7 +182,7 @@ public class AIPlayer : Player
                 });
                 Debug.Log("[AI " + ownPlayerIndex + "] tracking: P" + disproverIndex +
                 " showed a card from {" + Safe(cName) + ", " + Safe(wName) +
-                ", " + Safe(rName) + "} — will resolve when 2 are eliminated.");
+                ", " + Safe(rName) + "}  will resolve when 2 are eliminated.");
             }
         }
 
@@ -650,15 +652,18 @@ public class AIPlayer : Player
 
     private void MakeAccusation(GameController gameController, Suggestion suggestion)
     {
-        Debug.Log("[AI " + ownPlayerIndex + "] ACCUSATION (" +
-            (int)suspectConfidence + "/" +
-            (int)weaponConfidence + "/" +
-            (int)roomConfidence + "%): " +
-            Safe(suggestion.GetCharacter()) + ", " +
-            Safe(suggestion.GetWeapon()) + ", " +
-            Safe(suggestion.GetRoom()));
-        gameController.HandleAccusation(this, suggestion);
+
+    Debug.Log("[AI " + ownPlayerIndex + "] ACCUSATION (" +
+        (int)suspectConfidence + "/" +
+        (int)weaponConfidence + "/" +
+        (int)roomConfidence + "%): " +
+        Safe(suggestion.GetCharacter()) + ", " +
+        Safe(suggestion.GetWeapon()) + ", " +
+        Safe(suggestion.GetRoom()));
+    gameController.HandleAccusation(this, suggestion);
     }
+
+
 
     private string Safe(object o) { return o!= null ? o.ToString() : "(null)";}
 
