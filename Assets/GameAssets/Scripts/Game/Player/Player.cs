@@ -75,6 +75,36 @@ public abstract class Player
         eliminated = true;
     }
 
+    public bool IsEliminated()
+    {
+        return eliminated;
+    }
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="suggestion"></param>
+    /// <returns></returns>
+    public Card GetMatchingCard(Suggestion suggestion)
+    {
+        if (suggestion == null) return null;
+
+        string cName = suggestion.GetCharacter() != null ? suggestion.GetCharacter().ToString() : null;
+        string wName = suggestion.GetWeapon() != null ? suggestion.GetWeapon().ToString() : null;
+        string rName = suggestion.GetRoom() != null ? suggestion.GetRoom().ToString() : null;
+
+        foreach (Card c in hand)
+        {
+            string cardName = c.ToString();
+            if (cardName == cName || cardName == wName || cardName == rName)
+            {
+                return c;
+            }
+        }
+        return null;
+    }
+
     /// <summary>
     /// A method to return the Character card of the current player.
     /// </summary>
