@@ -167,13 +167,29 @@ public class GameController : MonoBehaviour
     /// <summary>
     /// Handles a player's suggestion.
     /// </summary>
+    /// <param name="suggesterIndex">Index of the player who made the suggestion.</param>
     /// <param name="suggestion">The <c>Suggestion</c> the player makes. </param>
-    private void HandleSuggestion(Suggestion suggestion)
+    private void HandleSuggestion(int suggesterIndex, Suggestion suggestion)
     {
-        // TODO:
-        // - Ask other player's to disprove
+        // TODO when human disprover Ui is wired up
+        // - Walk through other player in turn order asking who can dsiprove
         // - Reveal one matching card (if possible)
-        // - End Suggestion phase
+        // - Set disproverIndex and shownCard accordiangly
+        int disproverIndex = -1;
+        Card shownCard = null;
+
+        //Tells every player that a suggestion was made
+        //For each player: shownCard is only set when they know it (they are suggester or the disprover)
+        //Everyone else passed null
+        for (int i = 0; i < players.Count; i++)
+        {
+            Card visibleToThisPlayer = null;
+            if (i == suggesterIndex || i == disproverIndex)
+            {
+                visibleToThisPlayer = shownCard;
+            }
+            players[i].OnSuggestionMade(suggesterIndex, suggestion, disproverIndex, visibleToThisPlayer);
+        }
 
     }
 
