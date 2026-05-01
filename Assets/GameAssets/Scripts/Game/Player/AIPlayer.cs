@@ -1,83 +1,245 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+
 /// <summary>
 /// AI-controlled player.
-/// Decides movement, target rooms, suggestions, accusations,
-/// and updates its detective sheet knowledge.
+/// 
+/// As player class not fleshed out yet, some fileds Ill do here, until it done
+/// 
+/// 
 /// </summary>
 public class AIPlayer : Player
 {
-    private RoomCard currentTargetRoom;
+    private int ownPlayerIndex;
+    private int totalActivePlayers;
+    private List<Card> ownHand = new List<Card>();
+ 
     private DetectiveSheet detectiveSheet;
+    private List<UnknownDisproval> unknownDisprovals = new List<UnknownDisproval>();
 
+    //For Decisions:
+    private RoomCard currentTargetRoom;
     private double suspectConfidence;
     private double weaponConfidence;
     private double roomConfidence;
-
     private StrategyType strategyType;
     private Dictionary<string, int> cardBiases = new Dictionary<string, int>();
 
-    public AIPlayer()
+    private static readonly string[] AllSuspectNames = {
+        "Miss Scarlett", "Colonel Mustard", "Mrs White",
+        "Reverend Green", "Mrs Peacock", "Professor Plum"
+    };
+    private static readonly string[] AllWeaponNames = {
+        "Candlestick", "Knife", "Lead Pipe", "Revolver", "Rope", "Wrench"
+    };
+    private static readonly string[] AllRoomNames = {
+        "Kitchen", "Ballroom", "Conservatory", "Dining Room", "Billiards Room",
+        "Library", "Lounge", "Hall", "Study"
+    };
+
+    public AIPlayer(int ID, CharacterCard character) : base(ID, character)
     {
-        detectiveSheet = new DetectiveSheet();
+    suspectConfidence = 0;
+    weaponConfidence = 0;
+    roomConfidence = 0;
+    strategyType = StrategyType.Safe;
+    }
 
-        suspectConfidence = 0;
-        weaponConfidence = 0;
-        roomConfidence = 0;
 
-        strategyType = StrategyType.Safe;
+    //GameController should call these
+    
+    /// <summary>
+    /// Set up the Ai. Call once before dealing cards
+    /// </summary>
+    /// <param name="playerIndex">Player postion</param>
+    /// <param name="totalActivePlayers">How many active players</param>
+    public override void Initialise(int playerIndex, int totalActivePlayers)
+    {
+        this.ownPlayerIndex = playerIndex;
+        this.totalActivePlayers = totalActivePlayers;
+        this.detectiveSheet = new DetectiveSheet(totalActivePlayers);
+        this.ownHand.Clear();
+        this.unknownDisprovals.Clear();
+
     }
 
     /// <summary>
-    /// Main AI turn loop.
+    /// Choose between safe and deceptive (bluff) play styles
     /// </summary>
-    public void TakeTurn(GameController gameController, Dice dice)
+    /// <param name="strategy">Safe or Deceptive</param>
+    public void SetStrategy(StrategyType strategy)
     {
-        //1 Roll dice
-        int diceRoll = dice.Roll();
+        strategyType = strategy;
+    }
 
-        //2 Rerieve all legal postions
+    /// <summary>
+    /// Call once cards are dealt
+    /// This auto crosses out all cards in player own hand
+    /// </summary>
+    /// <param name="dealtCards">Cards dealt</param>
+    public override void OnHandDealt(List<Card> dealtCards)
+    {
+        if (dealtCards == null) return;
+        ownHand = new List<Card>(dealtCards);
+        if (detectiveSheet != null)
+        {
+            detectiveSheet.InitialiseFromHand(ownHand, ownPlayerIndex);
+        }
+        UpdateConfidence();
+    }
+    
+    /// <summary>
+    /// Call when another player shows this AI a card
+    /// Ai trting to make suggestion that they could disprove
+    /// </summary>
+    /// <param name="card">Card shown</param>
+    /// <param name="byPlayerIndex">Player postion</param>
+    public void OnCardShown(Card card, int byPlayerIndex)
+    {
+        if (card == null || detectiveSheet == null) return;
+        detectiveSheet.MarkAuto(card, byPlayerIndex);
+        UpdateConfidence();
+    }
+
+    /// <summary>
+    /// Call after every suggestion by anyone
+    /// Helps the deduction
+    /// disproverIndex == -1 means nobody could disprove
+    /// shownCard: only not null if Ai was suggesster/disprover
+    /// Null being passed means well record the disproval as "unknwn which card"
+    /// </summary>
+    /// <param name="suggestionIndex">Index of player made the suggestion</param>
+    /// <param name="suggestion">Suggestion made</param>
+    /// <param name="disproverIndex">Index of the disporver or -1 if nobody disproved</param>
+    /// <param name="shownCard">The card shown (if Known) or null</param>
+    public override void OnSuggestionMade(int suggestionIndex, Suggestion suggestion,
+    int disproverIndex, Card shownCard)
+    {
+        if (suggestion == null || detectiveSheet == null) return;
+
+        string cName = suggestion.GetCharacter() != null ? suggestion.GetCharacter().ToString() : null;
+        string wName = suggestion.GetWeapon() != null ? suggestion.GetWeapon().ToString() : null;
+        string rName = suggestion.GetRoom() != null ? suggestion.GetRoom().ToString() : null;
+
+
+        //After suggestion made, its chance for other players to disprove this claim
+        //so it keep going until one players can disprove the suggestion (they have one of the cards)
+        //If disproverIndex is -1, every other active player passed i.e so nobody could disprove the claim
+        for (int offset =1; offset < totalActivePlayers; offset++)
+        {
+            int index = (suggestionIndex + offset) % totalActivePlayers;
+            if (index == disproverIndex) break;
+            //The player has passed, they dont have one the cards
+            if (cName != null) detectiveSheet.MarkNotHeldBy(cName, index);
+            if (wName != null) detectiveSheet.MarkNotHeldBy(wName, index);
+            if (rName != null) detectiveSheet.MarkNotHeldBy(rName, index);
+        }
+
+        //The disprover, has at least one the three
+        // If we acctually saw which card, its auto crossed out
+        if (disproverIndex >= 0)
+        {
+            if (shownCard != null)
+            {
+                detectiveSheet.MarkAuto(shownCard, disproverIndex);
+            }
+            else
+            {
+                unknownDisprovals.Add(new UnknownDisproval
+                {
+                    DisproverIndex = disproverIndex,
+                    CardNames = new[] { cName, wName, rName }
+                });
+            }
+        }
+
+        // check unknown disprovals: if two of three cards in a past disproval
+        // are now known not to be in disprovers hand, the third must be
+        ResolveUnknownDisprovals();
+        UpdateConfidence();
+    }
+
+    //TurnLOOP
+
+    public override void TakeTurn(GameController gameController, Dice dice)
+    {
+        int diceRoll = dice.Roll();
         List<Vector2Int> legalMoves = GetLegalMoves(diceRoll);
 
-
-        //4 Bias Update
         UpdateBiases();
-
-        //5 Target Selection
         currentTargetRoom = ChooseTargetRoom();
 
         Vector2Int bestMove = BestMoveTowardsTarget(legalMoves);
-
         MoveTo(bestMove);
-
         if (IsInRoom())
         {
             if (ShouldMakeAccusation())
             {
-                Suggestion accusation = BuildSuggestion();
-                MakeAccusation(accusation);
+                Suggestion accusation = BuildAccusation();
+                MakeAccusation(gameController, accusation);
             }
             else
             {
                 Suggestion suggestion = BuildSuggestion();
-                MakeSuggestion(suggestion);
+                MakeSuggestion(gameController,suggestion);
             }
         }
 
-        UpdateDetectiveSheet();
         UpdateConfidence();
-
         EndTurn();
     }
 
     /// <summary>
-    /// Gets all board positions the AI can legally move to.
+    /// For each past disproval where we didn't see the card, check if we now
+    /// know that 2 of the 3 cards are NOT in the disprover's hand
+    /// If so,the third must be: autocross it
+    /// Repeats until no progress is made (one resolved disproval can unlock another)
     /// </summary>
-    private List<Vector2Int> GetLegalMoves(int diceRoll)
+    private void ResolveUnknownDisprovals()
     {
-        // TODO: connect this to Board movement/pathfinding.
-        return new List<Vector2Int>();
+        bool madeProgress = true;
+        while (madeProgress)
+        {
+            madeProgress = false;
+            for (int i = unknownDisprovals.Count -1; i >= 0; i--)
+            {
+                UnknownDisproval u = unknownDisprovals[i];
+                int possibleCount = 0;
+                string lastPossible = null;
+                bool resolved = false;
+
+                foreach (string name in u.CardNames)
+                {
+                    if (name == null) continue;
+                    DetectiveCardEntry entry = detectiveSheet.GetEntryByName(name);
+                    if (entry == null) continue;
+                    if (entry.IsAutoCrossedOut(u.DisproverIndex))
+                    {
+                        //We know that elsewhere has this card (resoloved)
+                        resolved = true;
+                        break;
+                    }
+                    if (!entry.IsKnownNotHeldBy(u.DisproverIndex))
+                    {
+                        possibleCount++;
+                        lastPossible = name;
+                    }
+                }
+
+                if (resolved)
+                {
+                    unknownDisprovals.RemoveAt(i);
+                    madeProgress = true;
+                }
+                else if (possibleCount ==1 && lastPossible != null)
+                {
+                    detectiveSheet.MarkAuto(lastPossible, u.DisproverIndex);
+                    unknownDisprovals.RemoveAt(i);
+                    madeProgress = true;
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -85,89 +247,57 @@ public class AIPlayer : Player
     /// </summary>
     private void UpdateBiases()
     {
+        if (detectiveSheet == null) return;
         cardBiases.Clear();
-        List<DetectiveCardEntry> entries = detectiveSheet.GetEntries();
-        int possibleSuspects = 0;
-        int possibleWeapons = 0;
-        int possibleRooms = 0;
-        foreach (DetectiveCardEntry entry in entries)
+
+        int possibleSuspects = CountUnruledOut(AllSuspectNames);
+        int possibleWeapons = CountUnruledOut(AllWeaponNames);
+        int possibleRooms = CountUnruledOut(AllRoomNames);
+        
+        foreach (string name in AllSuspectNames) cardBiases[name] = BiasFor(name, possibleSuspects);
+        foreach (string name in AllWeaponNames) cardBiases[name] = BiasFor(name, possibleWeapons);
+        foreach (string name in AllRoomNames) cardBiases[name] = BiasFor(name, possibleRooms);
+    }
+
+    /// <summary>
+    /// Give a score based on how useful it is for a suggestion
+    /// Card = 0: been rulled out
+    /// Cards with fewer remaing cards are given a higher score
+    /// </summary>
+    /// <param name="cardName">name of the card</param>
+    /// <param name="remainingInGroup">Number of cards in a group not been ruled out</param>
+    /// <returns>Bias score used for choosing suggestions</returns>
+    private int BiasFor(string cardName, int remainingInGroup)
+    {
+        DetectiveCardEntry entry = detectiveSheet.GetEntryByName(cardName);
+        if (entry == null) return 0;
+        if (entry.IsAutoCrossedOutAnywhere()) return 0; //Rulled out
+
+        //Higher weight when fewer candiates remain 
+
+        if (remainingInGroup <= 1) return 100;
+        if (remainingInGroup <= 2) return 75;
+        if (remainingInGroup <= 3) return 50;
+        return 20;
+    }
+
+    /// <summary>
+    /// Counts how many cards havent been ruled out
+    /// </summary>
+    /// <param name="names">Array of card names from a group </param>
+    /// <returns>Number cards that havent been ruled out</returns>
+    private int CountUnruledOut(string[] names)
+    {
+        int count = 0;
+        foreach (string n in names)
         {
-            string cardName = entry.GetCardName();
-            if (entry.IsCrossedOut())
-                continue;
-            if (IsSuspect(cardName))
-                possibleSuspects++;
-            else if (IsWeapon(cardName))
-                possibleWeapons++;
-            else if (IsRoom(cardName))
-                possibleRooms++;
+            DetectiveCardEntry e = detectiveSheet.GetEntryByName(n);
+            if (e != null && !e.IsAutoCrossedOutAnywhere()) count++;
         }
-
-        foreach (DetectiveCardEntry entry in entries)
-        {
-
-            string cardName = entry.GetCardName();
-            if (entry.IsCrossedOut())
-            {
-                cardBiases[cardName] = 0;
-                continue;
-            }
-
-            if (IsSuspect(cardName))
-                cardBiases[cardName] = CalculateBias(possibleSuspects);
-            else if (IsWeapon(cardName))
-                cardBiases[cardName] = CalculateBias(possibleWeapons);
-            else if (IsRoom(cardName))
-                cardBiases[cardName] = CalculateBias(possibleRooms);
-        }
+        return count;
     }
 
-    private bool IsSuspect(string cardName)
-    {
-        return cardName == "Miss Scarlett" ||
-            cardName == "Colonel Mustard" ||
-            cardName == "Mrs White" ||
-            cardName == "Reverend Green" ||
-            cardName == "Mrs Peacock" ||
-            cardName == "Professor Plum";
-    }
 
-    private bool IsWeapon(string cardName)
-    {
-        return cardName == "Candlestick" ||
-            cardName == "Dagger" ||
-            cardName == "Lead Pipe" ||
-            cardName == "Revolver" ||
-            cardName == "Rope" ||
-            cardName == "Wrench";
-    }
-
-    private bool IsRoom(string cardName)
-    {
-        return cardName == "Kitchen" ||
-            cardName == "Ballroom" ||
-            cardName == "Conservatory" ||
-            cardName == "Dining Room" ||
-            cardName == "Billiard Room" ||
-            cardName == "Library" ||
-            cardName == "Lounge" ||
-            cardName == "Hall" ||
-            cardName == "Study";
-    }
-
-    private int CalculateBias(int remainingCount)
-    {
-    if (remainingCount <= 1)
-        return 100;
-
-    if (remainingCount <= 2)
-        return 75;
-
-    if (remainingCount <= 3)
-        return 50;
-
-    return 20;
-    }
 
     /// <summary>
     /// Chooses a target room for the AI to move towards.
@@ -175,216 +305,250 @@ public class AIPlayer : Player
     private RoomCard ChooseTargetRoom()
     {
         List<RoomCard> closestRooms = GetThreeClosestRooms();
-
-        if (closestRooms.Count == 1)
-        {
-            return currentTargetRoom;
-        }
-        if (currentTargetRoom == null)
-        {
-            return ChooseNewTarget(closestRooms);
-        }
-
+        if (closestRooms == null || closestRooms.Count == 0) return currentTargetRoom;
+        if (currentTargetRoom == null) return ChooseNewTarget(closestRooms);
         return ChooseExistingTarget(closestRooms);
     }
 
     private RoomCard ChooseNewTarget(List<RoomCard> closestRooms)
     {
-        if (closestRooms.Count == 1)
-        {
-            return closestRooms[0];
-        }
+        if (closestRooms.Count == 1) return closestRooms[0];
         if (closestRooms.Count == 2)
         {
-            return WeightedRoomChoice(
-                closestRooms[0], 65,
-                closestRooms[1], 35
-            );
+            return WeightedRoomChoice(closestRooms[0], 65, closestRooms[1], 35);
         }
-        return WeightedRoomChoice(
-                closestRooms[0], 50,
-                closestRooms[1], 35,
-                closestRooms[2], 15
-            );
-    }
-
-    private List<RoomCard> GetThreeClosestRooms()
-    {
-        //TODO:
-        // This should cal distance from AI postion to each room
-        //ATM returns a test list of rooms  from the game/board/deck
-        return new List<RoomCard>();
+        return WeightedRoomChoice(closestRooms[0], 50, closestRooms[1], 35, closestRooms[2], 15);
     }
 
     private RoomCard ChooseExistingTarget(List<RoomCard> closestRooms)
     {
-    if (currentTargetRoom != null && UnityEngine.Random.value < 0.90f)
-        return currentTargetRoom;
+        if (currentTargetRoom != null && UnityEngine.Random.value < 0.90f)
+        {
+            return currentTargetRoom;
+        }
+        if (closestRooms.Count == 1) return closestRooms[0];
+        if (closestRooms.Count == 2)
+        {
+            return WeightedRoomChoice(closestRooms[0], 95, closestRooms[1], 5);
+        }
+        return WeightedRoomChoice(closestRooms[0], 90, closestRooms[1], 5, closestRooms[2], 5);
+    }
 
-    if (closestRooms.Count == 1)
-        return closestRooms[0];
-
-    if (closestRooms.Count == 2)
+    private RoomCard WeightedRoomChoice(RoomCard r1, int w1, RoomCard r2, int w2)
     {
-        return WeightedRoomChoice(
-            closestRooms[0], 95,
-            closestRooms[1], 5
+        int roll = UnityEngine.Random.Range(1, w1 + w2 + 1);
+        return roll <= w1 ? r1 : r2;
+    }
+
+    private RoomCard WeightedRoomChoice(RoomCard r1, int w1, RoomCard r2, int w2, RoomCard r3, int w3)
+    {
+        int total = w1 + w2 + w3;
+        int roll = UnityEngine.Random.Range(1, total + 1);
+        if (roll <= w1) return r1;
+        if (roll <= w1 + w2) return r2;
+        return r3;
+    }
+
+    //Suggestion and Accusation building
+
+
+    private Suggestion BuildSuggestion()
+    {
+        bool deceiveSuspect = ShouldBluff();
+        bool deceiveWeapon = ShouldBluff();
+
+        CharacterCard character = deceiveSuspect 
+        ? PickOwnHandSuspect() ?? ChooseSuspectCard() : ChooseSuspectCard();
+
+        WeaponCard weapon = deceiveWeapon 
+        ? PickOwnHandWeapon() ?? ChooseWeaponCard() : ChooseWeaponCard();
+
+        RoomCard room = ChooseRoomCard();
+
+        return new Suggestion(character, room, weapon);
+    }
+
+    private Suggestion BuildAccusation()
+    {
+        return new Suggestion(
+        PickBestEnvelopeCandidate<CharacterCard>(AllSuspectNames),
+        PickBestEnvelopeCandidate<RoomCard>(AllRoomNames),
+        PickBestEnvelopeCandidate<WeaponCard>(AllWeaponNames)
         );
     }
 
-    return WeightedRoomChoice(
-        closestRooms[0], 90,
-        closestRooms[1], 5,
-        closestRooms[2], 5
-    );
-}
-
-    private RoomCard WeightedRoomChoice(RoomCard room1, int weight1, 
-    RoomCard room2, int weight2)
+    private bool ShouldBluff()
     {
-        int roll = UnityEngine.Random.Range(1, weight1 + weight2 + 1);
-        if (roll <= weight1)
-        {
-            return room1;
-        }
-        return room2;
-    }
+        if (strategyType != StrategyType.Deceptive) return false;
 
-    private RoomCard WeightedRoomChoice(RoomCard room1, int weight1,
-    RoomCard room2, int weight2, RoomCard room3, int weight3)
-    {
-        int totalWeight = weight1 + weight2 + weight3;
-        int roll = UnityEngine.Random.Range(1, totalWeight + 1);
-
-        if (roll <= weight1)
-        {
-            return room1;
-        }
-
-        if (roll <= weight1 + weight2)
-        {
-            return room2;
-        }
-        return room3;
-
-    }
-
-    /// <summary>
-    /// Chooses the best legal move towards the current target room.
-    /// </summary>
-    private Vector2Int BestMoveTowardsTarget(List<Vector2Int> legalMoves)
-    {
-        if (legalMoves.Count == 0)
-            return Vector2Int.zero;
-
-        // TODO: replace with distance-to-room logic.
-        return legalMoves[0];
-    }
-
-    /// <summary>
-    /// Moves the AI to the chosen board position.
-    /// </summary>
-    private void MoveTo(Vector2Int position)
-    {
-        // TODO: update player position when board/player movement is ready.
-    }
-
-    /// <summary>
-    /// Checks whether the AI is currently inside a room.
-    /// </summary>
-    private bool IsInRoom()
-    {
-        // TODO: connect to board tile/room detection.
-        return false;
-    }
-
-    /// <summary>
-    /// Builds a suggestion or accusation from the AI's current knowledge.
-    /// </summary>
-    private Suggestion BuildSuggestion()
-    {
-        CharacterCard character = ChooseSuspectCard();
-        WeaponCard weapon = ChooseWeaponCard();
-        RoomCard room = ChooseRoomCard();
-
-        // Your Suggestion constructor order is:
-        // Suggestion(CharacterCard characterIn, RoomCard roomIn, WeaponCard weaponIn)
-        return new Suggestion(character, room, weapon);
+        //Don't bluff when confidnet (need to be accruarte)
+        if (GetOverallConfidence() > 75) return false;
+        return UnityEngine.Random.value < 0.30f;
     }
 
     private CharacterCard ChooseSuspectCard()
     {
-        // TODO: choose a suspect not crossed out in detectiveSheet.
-        return null;
+        string name = WeightedPick(AllSuspectNames);
+        if (name == null) return null;
+        // caller must resolve to a real card object
+        return new CharacterCard(name, null);
+
     }
 
     private WeaponCard ChooseWeaponCard()
     {
-        // TODO: choose a weapon not crossed out in detectiveSheet.
-        return null;
+        string name = WeightedPick(AllWeaponNames);
+        if (name == null) return null;
+        return new WeaponCard(name, null);
     }
 
+    /// <summary>
+    /// Choose room card: must match the room the AI is currently in
+    /// </summary>
     private RoomCard ChooseRoomCard()
     {
-        // TODO: use current room once board logic exists.
+        // Until Board is wired up: fall back to the target room
         return currentTargetRoom;
     }
 
     /// <summary>
-    /// Decides whether confidence is high enough to accuse.
+    /// Pick a random card weighted by cardBiases
     /// </summary>
-    private bool ShouldMakeAccusation()
+    /// <param name="names">card names</param>
+    /// <returns></returns>
+    private string WeightedPick(string[] names)
     {
-        double confidence = GetOverallConfidence();
+        int totalWeight = 0;
+        foreach (string n in names)
+        {
+            int w;
+            if (cardBiases.TryGetValue(n, out w)) totalWeight += w;
+        }
+        if (totalWeight <= 0)
+        {
+            // No good options: fall back to anything not ruled out
+            foreach (string n in names)
+            {
+                DetectiveCardEntry e = detectiveSheet.GetEntryByName(n);
+                if (e != null && !e.IsAutoCrossedOutAnywhere()) return n;
+            }
+            return names.Length > 0 ? names[0] : null;
+        }
 
-        if (confidence >= 100)
-            return true;
-
-        if (confidence >= 90)
-            return UnityEngine.Random.value < 0.33f;
-
-        return false;
-    }
-
-    private void MakeSuggestion(Suggestion suggestion)
-    {
-        Debug.Log("AI suggestion: " +
-                  suggestion.GetCharacter() + ", " +
-                  suggestion.GetWeapon() + ", " +
-                  suggestion.GetRoom());
-
-        // TODO: pass suggestion to GameController once HandleSuggestion is public.
-    }
-
-    private void MakeAccusation(Suggestion accusation)
-    {
-        Debug.Log("AI accusation: " +
-                  accusation.GetCharacter() + ", " +
-                  accusation.GetWeapon() + ", " +
-                  accusation.GetRoom());
-
-        // TODO: pass accusation to GameController once HandleAccusation is public.
+        int roll = UnityEngine.Random.Range(1, totalWeight + 1);
+        int running = 0;
+        foreach (string n in names)
+        {
+            int w;
+            if (!cardBiases.TryGetValue(n, out w)) continue;
+            running += w;
+            if (roll <= running) return n;
+        }
+        return names[0];
     }
 
     /// <summary>
-    /// Updates the AI detective sheet using known information.
+    /// Pick the most likey murder cards in a category
     /// </summary>
-    private void UpdateDetectiveSheet()
+    /// <typeparam name="T"></typeparam>
+    /// <param name="names"></param>
+    /// <returns></returns>
+    private T PickBestEnvelopeCandidate<T>(string[] names) where T : Card
     {
-        // TODO:
-        // Auto-cross cards in AI hand.
-        // Auto-cross cards shown by other players.
-        // Do not auto-cross unknown envelope candidates.
+        foreach (string n in names)
+        {
+            DetectiveCardEntry e = detectiveSheet.GetEntryByName(n);
+            if (e != null && e.IsDefinitelyInEnvelope())
+            {
+                return CreateCardOfType<T>(n);
+            }
+        }
+        // Fallback: first non-ruled-out card (best guess)
+        foreach (string n in names)
+        {
+            DetectiveCardEntry e = detectiveSheet.GetEntryByName(n);
+            if (e != null && !e.IsAutoCrossedOutAnywhere())
+            {
+                return CreateCardOfType<T>(n);
+            }
+        }
+        return null;
     }
 
+    private T CreateCardOfType<T>(string name) where T : Card
+    {
+        // If moves to scriptable object cards, replace with a lookup instead.
+        if (typeof(T) == typeof(CharacterCard)) return new CharacterCard(name, null) as T;
+        if (typeof(T) == typeof(WeaponCard)) return new WeaponCard(name, null) as T;
+        if (typeof(T) == typeof(RoomCard)) return new RoomCard(name, null) as T;
+        return null;
+    }
+
+
+    //Bluff
+
     /// <summary>
-    /// Updates confidence values for suspect, weapon, and room.
+    /// Pick card from the AI player own hand
     /// </summary>
+    /// <returns></returns>
+    private CharacterCard PickOwnHandSuspect()
+    {
+        foreach (Card c in ownHand)
+        {
+            CharacterCard cc = c as CharacterCard;
+            if (cc != null) return cc;
+        }
+        return null;
+    }
+
+    private WeaponCard PickOwnHandWeapon()
+    {
+        foreach (Card c in ownHand)
+        {
+            WeaponCard wc = c as WeaponCard;
+            if (wc != null) return wc;
+        }
+        return null;
+    }
+
+    //Confidence
+
     private void UpdateConfidence()
     {
-        // TODO:
-        // Increase confidence when fewer unknown candidates remain.
-        // Keep separate confidence for suspect, weapon, and room.
+        if (detectiveSheet == null) return;
+
+        suspectConfidence = ConfidenceFor(AllSuspectNames);
+        weaponConfidence= ConfidenceFor(AllWeaponNames);
+        roomConfidence= ConfidenceFor(AllRoomNames);
+    }
+
+    private double ConfidenceFor(string[] names)
+    {
+        int total = names.Length;
+        int remaining = 0;
+        bool definite = false;
+
+        foreach (string n in names)
+        {
+            DetectiveCardEntry e = detectiveSheet.GetEntryByName(n);
+            if (e== null) continue;
+            if (e.IsDefinitelyInEnvelope()) 
+            { 
+                definite = true; 
+                break;
+            }
+            if (!e.IsAutoCrossedOutAnywhere()) remaining++;
+        }
+
+            if (definite) return 100;
+            if (remaining <= 0) return 0;
+            if (remaining == 1) return 100;
+
+            // Rises sharply near the end
+            // 6 candidates - 0.5%, 4 - 30%, 3 - 42%, 2 - 70%, 1 - 100
+            double ratio = (double)(total - remaining + 1) / total;
+            return Mathf.Clamp((float)(100.0 * ratio * ratio * ratio), 0f, 99f);
+        
     }
 
     private double GetOverallConfidence()
@@ -392,11 +556,87 @@ public class AIPlayer : Player
         return (suspectConfidence + weaponConfidence + roomConfidence) / 3.0;
     }
 
+    private bool ShouldMakeAccusation()
+    {
+        if (suspectConfidence >= 100 && weaponConfidence >= 100 && roomConfidence >= 100)
+            return true;
+        if (GetOverallConfidence() >= 90)
+            return UnityEngine.Random.value < 0.33f;
+        return false;
+    }
+
+    //For board and GameController interfration
+
+    /// <summary>TODO: connect to Board pathfinding once available</summary>
+    private List<Vector2Int> GetLegalMoves(int diceRoll)
+    {
+        return new List<Vector2Int>();
+    }
+
+    /// <summary>TODO: connect to Board room/distance logic.</summary>
+    private List<RoomCard> GetThreeClosestRooms()
+    {
+        return new List<RoomCard>();
+    }
+
+    private Vector2Int BestMoveTowardsTarget(List<Vector2Int> legalMoves)
+    {
+        if (legalMoves.Count == 0) return Vector2Int.zero;
+        return legalMoves[0]; // TODO: distance heuristic
+    }
+
+    private void MoveTo(Vector2Int position)
+    {
+        // TODO: actual board movement
+    }
+
+    private bool IsInRoom()
+    {
+        return false; // TODO: board tile detection
+    }
+
+    private void MakeSuggestion(GameController gameController,Suggestion suggestion)
+    {
+        Debug.Log("[AI " + ownPlayerIndex + "] suggestion: " +
+        Safe(suggestion.GetCharacter()) + ", " +
+        Safe(suggestion.GetWeapon()) + ", " +
+        Safe(suggestion.GetRoom()));
+        gameController.HandleSuggestion(ownPlayerIndex, suggestion);
+    }
+
+    private void MakeAccusation(GameController gameController, Suggestion suggestion)
+    {
+        Debug.Log("[AI " + ownPlayerIndex + "] ACCUSATION: " +
+        Safe(suggestion.GetCharacter()) + ", " +
+        Safe(suggestion.GetWeapon()) + ", " +
+        Safe(suggestion.GetRoom()));
+        gameController.HandleAccusation(this, suggestion);
+    }
+
+    private string Safe(object o) { return o!= null ? o.ToString() : "(null)";}
+
     private void EndTurn()
     {
-        Debug.Log("AI turn ended.");
-
-        // TODO: tell GameController to move to next player.
+        Debug.Log("[AI " + ownPlayerIndex + "] turn ended.");
+        // TODO: gameController.NextPlayer() when public.
     }
+
+    //For testing and debugging
+    public DetectiveSheet GetSheetForDebug() { return detectiveSheet; }
+    public double GetSuspectConfidence() { return suspectConfidence; }
+    public double GetWeaponConfidence() { return weaponConfidence; }
+    public double GetRoomConfidence() { return roomConfidence; }
+
+
+    //Internal Types
+    private class UnknownDisproval
+    {
+        public int DisproverIndex;
+        public string[] CardNames; // [character, weapon, room] — any may be null
+    }
+
 }
+
+
+
 

@@ -72,7 +72,7 @@ public class DetectiveSheet
 
         // Weapons
         AddEntry("Candlestick");
-        AddEntry("Dagger");
+        AddEntry("Knife");
         AddEntry("Lead Pipe");
         AddEntry("Revolver");
         AddEntry("Rope");
@@ -83,7 +83,7 @@ public class DetectiveSheet
         AddEntry("Ballroom");
         AddEntry("Conservatory");
         AddEntry("Dining Room");
-        AddEntry("Billiard Room");
+        AddEntry("Billiards Room");
         AddEntry("Library");
         AddEntry("Lounge");
         AddEntry("Hall");
@@ -145,6 +145,29 @@ public class DetectiveSheet
     {
         if (card == null) return;
         MarkAuto(card.ToString(), playerIndex);
+    }
+
+    /// <summary>
+    /// Records that the player is know not hold a specific card
+    /// Use when they fail to disprove a suggestion contaitn it
+    /// </summary>
+    /// <param name="cardName"></param>
+    /// <param name="playerIndex"></param>
+    public void MarkNotHeldBy(string cardName, int playerIndex)
+    {
+        DetectiveCardEntry entry = GetEntryByName(cardName);
+        if (entry != null) entry.MarkNotHeldBy(playerIndex);
+    }
+
+    /// <summary>
+    /// overload taking a Card
+    /// </summary>
+    /// <param name="card"></param>
+    /// <param name="playerIndex"></param>
+    public void MarkNotHeldBy(Card card, int playerIndex)
+    {
+        if (card == null) return;
+        MarkNotHeldBy(card.ToString(), playerIndex);
     }
 
 

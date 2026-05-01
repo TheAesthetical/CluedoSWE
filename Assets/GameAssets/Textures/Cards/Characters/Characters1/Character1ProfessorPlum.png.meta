@@ -3,8 +3,8 @@ guid: 32868d1750b4d274689d878cd13e3c2b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1602713349872819038
-    second: CharacterProfessorPlum_0
+      213: -7824006172577779971
+    second: Character1ProfessorPlum_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CharacterProfessorPlum_0
+      name: Character1ProfessorPlum_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 206
-        height: 326
+        width: 191
+        height: 312
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a4ed0823b402c9e0800000000000000
-      internalID: -1602713349872819038
+      spriteID: dfea903e6db8b6390800000000000000
+      internalID: -7824006172577779971
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CharacterProfessorPlum_0: -1602713349872819038
+      Character1ProfessorPlum_0: -7824006172577779971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

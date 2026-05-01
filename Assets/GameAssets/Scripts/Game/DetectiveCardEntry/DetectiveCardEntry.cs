@@ -18,6 +18,8 @@ public class DetectiveCardEntry
     private bool[] autoCrossedOut;
     private bool[] manualCrossedOut;
 
+    private bool[] knownNotHeld;
+
     /// <summary>
     /// Creates a new entry.
     /// columnCount should mathc the number of button per row in the UI
@@ -33,6 +35,7 @@ public class DetectiveCardEntry
         active = new bool[columnCount];
         autoCrossedOut = new bool[columnCount];
         manualCrossedOut = new bool[columnCount]; 
+        knownNotHeld = new bool[columnCount];
 
         // First N columns are real players, the rest are empty seats.
         int realPlayers = Mathf.Clamp(activePlayerCount, 0, columnCount);
@@ -129,6 +132,33 @@ public class DetectiveCardEntry
         autoCrossedOut[playerIndex] = true;
     }
 
+    /// <summary>
+    /// Records that this player is know not to hold this card
+    /// Used when a player fails to disprove a suggestion containing this card
+    /// Different from MarkAuto: auto cross means "I saw them hold it",
+    /// not held means "I deduced they don't have it"
+    /// </summary>
+    /// <param name="playerIndex">Player Index postion</param>
+    /// <returns></returns>
+    public void MarkNotHeldBy(int playerIndex)
+    {
+        if (!IsValidIndex(playerIndex)) return;
+        if (!active[playerIndex]) return;
+        knownNotHeld[playerIndex] = true;
+    }
+    
+    
+    /// <summary>
+    /// True if we know this player does NOT hold this card
+    /// </summary>
+    /// <param name="playerIndex">Player Index postion</param>
+    /// <returns></returns>
+    public bool IsKnownNotHeldBy(int playerIndex)
+    {
+        if (!IsValidIndex(playerIndex)) return false;
+        return active[playerIndex] && knownNotHeld[playerIndex];
+    }
+
 
     /// <summary>
     /// Marks the card as manually crossed out by
@@ -177,6 +207,19 @@ public class DetectiveCardEntry
             if (autoCrossedOut[i] || manualCrossedOut[i]) return true;
         }
         return false;
+    }
+
+    public bool IsDefinitelyInEnvelope()
+    {
+        
+        if (IsAutoCrossedOutAnywhere()) return false;
+
+        for (int i= 0; i < active.Length; i++)
+        {
+            if (!active[i]) continue;
+            if (!knownNotHeld[i]) return false;
+        }
+        return true;
     }
 
     public bool IsCrossedOut() { return IsCrossedOutAnywhere(); }

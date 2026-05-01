@@ -3,8 +3,8 @@ guid: 417dfd09f31e100499488e604efb4b13
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7937259698692314024
-    second: CharacterColonelMustard_0
+      213: -1380384937864173184
+    second: Character1ColonelMustard_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CharacterColonelMustard_0
+      name: Character1ColonelMustard_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 210
-        height: 332
+        width: 194
+        height: 318
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a3549e74afc62e60800000000000000
-      internalID: 7937259698692314024
+      spriteID: 0896e4d6633e7dce0800000000000000
+      internalID: -1380384937864173184
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CharacterColonelMustard_0: 7937259698692314024
+      Character1ColonelMustard_0: -1380384937864173184
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

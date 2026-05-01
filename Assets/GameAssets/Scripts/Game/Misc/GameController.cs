@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 /// <summary>
 /// Class <c>GameController</c> controls the flow of the game, including the setup, turns and win conditions. 
@@ -16,6 +17,8 @@ public class GameController : MonoBehaviour
     
     private int currentPlayerIndex;
     private bool gameOver;
+    private bool canRoll = false;
+    private Dice dice;
 
     // Dice Controller
     [SerializeField] private DiceController diceController;
@@ -67,9 +70,31 @@ public class GameController : MonoBehaviour
     /// </summary>
     private void InitialiseGame()
     {
-        players = new List<Player>();
-        
-        murderEnvelope = new MurderEnvelope();
+        players = SceneCommunication.GetPlayers();
+
+        //REMOVE LATER THIS BACKUP FOR FALLBACK IF THERE NO PLAYERS
+        //create some default test players so the game loop has something to iterate over
+        if (players == null || players.Count == 0)
+        {
+            Debug.LogWarning("[GameController] No players from SceneCommunication — creating test players");
+            AIPlayer aiPeacock = new AIPlayer(2, new CharacterCard("Mrs Peacock", peacockCardSprite));
+            aiPeacock.SetStrategy(StrategyType.Safe);
+            players = new List<Player>
+            {
+                new HumanPlayer(0, new CharacterCard("Miss Scarlett", scarlettCardSprite)),
+                new HumanPlayer(1, new CharacterCard("Colonel Mustard", mustardCardSprite)),
+                aiPeacock
+            };
+        }
+        //REMOVE LATER THIS BACKUP FOR FALLBACK IF THERE NO PLAYERS
+
+        dice = new Dice();
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].Initialise(i, players.Count);
+        }
+
+		murderEnvelope = new MurderEnvelope();
 
         currentPlayerIndex = 0;
         gameOver = false;
@@ -89,9 +114,6 @@ public class GameController : MonoBehaviour
         // Call helper func. to setup main deck
         SetupMainDeck();
 
-        // TODO:
-        // - Create Players
-
         // Call function to deal the cards amongst the players
         DealCards();
 
@@ -108,10 +130,21 @@ public class GameController : MonoBehaviour
         }
 
         Player currentPlayer = players[currentPlayerIndex];
+        Debug.Log("Its player " + currentPlayerIndex + " turn (" + currentPlayer.GetCharacter().CardName + ")");
 
-        
-        
+        /*
+        If this an AI player, it will run its desion logic and end it turn
+        AI TakeTurn current log decisons only - not implemented 
+        */
+        if (currentPlayer is AIPlayer aIPlayer)
+        {
+            aIPlayer.TakeTurn(this, dice);
+            EndTurn();
+            return;
+        }
 
+        canRoll = true;
+        
         // TODO:
         // - Handle Dice Roll
         // - Handle Movement
@@ -121,29 +154,42 @@ public class GameController : MonoBehaviour
 
     }
 
+
     /// <summary>
     /// Begins the game loop.
     /// </summary>
     private void StartGame()
     {
         Debug.Log("Game Started");
-
-
-        // TODO:
-        // - Begin First Turn
-        // - Game Loop?
+        TakeTurn();
     }
 
     /// <summary>
     /// Handles a player's suggestion.
     /// </summary>
+    /// <param name="suggesterIndex">Index of the player who made the suggestion.</param>
     /// <param name="suggestion">The <c>Suggestion</c> the player makes. </param>
-    private void HandleSuggestion(Suggestion suggestion)
+    public void HandleSuggestion(int suggesterIndex, Suggestion suggestion)
     {
-        // TODO:
-        // - Ask other player's to disprove
+        // TODO when human disprover Ui is wired up
+        // - Walk through other player in turn order asking who can dsiprove
         // - Reveal one matching card (if possible)
-        // - End Suggestion phase
+        // - Set disproverIndex and shownCard accordiangly
+        int disproverIndex = -1;
+        Card shownCard = null;
+
+        //Tells every player that a suggestion was made
+        //For each player: shownCard is only set when they know it (they are suggester or the disprover)
+        //Everyone else passed null
+        for (int i = 0; i < players.Count; i++)
+        {
+            Card visibleToThisPlayer = null;
+            if (i == suggesterIndex || i == disproverIndex)
+            {
+                visibleToThisPlayer = shownCard;
+            }
+            players[i].OnSuggestionMade(suggesterIndex, suggestion, disproverIndex, visibleToThisPlayer);
+        }
 
     }
 
@@ -152,7 +198,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     /// <param name="currentPlayer"> The current player. </param>
     /// <param name="accusation">The <c>Suggestion</c> class is used to represent the Accusation. </param>
-    private void HandleAccusation(Player currentPlayer, Suggestion accusation)
+    public void HandleAccusation(Player currentPlayer, Suggestion accusation)
     {   
 
         bool correct = murderEnvelope.CheckAccusation(accusation.GetCharacter(), accusation.GetWeapon(), accusation.GetRoom());
@@ -261,6 +307,14 @@ public class GameController : MonoBehaviour
 
         }
 
+        //Tells each player their hand
+        //AIPlayer crosses the card on its sheet and stars deduction
+        //HumanPlayers empty defualt does nothing.
+        foreach (Player p in players)
+        {
+            p.OnHandDealt(p.GetHand());
+        }
+
         Debug.Log("Cards dealt to players");
     }
 
@@ -311,8 +365,9 @@ public class GameController : MonoBehaviour
     private void HandleDiceResult(int roll)
     {
         
-
-        Debug.Log("rolled " + roll);
+        Player currentPlayer = players[currentPlayerIndex];
+        Debug.Log("Player " + currentPlayerIndex + " (" + currentPlayer.GetCharacter() + ") rolled " + roll);
+        Debug.Log("Movement skipped -> board not implemented");
 
         //HandleMovement(currentPlayer, roll);
 
@@ -323,6 +378,11 @@ public class GameController : MonoBehaviour
 
     public void OnRollDicePressed()
     {
+        if (!canRoll)
+        {
+            return;
+        }
+        canRoll = false;
         diceController.RollDice();
     }
 

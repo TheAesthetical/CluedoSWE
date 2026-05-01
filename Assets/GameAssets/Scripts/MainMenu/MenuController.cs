@@ -49,15 +49,15 @@ public class MenuController : MonoBehaviour
         {
             CloseMenu();
         }
-
-        //initialPosition = menu.transform.position;
+		
+		//initialPosition = menu.transform.position;
 
 		//InitializedOffsetPositions();
-    }
+	}
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Return))
+		if (Input.GetKeyDown(KeyCode.Return) && GameObject.FindWithTag("MenuCanvas1").GetComponent<MenuController>().menuCanvasGroup.alpha == 1)
 		{
             NextPrevMenu("MenuCanvas1", true);
 		}
