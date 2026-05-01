@@ -20,11 +20,14 @@ public class AIPlayer : Player
 
     //For Decisions:
     private RoomCard currentTargetRoom;
+    private RoomCard currentRoom;
     private double suspectConfidence;
     private double weaponConfidence;
     private double roomConfidence;
     private StrategyType strategyType;
     private Dictionary<string, int> cardBiases = new Dictionary<string, int>();
+
+
 
     private static readonly string[] AllSuspectNames = {
         "Miss Scarlett", "Colonel Mustard", "Mrs White",
@@ -87,6 +90,18 @@ public class AIPlayer : Player
             detectiveSheet.InitialiseFromHand(ownHand, ownPlayerIndex);
         }
         UpdateConfidence();
+
+            string handStr = "";
+        for (int i = 0; i < ownHand.Count; i++)
+        {
+            handStr += ownHand[i].ToString();
+            if (i < ownHand.Count - 1) handStr += ", ";
+        }
+        Debug.Log("[AI " + ownPlayerIndex + "] dealt hand: " + handStr +
+            " — these are ruled out of envelope.");
+
+        UpdateConfidence();
+        LogConfidenceState("after hand dealt");
     }
     
     /// <summary>
@@ -134,6 +149,13 @@ public class AIPlayer : Player
             if (cName != null) detectiveSheet.MarkNotHeldBy(cName, index);
             if (wName != null) detectiveSheet.MarkNotHeldBy(wName, index);
             if (rName != null) detectiveSheet.MarkNotHeldBy(rName, index);
+
+            if (index != ownPlayerIndex)
+            {
+                Debug.Log("[AI " + ownPlayerIndex + "] deduction: P" + index +
+                " couldn't disprove → ruling out {" + Safe(cName) + ", " +
+                Safe(wName) + ", " + Safe(rName) + "} from their hand");
+            }
         }
 
         //The disprover, has at least one the three
@@ -143,6 +165,11 @@ public class AIPlayer : Player
             if (shownCard != null)
             {
                 detectiveSheet.MarkAuto(shownCard, disproverIndex);
+                if (suggestionIndex == ownPlayerIndex || disproverIndex == ownPlayerIndex)
+                {
+                    Debug.Log("[AI " + ownPlayerIndex + "] deduction: P" + disproverIndex +
+                    " has " + shownCard + " — ruled out of envelope.");
+                }
             }
             else
             {
@@ -151,6 +178,9 @@ public class AIPlayer : Player
                     DisproverIndex = disproverIndex,
                     CardNames = new[] { cName, wName, rName }
                 });
+                Debug.Log("[AI " + ownPlayerIndex + "] tracking: P" + disproverIndex +
+                " showed a card from {" + Safe(cName) + ", " + Safe(wName) +
+                ", " + Safe(rName) + "} — will resolve when 2 are eliminated.");
             }
         }
 
@@ -162,6 +192,8 @@ public class AIPlayer : Player
 
     //TurnLOOP
 
+
+
     public override void TakeTurn(GameController gameController, Dice dice)
     {
         int diceRoll = dice.Roll();
@@ -172,6 +204,9 @@ public class AIPlayer : Player
 
         Vector2Int bestMove = BestMoveTowardsTarget(legalMoves);
         MoveTo(bestMove);
+
+        currentRoom = PickRoomForTurn();
+
         if (IsInRoom())
         {
             if (ShouldMakeAccusation())
@@ -407,8 +442,15 @@ public class AIPlayer : Player
     /// </summary>
     private RoomCard ChooseRoomCard()
     {
-        // Until Board is wired up: fall back to the target room
-        return currentTargetRoom;
+        // Use the room the AI is currently in
+        return currentRoom != null ? currentRoom : currentTargetRoom;
+    }
+
+    private RoomCard PickRoomForTurn()
+    {
+        string name = WeightedPick(AllRoomNames);
+        if (name == null) return null;
+        return new RoomCard(name, null);
     }
 
     /// <summary>
@@ -592,7 +634,9 @@ public class AIPlayer : Player
 
     private bool IsInRoom()
     {
-        return false; // TODO: board tile detection
+        // Demo: AI is in a room once it has a target/current room set
+        // TODO: replace with real board room detection once Board is setup
+        return currentRoom != null;
     }
 
     private void MakeSuggestion(GameController gameController,Suggestion suggestion)
@@ -606,10 +650,13 @@ public class AIPlayer : Player
 
     private void MakeAccusation(GameController gameController, Suggestion suggestion)
     {
-        Debug.Log("[AI " + ownPlayerIndex + "] ACCUSATION: " +
-        Safe(suggestion.GetCharacter()) + ", " +
-        Safe(suggestion.GetWeapon()) + ", " +
-        Safe(suggestion.GetRoom()));
+        Debug.Log("[AI " + ownPlayerIndex + "] ACCUSATION (" +
+            (int)suspectConfidence + "/" +
+            (int)weaponConfidence + "/" +
+            (int)roomConfidence + "%): " +
+            Safe(suggestion.GetCharacter()) + ", " +
+            Safe(suggestion.GetWeapon()) + ", " +
+            Safe(suggestion.GetRoom()));
         gameController.HandleAccusation(this, suggestion);
     }
 
@@ -633,6 +680,14 @@ public class AIPlayer : Player
     {
         public int DisproverIndex;
         public string[] CardNames; // [character, weapon, room] — any may be null
+    }
+
+    private void LogConfidenceState(string context)
+    {
+        Debug.Log("[AI " + ownPlayerIndex + "] " + context +
+            " — suspect " + (int)suspectConfidence +
+            "%, weapon " + (int)weaponConfidence +
+            "%, room " + (int)roomConfidence + "%");
     }
 
 }

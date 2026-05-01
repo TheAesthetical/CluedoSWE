@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     private bool gameOver;
     private bool canRoll = false;
     private Dice dice;
+    private int turnCount = 0;
+    private const int maxTurns = 100; // safety net for AI vs AI demo
 
     // Dice Controller
     [SerializeField] private DiceController diceController;
@@ -72,19 +74,32 @@ public class GameController : MonoBehaviour
     {
         players = SceneCommunication.GetPlayers();
 
-        //REMOVE LATER THIS BACKUP FOR FALLBACK IF THERE NO PLAYERS
+        //REMOVE LATER THIS BACKUP FOR FALLBACK IF THERE NO PLAYERS AND DEMO
         //create some default test players so the game loop has something to iterate over
         if (players == null || players.Count == 0)
         {
+            
             Debug.LogWarning("[GameController] No players from SceneCommunication — creating test players");
+            AIPlayer aiScarlett = new AIPlayer(0, new CharacterCard("Miss Scarlett", scarlettCardSprite));
+            aiScarlett.SetStrategy(StrategyType.Deceptive);
+
+            AIPlayer aiMustard = new AIPlayer(1, new CharacterCard("Colonel Mustard", mustardCardSprite));
+            aiMustard.SetStrategy(StrategyType.Safe);
+
             AIPlayer aiPeacock = new AIPlayer(2, new CharacterCard("Mrs Peacock", peacockCardSprite));
             aiPeacock.SetStrategy(StrategyType.Safe);
-            players = new List<Player>
-            {
-                new HumanPlayer(0, new CharacterCard("Miss Scarlett", scarlettCardSprite)),
-                new HumanPlayer(1, new CharacterCard("Colonel Mustard", mustardCardSprite)),
-                aiPeacock
-            };
+
+            AIPlayer aiGreen = new AIPlayer(3, new CharacterCard("Reverend Green", greenCardSprite));
+            aiGreen.SetStrategy(StrategyType.Safe);
+
+            AIPlayer aiWhite = new AIPlayer(4, new CharacterCard("Mrs White", whiteCardSprite));
+            aiPeacock.SetStrategy(StrategyType.Safe);
+
+            AIPlayer aiPlum = new AIPlayer(5, new CharacterCard("Professor Plum", plumCardSprite));
+            aiPlum.SetStrategy(StrategyType.Deceptive);
+
+
+            players = new List<Player> { aiScarlett, aiMustard, aiWhite, aiGreen, aiPeacock, aiPlum };
         }
         //REMOVE LATER THIS BACKUP FOR FALLBACK IF THERE NO PLAYERS
 
@@ -126,6 +141,14 @@ public class GameController : MonoBehaviour
     {
         if (gameOver)
         {
+            return;
+        }
+
+        turnCount++;
+        if (turnCount > maxTurns)
+        {
+            Debug.LogWarning("Max turns reached (" + maxTurns + ") stopping AI loop for demo safety");
+            gameOver = true;
             return;
         }
 
