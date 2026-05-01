@@ -169,7 +169,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     /// <param name="suggesterIndex">Index of the player who made the suggestion.</param>
     /// <param name="suggestion">The <c>Suggestion</c> the player makes. </param>
-    private void HandleSuggestion(int suggesterIndex, Suggestion suggestion)
+    public void HandleSuggestion(int suggesterIndex, Suggestion suggestion)
     {
         // TODO when human disprover Ui is wired up
         // - Walk through other player in turn order asking who can dsiprove
@@ -198,7 +198,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     /// <param name="currentPlayer"> The current player. </param>
     /// <param name="accusation">The <c>Suggestion</c> class is used to represent the Accusation. </param>
-    private void HandleAccusation(Player currentPlayer, Suggestion accusation)
+    public void HandleAccusation(Player currentPlayer, Suggestion accusation)
     {   
 
         bool correct = murderEnvelope.CheckAccusation(accusation.GetCharacter(), accusation.GetWeapon(), accusation.GetRoom());
