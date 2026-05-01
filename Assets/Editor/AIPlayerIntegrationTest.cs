@@ -116,4 +116,45 @@ public class AIPlayerIntegrationTest
         // AIs turn 
         // TODO
     }
+
+    /// <summary>
+    /// Deduction test
+    /// </summary>
+    [Test]
+    public void UnknownCard_DeducedThroughElimination()
+    {
+        AIPlayer ai = new AIPlayer(0, MakeChar("Miss Scarlett"));
+        ai.Initialise(playerIndex: 0, totalActivePlayers: 3);
+        ai.OnHandDealt(new List<Card>());
+
+        //Ai not shown the disproval
+        ai.OnSuggestionMade(
+            suggestionIndex: 1,
+            suggestion: new Suggestion(MakeChar("Mrs Peacock"), MakeRoom("Lounge"), MakeWeap("Wrench")),
+            disproverIndex: 2,
+            shownCard: null);
+
+        DetectiveSheet sheet = ai.GetSheetForDebug();
+        Assert.IsFalse(sheet.GetEntryByName("Wrench").IsAutoCrossedOut(2),
+        "Wretch shouldn't be auto crossed out");
+        
+        //Nobody to disprove player 2 does not have Peacock
+        ai.OnSuggestionMade(
+            suggestionIndex: 0,
+            suggestion: new Suggestion(MakeChar("Mrs Peacock"), MakeRoom("Hall"), MakeWeap("Rope")),
+            disproverIndex: -1,
+            shownCard: null);
+
+        //Nobody disproves: player 2 does not have Lounge
+        ai.OnSuggestionMade(
+            suggestionIndex: 0,
+            suggestion: new Suggestion(MakeChar("Mrs White"), MakeRoom("Lounge"), MakeWeap("Candlestick")),
+            disproverIndex: -1,
+            shownCard: null);
+
+        Assert.IsTrue(sheet.GetEntryByName("Wrench").IsAutoCrossedOut(2),
+        "Ai should have deduced p2 holds the wrench");
+        Assert.IsTrue(sheet.IsRuledOutOfEnvelope("Wrench"),
+        "Wrench should be ruled out");
+    }
 }
