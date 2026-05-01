@@ -35,14 +35,6 @@ public abstract class Player
     }
 
     /// <summary>
-    /// Makes an accusation.
-    /// </summary>
-    public void MakeAccusation()
-    {
-        // empty for now, probably the same as suggestion
-    }
-
-    /// <summary>
     /// Shows the card from the suggestion
     /// </summary>
     public void ShowCard()
@@ -51,7 +43,7 @@ public abstract class Player
     }
 
     /// <summary>
-    /// Returns whether the Player can disprove the accusation against them.
+    /// A method to return whether the Player can disprove the accusation against them.
     /// </summary>
     /// <param name="suggestion">The suggestion being made.</param>
     /// <returns>Returns a bool representing whether the player matches the accusation.</returns>
@@ -68,13 +60,17 @@ public abstract class Player
     }
 
     /// <summary>
-    /// Eliminates the Player.
+    /// A method to eliminate the Player.
     /// </summary>
     public void Eliminate()
     {
         eliminated = true;
     }
 
+    /// <summary>
+    /// A method to check if the Player is eliminated or not.
+    /// </summary>
+    /// <returns>True if eliminated.</returns>
     public bool IsEliminated()
     {
         return eliminated;
@@ -82,10 +78,10 @@ public abstract class Player
 
 
     /// <summary>
-    /// 
+    /// A method to return a card from the suggestion if the card is in the player's hand.
     /// </summary>
-    /// <param name="suggestion"></param>
-    /// <returns></returns>
+    /// <param name="suggestion">The suggestion being made.</param>
+    /// <returns>The card if in hand, otherwise returns null.</returns>
     public Card GetMatchingCard(Suggestion suggestion)
     {
         if (suggestion == null) return null;

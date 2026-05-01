@@ -64,11 +64,10 @@ public class MenuUI : MonoBehaviour
 		return toggleSprites[spriteNum];
 	}
 
-    public void SetToggleSprite(int spriteNum)
-    {
-        GetComponent<Image>().sprite = toggleSprites[spriteNum];
-    }
-
+	/// <summary>
+	/// Loads the correct number of cards onto the menu screen.
+	/// </summary>
+	/// <param name="cardNum">Number of cards to load.</param>
     public void LoadCards(int cardNum)
     {
 		GameObject cardPanel = transform.GetChild(3).gameObject.transform.GetChild(1).gameObject;
@@ -82,6 +81,10 @@ public class MenuUI : MonoBehaviour
 		playerNum = cardNum;
 	}
 
+	/// <summary>
+	/// Removes all the cards from the menu screen.
+	/// </summary>
+	/// <param name="cardPanel">The cardPanel to remove cards from.</param>
 	private void ResetCards(GameObject cardPanel)
 	{
 		for (int i = 0; i < 6; i++)
@@ -93,6 +96,11 @@ public class MenuUI : MonoBehaviour
 		playerNum = 0;
 	}
 
+	/// <summary>
+	/// Toggles whether an element is visible or not.
+	/// </summary>
+	/// <param name="element">The element to toggle.</param>
+	/// <param name="state">The state to set the element to.</param>
 	public static void ToggleElement(GameObject element, bool state)
 	{
 		element.GetComponent<CanvasGroup>().alpha = state ? 1 : 0;
@@ -100,6 +108,10 @@ public class MenuUI : MonoBehaviour
 		element.GetComponent<CanvasGroup>().interactable = state;
 	}
 
+	/// <summary>
+	/// Resets all of the card toggles to CPU (default).
+	/// </summary>
+	/// <param name="cardPanel">The card panel containing the card toggles.</param>
 	private void ResetToggles(GameObject cardPanel)
 	{
 		for (int i = 0; i < 6; i++)
