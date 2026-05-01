@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     private int currentPlayerIndex;
     private bool gameOver;
     private bool canRoll = false;
+    private Dice dice;
 
     // Dice Controller
     [SerializeField] private DiceController diceController;
@@ -76,17 +77,22 @@ public class GameController : MonoBehaviour
         if (players == null || players.Count == 0)
         {
             Debug.LogWarning("[GameController] No players from SceneCommunication — creating test players");
+            AIPlayer aiPeacock = new AIPlayer(2, new CharacterCard("Mrs Peacock", peacockCardSprite));
+            aiPeacock.SetStrategy(StrategyType.Safe);
             players = new List<Player>
             {
                 new HumanPlayer(0, new CharacterCard("Miss Scarlett", scarlettCardSprite)),
                 new HumanPlayer(1, new CharacterCard("Colonel Mustard", mustardCardSprite)),
-                new HumanPlayer(2, new CharacterCard("Mrs Peacock", peacockCardSprite))
+                aiPeacock
             };
         }
-
         //REMOVE LATER THIS BACKUP FOR FALLBACK IF THERE NO PLAYERS
 
-
+        dice = new Dice();
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].Initialise(i, players.Count);
+        }
 
 		murderEnvelope = new MurderEnvelope();
 
@@ -126,6 +132,17 @@ public class GameController : MonoBehaviour
         Player currentPlayer = players[currentPlayerIndex];
         Debug.Log("Its player " + currentPlayerIndex + " turn (" + currentPlayer.GetCharacter().CardName + ")");
 
+        /*
+        If this an AI player, it will run its desion logic and end it turn
+        AI TakeTurn current log decisons only - not implemented 
+        */
+        if (currentPlayer is AIPlayer aIPlayer)
+        {
+            aIPlayer.TakeTurn(this, dice);
+            EndTurn();
+            return;
+        }
+
         canRoll = true;
         
         // TODO:
@@ -137,16 +154,6 @@ public class GameController : MonoBehaviour
 
     }
 
-    // TEMPORARY: lets us test the game loop without a Roll Dice button
-    // Press SPACE to simulate a dice roll 
-    // Remove when UI setup
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OnRollDicePressed();
-        }
-    }
 
     /// <summary>
     /// Begins the game loop.
@@ -282,6 +289,14 @@ public class GameController : MonoBehaviour
 
             playerIndex = (playerIndex + 1) % players.Count; // wraps around once end reached
 
+        }
+
+        //Tells each player their hand
+        //AIPlayer crosses the card on its sheet and stars deduction
+        //HumanPlayers empty defualt does nothing.
+        foreach (Player p in players)
+        {
+            p.OnHandDealt(p.GetHand());
         }
 
         Debug.Log("Cards dealt to players");
