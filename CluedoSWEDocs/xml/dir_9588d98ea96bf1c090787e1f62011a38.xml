@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_9588d98ea96bf1c090787e1f62011a38" kind="dir">
+    <compoundname>CluedoSWE/Assets/GameAssets/Scripts/Game/Player</compoundname>
+    <innerfile refid="_a_i_player_8cs">AIPlayer.cs</innerfile>
+    <innerfile refid="_human_player_8cs">HumanPlayer.cs</innerfile>
+    <innerfile refid="_player_8cs">Player.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/"/>
+  </compounddef>
+</doxygen>

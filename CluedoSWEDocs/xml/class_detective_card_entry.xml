@@ -1,0 +1,655 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_detective_card_entry" kind="class" language="C#" prot="public">
+    <compoundname>DetectiveCardEntry</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_detective_card_entry_1a39ce1f84cca7845926161132df9dd66a" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DetectiveCardEntry.cardName</definition>
+        <argsstring></argsstring>
+        <name>cardName</name>
+        <qualifiedname>DetectiveCardEntry.cardName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="15" column="20" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detective_card_entry_1a3f4969b50c8b5a3201e6c13ade915b12" prot="private" static="no" mutable="no">
+        <type>bool[]</type>
+        <definition>bool [] DetectiveCardEntry.active</definition>
+        <argsstring></argsstring>
+        <name>active</name>
+        <qualifiedname>DetectiveCardEntry.active</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="17" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detective_card_entry_1ac46dff6dd0d51613d0ddff349ff6e737" prot="private" static="no" mutable="no">
+        <type>bool[]</type>
+        <definition>bool [] DetectiveCardEntry.autoCrossedOut</definition>
+        <argsstring></argsstring>
+        <name>autoCrossedOut</name>
+        <qualifiedname>DetectiveCardEntry.autoCrossedOut</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="18" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detective_card_entry_1a11e0447b8292c476fd6d072ced620e39" prot="private" static="no" mutable="no">
+        <type>bool[]</type>
+        <definition>bool [] DetectiveCardEntry.manualCrossedOut</definition>
+        <argsstring></argsstring>
+        <name>manualCrossedOut</name>
+        <qualifiedname>DetectiveCardEntry.manualCrossedOut</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="19" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detective_card_entry_1a60807f9cbb730aa8f56ee0a321a0972d" prot="private" static="no" mutable="no">
+        <type>bool[]</type>
+        <definition>bool [] DetectiveCardEntry.knownNotHeld</definition>
+        <argsstring></argsstring>
+        <name>knownNotHeld</name>
+        <qualifiedname>DetectiveCardEntry.knownNotHeld</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="21" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_detective_card_entry_1ac3b7e3da4f4b27e9b9db2382910c42ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DetectiveCardEntry.DetectiveCardEntry</definition>
+        <argsstring>(string cardName, int columnCount, int activePlayerCount)</argsstring>
+        <name>DetectiveCardEntry</name>
+        <qualifiedname>DetectiveCardEntry.DetectiveCardEntry</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>cardName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>columnCount</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>activePlayerCount</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new entry. columnCount should mathc the number of button per row in the UI activePlayercount is how many of those columns are real players (Ai and human) this game. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columnCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Totla UI Colums</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>activePlayerCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Real players this game</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="31" column="12" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="31" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a379c0ebe1d674360af6331fc38203631" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DetectiveCardEntry.DetectiveCardEntry</definition>
+        <argsstring>(string cardName)</argsstring>
+        <name>DetectiveCardEntry</name>
+        <qualifiedname>DetectiveCardEntry.DetectiveCardEntry</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>cardName</declname>
+        </param>
+        <briefdescription>
+<para>Backwards compatible constructor: assumes a single active column. Prefer the (cardName, columnCount, activePlayerCount) form. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="52" column="12" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1ac5b2677db9e876cb7fc6fbf51d25162d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string DetectiveCardEntry.GetCardName</definition>
+        <argsstring>()</argsstring>
+        <name>GetCardName</name>
+        <qualifiedname>DetectiveCardEntry.GetCardName</qualifiedname>
+        <briefdescription>
+<para>Returns the name of the card. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="57" column="19" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1af6e447f805b7d972ab7d8c2cbb22f373" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int DetectiveCardEntry.GetColumnCount</definition>
+        <argsstring>()</argsstring>
+        <name>GetColumnCount</name>
+        <qualifiedname>DetectiveCardEntry.GetColumnCount</qualifiedname>
+        <briefdescription>
+<para>Total number of UI columns this entry tracks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="62" column="16" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1acf42ab18333be7a1741906e3c0c32527" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsColumnActive</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>IsColumnActive</name>
+        <qualifiedname>DetectiveCardEntry.IsColumnActive</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>True if this column corresponds to a real player. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_player" kindref="compound">Player</ref> of postion</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the corresponds to a real player</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="69" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="69" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a1bd60df25c7d5ea82e627358a2af1287" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.ShouldDisplayCross</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>ShouldDisplayCross</name>
+        <qualifiedname>DetectiveCardEntry.ShouldDisplayCross</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>True if this column should be displayed by the UI Includes inactive columns. (so empty seats are x out) and active columns that have been auto/manual crossed out. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Postion of player</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="82" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="82" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1ae43e42b32baec0ec6ad9e2ecf4318d6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsCrossedOut</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>IsCrossedOut</name>
+        <qualifiedname>DetectiveCardEntry.IsCrossedOut</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>True if this column is meaningfully crossed out for deduction purposes Inactive columns return false: they aren&apos;t real information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Postion of player</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns true if column crossed out</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="95" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="95" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a9830d29be438fd45fd8cf05080d5412a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsAutoCrossedOut</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>IsAutoCrossedOut</name>
+        <qualifiedname>DetectiveCardEntry.IsAutoCrossedOut</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>Checks if the card been Auto crossed out. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_player" kindref="compound">Player</ref> postion</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>reutrns true if auto crossed out</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="107" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="107" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a444372ba77ce8f16b4a2f26085884398" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsManualCrossedOut</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>IsManualCrossedOut</name>
+        <qualifiedname>DetectiveCardEntry.IsManualCrossedOut</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>Returns if the card is manually crossed out. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_player" kindref="compound">Player</ref> postion</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if manually crossed out</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="118" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="118" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a5f1a224fe94a9a406f4a4e64046066a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveCardEntry.MarkAuto</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>MarkAuto</name>
+        <qualifiedname>DetectiveCardEntry.MarkAuto</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>System marks this column crossed inactive columns are not included. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="128" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="128" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a331248f860bb934ffa60c84466302a4c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveCardEntry.MarkNotHeldBy</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>MarkNotHeldBy</name>
+        <qualifiedname>DetectiveCardEntry.MarkNotHeldBy</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>Records that this player is know not to hold this card Used when a player fails to disprove a suggestion containing this card Different from MarkAuto: auto cross means &quot;I saw them hold it&quot;, not held means &quot;I deduced they don&apos;t have it&quot;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_player" kindref="compound">Player</ref> Index postion</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="143" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="143" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a333b5f45659e97f7fcafa21a61187d89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsKnownNotHeldBy</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>IsKnownNotHeldBy</name>
+        <qualifiedname>DetectiveCardEntry.IsKnownNotHeldBy</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>True if we know this player does NOT hold this card. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_player" kindref="compound">Player</ref> Index postion</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="156" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="156" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1ad0162d1be0ed298cdea30aa4d0b70abc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveCardEntry.MarkManual</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>MarkManual</name>
+        <qualifiedname>DetectiveCardEntry.MarkManual</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>Marks the card as manually crossed out by the player inactive columns are not included. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="168" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="168" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a2323eb64d38437699390ba2287cb8a07" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveCardEntry.UndoManual</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>UndoManual</name>
+        <qualifiedname>DetectiveCardEntry.UndoManual</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>Human player un-ticks the cross button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_player" kindref="compound">Player</ref> postion</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="179" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="179" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a9a163e6a528724291ea92480cd352969" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsAutoCrossedOutAnywhere</definition>
+        <argsstring>()</argsstring>
+        <name>IsAutoCrossedOutAnywhere</name>
+        <qualifiedname>DetectiveCardEntry.IsAutoCrossedOutAnywhere</qualifiedname>
+        <briefdescription>
+<para>True if a card been automatically crossed out. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Return true if card been crossed out automatically</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="190" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="190" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a98c6d27824fa258c66e5509a448cabe3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsCrossedOutAnywhere</definition>
+        <argsstring>()</argsstring>
+        <name>IsCrossedOutAnywhere</name>
+        <qualifiedname>DetectiveCardEntry.IsCrossedOutAnywhere</qualifiedname>
+        <briefdescription>
+<para>True if any active column (auto or manual) is crossed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="202" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="202" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1ab41c781b8af14b047b6bfdef9168237d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsDefinitelyInEnvelope</definition>
+        <argsstring>()</argsstring>
+        <name>IsDefinitelyInEnvelope</name>
+        <qualifiedname>DetectiveCardEntry.IsDefinitelyInEnvelope</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="212" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="212" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a4bad59e24ca0ff3ca0409379dbd4c449" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsCrossedOut</definition>
+        <argsstring>()</argsstring>
+        <name>IsCrossedOut</name>
+        <qualifiedname>DetectiveCardEntry.IsCrossedOut</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="225" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="225" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a39ecd110783b68c0ba2e4afdd5d141b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsAutoCrossedOut</definition>
+        <argsstring>()</argsstring>
+        <name>IsAutoCrossedOut</name>
+        <qualifiedname>DetectiveCardEntry.IsAutoCrossedOut</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="226" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="226" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1ab9de35b93b4ccc69a221e6a08d335c1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsManualCrossedOut</definition>
+        <argsstring>()</argsstring>
+        <name>IsManualCrossedOut</name>
+        <qualifiedname>DetectiveCardEntry.IsManualCrossedOut</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="227" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="227" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a5c1118c7f12d6df5ff8e5a0c22a03ea5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveCardEntry.MarkAuto</definition>
+        <argsstring>()</argsstring>
+        <name>MarkAuto</name>
+        <qualifiedname>DetectiveCardEntry.MarkAuto</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="231" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="231" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1a863f9d3cc9c376df664431d791977da0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveCardEntry.MarkManual</definition>
+        <argsstring>()</argsstring>
+        <name>MarkManual</name>
+        <qualifiedname>DetectiveCardEntry.MarkManual</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="232" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="232" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_card_entry_1ab9424672f14c646bd46a98a36fd005cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveCardEntry.UndoManual</definition>
+        <argsstring>()</argsstring>
+        <name>UndoManual</name>
+        <qualifiedname>DetectiveCardEntry.UndoManual</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="233" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="233" bodyend="233"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_detective_card_entry_1a6aa96533ab98bc804acd75fdf7c199fc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectiveCardEntry.IsValidIndex</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>IsValidIndex</name>
+        <qualifiedname>DetectiveCardEntry.IsValidIndex</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="235" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="235" bodyend="244"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a single card in the detective sheet (e.g. Ms Scarlett) The sheet UI has fixed number of player columns 6 rest columns will be inactive. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>For each column this entry tracks three things: active: is there player in this col autoCrossedOut: the game auto marked this card manualCrossedOut: the human player ticked the cross button </para>
+    </detaileddescription>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" line="13" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveCardEntry.cs" bodystart="14" bodyend="246"/>
+    <listofallmembers>
+      <member refid="class_detective_card_entry_1a3f4969b50c8b5a3201e6c13ade915b12" prot="private" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>active</name></member>
+      <member refid="class_detective_card_entry_1ac46dff6dd0d51613d0ddff349ff6e737" prot="private" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>autoCrossedOut</name></member>
+      <member refid="class_detective_card_entry_1a39ce1f84cca7845926161132df9dd66a" prot="private" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>cardName</name></member>
+      <member refid="class_detective_card_entry_1ac3b7e3da4f4b27e9b9db2382910c42ba" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>DetectiveCardEntry</name></member>
+      <member refid="class_detective_card_entry_1a379c0ebe1d674360af6331fc38203631" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>DetectiveCardEntry</name></member>
+      <member refid="class_detective_card_entry_1ac5b2677db9e876cb7fc6fbf51d25162d" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>GetCardName</name></member>
+      <member refid="class_detective_card_entry_1af6e447f805b7d972ab7d8c2cbb22f373" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>GetColumnCount</name></member>
+      <member refid="class_detective_card_entry_1a9830d29be438fd45fd8cf05080d5412a" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsAutoCrossedOut</name></member>
+      <member refid="class_detective_card_entry_1a39ecd110783b68c0ba2e4afdd5d141b7" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsAutoCrossedOut</name></member>
+      <member refid="class_detective_card_entry_1a9a163e6a528724291ea92480cd352969" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsAutoCrossedOutAnywhere</name></member>
+      <member refid="class_detective_card_entry_1acf42ab18333be7a1741906e3c0c32527" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsColumnActive</name></member>
+      <member refid="class_detective_card_entry_1ae43e42b32baec0ec6ad9e2ecf4318d6d" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsCrossedOut</name></member>
+      <member refid="class_detective_card_entry_1a4bad59e24ca0ff3ca0409379dbd4c449" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsCrossedOut</name></member>
+      <member refid="class_detective_card_entry_1a98c6d27824fa258c66e5509a448cabe3" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsCrossedOutAnywhere</name></member>
+      <member refid="class_detective_card_entry_1ab41c781b8af14b047b6bfdef9168237d" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsDefinitelyInEnvelope</name></member>
+      <member refid="class_detective_card_entry_1a333b5f45659e97f7fcafa21a61187d89" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsKnownNotHeldBy</name></member>
+      <member refid="class_detective_card_entry_1a444372ba77ce8f16b4a2f26085884398" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsManualCrossedOut</name></member>
+      <member refid="class_detective_card_entry_1ab9de35b93b4ccc69a221e6a08d335c1a" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsManualCrossedOut</name></member>
+      <member refid="class_detective_card_entry_1a6aa96533ab98bc804acd75fdf7c199fc" prot="private" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>IsValidIndex</name></member>
+      <member refid="class_detective_card_entry_1a60807f9cbb730aa8f56ee0a321a0972d" prot="private" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>knownNotHeld</name></member>
+      <member refid="class_detective_card_entry_1a11e0447b8292c476fd6d072ced620e39" prot="private" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>manualCrossedOut</name></member>
+      <member refid="class_detective_card_entry_1a5f1a224fe94a9a406f4a4e64046066a5" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>MarkAuto</name></member>
+      <member refid="class_detective_card_entry_1a5c1118c7f12d6df5ff8e5a0c22a03ea5" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>MarkAuto</name></member>
+      <member refid="class_detective_card_entry_1ad0162d1be0ed298cdea30aa4d0b70abc" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>MarkManual</name></member>
+      <member refid="class_detective_card_entry_1a863f9d3cc9c376df664431d791977da0" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>MarkManual</name></member>
+      <member refid="class_detective_card_entry_1a331248f860bb934ffa60c84466302a4c" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>MarkNotHeldBy</name></member>
+      <member refid="class_detective_card_entry_1a1bd60df25c7d5ea82e627358a2af1287" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>ShouldDisplayCross</name></member>
+      <member refid="class_detective_card_entry_1a2323eb64d38437699390ba2287cb8a07" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>UndoManual</name></member>
+      <member refid="class_detective_card_entry_1ab9424672f14c646bd46a98a36fd005cc" prot="public" virt="non-virtual"><scope>DetectiveCardEntry</scope><name>UndoManual</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_detective_row_u_i" kind="class" language="C#" prot="public">
+    <compoundname>DetectiveRowUI</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_detective_row_u_i_1a77664c2b26c8b803ffa4b5a48f3558a8" prot="private" static="no" mutable="no">
+        <type>TMP_Text</type>
+        <definition>TMP_Text DetectiveRowUI.cardNameText</definition>
+        <argsstring></argsstring>
+        <name>cardNameText</name>
+        <qualifiedname>DetectiveRowUI.cardNameText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="13" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detective_row_u_i_1a1b9fe92d688583a738d1e45cfb26f26a" prot="private" static="no" mutable="no">
+        <type>Button[]</type>
+        <definition>Button [] DetectiveRowUI.crossButtons</definition>
+        <argsstring></argsstring>
+        <name>crossButtons</name>
+        <qualifiedname>DetectiveRowUI.crossButtons</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="14" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detective_row_u_i_1aa972aa85ac089dc66b53d0c698278ec1" prot="private" static="no" mutable="no">
+        <type>GameObject[]</type>
+        <definition>GameObject [] DetectiveRowUI.xImages</definition>
+        <argsstring></argsstring>
+        <name>xImages</name>
+        <qualifiedname>DetectiveRowUI.xImages</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="15" column="25" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detective_row_u_i_1a3d8fecb44ecb49ae194f6dd5ec0dccd8" prot="private" static="no" mutable="no">
+        <type><ref refid="class_detective_sheet" kindref="compound">DetectiveSheet</ref></type>
+        <definition>DetectiveSheet DetectiveRowUI.sheet</definition>
+        <argsstring></argsstring>
+        <name>sheet</name>
+        <qualifiedname>DetectiveRowUI.sheet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="16" column="28" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detective_row_u_i_1afb0e9425ebafab999cd0115a1ca6a831" prot="private" static="no" mutable="no">
+        <type><ref refid="class_detective_card_entry" kindref="compound">DetectiveCardEntry</ref></type>
+        <definition>DetectiveCardEntry DetectiveRowUI.entry</definition>
+        <argsstring></argsstring>
+        <name>entry</name>
+        <qualifiedname>DetectiveRowUI.entry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="17" column="32" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_detective_row_u_i_1ab0a0f100db8bae6502acf565a30025d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveRowUI.Setup</definition>
+        <argsstring>(DetectiveSheet sheet, string cardName)</argsstring>
+        <name>Setup</name>
+        <qualifiedname>DetectiveRowUI.Setup</qualifiedname>
+        <param>
+          <type><ref refid="class_detective_sheet" kindref="compound">DetectiveSheet</ref></type>
+          <declname>sheet</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>cardName</declname>
+        </param>
+        <briefdescription>
+<para>Initialise this row for a specific card in a specific sheet. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sheet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="class_detective_sheet" kindref="compound">DetectiveSheet</ref> this row reads from / writes to</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card this row represents</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="24" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="24" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_row_u_i_1aa046b26449c8ce1808f375c0f668c54d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveRowUI.Refresh</definition>
+        <argsstring>()</argsstring>
+        <name>Refresh</name>
+        <qualifiedname>DetectiveRowUI.Refresh</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="65" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="65" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detective_row_u_i_1aaa88008d2da20be7e928f5a625a435f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string DetectiveRowUI.GetCardName</definition>
+        <argsstring>()</argsstring>
+        <name>GetCardName</name>
+        <qualifiedname>DetectiveRowUI.GetCardName</qualifiedname>
+        <briefdescription>
+<para>The card name this row represents. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="78" column="19" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="78" bodyend="81"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_detective_row_u_i_1a8228bd2210698da43d85d4469f4bbe51" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectiveRowUI.OnButtonClicked</definition>
+        <argsstring>(int columnIndex)</argsstring>
+        <name>OnButtonClicked</name>
+        <qualifiedname>DetectiveRowUI.OnButtonClicked</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>columnIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="83" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="83" bodyend="89"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Handles a single row in the deticive sheet UI Each Row represents one card (suspect, weapon or room) per player column Clicking button toggles the manual cross out. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>DetectiveRowUI</label>
+        <link refid="class_detective_row_u_i"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>DetectiveRowUI</label>
+        <link refid="class_detective_row_u_i"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" line="10" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/DetectiveRowUI.cs" bodystart="11" bodyend="91"/>
+    <listofallmembers>
+      <member refid="class_detective_row_u_i_1a77664c2b26c8b803ffa4b5a48f3558a8" prot="private" virt="non-virtual"><scope>DetectiveRowUI</scope><name>cardNameText</name></member>
+      <member refid="class_detective_row_u_i_1a1b9fe92d688583a738d1e45cfb26f26a" prot="private" virt="non-virtual"><scope>DetectiveRowUI</scope><name>crossButtons</name></member>
+      <member refid="class_detective_row_u_i_1afb0e9425ebafab999cd0115a1ca6a831" prot="private" virt="non-virtual"><scope>DetectiveRowUI</scope><name>entry</name></member>
+      <member refid="class_detective_row_u_i_1aaa88008d2da20be7e928f5a625a435f8" prot="public" virt="non-virtual"><scope>DetectiveRowUI</scope><name>GetCardName</name></member>
+      <member refid="class_detective_row_u_i_1a8228bd2210698da43d85d4469f4bbe51" prot="private" virt="non-virtual"><scope>DetectiveRowUI</scope><name>OnButtonClicked</name></member>
+      <member refid="class_detective_row_u_i_1aa046b26449c8ce1808f375c0f668c54d" prot="public" virt="non-virtual"><scope>DetectiveRowUI</scope><name>Refresh</name></member>
+      <member refid="class_detective_row_u_i_1ab0a0f100db8bae6502acf565a30025d8" prot="public" virt="non-virtual"><scope>DetectiveRowUI</scope><name>Setup</name></member>
+      <member refid="class_detective_row_u_i_1a3d8fecb44ecb49ae194f6dd5ec0dccd8" prot="private" virt="non-virtual"><scope>DetectiveRowUI</scope><name>sheet</name></member>
+      <member refid="class_detective_row_u_i_1aa972aa85ac089dc66b53d0c698278ec1" prot="private" virt="non-virtual"><scope>DetectiveRowUI</scope><name>xImages</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

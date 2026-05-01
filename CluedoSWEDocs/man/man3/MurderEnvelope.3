@@ -1,0 +1,65 @@
+.TH "MurderEnvelope" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MurderEnvelope \- Class \fR\fBMurderEnvelope\fP\fP represents the hidden solution to the game\&. Contains one \fR\fBCharacterCard\fP\fP, \fR\fBWeaponCard\fP\fP, and \fR\fBRoomCard\fP\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetCards\fP (\fBCharacterCard\fP character, \fBWeaponCard\fP weapon, \fBRoomCard\fP room)"
+.br
+.RI "Sets the cards that form the solution\&. "
+.ti -1c
+.RI "bool \fBCheckAccusation\fP (\fBCharacterCard\fP character, \fBWeaponCard\fP weapon, \fBRoomCard\fP room)"
+.br
+.RI "Checks whether the player's accusation matches the solution contained in the \fBMurderEnvelope\fP\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class \fR\fBMurderEnvelope\fP\fP represents the hidden solution to the game\&. Contains one \fR\fBCharacterCard\fP\fP, \fR\fBWeaponCard\fP\fP, and \fR\fBRoomCard\fP\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool MurderEnvelope\&.CheckAccusation (\fBCharacterCard\fP character, \fBWeaponCard\fP weapon, \fBRoomCard\fP room)"
+
+.PP
+Checks whether the player's accusation matches the solution contained in the \fBMurderEnvelope\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcharacter\fP The character in the accusation\&. 
+.br
+\fIweapon\fP The weapon in the accusation\&. 
+.br
+\fIroom\fP The room in the accusation\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the accusation is correct, false otherwise\&. 
+.RE
+.PP
+
+.SS "void MurderEnvelope\&.SetCards (\fBCharacterCard\fP character, \fBWeaponCard\fP weapon, \fBRoomCard\fP room)"
+
+.PP
+Sets the cards that form the solution\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcharacter\fP The \fR\fBCharacterCard\fP\fP in the \fBMurderEnvelope\fP\&. 
+.br
+\fIweapon\fP The \fR\fBWeaponCard\fP\fP in the \fBMurderEnvelope\fP\&.
+.br
+\fIroom\fP The \fR\fBRoomCard\fP\fP in the \fBMurderEnvelope\fP\&.
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

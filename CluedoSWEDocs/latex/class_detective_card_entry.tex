@@ -1,0 +1,262 @@
+\doxysection{Detective\+Card\+Entry Class Reference}
+\hypertarget{class_detective_card_entry}{}\label{class_detective_card_entry}\index{DetectiveCardEntry@{DetectiveCardEntry}}
+
+
+Represents a single card in the detective sheet (e.\+g. Ms Scarlett) The sheet UI has fixed number of player columns 6 rest columns will be inactive.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_detective_card_entry_ac3b7e3da4f4b27e9b9db2382910c42ba}{Detective\+Card\+Entry}} (string card\+Name, int column\+Count, int active\+Player\+Count)
+\begin{DoxyCompactList}\small\item\em Creates a new entry. column\+Count should mathc the number of button per row in the UI active\+Playercount is how many of those columns are real players (Ai and human) this game. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_card_entry_a379c0ebe1d674360af6331fc38203631}\label{class_detective_card_entry_a379c0ebe1d674360af6331fc38203631} 
+{\bfseries Detective\+Card\+Entry} (string card\+Name)
+\begin{DoxyCompactList}\small\item\em Backwards compatible constructor:\+ assumes a single active column. Prefer the (card\+Name, column\+Count, active\+Player\+Count) form. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_card_entry_ac5b2677db9e876cb7fc6fbf51d25162d}\label{class_detective_card_entry_ac5b2677db9e876cb7fc6fbf51d25162d} 
+string {\bfseries Get\+Card\+Name} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of the card. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_card_entry_af6e447f805b7d972ab7d8c2cbb22f373}\label{class_detective_card_entry_af6e447f805b7d972ab7d8c2cbb22f373} 
+int {\bfseries Get\+Column\+Count} ()
+\begin{DoxyCompactList}\small\item\em Total number of UI columns this entry tracks. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_detective_card_entry_acf42ab18333be7a1741906e3c0c32527}{Is\+Column\+Active}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em True if this column corresponds to a real player. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_detective_card_entry_a1bd60df25c7d5ea82e627358a2af1287}{Should\+Display\+Cross}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em True if this column should be displayed by the UI Includes inactive columns. (so empty seats are x out) and active columns that have been auto/\+manual crossed out. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_detective_card_entry_ae43e42b32baec0ec6ad9e2ecf4318d6d}{Is\+Crossed\+Out}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em True if this column is meaningfully crossed out for deduction purposes Inactive columns return false:\+ they aren\textquotesingle{}t real information. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_detective_card_entry_a9830d29be438fd45fd8cf05080d5412a}{Is\+Auto\+Crossed\+Out}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Checks if the card been Auto crossed out. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_detective_card_entry_a444372ba77ce8f16b4a2f26085884398}{Is\+Manual\+Crossed\+Out}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Returns if the card is manually crossed out. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_card_entry_a5f1a224fe94a9a406f4a4e64046066a5}\label{class_detective_card_entry_a5f1a224fe94a9a406f4a4e64046066a5} 
+void {\bfseries Mark\+Auto} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em System marks this column crossed inactive columns are not included. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_detective_card_entry_a331248f860bb934ffa60c84466302a4c}{Mark\+Not\+Held\+By}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Records that this player is know not to hold this card Used when a player fails to disprove a suggestion containing this card Different from Mark\+Auto:\+ auto cross means "{}\+I saw them hold it"{}, not held means "{}\+I deduced they don\textquotesingle{}t have it"{}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_detective_card_entry_a333b5f45659e97f7fcafa21a61187d89}{Is\+Known\+Not\+Held\+By}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em True if we know this player does NOT hold this card. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_card_entry_ad0162d1be0ed298cdea30aa4d0b70abc}\label{class_detective_card_entry_ad0162d1be0ed298cdea30aa4d0b70abc} 
+void {\bfseries Mark\+Manual} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Marks the card as manually crossed out by the player inactive columns are not included. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_detective_card_entry_a2323eb64d38437699390ba2287cb8a07}{Undo\+Manual}} (int player\+Index)
+\begin{DoxyCompactList}\small\item\em Human player un-\/ticks the cross button. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_detective_card_entry_a9a163e6a528724291ea92480cd352969}{Is\+Auto\+Crossed\+Out\+Anywhere}} ()
+\begin{DoxyCompactList}\small\item\em True if a card been automatically crossed out. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_card_entry_a98c6d27824fa258c66e5509a448cabe3}\label{class_detective_card_entry_a98c6d27824fa258c66e5509a448cabe3} 
+bool {\bfseries Is\+Crossed\+Out\+Anywhere} ()
+\begin{DoxyCompactList}\small\item\em True if any active column (auto or manual) is crossed. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_card_entry_ab41c781b8af14b047b6bfdef9168237d}\label{class_detective_card_entry_ab41c781b8af14b047b6bfdef9168237d} 
+bool {\bfseries Is\+Definitely\+In\+Envelope} ()
+\item 
+\Hypertarget{class_detective_card_entry_a4bad59e24ca0ff3ca0409379dbd4c449}\label{class_detective_card_entry_a4bad59e24ca0ff3ca0409379dbd4c449} 
+bool {\bfseries Is\+Crossed\+Out} ()
+\item 
+\Hypertarget{class_detective_card_entry_a39ecd110783b68c0ba2e4afdd5d141b7}\label{class_detective_card_entry_a39ecd110783b68c0ba2e4afdd5d141b7} 
+bool {\bfseries Is\+Auto\+Crossed\+Out} ()
+\item 
+\Hypertarget{class_detective_card_entry_ab9de35b93b4ccc69a221e6a08d335c1a}\label{class_detective_card_entry_ab9de35b93b4ccc69a221e6a08d335c1a} 
+bool {\bfseries Is\+Manual\+Crossed\+Out} ()
+\item 
+\Hypertarget{class_detective_card_entry_a5c1118c7f12d6df5ff8e5a0c22a03ea5}\label{class_detective_card_entry_a5c1118c7f12d6df5ff8e5a0c22a03ea5} 
+void {\bfseries Mark\+Auto} ()
+\item 
+\Hypertarget{class_detective_card_entry_a863f9d3cc9c376df664431d791977da0}\label{class_detective_card_entry_a863f9d3cc9c376df664431d791977da0} 
+void {\bfseries Mark\+Manual} ()
+\item 
+\Hypertarget{class_detective_card_entry_ab9424672f14c646bd46a98a36fd005cc}\label{class_detective_card_entry_ab9424672f14c646bd46a98a36fd005cc} 
+void {\bfseries Undo\+Manual} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single card in the detective sheet (e.\+g. Ms Scarlett) The sheet UI has fixed number of player columns 6 rest columns will be inactive. 
+
+For each column this entry tracks three things:\+ active:\+ is there player in this col auto\+Crossed\+Out:\+ the game auto marked this card manual\+Crossed\+Out:\+ the human player ticked the cross button 
+
+\label{class_detective_card_entry_doc-constructors}
+\Hypertarget{class_detective_card_entry_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_detective_card_entry_ac3b7e3da4f4b27e9b9db2382910c42ba}\index{DetectiveCardEntry@{DetectiveCardEntry}!DetectiveCardEntry@{DetectiveCardEntry}}
+\index{DetectiveCardEntry@{DetectiveCardEntry}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{DetectiveCardEntry()}{DetectiveCardEntry()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_ac3b7e3da4f4b27e9b9db2382910c42ba} 
+Detective\+Card\+Entry.\+Detective\+Card\+Entry (\begin{DoxyParamCaption}\item[{string}]{card\+Name}{, }\item[{int}]{column\+Count}{, }\item[{int}]{active\+Player\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new entry. column\+Count should mathc the number of button per row in the UI active\+Playercount is how many of those columns are real players (Ai and human) this game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em card\+Name} & Name of the card\\
+\hline
+{\em column\+Count} & Totla UI Colums\\
+\hline
+{\em active\+Player\+Count} & Real players this game\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_detective_card_entry_doc-func-members}
+\Hypertarget{class_detective_card_entry_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_detective_card_entry_a9830d29be438fd45fd8cf05080d5412a}\index{DetectiveCardEntry@{DetectiveCardEntry}!IsAutoCrossedOut@{IsAutoCrossedOut}}
+\index{IsAutoCrossedOut@{IsAutoCrossedOut}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{IsAutoCrossedOut()}{IsAutoCrossedOut()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_a9830d29be438fd45fd8cf05080d5412a} 
+bool Detective\+Card\+Entry.\+Is\+Auto\+Crossed\+Out (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the card been Auto crossed out. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & \doxylink{class_player}{Player} postion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reutrns true if auto crossed out
+\end{DoxyReturn}
+\Hypertarget{class_detective_card_entry_a9a163e6a528724291ea92480cd352969}\index{DetectiveCardEntry@{DetectiveCardEntry}!IsAutoCrossedOutAnywhere@{IsAutoCrossedOutAnywhere}}
+\index{IsAutoCrossedOutAnywhere@{IsAutoCrossedOutAnywhere}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{IsAutoCrossedOutAnywhere()}{IsAutoCrossedOutAnywhere()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_a9a163e6a528724291ea92480cd352969} 
+bool Detective\+Card\+Entry.\+Is\+Auto\+Crossed\+Out\+Anywhere (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+True if a card been automatically crossed out. 
+
+\begin{DoxyReturn}{Returns}
+Return true if card been crossed out automatically
+\end{DoxyReturn}
+\Hypertarget{class_detective_card_entry_acf42ab18333be7a1741906e3c0c32527}\index{DetectiveCardEntry@{DetectiveCardEntry}!IsColumnActive@{IsColumnActive}}
+\index{IsColumnActive@{IsColumnActive}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{IsColumnActive()}{IsColumnActive()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_acf42ab18333be7a1741906e3c0c32527} 
+bool Detective\+Card\+Entry.\+Is\+Column\+Active (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+True if this column corresponds to a real player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & \doxylink{class_player}{Player} of postion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the corresponds to a real player
+\end{DoxyReturn}
+\Hypertarget{class_detective_card_entry_ae43e42b32baec0ec6ad9e2ecf4318d6d}\index{DetectiveCardEntry@{DetectiveCardEntry}!IsCrossedOut@{IsCrossedOut}}
+\index{IsCrossedOut@{IsCrossedOut}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{IsCrossedOut()}{IsCrossedOut()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_ae43e42b32baec0ec6ad9e2ecf4318d6d} 
+bool Detective\+Card\+Entry.\+Is\+Crossed\+Out (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+True if this column is meaningfully crossed out for deduction purposes Inactive columns return false:\+ they aren\textquotesingle{}t real information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & Postion of player\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if column crossed out
+\end{DoxyReturn}
+\Hypertarget{class_detective_card_entry_a333b5f45659e97f7fcafa21a61187d89}\index{DetectiveCardEntry@{DetectiveCardEntry}!IsKnownNotHeldBy@{IsKnownNotHeldBy}}
+\index{IsKnownNotHeldBy@{IsKnownNotHeldBy}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{IsKnownNotHeldBy()}{IsKnownNotHeldBy()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_a333b5f45659e97f7fcafa21a61187d89} 
+bool Detective\+Card\+Entry.\+Is\+Known\+Not\+Held\+By (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+True if we know this player does NOT hold this card. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & \doxylink{class_player}{Player} Index postion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_detective_card_entry_a444372ba77ce8f16b4a2f26085884398}\index{DetectiveCardEntry@{DetectiveCardEntry}!IsManualCrossedOut@{IsManualCrossedOut}}
+\index{IsManualCrossedOut@{IsManualCrossedOut}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{IsManualCrossedOut()}{IsManualCrossedOut()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_a444372ba77ce8f16b4a2f26085884398} 
+bool Detective\+Card\+Entry.\+Is\+Manual\+Crossed\+Out (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Returns if the card is manually crossed out. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & \doxylink{class_player}{Player} postion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if manually crossed out
+\end{DoxyReturn}
+\Hypertarget{class_detective_card_entry_a331248f860bb934ffa60c84466302a4c}\index{DetectiveCardEntry@{DetectiveCardEntry}!MarkNotHeldBy@{MarkNotHeldBy}}
+\index{MarkNotHeldBy@{MarkNotHeldBy}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{MarkNotHeldBy()}{MarkNotHeldBy()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_a331248f860bb934ffa60c84466302a4c} 
+void Detective\+Card\+Entry.\+Mark\+Not\+Held\+By (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Records that this player is know not to hold this card Used when a player fails to disprove a suggestion containing this card Different from Mark\+Auto:\+ auto cross means "{}\+I saw them hold it"{}, not held means "{}\+I deduced they don\textquotesingle{}t have it"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & \doxylink{class_player}{Player} Index postion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_detective_card_entry_a1bd60df25c7d5ea82e627358a2af1287}\index{DetectiveCardEntry@{DetectiveCardEntry}!ShouldDisplayCross@{ShouldDisplayCross}}
+\index{ShouldDisplayCross@{ShouldDisplayCross}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{ShouldDisplayCross()}{ShouldDisplayCross()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_a1bd60df25c7d5ea82e627358a2af1287} 
+bool Detective\+Card\+Entry.\+Should\+Display\+Cross (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+True if this column should be displayed by the UI Includes inactive columns. (so empty seats are x out) and active columns that have been auto/\+manual crossed out. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & Postion of player\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_detective_card_entry_a2323eb64d38437699390ba2287cb8a07}\index{DetectiveCardEntry@{DetectiveCardEntry}!UndoManual@{UndoManual}}
+\index{UndoManual@{UndoManual}!DetectiveCardEntry@{DetectiveCardEntry}}
+\doxysubsubsection{\texorpdfstring{UndoManual()}{UndoManual()}}
+{\footnotesize\ttfamily \label{class_detective_card_entry_a2323eb64d38437699390ba2287cb8a07} 
+void Detective\+Card\+Entry.\+Undo\+Manual (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Human player un-\/ticks the cross button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & \doxylink{class_player}{Player} postion\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Cluedo\+SWE/\+\+Assets/\+\+Game\+Assets/\+\+Scripts/\+\+Game/\+\+Detective\+Card\+Entry/\+Detective\+Card\+Entry.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_murder_envelope_8cs" kind="file" language="C#">
+    <compoundname>MurderEnvelope.cs</compoundname>
+    <innerclass refid="class_murder_envelope" prot="public">MurderEnvelope</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="6" refid="class_murder_envelope" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_murder_envelope" kindref="compound">MurderEnvelope</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_character_card" kindref="compound">CharacterCard</ref><sp/>characterCard;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_weapon_card" kindref="compound">WeaponCard</ref><sp/>weaponCard;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_room_card" kindref="compound">RoomCard</ref><sp/>roomCard;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_murder_envelope_1a4955412af51df2fb09a668cc782f1f43" kindref="member">SetCards</ref>(<ref refid="class_character_card" kindref="compound">CharacterCard</ref><sp/>character,<sp/><ref refid="class_weapon_card" kindref="compound">WeaponCard</ref><sp/>weapon,<sp/><ref refid="class_room_card" kindref="compound">RoomCard</ref><sp/>room)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.characterCard<sp/>=<sp/>character;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.weaponCard<sp/>=<sp/>weapon;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.roomCard<sp/>=<sp/>room;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_murder_envelope_1a8aa7afc4e292c49a2611c0477100796b" kindref="member">CheckAccusation</ref>(<ref refid="class_character_card" kindref="compound">CharacterCard</ref><sp/>character,<sp/><ref refid="class_weapon_card" kindref="compound">WeaponCard</ref><sp/>weapon,<sp/><ref refid="class_room_card" kindref="compound">RoomCard</ref><sp/>room)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>character.<ref refid="class_card_1a919f72f0e85015b376b99789aac91b35" kindref="member">ToString</ref>()<sp/>==<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">.characterCard.ToString()<sp/>&amp;&amp;<sp/></highlight><highlight class="comment">//<sp/>using<sp/>the<sp/>names<sp/>of<sp/>the<sp/>cards</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weapon.<ref refid="class_card_1a919f72f0e85015b376b99789aac91b35" kindref="member">ToString</ref>()<sp/>==<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">.weaponCard.ToString()<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>room.<ref refid="class_card_1a919f72f0e85015b376b99789aac91b35" kindref="member">ToString</ref>()<sp/>==<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">.roomCard.ToString()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Cards/MurderEnvelope.cs"/>
+  </compounddef>
+</doxygen>

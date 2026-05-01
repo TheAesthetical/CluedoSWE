@@ -1,0 +1,56 @@
+\doxysection{Menu\+Button Class Reference}
+\hypertarget{class_menu_button}{}\label{class_menu_button}\index{MenuButton@{MenuButton}}
+Inheritance diagram for Menu\+Button:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_menu_button}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_menu_button_a6944c71a09444230ce63af5237416554}\label{class_menu_button_a6944c71a09444230ce63af5237416554} 
+void {\bfseries Start\+Button\+Click} ()
+\item 
+\Hypertarget{class_menu_button_a8aeeccf488a984d9013c850063a35b71}\label{class_menu_button_a8aeeccf488a984d9013c850063a35b71} 
+void {\bfseries Quit\+Button\+Click} ()
+\item 
+\Hypertarget{class_menu_button_ad4f93af5bc44a66a165e51a868c9933a}\label{class_menu_button_ad4f93af5bc44a66a165e51a868c9933a} 
+void {\bfseries Player\+Button\+Click} (int players)
+\item 
+\Hypertarget{class_menu_button_a2a8c83581f790193116fe8af61b4907c}\label{class_menu_button_a2a8c83581f790193116fe8af61b4907c} 
+void {\bfseries Back\+Button\+Click} ()
+\item 
+void \doxymbox{\hyperlink{class_menu_button_ad7268345e210b69404e3db48c8991e63}{Toggle\+Button\+Click}} ()
+\begin{DoxyCompactList}\small\item\em Cycles the assignment of this toggle button between AI and valid players. Ensures that:\+ \end{DoxyCompactList}\item 
+\Hypertarget{class_menu_button_af56f79cb0acf25118836100b13f4d781}\label{class_menu_button_af56f79cb0acf25118836100b13f4d781} 
+int {\bfseries Get\+Assigned\+Player\+Index} ()
+\item 
+\Hypertarget{class_menu_button_a23f90aedea5142b5192076cf3c3700d9}\label{class_menu_button_a23f90aedea5142b5192076cf3c3700d9} 
+void {\bfseries Begin\+Button\+Click} ()
+\end{DoxyCompactItemize}
+
+
+\label{class_menu_button_doc-func-members}
+\Hypertarget{class_menu_button_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_button_ad7268345e210b69404e3db48c8991e63}\index{MenuButton@{MenuButton}!ToggleButtonClick@{ToggleButtonClick}}
+\index{ToggleButtonClick@{ToggleButtonClick}!MenuButton@{MenuButton}}
+\doxysubsubsection{\texorpdfstring{ToggleButtonClick()}{ToggleButtonClick()}}
+{\footnotesize\ttfamily \label{class_menu_button_ad7268345e210b69404e3db48c8991e63} 
+void Menu\+Button.\+Toggle\+Button\+Click (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cycles the assignment of this toggle button between AI and valid players. Ensures that:\+ 
+
+
+\begin{DoxyItemize}
+\item No duplicate human players are assigned
+\item \doxylink{class_player}{Player} indices remain sequential
+\item Ai can be selected multiple times. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Cluedo\+SWE/\+\+Assets/\+\+Game\+Assets/\+\+Scripts/\+\+Main\+Menu/\+Menu\+Button.\+cs\end{DoxyCompactItemize}

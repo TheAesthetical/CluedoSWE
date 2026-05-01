@@ -1,0 +1,115 @@
+\doxysection{Cluedo\+Board\+Controller Class Reference}
+\hypertarget{class_cluedo_board_controller}{}\label{class_cluedo_board_controller}\index{CluedoBoardController@{CluedoBoardController}}
+
+
+Main controller for a Cluedo (Clue) board game in Unity. Manages game state, player turns, movement, accusations, and suggestions.  
+
+
+Inheritance diagram for Cluedo\+Board\+Controller:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cluedo_board_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_cluedo_board_controller_1_1_cluedo_card}{Cluedo\+Card}}
+\item 
+class \doxymbox{\hyperlink{class_cluedo_board_controller_1_1_solution}{Solution}}
+\item 
+class \doxymbox{\hyperlink{class_cluedo_board_controller_1_1_player}{Player}}
+\item 
+class \doxymbox{\hyperlink{class_cluedo_board_controller_1_1_board_cell}{Board\+Cell}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_cluedo_board_controller_aa153d9ed5ee9840ade1b6f8330bc4c39}\label{class_cluedo_board_controller_aa153d9ed5ee9840ade1b6f8330bc4c39} 
+enum {\bfseries Suspect} \{ \newline
+{\bfseries Miss\+Scarlett}
+, {\bfseries Col\+Mustard}
+, {\bfseries Mrs\+White}
+, {\bfseries Rev\+Green}
+, \newline
+{\bfseries Mrs\+Peacock}
+, {\bfseries Prof\+Plum}
+ \}
+\item 
+\Hypertarget{class_cluedo_board_controller_ac885ee0bb317235b10b58fd0df28b25d}\label{class_cluedo_board_controller_ac885ee0bb317235b10b58fd0df28b25d} 
+enum {\bfseries Weapon} \{ \newline
+{\bfseries Candlestick}
+, {\bfseries Knife}
+, {\bfseries Lead\+Pipe}
+, {\bfseries Revolver}
+, \newline
+{\bfseries Rope}
+, {\bfseries Wrench}
+ \}
+\item 
+\Hypertarget{class_cluedo_board_controller_a710d46bc2710734dbc31ebfb356896e2}\label{class_cluedo_board_controller_a710d46bc2710734dbc31ebfb356896e2} 
+enum {\bfseries Room} \{ \newline
+{\bfseries Kitchen}
+, {\bfseries Ballroom}
+, {\bfseries Conservatory}
+, {\bfseries Billiard\+Room}
+, \newline
+{\bfseries Library}
+, {\bfseries Study}
+, {\bfseries Hall}
+, {\bfseries Lounge}
+, \newline
+{\bfseries Dining\+Room}
+, {\bfseries Hallway}
+ \}
+\item 
+\Hypertarget{class_cluedo_board_controller_a75a0f3706b3bdaa7fb595e21e099cc3b}\label{class_cluedo_board_controller_a75a0f3706b3bdaa7fb595e21e099cc3b} 
+enum {\bfseries Game\+Phase} \{ \newline
+{\bfseries Setup}
+, {\bfseries Rolling}
+, {\bfseries Moving}
+, {\bfseries Making\+Suggestion}
+, \newline
+{\bfseries Resolving\+Suggestion}
+, {\bfseries Making\+Accusation}
+, {\bfseries Game\+Over}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_cluedo_board_controller_ab3b7c6c68cf0a03b9a88758ff76a9c31}\label{class_cluedo_board_controller_ab3b7c6c68cf0a03b9a88758ff76a9c31} 
+void {\bfseries On\+Roll\+Dice} ()
+\begin{DoxyCompactList}\small\item\em Call this from a UI button for the human player. \end{DoxyCompactList}\item 
+\Hypertarget{class_cluedo_board_controller_a9472158eebd78fa808be2779e7aad56a}\label{class_cluedo_board_controller_a9472158eebd78fa808be2779e7aad56a} 
+void {\bfseries On\+Cell\+Selected} (\doxymbox{\hyperlink{class_cluedo_board_controller_1_1_board_cell}{Board\+Cell}} target\+Cell)
+\begin{DoxyCompactList}\small\item\em Move the current player to a neighbouring cell. Call from UI (e.\+g. clicking a highlighted cell). \end{DoxyCompactList}\item 
+\Hypertarget{class_cluedo_board_controller_adfa81714e0e9a5a8a1c34e8e995000bc}\label{class_cluedo_board_controller_adfa81714e0e9a5a8a1c34e8e995000bc} 
+void {\bfseries On\+Suggestion\+Submitted} (Suspect suspect, Weapon weapon)
+\begin{DoxyCompactList}\small\item\em Human player submits a suggestion. \end{DoxyCompactList}\item 
+\Hypertarget{class_cluedo_board_controller_aec8727bed79fe17a99c6794453814b42}\label{class_cluedo_board_controller_aec8727bed79fe17a99c6794453814b42} 
+void {\bfseries On\+Accusation\+Submitted} (Suspect suspect, Weapon weapon, Room room)
+\begin{DoxyCompactList}\small\item\em Human player makes a final accusation. \end{DoxyCompactList}\item 
+\Hypertarget{class_cluedo_board_controller_af27a66ea8ade9b452165906b0a42f1f2}\label{class_cluedo_board_controller_af27a66ea8ade9b452165906b0a42f1f2} 
+\doxymbox{\hyperlink{class_player}{Player}} {\bfseries Get\+Current\+Player} ()
+\item 
+\Hypertarget{class_cluedo_board_controller_a2233c5ba5dbf60adc04d4c338b48e823}\label{class_cluedo_board_controller_a2233c5ba5dbf60adc04d4c338b48e823} 
+List$<$ \doxymbox{\hyperlink{class_player}{Player}} $>$ {\bfseries Get\+All\+Players} ()
+\item 
+\Hypertarget{class_cluedo_board_controller_a05422dd383755409be72758bd7db65ff}\label{class_cluedo_board_controller_a05422dd383755409be72758bd7db65ff} 
+\doxymbox{\hyperlink{class_cluedo_board_controller_1_1_solution}{Solution}} {\bfseries Get\+Solution} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_cluedo_board_controller_a91b98948349dda118267fcc45e47c27d}\label{class_cluedo_board_controller_a91b98948349dda118267fcc45e47c27d} 
+Game\+Phase {\bfseries Current\+Phase}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main controller for a Cluedo (Clue) board game in Unity. Manages game state, player turns, movement, accusations, and suggestions. 
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Cluedo\+SWE/\+\+Assets/\+\+Game\+Assets/\+\+Scripts/\+\+Game/\+\+Board/\+Cluedo\+Board\+Controller.\+cs\end{DoxyCompactItemize}

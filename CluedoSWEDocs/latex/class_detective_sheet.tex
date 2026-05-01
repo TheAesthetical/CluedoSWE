@@ -1,0 +1,192 @@
+\doxysection{Detective\+Sheet Class Reference}
+\hypertarget{class_detective_sheet}{}\label{class_detective_sheet}\index{DetectiveSheet@{DetectiveSheet}}
+
+
+Represents the full detective Sheet for one player Hold one Decteive\+Crd\+Entry per card Each entry has fixed number of columns mathcing the UI and know ehich those columns have either human or Ai players in this game One Dective\+Sheet exist per player.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_detective_sheet_a9a0f1c1abc38678c91a916dda4bfd31a}\label{class_detective_sheet_a9a0f1c1abc38678c91a916dda4bfd31a} 
+{\bfseries Detective\+Sheet} (int active\+Player\+Count)
+\begin{DoxyCompactList}\small\item\em Creates a new sheet for a game with the given number of real players Columns count is defualt 6 to match the UI. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_detective_sheet_a8b8de34ab616a21386c9f02bd70d59a4}{Detective\+Sheet}} (int column\+Count, int active\+Player\+Count)
+\begin{DoxyCompactList}\small\item\em Creates a sheet with exact column count and active player count Can be used if the UI coloumns to could change size. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_detective_sheet_a6e42aed55b85ec9e15940341044cbcb4}{Initialise\+From\+Hand}} (IEnumerable$<$ \doxymbox{\hyperlink{class_card}{Card}} $>$ hand, int own\+Player\+Index)
+\begin{DoxyCompactList}\small\item\em Convenience:\+ at game start, auto-\/cross every card in this player\textquotesingle{}s own hand under their own column Call this once after the game deals cards. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{class_detective_card_entry}{Detective\+Card\+Entry}} $>$ \doxymbox{\hyperlink{class_detective_sheet_a2ecbb0d11df9d3d5a106b15c4cbcaba5}{Get\+Entries}} ()
+\begin{DoxyCompactList}\small\item\em Returns all card entries in the sheet. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_sheet_aa9fedda6a1db3a9f6104f7e305a9cd4c}\label{class_detective_sheet_aa9fedda6a1db3a9f6104f7e305a9cd4c} 
+int {\bfseries Get\+Column\+Count} ()
+\begin{DoxyCompactList}\small\item\em Number of UI columns per row. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_sheet_a03d71b546b94e2a04c2ddec9e6708abb}\label{class_detective_sheet_a03d71b546b94e2a04c2ddec9e6708abb} 
+int {\bfseries Get\+Active\+Player\+Count} ()
+\begin{DoxyCompactList}\small\item\em Number of real players this game. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_detective_card_entry}{Detective\+Card\+Entry}} \doxymbox{\hyperlink{class_detective_sheet_a33e606a0b27ac132d3492707f7116aaf}{Get\+Entry\+By\+Name}} (string card\+Name)
+\begin{DoxyCompactList}\small\item\em Look Up a card by entry name. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_sheet_a1891461c6250fbd35a368b13b2d63aeb}\label{class_detective_sheet_a1891461c6250fbd35a368b13b2d63aeb} 
+void {\bfseries Mark\+Auto} (string card\+Name, int player\+Index)
+\begin{DoxyCompactList}\small\item\em System marks a card as known to be in a specific players hand (or shown by them) Used for auto-\/cross. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_sheet_a4b402a9f2b8f42b0145c4e334011dbdd}\label{class_detective_sheet_a4b402a9f2b8f42b0145c4e334011dbdd} 
+void {\bfseries Mark\+Auto} (\doxymbox{\hyperlink{class_card}{Card}} card, int player\+Index)
+\begin{DoxyCompactList}\small\item\em overload:\+ takes a \doxylink{class_card}{Card} object instead of a name \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_detective_sheet_a18aa5ae15a4d106ddb149773b47d24f8}{Mark\+Not\+Held\+By}} (string card\+Name, int player\+Index)
+\begin{DoxyCompactList}\small\item\em Records that the player is know not hold a specific card Use when they fail to disprove a suggestion contaitn it. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_detective_sheet_ac2a351426a35f17d82d6948562947373}{Mark\+Not\+Held\+By}} (\doxymbox{\hyperlink{class_card}{Card}} card, int player\+Index)
+\begin{DoxyCompactList}\small\item\em overload taking a \doxylink{class_card}{Card} \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_sheet_a184000787375d9c2eef481e96c2d56fd}\label{class_detective_sheet_a184000787375d9c2eef481e96c2d56fd} 
+void {\bfseries Toggle\+Manual\+Cross\+Out} (\doxymbox{\hyperlink{class_detective_card_entry}{Detective\+Card\+Entry}} entry, int player\+Index)
+\begin{DoxyCompactList}\small\item\em Toggles the manual cross for a card in a players column. \end{DoxyCompactList}\item 
+\Hypertarget{class_detective_sheet_a065ab4733decde73926a651abd317aa1}\label{class_detective_sheet_a065ab4733decde73926a651abd317aa1} 
+void {\bfseries Mark\+Auto} (string card\+Name)
+\item 
+\Hypertarget{class_detective_sheet_a14d582b69ec51dd30b96eb46957e0104}\label{class_detective_sheet_a14d582b69ec51dd30b96eb46957e0104} 
+void {\bfseries Mark\+Auto} (\doxymbox{\hyperlink{class_card}{Card}} card)
+\item 
+\Hypertarget{class_detective_sheet_affb3497ea4585efbe3367c5d586e9062}\label{class_detective_sheet_affb3497ea4585efbe3367c5d586e9062} 
+void {\bfseries Toggle\+Manual\+Cross\+Out} (\doxymbox{\hyperlink{class_detective_card_entry}{Detective\+Card\+Entry}} entry)
+\item 
+bool \doxymbox{\hyperlink{class_detective_sheet_a5fd5f6cf99e7c837ab73cdb06de897b1}{Is\+Ruled\+Out\+Of\+Envelope}} (string card\+Name)
+\begin{DoxyCompactList}\small\item\em Returns true if the Ai can rule this card out of the murder envolpe That happens when card is croosed in ANy active player column So it should be sombody holds it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_detective_sheet_a3cc48da7c1f3dbdbc9665fd23003b03a}\label{class_detective_sheet_a3cc48da7c1f3dbdbc9665fd23003b03a} 
+const int {\bfseries DEFAULT\+\_\+\+COLUMN\+\_\+\+COUNT} = 6
+\begin{DoxyCompactList}\small\item\em Number of buttons per row in the detective sheet UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the full detective Sheet for one player Hold one Decteive\+Crd\+Entry per card Each entry has fixed number of columns mathcing the UI and know ehich those columns have either human or Ai players in this game One Dective\+Sheet exist per player. 
+
+\label{class_detective_sheet_doc-constructors}
+\Hypertarget{class_detective_sheet_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_detective_sheet_a8b8de34ab616a21386c9f02bd70d59a4}\index{DetectiveSheet@{DetectiveSheet}!DetectiveSheet@{DetectiveSheet}}
+\index{DetectiveSheet@{DetectiveSheet}!DetectiveSheet@{DetectiveSheet}}
+\doxysubsubsection{\texorpdfstring{DetectiveSheet()}{DetectiveSheet()}}
+{\footnotesize\ttfamily \label{class_detective_sheet_a8b8de34ab616a21386c9f02bd70d59a4} 
+Detective\+Sheet.\+Detective\+Sheet (\begin{DoxyParamCaption}\item[{int}]{column\+Count}{, }\item[{int}]{active\+Player\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Creates a sheet with exact column count and active player count Can be used if the UI coloumns to could change size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em column\+Count} & \\
+\hline
+{\em active\+Player\+Count} & \\
+\hline
+\end{DoxyParams}
+
+
+\label{class_detective_sheet_doc-func-members}
+\Hypertarget{class_detective_sheet_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_detective_sheet_a2ecbb0d11df9d3d5a106b15c4cbcaba5}\index{DetectiveSheet@{DetectiveSheet}!GetEntries@{GetEntries}}
+\index{GetEntries@{GetEntries}!DetectiveSheet@{DetectiveSheet}}
+\doxysubsubsection{\texorpdfstring{GetEntries()}{GetEntries()}}
+{\footnotesize\ttfamily \label{class_detective_sheet_a2ecbb0d11df9d3d5a106b15c4cbcaba5} 
+List$<$ \doxymbox{\hyperlink{class_detective_card_entry}{Detective\+Card\+Entry}} $>$ Detective\+Sheet.\+Get\+Entries (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns all card entries in the sheet. 
+
+\begin{DoxyReturn}{Returns}
+List of detective card entries
+\end{DoxyReturn}
+\Hypertarget{class_detective_sheet_a33e606a0b27ac132d3492707f7116aaf}\index{DetectiveSheet@{DetectiveSheet}!GetEntryByName@{GetEntryByName}}
+\index{GetEntryByName@{GetEntryByName}!DetectiveSheet@{DetectiveSheet}}
+\doxysubsubsection{\texorpdfstring{GetEntryByName()}{GetEntryByName()}}
+{\footnotesize\ttfamily \label{class_detective_sheet_a33e606a0b27ac132d3492707f7116aaf} 
+\doxymbox{\hyperlink{class_detective_card_entry}{Detective\+Card\+Entry}} Detective\+Sheet.\+Get\+Entry\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{card\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Look Up a card by entry name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em card\+Name} & \doxylink{class_card}{Card} name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return null if not found
+\end{DoxyReturn}
+\Hypertarget{class_detective_sheet_a6e42aed55b85ec9e15940341044cbcb4}\index{DetectiveSheet@{DetectiveSheet}!InitialiseFromHand@{InitialiseFromHand}}
+\index{InitialiseFromHand@{InitialiseFromHand}!DetectiveSheet@{DetectiveSheet}}
+\doxysubsubsection{\texorpdfstring{InitialiseFromHand()}{InitialiseFromHand()}}
+{\footnotesize\ttfamily \label{class_detective_sheet_a6e42aed55b85ec9e15940341044cbcb4} 
+void Detective\+Sheet.\+Initialise\+From\+Hand (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \doxymbox{\hyperlink{class_card}{Card}} $>$}]{hand}{, }\item[{int}]{own\+Player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Convenience:\+ at game start, auto-\/cross every card in this player\textquotesingle{}s own hand under their own column Call this once after the game deals cards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & The players dealt cards\\
+\hline
+{\em own\+Player\+Index} & This players column index in the sheet\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_detective_sheet_a5fd5f6cf99e7c837ab73cdb06de897b1}\index{DetectiveSheet@{DetectiveSheet}!IsRuledOutOfEnvelope@{IsRuledOutOfEnvelope}}
+\index{IsRuledOutOfEnvelope@{IsRuledOutOfEnvelope}!DetectiveSheet@{DetectiveSheet}}
+\doxysubsubsection{\texorpdfstring{IsRuledOutOfEnvelope()}{IsRuledOutOfEnvelope()}}
+{\footnotesize\ttfamily \label{class_detective_sheet_a5fd5f6cf99e7c837ab73cdb06de897b1} 
+bool Detective\+Sheet.\+Is\+Ruled\+Out\+Of\+Envelope (\begin{DoxyParamCaption}\item[{string}]{card\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Returns true if the Ai can rule this card out of the murder envolpe That happens when card is croosed in ANy active player column So it should be sombody holds it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em card\+Name} & name of the card\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the Ai can rule this card out of the murder envolpe
+\end{DoxyReturn}
+\Hypertarget{class_detective_sheet_ac2a351426a35f17d82d6948562947373}\index{DetectiveSheet@{DetectiveSheet}!MarkNotHeldBy@{MarkNotHeldBy}}
+\index{MarkNotHeldBy@{MarkNotHeldBy}!DetectiveSheet@{DetectiveSheet}}
+\doxysubsubsection{\texorpdfstring{MarkNotHeldBy()}{MarkNotHeldBy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_detective_sheet_ac2a351426a35f17d82d6948562947373} 
+void Detective\+Sheet.\+Mark\+Not\+Held\+By (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_card}{Card}}}]{card}{, }\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+overload taking a \doxylink{class_card}{Card} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em card} & \\
+\hline
+{\em player\+Index} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_detective_sheet_a18aa5ae15a4d106ddb149773b47d24f8}\index{DetectiveSheet@{DetectiveSheet}!MarkNotHeldBy@{MarkNotHeldBy}}
+\index{MarkNotHeldBy@{MarkNotHeldBy}!DetectiveSheet@{DetectiveSheet}}
+\doxysubsubsection{\texorpdfstring{MarkNotHeldBy()}{MarkNotHeldBy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_detective_sheet_a18aa5ae15a4d106ddb149773b47d24f8} 
+void Detective\+Sheet.\+Mark\+Not\+Held\+By (\begin{DoxyParamCaption}\item[{string}]{card\+Name}{, }\item[{int}]{player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Records that the player is know not hold a specific card Use when they fail to disprove a suggestion contaitn it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em card\+Name} & \\
+\hline
+{\em player\+Index} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Cluedo\+SWE/\+\+Assets/\+\+Game\+Assets/\+\+Scripts/\+\+Game/\+\+Detective\+Card\+Entry/\+Detective\+Sheet.\+cs\end{DoxyCompactItemize}

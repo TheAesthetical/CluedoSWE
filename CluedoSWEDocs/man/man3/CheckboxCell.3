@@ -1,0 +1,43 @@
+.TH "CheckboxCell" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CheckboxCell \- Attach to every cell Button inside the detective sheet grid\&. Click once → shows X Click again → clears X State is saved to PlayerPrefs so it persists across sessions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBResetCell\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBxCharacter\fP = 'X'"
+.br
+.ti -1c
+.RI "Color \fBxColor\fP = Color\&.red"
+.br
+.ti -1c
+.RI "float \fBxFontSize\fP = 20f"
+.br
+.ti -1c
+.RI "TextMeshProUGUI \fBxLabel\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Attach to every cell Button inside the detective sheet grid\&. Click once → shows X Click again → clears X State is saved to PlayerPrefs so it persists across sessions\&. 
+
+SETUP: Each cell Button GameObject must have a UNIQUE name, e\&.g: "Cell_Scarlett_Knife", "Cell_Plum_Revolver", etc\&. Each cell needs a child TextMeshProUGUI for the X display\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

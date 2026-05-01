@@ -1,0 +1,558 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_player" kind="class" language="C#" prot="public" abstract="yes">
+    <compoundname>Player</compoundname>
+    <derivedcompoundref refid="class_a_i_player" prot="public" virt="non-virtual">AIPlayer</derivedcompoundref>
+    <derivedcompoundref refid="class_human_player" prot="public" virt="non-virtual">HumanPlayer</derivedcompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_player_1aaaf699e1ca4510b0a266441c4ea1961a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Player.ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <qualifiedname>Player.ID</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="10" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a283f6a50e637f0f96f29096632db4dce" prot="private" static="no" mutable="no">
+        <type><ref refid="class_character_card" kindref="compound">CharacterCard</ref></type>
+        <definition>CharacterCard Player.character</definition>
+        <argsstring></argsstring>
+        <name>character</name>
+        <qualifiedname>Player.character</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="11" column="27" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1afdb8ba2752c6eecb3e14c77be0421025" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Player.position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <qualifiedname>Player.position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="12" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a05a98e2f68bf3dfce68da9ea30e5ca27" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_card" kindref="compound">Card</ref> &gt;</type>
+        <definition>List&lt;Card&gt; Player.hand</definition>
+        <argsstring></argsstring>
+        <name>hand</name>
+        <qualifiedname>Player.hand</qualifiedname>
+        <initializer>= new List&lt;<ref refid="class_card" kindref="compound">Card</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="13" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1a9752a18f5843a2d68a2a13fd9f4eabcf" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Player.eliminated</definition>
+        <argsstring></argsstring>
+        <name>eliminated</name>
+        <qualifiedname>Player.eliminated</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="14" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_player_1a6ad06ede8bab356997b3405692104042" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Player.Player</definition>
+        <argsstring>(int ID, CharacterCard character)</argsstring>
+        <name>Player</name>
+        <qualifiedname>Player.Player</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type><ref refid="class_character_card" kindref="compound">CharacterCard</ref></type>
+          <declname>character</declname>
+        </param>
+        <briefdescription>
+<para>Initialises a new instance of the <ref refid="class_card" kindref="compound">Card</ref> class. Set to protected as this should not be instantiated directly! </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player&apos;s ID.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>character</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player&apos;s <computeroutput><ref refid="class_character_card" kindref="compound">CharacterCard</ref></computeroutput>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="21" column="11" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="21" bodyend="27"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_player_1a5813d403d0c9c7df4debb1b22f5d47df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_suggestion" kindref="compound">Suggestion</ref></type>
+        <definition>Suggestion Player.MakeSuggestion</definition>
+        <argsstring>(CharacterCard character, RoomCard room, WeaponCard weapon)</argsstring>
+        <name>MakeSuggestion</name>
+        <qualifiedname>Player.MakeSuggestion</qualifiedname>
+        <param>
+          <type><ref refid="class_character_card" kindref="compound">CharacterCard</ref></type>
+          <declname>character</declname>
+        </param>
+        <param>
+          <type><ref refid="class_room_card" kindref="compound">RoomCard</ref></type>
+          <declname>room</declname>
+        </param>
+        <param>
+          <type><ref refid="class_weapon_card" kindref="compound">WeaponCard</ref></type>
+          <declname>weapon</declname>
+        </param>
+        <briefdescription>
+<para>Makes a suggestion. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="32" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a7df9f0b55d07a642922b7ba56960572e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.MakeAccusation</definition>
+        <argsstring>()</argsstring>
+        <name>MakeAccusation</name>
+        <qualifiedname>Player.MakeAccusation</qualifiedname>
+        <briefdescription>
+<para>Makes an accusation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="40" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a0032ec613898c49a13b335b23951cc85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.ShowCard</definition>
+        <argsstring>()</argsstring>
+        <name>ShowCard</name>
+        <qualifiedname>Player.ShowCard</qualifiedname>
+        <briefdescription>
+<para>Shows the card from the suggestion. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="48" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1acf7ce683f185917cd37b66d8253026e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player.CanDisprove</definition>
+        <argsstring>(Suggestion suggestion)</argsstring>
+        <name>CanDisprove</name>
+        <qualifiedname>Player.CanDisprove</qualifiedname>
+        <param>
+          <type><ref refid="class_suggestion" kindref="compound">Suggestion</ref></type>
+          <declname>suggestion</declname>
+        </param>
+        <briefdescription>
+<para>Returns whether the <ref refid="class_player" kindref="compound">Player</ref> can disprove the accusation against them. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>suggestion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The suggestion being made.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a bool representing whether the player matches the accusation.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="58" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="58" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ae00202af10917a23aa02f5d9f3b67039" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.Eliminate</definition>
+        <argsstring>()</argsstring>
+        <name>Eliminate</name>
+        <qualifiedname>Player.Eliminate</qualifiedname>
+        <briefdescription>
+<para>Eliminates the <ref refid="class_player" kindref="compound">Player</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="73" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1aeb6268e2f9d53f86e57025229748585b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Player.IsEliminated</definition>
+        <argsstring>()</argsstring>
+        <name>IsEliminated</name>
+        <qualifiedname>Player.IsEliminated</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="78" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1af1b4661f61f8c4a5df96b6b755a43583" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_card" kindref="compound">Card</ref></type>
+        <definition>Card Player.GetMatchingCard</definition>
+        <argsstring>(Suggestion suggestion)</argsstring>
+        <name>GetMatchingCard</name>
+        <qualifiedname>Player.GetMatchingCard</qualifiedname>
+        <param>
+          <type><ref refid="class_suggestion" kindref="compound">Suggestion</ref></type>
+          <declname>suggestion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>suggestion</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="89" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="89" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ab5ad1a75d0c48626181eea4038f64d2a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_character_card" kindref="compound">CharacterCard</ref></type>
+        <definition>CharacterCard Player.GetCharacter</definition>
+        <argsstring>()</argsstring>
+        <name>GetCharacter</name>
+        <qualifiedname>Player.GetCharacter</qualifiedname>
+        <briefdescription>
+<para>A method to return the Character card of the current player. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A <ref refid="class_character_card" kindref="compound">CharacterCard</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="112" column="26" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a04ea784decdb70930cb753b0826ee0b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.AddCard</definition>
+        <argsstring>(Card card)</argsstring>
+        <name>AddCard</name>
+        <qualifiedname>Player.AddCard</qualifiedname>
+        <param>
+          <type><ref refid="class_card" kindref="compound">Card</ref></type>
+          <declname>card</declname>
+        </param>
+        <briefdescription>
+<para>A method to add a card to the player&apos;s hand. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>card</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="121" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1abc5118b6e9ec271505421dce9c7935e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="class_card" kindref="compound">Card</ref> &gt;</type>
+        <definition>List&lt; Card &gt; Player.GetHand</definition>
+        <argsstring>()</argsstring>
+        <name>GetHand</name>
+        <qualifiedname>Player.GetHand</qualifiedname>
+        <briefdescription>
+<para>Returns the hand. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="129" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1ab575217647161aeec1c69159b2958a2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.Initialise</definition>
+        <argsstring>(int playerIndex, int totalActivePlayers)</argsstring>
+        <name>Initialise</name>
+        <qualifiedname>Player.Initialise</qualifiedname>
+        <reimplementedby refid="class_a_i_player_1a8301003ecbed9b81edf0e4f4ce7832f8">Initialise</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>totalActivePlayers</declname>
+        </param>
+        <briefdescription>
+<para>Sets up the player at game start Call once berfore cards are delt. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_player" kindref="compound">Player</ref> index</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>totalActivePlayers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How many active players</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="140" column="25" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="140" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a53e0fb729f4e52aa101ec1935c95d76a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.OnHandDealt</definition>
+        <argsstring>(List&lt; Card &gt; cards)</argsstring>
+        <name>OnHandDealt</name>
+        <qualifiedname>Player.OnHandDealt</qualifiedname>
+        <reimplementedby refid="class_a_i_player_1a91f5c834a7a315221e51b6394490a20f">OnHandDealt</reimplementedby>
+        <param>
+          <type>List&lt; <ref refid="class_card" kindref="compound">Card</ref> &gt;</type>
+          <declname>cards</declname>
+        </param>
+        <briefdescription>
+<para>Call once cards are dealt This auto crosses out all cards in player own hand Override to react to your hand. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dealtCards</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cards dealt</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="148" column="25" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a74e001f9d75f2f273845ea2d5d54c123" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.OnSuggestionMade</definition>
+        <argsstring>(int suggesterIndex, Suggestion suggestion, int disproverIndex, Card shownCard)</argsstring>
+        <name>OnSuggestionMade</name>
+        <qualifiedname>Player.OnSuggestionMade</qualifiedname>
+        <reimplementedby refid="class_a_i_player_1a5c915dee0ae832cd059cef1ae816e80e">OnSuggestionMade</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>suggesterIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="class_suggestion" kindref="compound">Suggestion</ref></type>
+          <declname>suggestion</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>disproverIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="class_card" kindref="compound">Card</ref></type>
+          <declname>shownCard</declname>
+        </param>
+        <briefdescription>
+<para>Call after every suggestion by anyone Helps the deduction disproverIndex == -1 means nobody could disprove shownCard: only not null if Ai was suggesster/disprover Null being passed means well record the disproval as &quot;unknwn which card&quot; Override to track deduction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>suggestionIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of player made the suggestion</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>suggestion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_suggestion" kindref="compound">Suggestion</ref> made</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>disproverIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the disporver or -1 if nobody disproved</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shownCard</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card shown (if Known) or null</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="162" column="25" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="162" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a64c26e12a5efb5b123fd158b8432f3b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Player.TakeTurn</definition>
+        <argsstring>(GameController gameController, Dice dice)</argsstring>
+        <name>TakeTurn</name>
+        <qualifiedname>Player.TakeTurn</qualifiedname>
+        <reimplementedby refid="class_a_i_player_1a526f1e6f86da1cc7f86784cc5dc2a1b1">TakeTurn</reimplementedby>
+        <param>
+          <type><ref refid="class_game_controller" kindref="compound">GameController</ref></type>
+          <declname>gameController</declname>
+        </param>
+        <param>
+          <type><ref refid="class_dice" kindref="compound">Dice</ref></type>
+          <declname>dice</declname>
+        </param>
+        <briefdescription>
+<para>Call when its this players turn Override to drive the turn. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gameController</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dice</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="171" column="25" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="171" bodyend="171"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class <computeroutput> <ref refid="class_player" kindref="compound">Player</ref> </computeroutput> is an abstract class that represents a generic card. It provides the base for each player type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>AIPlayer</label>
+        <link refid="class_a_i_player"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>HumanPlayer</label>
+        <link refid="class_human_player"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Player</label>
+        <link refid="class_player"/>
+      </node>
+    </inheritancegraph>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" line="8" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/Player.cs" bodystart="9" bodyend="173"/>
+    <listofallmembers>
+      <member refid="class_player_1a04ea784decdb70930cb753b0826ee0b3" prot="public" virt="non-virtual"><scope>Player</scope><name>AddCard</name></member>
+      <member refid="class_player_1acf7ce683f185917cd37b66d8253026e5" prot="public" virt="non-virtual"><scope>Player</scope><name>CanDisprove</name></member>
+      <member refid="class_player_1a283f6a50e637f0f96f29096632db4dce" prot="private" virt="non-virtual"><scope>Player</scope><name>character</name></member>
+      <member refid="class_player_1ae00202af10917a23aa02f5d9f3b67039" prot="public" virt="non-virtual"><scope>Player</scope><name>Eliminate</name></member>
+      <member refid="class_player_1a9752a18f5843a2d68a2a13fd9f4eabcf" prot="private" virt="non-virtual"><scope>Player</scope><name>eliminated</name></member>
+      <member refid="class_player_1ab5ad1a75d0c48626181eea4038f64d2a" prot="public" virt="non-virtual"><scope>Player</scope><name>GetCharacter</name></member>
+      <member refid="class_player_1abc5118b6e9ec271505421dce9c7935e3" prot="public" virt="non-virtual"><scope>Player</scope><name>GetHand</name></member>
+      <member refid="class_player_1af1b4661f61f8c4a5df96b6b755a43583" prot="public" virt="non-virtual"><scope>Player</scope><name>GetMatchingCard</name></member>
+      <member refid="class_player_1a05a98e2f68bf3dfce68da9ea30e5ca27" prot="private" virt="non-virtual"><scope>Player</scope><name>hand</name></member>
+      <member refid="class_player_1aaaf699e1ca4510b0a266441c4ea1961a" prot="private" virt="non-virtual"><scope>Player</scope><name>ID</name></member>
+      <member refid="class_player_1ab575217647161aeec1c69159b2958a2b" prot="public" virt="virtual"><scope>Player</scope><name>Initialise</name></member>
+      <member refid="class_player_1aeb6268e2f9d53f86e57025229748585b" prot="public" virt="non-virtual"><scope>Player</scope><name>IsEliminated</name></member>
+      <member refid="class_player_1a7df9f0b55d07a642922b7ba56960572e" prot="public" virt="non-virtual"><scope>Player</scope><name>MakeAccusation</name></member>
+      <member refid="class_player_1a5813d403d0c9c7df4debb1b22f5d47df" prot="public" virt="non-virtual"><scope>Player</scope><name>MakeSuggestion</name></member>
+      <member refid="class_player_1a53e0fb729f4e52aa101ec1935c95d76a" prot="public" virt="virtual"><scope>Player</scope><name>OnHandDealt</name></member>
+      <member refid="class_player_1a74e001f9d75f2f273845ea2d5d54c123" prot="public" virt="virtual"><scope>Player</scope><name>OnSuggestionMade</name></member>
+      <member refid="class_player_1a6ad06ede8bab356997b3405692104042" prot="protected" virt="non-virtual"><scope>Player</scope><name>Player</name></member>
+      <member refid="class_player_1afdb8ba2752c6eecb3e14c77be0421025" prot="private" virt="non-virtual"><scope>Player</scope><name>position</name></member>
+      <member refid="class_player_1a0032ec613898c49a13b335b23951cc85" prot="public" virt="non-virtual"><scope>Player</scope><name>ShowCard</name></member>
+      <member refid="class_player_1a64c26e12a5efb5b123fd158b8432f3b2" prot="public" virt="virtual"><scope>Player</scope><name>TakeTurn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

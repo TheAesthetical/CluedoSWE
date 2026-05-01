@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_dice" kind="class" language="C#" prot="public">
+    <compoundname>Dice</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_dice_1a7cf126ff6fadde1647253181bad02a2c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Dice.sides</definition>
+        <argsstring></argsstring>
+        <name>sides</name>
+        <qualifiedname>Dice.sides</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" line="9" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dice_1aff0d5d3ebc301ee43011237bff646a95" prot="private" static="no" mutable="no">
+        <type>Random</type>
+        <definition>Random Dice.random</definition>
+        <argsstring></argsstring>
+        <name>random</name>
+        <qualifiedname>Dice.random</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" line="11" column="20" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_dice_1a74b427d6208be7d82b8b80cf22a977f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dice.Dice</definition>
+        <argsstring>(int sidesInput=6)</argsstring>
+        <name>Dice</name>
+        <qualifiedname>Dice.Dice</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>sidesInput</declname>
+          <defval>6</defval>
+        </param>
+        <briefdescription>
+<para>Creates a new instance of the <computeroutput><ref refid="class_dice" kindref="compound">Dice</ref></computeroutput> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sidesInput</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of sides the dice should have.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" line="18" column="12" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" bodystart="18" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dice_1a68e3451284a714cfcb18b58aae96095c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Dice.Roll</definition>
+        <argsstring>()</argsstring>
+        <name>Roll</name>
+        <qualifiedname>Dice.Roll</qualifiedname>
+        <briefdescription>
+<para>Simulates a roll of the dice. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns a random integer from 1 up to the number of sides. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" line="28" column="16" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" bodystart="28" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class <computeroutput><ref refid="class_dice" kindref="compound">Dice</ref></computeroutput> represents a dice used in the game. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" line="7" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/Dice.cs" bodystart="8" bodyend="33"/>
+    <listofallmembers>
+      <member refid="class_dice_1a74b427d6208be7d82b8b80cf22a977f3" prot="public" virt="non-virtual"><scope>Dice</scope><name>Dice</name></member>
+      <member refid="class_dice_1aff0d5d3ebc301ee43011237bff646a95" prot="private" virt="non-virtual"><scope>Dice</scope><name>random</name></member>
+      <member refid="class_dice_1a68e3451284a714cfcb18b58aae96095c" prot="public" virt="non-virtual"><scope>Dice</scope><name>Roll</name></member>
+      <member refid="class_dice_1a7cf126ff6fadde1647253181bad02a2c" prot="private" virt="non-virtual"><scope>Dice</scope><name>sides</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

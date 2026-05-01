@@ -1,0 +1,48 @@
+.TH "DetectiveRowUI" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DetectiveRowUI \- Handles a single row in the deticive sheet UI Each Row represents one card (suspect, weapon or room) per player column Clicking button toggles the manual cross out\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetup\fP (\fBDetectiveSheet\fP sheet, string cardName)"
+.br
+.RI "Initialise this row for a specific card in a specific sheet\&. "
+.ti -1c
+.RI "void \fBRefresh\fP ()"
+.br
+.ti -1c
+.RI "string \fBGetCardName\fP ()"
+.br
+.RI "The card name this row represents\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Handles a single row in the deticive sheet UI Each Row represents one card (suspect, weapon or room) per player column Clicking button toggles the manual cross out\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void DetectiveRowUI\&.Setup (\fBDetectiveSheet\fP sheet, string cardName)"
+
+.PP
+Initialise this row for a specific card in a specific sheet\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsheet\fP The \fBDetectiveSheet\fP this row reads from / writes to
+.br
+\fIcardName\fP Name of the card this row represents
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

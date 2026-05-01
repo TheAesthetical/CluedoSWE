@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_auto_cross_test" kind="class" language="C#" prot="public">
+    <compoundname>AutoCrossTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_auto_cross_test_1a2389b997e19b98b3f8623865e1cc52db" prot="private" static="no" mutable="no">
+        <type><ref refid="class_detective_sheet_builder" kindref="compound">DetectiveSheetBuilder</ref></type>
+        <definition>DetectiveSheetBuilder AutoCrossTest.builder</definition>
+        <argsstring></argsstring>
+        <name>builder</name>
+        <qualifiedname>AutoCrossTest.builder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/AutoCrossTest.cs" line="15" column="35" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/AutoCrossTest.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_auto_cross_test_1a989a32dc22c5b28327567748c689e57f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AutoCrossTest.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>AutoCrossTest.Start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/AutoCrossTest.cs" line="17" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/AutoCrossTest.cs" bodystart="17" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_auto_cross_test_1aa8fabe22eb29af8c791f9b9dece2d204" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AutoCrossTest.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>AutoCrossTest.Update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/AutoCrossTest.cs" line="29" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/AutoCrossTest.cs" bodystart="29" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Temporary test script to prove auto cross works end to end Delete this script once the AI is wired up properly Keys: 1 - Simulate &quot;I was dealt these cards&quot; (auto crosses 3 cards in column 0) 2 - Simulate &quot;Player 1 showed me the Dagger&quot; (auto-crosses Dagger in column 1) 3 - Simulate &quot;Player 2 showed me the Library&quot; (auto-crosses Library in column 2) 4 - Simulate manual cross (toggles Wrench in column 0 manually) R - Reset (rebuild a fresh sheet). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AutoCrossTest</label>
+        <link refid="class_auto_cross_test"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AutoCrossTest</label>
+        <link refid="class_auto_cross_test"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/AutoCrossTest.cs" line="13" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry/AutoCrossTest.cs" bodystart="14" bodyend="86"/>
+    <listofallmembers>
+      <member refid="class_auto_cross_test_1a2389b997e19b98b3f8623865e1cc52db" prot="private" virt="non-virtual"><scope>AutoCrossTest</scope><name>builder</name></member>
+      <member refid="class_auto_cross_test_1a989a32dc22c5b28327567748c689e57f" prot="private" virt="non-virtual"><scope>AutoCrossTest</scope><name>Start</name></member>
+      <member refid="class_auto_cross_test_1aa8fabe22eb29af8c791f9b9dece2d204" prot="private" virt="non-virtual"><scope>AutoCrossTest</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

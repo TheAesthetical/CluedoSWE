@@ -1,0 +1,205 @@
+\doxysection{AIPlayer Class Reference}
+\hypertarget{class_a_i_player}{}\label{class_a_i_player}\index{AIPlayer@{AIPlayer}}
+
+
+AI-\/controlled player.  
+
+
+Inheritance diagram for AIPlayer:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_i_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_a_i_player_a66149b7c82c0649bf7f4a5d665b1195b}\label{class_a_i_player_a66149b7c82c0649bf7f4a5d665b1195b} 
+{\bfseries AIPlayer} (int ID, \doxymbox{\hyperlink{class_character_card}{Character\+Card}} character)
+\item 
+override void \doxymbox{\hyperlink{class_a_i_player_a8301003ecbed9b81edf0e4f4ce7832f8}{Initialise}} (int player\+Index, int total\+Active\+Players)
+\begin{DoxyCompactList}\small\item\em Set up the Ai. Call once before dealing cards. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_a_i_player_ad4eb8678dba996c0904ba363cfd32d52}{Set\+Strategy}} (Strategy\+Type strategy)
+\begin{DoxyCompactList}\small\item\em Choose between safe and deceptive (bluff) play styles. \end{DoxyCompactList}\item 
+override void \doxymbox{\hyperlink{class_a_i_player_a91f5c834a7a315221e51b6394490a20f}{On\+Hand\+Dealt}} (List$<$ \doxymbox{\hyperlink{class_card}{Card}} $>$ dealt\+Cards)
+\begin{DoxyCompactList}\small\item\em Call once cards are dealt This auto crosses out all cards in player own hand. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_a_i_player_ab311c5f47ed22d475af1f795f7e48c34}{On\+Card\+Shown}} (\doxymbox{\hyperlink{class_card}{Card}} card, int by\+Player\+Index)
+\begin{DoxyCompactList}\small\item\em Call when another player shows this AI a card Ai trting to make suggestion that they could disprove. \end{DoxyCompactList}\item 
+override void \doxymbox{\hyperlink{class_a_i_player_a5c915dee0ae832cd059cef1ae816e80e}{On\+Suggestion\+Made}} (int suggestion\+Index, \doxymbox{\hyperlink{class_suggestion}{Suggestion}} suggestion, int disprover\+Index, \doxymbox{\hyperlink{class_card}{Card}} shown\+Card)
+\begin{DoxyCompactList}\small\item\em Call after every suggestion by anyone Helps the deduction disprover\+Index == -\/1 means nobody could disprove shown\+Card:\+ only not null if Ai was suggesster/\+disprover Null being passed means well record the disproval as "{}unknwn which card"{}. \end{DoxyCompactList}\item 
+override void \doxymbox{\hyperlink{class_a_i_player_a526f1e6f86da1cc7f86784cc5dc2a1b1}{Take\+Turn}} (\doxymbox{\hyperlink{class_game_controller}{Game\+Controller}} game\+Controller, \doxymbox{\hyperlink{class_dice}{Dice}} dice)
+\begin{DoxyCompactList}\small\item\em Call when its this players turn Override to drive the turn. \end{DoxyCompactList}\item 
+\Hypertarget{class_a_i_player_a3e6c907b689067b89edf9ba7a2808437}\label{class_a_i_player_a3e6c907b689067b89edf9ba7a2808437} 
+\doxymbox{\hyperlink{class_detective_sheet}{Detective\+Sheet}} {\bfseries Get\+Sheet\+For\+Debug} ()
+\item 
+\Hypertarget{class_a_i_player_a98acd324726d55dfba214ed188a47bda}\label{class_a_i_player_a98acd324726d55dfba214ed188a47bda} 
+double {\bfseries Get\+Suspect\+Confidence} ()
+\item 
+\Hypertarget{class_a_i_player_a79442a01a51835a37497b19e0c1fa3d2}\label{class_a_i_player_a79442a01a51835a37497b19e0c1fa3d2} 
+double {\bfseries Get\+Weapon\+Confidence} ()
+\item 
+\Hypertarget{class_a_i_player_a28aca58500d849b12e3e90baed5c7f8c}\label{class_a_i_player_a28aca58500d849b12e3e90baed5c7f8c} 
+double {\bfseries Get\+Room\+Confidence} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_player}{Player}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_suggestion}{Suggestion}} {\bfseries Make\+Suggestion} (\doxymbox{\hyperlink{class_character_card}{Character\+Card}} character, \doxymbox{\hyperlink{class_room_card}{Room\+Card}} room, \doxymbox{\hyperlink{class_weapon_card}{Weapon\+Card}} weapon)
+\begin{DoxyCompactList}\small\item\em Makes a suggestion. \end{DoxyCompactList}\item 
+void {\bfseries Make\+Accusation} ()
+\begin{DoxyCompactList}\small\item\em Makes an accusation. \end{DoxyCompactList}\item 
+void {\bfseries Show\+Card} ()
+\begin{DoxyCompactList}\small\item\em Shows the card from the suggestion. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_player_acf7ce683f185917cd37b66d8253026e5}{Can\+Disprove}} (\doxymbox{\hyperlink{class_suggestion}{Suggestion}} suggestion)
+\begin{DoxyCompactList}\small\item\em Returns whether the \doxylink{class_player}{Player} can disprove the accusation against them. \end{DoxyCompactList}\item 
+void {\bfseries Eliminate} ()
+\begin{DoxyCompactList}\small\item\em Eliminates the \doxylink{class_player}{Player}. \end{DoxyCompactList}\item 
+bool {\bfseries Is\+Eliminated} ()
+\item 
+\doxymbox{\hyperlink{class_card}{Card}} \doxymbox{\hyperlink{class_player_af1b4661f61f8c4a5df96b6b755a43583}{Get\+Matching\+Card}} (\doxymbox{\hyperlink{class_suggestion}{Suggestion}} suggestion)
+\item 
+\doxymbox{\hyperlink{class_character_card}{Character\+Card}} \doxymbox{\hyperlink{class_player_ab5ad1a75d0c48626181eea4038f64d2a}{Get\+Character}} ()
+\begin{DoxyCompactList}\small\item\em A method to return the Character card of the current player. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_player_a04ea784decdb70930cb753b0826ee0b3}{Add\+Card}} (\doxymbox{\hyperlink{class_card}{Card}} card)
+\begin{DoxyCompactList}\small\item\em A method to add a card to the player\textquotesingle{}s hand. \end{DoxyCompactList}\item 
+List$<$ \doxymbox{\hyperlink{class_card}{Card}} $>$ {\bfseries Get\+Hand} ()
+\begin{DoxyCompactList}\small\item\em Returns the hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \doxymbox{\hyperlink{class_player}{Player}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_player_a6ad06ede8bab356997b3405692104042}{Player}} (int ID, \doxymbox{\hyperlink{class_character_card}{Character\+Card}} character)
+\begin{DoxyCompactList}\small\item\em Initialises a new instance of the \doxylink{class_card}{Card} class. Set to protected as this should not be instantiated directly! \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AI-\/controlled player. 
+
+As player class not fleshed out yet, some fileds Ill do here, until it done 
+
+\label{class_a_i_player_doc-func-members}
+\Hypertarget{class_a_i_player_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_a_i_player_a8301003ecbed9b81edf0e4f4ce7832f8}\index{AIPlayer@{AIPlayer}!Initialise@{Initialise}}
+\index{Initialise@{Initialise}!AIPlayer@{AIPlayer}}
+\doxysubsubsection{\texorpdfstring{Initialise()}{Initialise()}}
+{\footnotesize\ttfamily \label{class_a_i_player_a8301003ecbed9b81edf0e4f4ce7832f8} 
+override void AIPlayer.\+Initialise (\begin{DoxyParamCaption}\item[{int}]{player\+Index}{, }\item[{int}]{total\+Active\+Players}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set up the Ai. Call once before dealing cards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Index} & \doxylink{class_player}{Player} postion\\
+\hline
+{\em total\+Active\+Players} & How many active players\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \doxymbox{\hyperlink{class_player_ab575217647161aeec1c69159b2958a2b}{Player}}.
+
+\Hypertarget{class_a_i_player_ab311c5f47ed22d475af1f795f7e48c34}\index{AIPlayer@{AIPlayer}!OnCardShown@{OnCardShown}}
+\index{OnCardShown@{OnCardShown}!AIPlayer@{AIPlayer}}
+\doxysubsubsection{\texorpdfstring{OnCardShown()}{OnCardShown()}}
+{\footnotesize\ttfamily \label{class_a_i_player_ab311c5f47ed22d475af1f795f7e48c34} 
+void AIPlayer.\+On\+Card\+Shown (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_card}{Card}}}]{card}{, }\item[{int}]{by\+Player\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Call when another player shows this AI a card Ai trting to make suggestion that they could disprove. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em card} & \doxylink{class_card}{Card} shown\\
+\hline
+{\em by\+Player\+Index} & \doxylink{class_player}{Player} postion\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_i_player_a91f5c834a7a315221e51b6394490a20f}\index{AIPlayer@{AIPlayer}!OnHandDealt@{OnHandDealt}}
+\index{OnHandDealt@{OnHandDealt}!AIPlayer@{AIPlayer}}
+\doxysubsubsection{\texorpdfstring{OnHandDealt()}{OnHandDealt()}}
+{\footnotesize\ttfamily \label{class_a_i_player_a91f5c834a7a315221e51b6394490a20f} 
+override void AIPlayer.\+On\+Hand\+Dealt (\begin{DoxyParamCaption}\item[{List$<$ \doxymbox{\hyperlink{class_card}{Card}} $>$}]{dealt\+Cards}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Call once cards are dealt This auto crosses out all cards in player own hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dealt\+Cards} & Cards dealt\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \doxymbox{\hyperlink{class_player_a53e0fb729f4e52aa101ec1935c95d76a}{Player}}.
+
+\Hypertarget{class_a_i_player_a5c915dee0ae832cd059cef1ae816e80e}\index{AIPlayer@{AIPlayer}!OnSuggestionMade@{OnSuggestionMade}}
+\index{OnSuggestionMade@{OnSuggestionMade}!AIPlayer@{AIPlayer}}
+\doxysubsubsection{\texorpdfstring{OnSuggestionMade()}{OnSuggestionMade()}}
+{\footnotesize\ttfamily \label{class_a_i_player_a5c915dee0ae832cd059cef1ae816e80e} 
+override void AIPlayer.\+On\+Suggestion\+Made (\begin{DoxyParamCaption}\item[{int}]{suggestion\+Index}{, }\item[{\doxymbox{\hyperlink{class_suggestion}{Suggestion}}}]{suggestion}{, }\item[{int}]{disprover\+Index}{, }\item[{\doxymbox{\hyperlink{class_card}{Card}}}]{shown\+Card}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Call after every suggestion by anyone Helps the deduction disprover\+Index == -\/1 means nobody could disprove shown\+Card:\+ only not null if Ai was suggesster/\+disprover Null being passed means well record the disproval as "{}unknwn which card"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em suggestion\+Index} & Index of player made the suggestion\\
+\hline
+{\em suggestion} & \doxylink{class_suggestion}{Suggestion} made\\
+\hline
+{\em disprover\+Index} & Index of the disporver or -\/1 if nobody disproved\\
+\hline
+{\em shown\+Card} & The card shown (if Known) or null\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \doxymbox{\hyperlink{class_player_a74e001f9d75f2f273845ea2d5d54c123}{Player}}.
+
+\Hypertarget{class_a_i_player_ad4eb8678dba996c0904ba363cfd32d52}\index{AIPlayer@{AIPlayer}!SetStrategy@{SetStrategy}}
+\index{SetStrategy@{SetStrategy}!AIPlayer@{AIPlayer}}
+\doxysubsubsection{\texorpdfstring{SetStrategy()}{SetStrategy()}}
+{\footnotesize\ttfamily \label{class_a_i_player_ad4eb8678dba996c0904ba363cfd32d52} 
+void AIPlayer.\+Set\+Strategy (\begin{DoxyParamCaption}\item[{Strategy\+Type}]{strategy}{}\end{DoxyParamCaption})}
+
+
+
+Choose between safe and deceptive (bluff) play styles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strategy} & Safe or Deceptive\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_a_i_player_a526f1e6f86da1cc7f86784cc5dc2a1b1}\index{AIPlayer@{AIPlayer}!TakeTurn@{TakeTurn}}
+\index{TakeTurn@{TakeTurn}!AIPlayer@{AIPlayer}}
+\doxysubsubsection{\texorpdfstring{TakeTurn()}{TakeTurn()}}
+{\footnotesize\ttfamily \label{class_a_i_player_a526f1e6f86da1cc7f86784cc5dc2a1b1} 
+override void AIPlayer.\+Take\+Turn (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_game_controller}{Game\+Controller}}}]{game\+Controller}{, }\item[{\doxymbox{\hyperlink{class_dice}{Dice}}}]{dice}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Call when its this players turn Override to drive the turn. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Controller} & \\
+\hline
+{\em dice} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \doxymbox{\hyperlink{class_player_a64c26e12a5efb5b123fd158b8432f3b2}{Player}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Cluedo\+SWE/\+\+Assets/\+\+Game\+Assets/\+\+Scripts/\+\+Game/\+\+Player/\+AIPlayer.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_b0e0c55a9e3bd4373f1a0bfdc916dcb2" kind="dir">
+    <compoundname>CluedoSWE/Assets</compoundname>
+    <innerdir refid="dir_78fe742ab95f308d05a7cdf0d0993fc2">CluedoSWE/Assets/GameAssets</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CluedoSWE/Assets/"/>
+  </compounddef>
+</doxygen>

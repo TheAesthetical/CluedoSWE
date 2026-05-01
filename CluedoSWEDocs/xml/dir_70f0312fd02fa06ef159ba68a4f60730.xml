@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_70f0312fd02fa06ef159ba68a4f60730" kind="dir">
+    <compoundname>CluedoSWE/Assets/GameAssets/Scripts/Game/Board</compoundname>
+    <innerfile refid="_board_image_aligner_8cs">BoardImageAligner.cs</innerfile>
+    <innerfile refid="_board_piece_8cs">BoardPiece.cs</innerfile>
+    <innerfile refid="_cell_highlighter_8cs">CellHighlighter.cs</innerfile>
+    <innerfile refid="_checkbox_cell_8cs">CheckboxCell.cs</innerfile>
+    <innerfile refid="_cluedo_board_controller_8cs">CluedoBoardController.cs</innerfile>
+    <innerfile refid="_cluedo_board_data_8cs">CluedoBoardData.cs</innerfile>
+    <innerfile refid="_cluedo_enums_8cs">CluedoEnums.cs</innerfile>
+    <innerfile refid="_detective_sheet_manager_8cs">DetectiveSheetManager.cs</innerfile>
+    <innerfile refid="_dice_roll_manager_8cs">DiceRollManager.cs</innerfile>
+    <innerfile refid="_grid_cell_8cs">GridCell.cs</innerfile>
+    <innerfile refid="_grid_manager_8cs">GridManager.cs</innerfile>
+    <innerfile refid="_player_turn_manager_8cs">PlayerTurnManager.cs</innerfile>
+    <innerfile refid="_quit_popup_manager_8cs">QuitPopupManager.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/"/>
+  </compounddef>
+</doxygen>

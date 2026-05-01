@@ -1,0 +1,86 @@
+.TH "CluedoBoardController" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CluedoBoardController \- Main controller for a Cluedo (Clue) board game in Unity\&. Manages game state, player turns, movement, accusations, and suggestions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCluedoCard\fP"
+.br
+.ti -1c
+.RI "class \fBSolution\fP"
+.br
+.ti -1c
+.RI "class \fBPlayer\fP"
+.br
+.ti -1c
+.RI "class \fBBoardCell\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSuspect\fP { \fBMissScarlett\fP, \fBColMustard\fP, \fBMrsWhite\fP, \fBRevGreen\fP, \fBMrsPeacock\fP, \fBProfPlum\fP }"
+.br
+.ti -1c
+.RI "enum \fBWeapon\fP { \fBCandlestick\fP, \fBKnife\fP, \fBLeadPipe\fP, \fBRevolver\fP, \fBRope\fP, \fBWrench\fP }"
+.br
+.ti -1c
+.RI "enum \fBRoom\fP { \fBKitchen\fP, \fBBallroom\fP, \fBConservatory\fP, \fBBilliardRoom\fP, \fBLibrary\fP, \fBStudy\fP, \fBHall\fP, \fBLounge\fP, \fBDiningRoom\fP, \fBHallway\fP }"
+.br
+.ti -1c
+.RI "enum \fBGamePhase\fP { \fBSetup\fP, \fBRolling\fP, \fBMoving\fP, \fBMakingSuggestion\fP, \fBResolvingSuggestion\fP, \fBMakingAccusation\fP, \fBGameOver\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBOnRollDice\fP ()"
+.br
+.RI "Call this from a UI button for the human player\&. "
+.ti -1c
+.RI "void \fBOnCellSelected\fP (\fBBoardCell\fP targetCell)"
+.br
+.RI "Move the current player to a neighbouring cell\&. Call from UI (e\&.g\&. clicking a highlighted cell)\&. "
+.ti -1c
+.RI "void \fBOnSuggestionSubmitted\fP (Suspect suspect, Weapon weapon)"
+.br
+.RI "Human player submits a suggestion\&. "
+.ti -1c
+.RI "void \fBOnAccusationSubmitted\fP (Suspect suspect, Weapon weapon, Room room)"
+.br
+.RI "Human player makes a final accusation\&. "
+.ti -1c
+.RI "\fBPlayer\fP \fBGetCurrentPlayer\fP ()"
+.br
+.ti -1c
+.RI "List< \fBPlayer\fP > \fBGetAllPlayers\fP ()"
+.br
+.ti -1c
+.RI "\fBSolution\fP \fBGetSolution\fP ()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "GamePhase \fBCurrentPhase\fP\fR [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Main controller for a Cluedo (Clue) board game in Unity\&. Manages game state, player turns, movement, accusations, and suggestions\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

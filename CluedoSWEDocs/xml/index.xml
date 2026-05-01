@@ -1,0 +1,840 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.17.0" xml:lang="en-US">
+  <compound refid="class_a_i_player" kind="class"><name>AIPlayer</name>
+    <member refid="class_a_i_player_1a875b4f065792c8c0d1d23c293039012d" kind="variable"><name>ownPlayerIndex</name></member>
+    <member refid="class_a_i_player_1ab810a9e2933cf6475e5227aa490be38c" kind="variable"><name>totalActivePlayers</name></member>
+    <member refid="class_a_i_player_1a4fa8f785c2f130e19387afb724b47e49" kind="variable"><name>ownHand</name></member>
+    <member refid="class_a_i_player_1ae853a42f211850b358803c48ad54c411" kind="variable"><name>detectiveSheet</name></member>
+    <member refid="class_a_i_player_1aaed0450193de794f56659a5f11866e4c" kind="variable"><name>unknownDisprovals</name></member>
+    <member refid="class_a_i_player_1a93ce44c85f3590747dcc4e55167707f9" kind="variable"><name>currentTargetRoom</name></member>
+    <member refid="class_a_i_player_1a5255f09ed2298d9f5e3b2a39404041fa" kind="variable"><name>currentRoom</name></member>
+    <member refid="class_a_i_player_1a1c22d60b383c155f6d9636295e58a45c" kind="variable"><name>suspectConfidence</name></member>
+    <member refid="class_a_i_player_1a3c3e98538bf0a26b25e1019e0729353b" kind="variable"><name>weaponConfidence</name></member>
+    <member refid="class_a_i_player_1a640ffa00479e46b8ee656cd7eb855b7a" kind="variable"><name>roomConfidence</name></member>
+    <member refid="class_a_i_player_1a38c5741f247fbd79e199dbeb315dfc62" kind="variable"><name>strategyType</name></member>
+    <member refid="class_a_i_player_1adfc2f613929e74ceac1975221f8fd8b2" kind="variable"><name>cardBiases</name></member>
+    <member refid="class_a_i_player_1a56750f53445ba17240b35b5421c06dd8" kind="variable"><name>AllSuspectNames</name></member>
+    <member refid="class_a_i_player_1a657cef173a03d22a83eff3ecc2e36aa7" kind="variable"><name>AllWeaponNames</name></member>
+    <member refid="class_a_i_player_1afc18f1f885cfd7481929bc32ec2a2364" kind="variable"><name>AllRoomNames</name></member>
+    <member refid="class_a_i_player_1a66149b7c82c0649bf7f4a5d665b1195b" kind="function"><name>AIPlayer</name></member>
+    <member refid="class_a_i_player_1a8301003ecbed9b81edf0e4f4ce7832f8" kind="function"><name>Initialise</name></member>
+    <member refid="class_a_i_player_1ad4eb8678dba996c0904ba363cfd32d52" kind="function"><name>SetStrategy</name></member>
+    <member refid="class_a_i_player_1a91f5c834a7a315221e51b6394490a20f" kind="function"><name>OnHandDealt</name></member>
+    <member refid="class_a_i_player_1ab311c5f47ed22d475af1f795f7e48c34" kind="function"><name>OnCardShown</name></member>
+    <member refid="class_a_i_player_1a5c915dee0ae832cd059cef1ae816e80e" kind="function"><name>OnSuggestionMade</name></member>
+    <member refid="class_a_i_player_1a526f1e6f86da1cc7f86784cc5dc2a1b1" kind="function"><name>TakeTurn</name></member>
+    <member refid="class_a_i_player_1a3e6c907b689067b89edf9ba7a2808437" kind="function"><name>GetSheetForDebug</name></member>
+    <member refid="class_a_i_player_1a98acd324726d55dfba214ed188a47bda" kind="function"><name>GetSuspectConfidence</name></member>
+    <member refid="class_a_i_player_1a79442a01a51835a37497b19e0c1fa3d2" kind="function"><name>GetWeaponConfidence</name></member>
+    <member refid="class_a_i_player_1a28aca58500d849b12e3e90baed5c7f8c" kind="function"><name>GetRoomConfidence</name></member>
+    <member refid="class_a_i_player_1a35c20a035d7c6710ec0916a623be1d03" kind="function"><name>ResolveUnknownDisprovals</name></member>
+    <member refid="class_a_i_player_1ab9e7db762fe97f0c4cc1b29b4b7c5903" kind="function"><name>UpdateBiases</name></member>
+    <member refid="class_a_i_player_1a779d794628f3636781e1341b19e5faa3" kind="function"><name>BiasFor</name></member>
+    <member refid="class_a_i_player_1abf109975fd4538bd414fc650e8bf675e" kind="function"><name>CountUnruledOut</name></member>
+    <member refid="class_a_i_player_1a33eac6d145a7e343cb97ff6aa7d08ecc" kind="function"><name>ChooseTargetRoom</name></member>
+    <member refid="class_a_i_player_1a7e9b20ef6e733cf14449fa30f36476db" kind="function"><name>ChooseNewTarget</name></member>
+    <member refid="class_a_i_player_1a004e8dd27bf3965c12f81097971dd1bf" kind="function"><name>ChooseExistingTarget</name></member>
+    <member refid="class_a_i_player_1a3f140190e8de1c2f91f3b8d108b10492" kind="function"><name>WeightedRoomChoice</name></member>
+    <member refid="class_a_i_player_1a9fc7bb0a3a7b756d673a08193ce68382" kind="function"><name>WeightedRoomChoice</name></member>
+    <member refid="class_a_i_player_1a09deb1b7e5824b66d9ceee5949abcb7f" kind="function"><name>BuildSuggestion</name></member>
+    <member refid="class_a_i_player_1a4e17aaa51523a510debcdf5d928087eb" kind="function"><name>BuildAccusation</name></member>
+    <member refid="class_a_i_player_1a6b52022347c78ad7dbf6e5a474b260d6" kind="function"><name>ShouldBluff</name></member>
+    <member refid="class_a_i_player_1a8d2ced7380384a75064020b599668f21" kind="function"><name>ChooseSuspectCard</name></member>
+    <member refid="class_a_i_player_1afb7996446d3aef87c26b38de5d65050a" kind="function"><name>ChooseWeaponCard</name></member>
+    <member refid="class_a_i_player_1a75512d91e2db0e5c664f29207dd15785" kind="function"><name>ChooseRoomCard</name></member>
+    <member refid="class_a_i_player_1a517703153832ddd7f32d499edd7f494b" kind="function"><name>PickRoomForTurn</name></member>
+    <member refid="class_a_i_player_1a588bd584ede18c3b85889481925252e2" kind="function"><name>WeightedPick</name></member>
+    <member refid="class_a_i_player_1af9329f17966692b90462c0698f1aa7f6" kind="function"><name>PickBestEnvelopeCandidate&lt; T &gt;</name></member>
+    <member refid="class_a_i_player_1a0666619dbf654ddc546a7eaaf68de55c" kind="function"><name>CreateCardOfType&lt; T &gt;</name></member>
+    <member refid="class_a_i_player_1a8fdad16305faed557f367567e779558a" kind="function"><name>PickOwnHandSuspect</name></member>
+    <member refid="class_a_i_player_1a807099aadc626ef6b46728b8ce50405a" kind="function"><name>PickOwnHandWeapon</name></member>
+    <member refid="class_a_i_player_1afb4beb949fa4ce690eae723290afabca" kind="function"><name>UpdateConfidence</name></member>
+    <member refid="class_a_i_player_1a2efd23b4a9e389db8f9156944bf30dd3" kind="function"><name>ConfidenceFor</name></member>
+    <member refid="class_a_i_player_1af94004104b7915408e873c6dbed4df1d" kind="function"><name>GetOverallConfidence</name></member>
+    <member refid="class_a_i_player_1adbab939cda74243cba78219dd071c18b" kind="function"><name>ShouldMakeAccusation</name></member>
+    <member refid="class_a_i_player_1a6370784a6e3f889b4d40a1ae94adc6f4" kind="function"><name>GetLegalMoves</name></member>
+    <member refid="class_a_i_player_1a1ff40abdf3c08df30447344658645505" kind="function"><name>GetThreeClosestRooms</name></member>
+    <member refid="class_a_i_player_1af32706e12e8acd79d19891d4fd42e7dc" kind="function"><name>BestMoveTowardsTarget</name></member>
+    <member refid="class_a_i_player_1ab988ffe3942bc2744541c41e22a96761" kind="function"><name>MoveTo</name></member>
+    <member refid="class_a_i_player_1acd6066689013ccfd3957a592113f90e1" kind="function"><name>IsInRoom</name></member>
+    <member refid="class_a_i_player_1a51176d99c037f4758f11c60aaa328371" kind="function"><name>MakeSuggestion</name></member>
+    <member refid="class_a_i_player_1add961468d06fe10e5b028794d3f30a45" kind="function"><name>MakeAccusation</name></member>
+    <member refid="class_a_i_player_1a8f0ce7b5518bcc7e9b06efa4db9cfba5" kind="function"><name>Safe</name></member>
+    <member refid="class_a_i_player_1ab9f133185a77492f5bf42fc9fa05e005" kind="function"><name>EndTurn</name></member>
+    <member refid="class_a_i_player_1a43f095ea563c31e953b0e0f1fce0cfe7" kind="function"><name>LogConfidenceState</name></member>
+  </compound>
+  <compound refid="class_auto_cross_test" kind="class"><name>AutoCrossTest</name>
+    <member refid="class_auto_cross_test_1a2389b997e19b98b3f8623865e1cc52db" kind="variable"><name>builder</name></member>
+    <member refid="class_auto_cross_test_1a989a32dc22c5b28327567748c689e57f" kind="function"><name>Start</name></member>
+    <member refid="class_auto_cross_test_1aa8fabe22eb29af8c791f9b9dece2d204" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="class_cluedo_board_controller_1_1_board_cell" kind="class"><name>CluedoBoardController::BoardCell</name>
+    <member refid="class_cluedo_board_controller_1_1_board_cell_1a3099349596cc6a32d1ae53b93df27551" kind="variable"><name>gridPosition</name></member>
+    <member refid="class_cluedo_board_controller_1_1_board_cell_1a7d2b613141e80522647dc75cb4c6c003" kind="variable"><name>room</name></member>
+    <member refid="class_cluedo_board_controller_1_1_board_cell_1a0dd938aadebe1ce6ca566c6a60d0bb83" kind="variable"><name>isRoomEntrance</name></member>
+    <member refid="class_cluedo_board_controller_1_1_board_cell_1a7fed143789167fec502281365d5e0831" kind="variable"><name>entranceLeadsTo</name></member>
+    <member refid="class_cluedo_board_controller_1_1_board_cell_1ab283bbe3ad84a8568d1ccf99e7bca718" kind="variable"><name>neighbors</name></member>
+    <member refid="class_cluedo_board_controller_1_1_board_cell_1aec4d38a6104648b982f024aadbf8eda2" kind="variable"><name>worldObject</name></member>
+    <member refid="class_cluedo_board_controller_1_1_board_cell_1a250290a8c940651ef1865b188aed2b40" kind="property"><name>IsInRoom</name></member>
+  </compound>
+  <compound refid="class_board_image_aligner" kind="class"><name>BoardImageAligner</name>
+  </compound>
+  <compound refid="class_board_piece" kind="class"><name>BoardPiece</name>
+    <member refid="class_board_piece_1aea6539377a44ee1d60a8cbf0d1cb933d" kind="variable"><name>suspect</name></member>
+    <member refid="class_board_piece_1add7c161ef2de417dbfc79d90de99ccfc" kind="variable"><name>isWeapon</name></member>
+    <member refid="class_board_piece_1a4ccd376cc459a3aaaa8fafbc3385dd55" kind="variable"><name>weapon</name></member>
+    <member refid="class_board_piece_1a32c55404fb3bfd325c61e7d4a51e1b52" kind="variable"><name>moveSpeed</name></member>
+    <member refid="class_board_piece_1a7072f2b3179aca6235e668b4652b4d7d" kind="variable"><name>bobHeight</name></member>
+    <member refid="class_board_piece_1af577be2d46615371bc705f1c5b592c6b" kind="variable"><name>bobSpeed</name></member>
+    <member refid="class_board_piece_1a0c9c0fe5de0c91b47108d83dc83cdffc" kind="variable"><name>activeMove</name></member>
+    <member refid="class_board_piece_1a0e226511be5b86267d376a9232948836" kind="property"><name>currentCell</name></member>
+    <member refid="class_board_piece_1ac67e536dda3ca61d0f21a271d2751a51" kind="property"><name>isMoving</name></member>
+    <member refid="class_board_piece_1aad7f6d3cb94ea461d2a7c44c338a654c" kind="function"><name>PlaceOn</name></member>
+    <member refid="class_board_piece_1aa904ee75a79432c0e6591774114b36b6" kind="function"><name>SlideTo</name></member>
+    <member refid="class_board_piece_1a9b7bfef8ca1729415576c3ceb29c487c" kind="function"><name>WalkPath</name></member>
+    <member refid="class_board_piece_1aa715d3cc168e295f395c72d45cb62164" kind="function"><name>TeleportToRoom</name></member>
+    <member refid="class_board_piece_1af179c2f90afc3d91fc84b45596ea87b6" kind="function"><name>SlideRoutine</name></member>
+    <member refid="class_board_piece_1ab2c5bca5b587e9300d939c121416dd8c" kind="function"><name>WalkRoutine</name></member>
+  </compound>
+  <compound refid="class_card" kind="class"><name>Card</name>
+    <member refid="class_card_1a03cd23e488fc8ee09e506162bb4d8ce6" kind="property"><name>CardName</name></member>
+    <member refid="class_card_1ae345d8a1c8a1e767ffb8ec1bd4958996" kind="variable"><name>sprite</name></member>
+    <member refid="class_card_1a0140828bdf9a16c921f4d792cbcd8a3d" kind="function"><name>Card</name></member>
+    <member refid="class_card_1a919f72f0e85015b376b99789aac91b35" kind="function"><name>ToString</name></member>
+    <member refid="class_card_1afcd8c8e0154e361afc560a2b333c7d6f" kind="function"><name>GetSprite</name></member>
+  </compound>
+  <compound refid="class_cell_highlighter" kind="class"><name>CellHighlighter</name>
+    <member refid="class_cell_highlighter_1a7af65ecacea7aae1146c0aba09ce74ab" kind="variable"><name>highlightPrefab</name></member>
+    <member refid="class_cell_highlighter_1a3a8c57cc92775730ed2dccc0d105ee6a" kind="variable"><name>reachableColour</name></member>
+    <member refid="class_cell_highlighter_1a9022cf23bc3acdb4ed83a2a53934593b" kind="variable"><name>doorColour</name></member>
+    <member refid="class_cell_highlighter_1a5a8dc948a3ed14fc57fe2cf042c355e3" kind="variable"><name>hoverColour</name></member>
+    <member refid="class_cell_highlighter_1a6e94b447302eb87aeda68bbd5e33f575" kind="variable"><name>activeHighlights</name></member>
+    <member refid="class_cell_highlighter_1a4271e775d1e9672b081ad3dede126e46" kind="variable"><name>cellToHighlight</name></member>
+    <member refid="class_cell_highlighter_1ac87ca52fee66efce9b93f2082eecd3dc" kind="variable"><name>hoveredCell</name></member>
+    <member refid="class_cell_highlighter_1a71095e60d1ee4505480a558f9654ba57" kind="function"><name>ShowReachable</name></member>
+    <member refid="class_cell_highlighter_1a9f83e4a29b95c9be17b398508fae5e04" kind="function"><name>SetHover</name></member>
+    <member refid="class_cell_highlighter_1aed1f60cda9be30e3ba25157d1f68ce9f" kind="function"><name>ClearAll</name></member>
+    <member refid="class_cell_highlighter_1ae77b4e30c1334348ed54f3f340463c71" kind="function"><name>GetHighlightedCellAt</name></member>
+    <member refid="class_cell_highlighter_1abb5f35441097b352147beebad3e57f9c" kind="function"><name>IsHighlighted</name></member>
+    <member refid="class_cell_highlighter_1a802086cd3b0966f8d2ed047c5b40ea13" kind="function"><name>Spawn</name></member>
+    <member refid="class_cell_highlighter_1ab6ae9ebf9e0bd83791c198ed45566431" kind="function"><name>CreateDefaultHighlight</name></member>
+    <member refid="class_cell_highlighter_1a1cb3f0a466579e546c6c70aad8460d24" kind="function"><name>CreateSquareSprite</name></member>
+    <member refid="class_cell_highlighter_1ac4746384785c3990510fc26c41e609df" kind="function"><name>SetColour</name></member>
+  </compound>
+  <compound refid="class_character_card" kind="class"><name>CharacterCard</name>
+    <member refid="class_character_card_1a3b165e4c4dfaef14a28bcb0638d496b8" kind="function"><name>CharacterCard</name></member>
+  </compound>
+  <compound refid="class_checkbox_cell" kind="class"><name>CheckboxCell</name>
+    <member refid="class_checkbox_cell_1a63a12058ad56e22b189976b04bede34a" kind="variable"><name>xCharacter</name></member>
+    <member refid="class_checkbox_cell_1ae3b133281d314a0f181aeec0fc3d32f0" kind="variable"><name>xColor</name></member>
+    <member refid="class_checkbox_cell_1a2fb25a63e967d1e982c11f466fba9cad" kind="variable"><name>xFontSize</name></member>
+    <member refid="class_checkbox_cell_1a51cc2611c1e4d782c291d9834f278d85" kind="variable"><name>xLabel</name></member>
+    <member refid="class_checkbox_cell_1aaf88051a863953b7e3641db0218ac841" kind="property"><name>SaveKey</name></member>
+    <member refid="class_checkbox_cell_1ad07dd325e5ee4a8d7f9bb19efd5ccc04" kind="variable"><name>_isChecked</name></member>
+    <member refid="class_checkbox_cell_1a79b008677e3cb9cb3ff4a48730435566" kind="variable"><name>_btn</name></member>
+    <member refid="class_checkbox_cell_1af4921bbe7ab7f09e7bb4b1b9ac7d3e96" kind="function"><name>Awake</name></member>
+    <member refid="class_checkbox_cell_1a740f3e4f3be45cd61ca238540052fe42" kind="function"><name>OnEnable</name></member>
+    <member refid="class_checkbox_cell_1a7cfeb028e5780dad21026be8a8833727" kind="function"><name>Toggle</name></member>
+    <member refid="class_checkbox_cell_1a6a01204007c501fc0170bbacf9820b79" kind="function"><name>Refresh</name></member>
+    <member refid="class_checkbox_cell_1ad752a0341eab5ff9d46516cb50c0ead6" kind="function"><name>Apply</name></member>
+    <member refid="class_checkbox_cell_1a71990664e6e3a074e9ab72976d916422" kind="function"><name>ResetCell</name></member>
+  </compound>
+  <compound refid="class_cluedo_board_controller" kind="class"><name>CluedoBoardController</name>
+    <member refid="class_cluedo_board_controller_1aa153d9ed5ee9840ade1b6f8330bc4c39" kind="enum"><name>Suspect</name></member>
+    <member refid="class_cluedo_board_controller_1aa153d9ed5ee9840ade1b6f8330bc4c39aa742573743a36042e3d360b88fe68af8" kind="enumvalue"><name>MissScarlett</name></member>
+    <member refid="class_cluedo_board_controller_1aa153d9ed5ee9840ade1b6f8330bc4c39a4b44d94726ded148a2353b2d6abcba1c" kind="enumvalue"><name>ColMustard</name></member>
+    <member refid="class_cluedo_board_controller_1aa153d9ed5ee9840ade1b6f8330bc4c39a20813408d110d95c9dc88937644b4fad" kind="enumvalue"><name>MrsWhite</name></member>
+    <member refid="class_cluedo_board_controller_1aa153d9ed5ee9840ade1b6f8330bc4c39adff85b6e942edeb7806e2bdac3759446" kind="enumvalue"><name>RevGreen</name></member>
+    <member refid="class_cluedo_board_controller_1aa153d9ed5ee9840ade1b6f8330bc4c39a5db3efe5d0495d7dedca541c1912a4d4" kind="enumvalue"><name>MrsPeacock</name></member>
+    <member refid="class_cluedo_board_controller_1aa153d9ed5ee9840ade1b6f8330bc4c39a39fd2f6ee051c130b63b9781b0aff8c2" kind="enumvalue"><name>ProfPlum</name></member>
+    <member refid="class_cluedo_board_controller_1ac885ee0bb317235b10b58fd0df28b25d" kind="enum"><name>Weapon</name></member>
+    <member refid="class_cluedo_board_controller_1ac885ee0bb317235b10b58fd0df28b25da5f13640eb2d9a18296a0662051d41a38" kind="enumvalue"><name>Candlestick</name></member>
+    <member refid="class_cluedo_board_controller_1ac885ee0bb317235b10b58fd0df28b25dad39d7a2bb6d430fd238a6aedc7f0cee2" kind="enumvalue"><name>Knife</name></member>
+    <member refid="class_cluedo_board_controller_1ac885ee0bb317235b10b58fd0df28b25da3cc5a18a3ce193db372905c869be258b" kind="enumvalue"><name>LeadPipe</name></member>
+    <member refid="class_cluedo_board_controller_1ac885ee0bb317235b10b58fd0df28b25dae450f76afe9b3844228bdf4846d6f301" kind="enumvalue"><name>Revolver</name></member>
+    <member refid="class_cluedo_board_controller_1ac885ee0bb317235b10b58fd0df28b25daa3a77296cc85eb0c3175a09c0f7c3e60" kind="enumvalue"><name>Rope</name></member>
+    <member refid="class_cluedo_board_controller_1ac885ee0bb317235b10b58fd0df28b25dad0e410ca11db8103b87c4f66e2659067" kind="enumvalue"><name>Wrench</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2" kind="enum"><name>Room</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2a33fa00a66f2edf0d1c5697a9f8693ba8" kind="enumvalue"><name>Kitchen</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2a99b46ee68598455b26c07178a4e22cf7" kind="enumvalue"><name>Ballroom</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2a44a6fd66cd40d3a08f7228f7b1c4ccb7" kind="enumvalue"><name>Conservatory</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2a89b0665a8c7cc09151fb6f2d48c03887" kind="enumvalue"><name>BilliardRoom</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2a4d70254b3a8e2bc38b6147fa6ee813be" kind="enumvalue"><name>Library</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2a0a3dac2314e66e15240f019afcbd6b0f" kind="enumvalue"><name>Study</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2a75002fe48442a02a55971f48cebbe3e4" kind="enumvalue"><name>Hall</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2ac4d1e675e69e73d60984bad5e7487dca" kind="enumvalue"><name>Lounge</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2aad63dd5fe262a1caba888f03ee74ba65" kind="enumvalue"><name>DiningRoom</name></member>
+    <member refid="class_cluedo_board_controller_1a710d46bc2710734dbc31ebfb356896e2ae3cdcec1011e48473b52ff0a892b2c4b" kind="enumvalue"><name>Hallway</name></member>
+    <member refid="class_cluedo_board_controller_1a75a0f3706b3bdaa7fb595e21e099cc3b" kind="enum"><name>GamePhase</name></member>
+    <member refid="class_cluedo_board_controller_1a75a0f3706b3bdaa7fb595e21e099cc3baad2376beebecdcf7846ba973fa1a005b" kind="enumvalue"><name>Setup</name></member>
+    <member refid="class_cluedo_board_controller_1a75a0f3706b3bdaa7fb595e21e099cc3baf4920797afb92022a9c6608efcd86317" kind="enumvalue"><name>Rolling</name></member>
+    <member refid="class_cluedo_board_controller_1a75a0f3706b3bdaa7fb595e21e099cc3badefe967ad0373b2274fc298f19125ca7" kind="enumvalue"><name>Moving</name></member>
+    <member refid="class_cluedo_board_controller_1a75a0f3706b3bdaa7fb595e21e099cc3ba3089a3b84087bcb487261d6f07ee65c0" kind="enumvalue"><name>MakingSuggestion</name></member>
+    <member refid="class_cluedo_board_controller_1a75a0f3706b3bdaa7fb595e21e099cc3bad38cededeb16a2c388b650c922f49534" kind="enumvalue"><name>ResolvingSuggestion</name></member>
+    <member refid="class_cluedo_board_controller_1a75a0f3706b3bdaa7fb595e21e099cc3ba4bb540b093ef84b326454133c47e0584" kind="enumvalue"><name>MakingAccusation</name></member>
+    <member refid="class_cluedo_board_controller_1a75a0f3706b3bdaa7fb595e21e099cc3ba8f347bc7cebca9fa6d97e70c6bc29eb3" kind="enumvalue"><name>GameOver</name></member>
+    <member refid="class_cluedo_board_controller_1aba1b3451636f825351ff9b53ec6f2565" kind="variable"><name>boardWidth</name></member>
+    <member refid="class_cluedo_board_controller_1abebb1853a2069a934cbc80167886ab04" kind="variable"><name>boardHeight</name></member>
+    <member refid="class_cluedo_board_controller_1abeb62c9659128396240b622a0d3acf1e" kind="variable"><name>numberOfPlayers</name></member>
+    <member refid="class_cluedo_board_controller_1ae3245b168faef507a5397f0a00ae4ab1" kind="variable"><name>playerTokenPrefab</name></member>
+    <member refid="class_cluedo_board_controller_1ac7ee55e353c30bf07d2f03f597f9f081" kind="variable"><name>boardRoot</name></member>
+    <member refid="class_cluedo_board_controller_1a1bb6cee54b29ff12fd7f5b312b2340e5" kind="variable"><name>suggestionPanel</name></member>
+    <member refid="class_cluedo_board_controller_1ae6e0772ff03238b3f9de4606d10940b8" kind="variable"><name>accusationPanel</name></member>
+    <member refid="class_cluedo_board_controller_1aed8b4014f5253835a23c27a527cdac50" kind="variable"><name>winPanel</name></member>
+    <member refid="class_cluedo_board_controller_1a9a17ae0bfe1fdec346961d19bfb33aab" kind="variable"><name>phaseLabel</name></member>
+    <member refid="class_cluedo_board_controller_1a18e59a9b90f195504c45052ed7093d88" kind="variable"><name>currentPlayerLabel</name></member>
+    <member refid="class_cluedo_board_controller_1a4fc513f8400494c81c9b1383d51e0070" kind="variable"><name>diceResultLabel</name></member>
+    <member refid="class_cluedo_board_controller_1acf24f74ef4c5cfca3a8cc7c2b7030a75" kind="variable"><name>logText</name></member>
+    <member refid="class_cluedo_board_controller_1a6b2beb47026379f2c80c9c5349e00fd2" kind="variable"><name>players</name></member>
+    <member refid="class_cluedo_board_controller_1a5e3b721ff2e9abf30dd90943e3d00ef5" kind="variable"><name>allCells</name></member>
+    <member refid="class_cluedo_board_controller_1ad4b2b76eafcba32bff0da2a1729744aa" kind="variable"><name>roomCells</name></member>
+    <member refid="class_cluedo_board_controller_1a29afbf6ca750f48f1f341d1c81ab61b8" kind="variable"><name>solution</name></member>
+    <member refid="class_cluedo_board_controller_1a5903ca7cdaef32d89de35f2c916532fc" kind="variable"><name>currentPlayerIndex</name></member>
+    <member refid="class_cluedo_board_controller_1a9582b8e376a7c851c00fafc766432da0" kind="variable"><name>diceRoll</name></member>
+    <member refid="class_cluedo_board_controller_1aac18a8dae58f3ed8b26a9cedadf8dde2" kind="variable"><name>movesRemaining</name></member>
+    <member refid="class_cluedo_board_controller_1a4402ac381ca0dddc1e7cde6ee7de1a86" kind="variable"><name>phase</name></member>
+    <member refid="class_cluedo_board_controller_1acfbc137b8ede51598c8c0ea35a083430" kind="variable"><name>gameLog</name></member>
+    <member refid="class_cluedo_board_controller_1a331b77eaf128a75df51d3cc1f0a24485" kind="property"><name>CurrentPlayer</name></member>
+    <member refid="class_cluedo_board_controller_1a91b98948349dda118267fcc45e47c27d" kind="property"><name>CurrentPhase</name></member>
+    <member refid="class_cluedo_board_controller_1a384533d866939ef6ff2081156a16aa76" kind="function"><name>Start</name></member>
+    <member refid="class_cluedo_board_controller_1a146b7dfe5306243dc63abd402007de65" kind="function"><name>InitialiseBoard</name></member>
+    <member refid="class_cluedo_board_controller_1a352e04d8aa59d7ad5874350c6e01e0d3" kind="function"><name>BuildCellGraph</name></member>
+    <member refid="class_cluedo_board_controller_1a0586135f5ad0a931f39937a8cdff1322" kind="function"><name>AssignRoomRegion</name></member>
+    <member refid="class_cluedo_board_controller_1a1cf018fd9317089d98c13c6072929988" kind="function"><name>AssignStartingPositions</name></member>
+    <member refid="class_cluedo_board_controller_1a776c9f4e750d49dc11709ceefa42253e" kind="function"><name>DealCards</name></member>
+    <member refid="class_cluedo_board_controller_1a10c1684f607f7ee6dc456512094c6e94" kind="function"><name>StartGame</name></member>
+    <member refid="class_cluedo_board_controller_1a38211005a8cd85359f14da6bc7e91196" kind="function"><name>BeginTurn</name></member>
+    <member refid="class_cluedo_board_controller_1a70db2ccaf8265f2b7b5763c5e4a25044" kind="function"><name>OnMovementFinished</name></member>
+    <member refid="class_cluedo_board_controller_1a08fbcbdff2910d1af06bf835acb2c744" kind="function"><name>ProcessSuggestion</name></member>
+    <member refid="class_cluedo_board_controller_1a2db8dc52fe83455ece21650ec835a06a" kind="function"><name>ResolveSuggestion</name></member>
+    <member refid="class_cluedo_board_controller_1a6d7987549e05efd2d9b1caf8d9906fef" kind="function"><name>ProcessAccusation</name></member>
+    <member refid="class_cluedo_board_controller_1adf39fbd3e6fddd8ea75edac9fa35f88b" kind="function"><name>EndTurn</name></member>
+    <member refid="class_cluedo_board_controller_1a3ba68032623f615bccaa229496346f8c" kind="function"><name>AdvanceTurn</name></member>
+    <member refid="class_cluedo_board_controller_1a0d80dd0c739467dbbf639293ba56da97" kind="function"><name>AITurn</name></member>
+    <member refid="class_cluedo_board_controller_1a26e5eb572badae54fe9d0f1d4f3059d2" kind="function"><name>AIMoveToRoom</name></member>
+    <member refid="class_cluedo_board_controller_1af102688a94516f995124ea16dde5c776" kind="function"><name>AIMakeSuggestion</name></member>
+    <member refid="class_cluedo_board_controller_1a3074e29749d478285a2cdd71b9445e2b" kind="function"><name>MovePlayer</name></member>
+    <member refid="class_cluedo_board_controller_1ac120155a4400630ba1f2543142ec7885" kind="function"><name>IsReachableInOneStep</name></member>
+    <member refid="class_cluedo_board_controller_1a3f1f24eb5f09781039ff2c27d0ab9f5c" kind="function"><name>FindCellInBFS</name></member>
+    <member refid="class_cluedo_board_controller_1a02105dceb613f15e92e26af21c1e6e87" kind="function"><name>AnimateMoveAlongPath</name></member>
+    <member refid="class_cluedo_board_controller_1a64540134ce5f723c79c4daaa13fd3b7f" kind="function"><name>BFSPath</name></member>
+    <member refid="class_cluedo_board_controller_1aaef1c61143f7b32380c79fd3e0972c05" kind="function"><name>RollDice</name></member>
+    <member refid="class_cluedo_board_controller_1ac6e8c0bbb9b8572f63385cf29843b63c" kind="function"><name>SetPhase</name></member>
+    <member refid="class_cluedo_board_controller_1a6171b213d963804fa8b80a3493e07b7d" kind="function"><name>UpdateUI</name></member>
+    <member refid="class_cluedo_board_controller_1afa50545266bd517eb9f7f27a72858ad3" kind="function"><name>ShowWinScreen</name></member>
+    <member refid="class_cluedo_board_controller_1a33c8f1d31626ad26ceed33fd8022bdf3" kind="function"><name>Log</name></member>
+    <member refid="class_cluedo_board_controller_1ab3b7c6c68cf0a03b9a88758ff76a9c31" kind="function"><name>OnRollDice</name></member>
+    <member refid="class_cluedo_board_controller_1a9472158eebd78fa808be2779e7aad56a" kind="function"><name>OnCellSelected</name></member>
+    <member refid="class_cluedo_board_controller_1adfa81714e0e9a5a8a1c34e8e995000bc" kind="function"><name>OnSuggestionSubmitted</name></member>
+    <member refid="class_cluedo_board_controller_1aec8727bed79fe17a99c6794453814b42" kind="function"><name>OnAccusationSubmitted</name></member>
+    <member refid="class_cluedo_board_controller_1af27a66ea8ade9b452165906b0a42f1f2" kind="function"><name>GetCurrentPlayer</name></member>
+    <member refid="class_cluedo_board_controller_1a2233c5ba5dbf60adc04d4c338b48e823" kind="function"><name>GetAllPlayers</name></member>
+    <member refid="class_cluedo_board_controller_1a05422dd383755409be72758bd7db65ff" kind="function"><name>GetSolution</name></member>
+  </compound>
+  <compound refid="class_cluedo_board_data" kind="class"><name>CluedoBoardData</name>
+    <member refid="class_cluedo_board_data_1adad33144fb38c54c02a5ba3e837a68a5" kind="variable"><name>gridWidth</name></member>
+    <member refid="class_cluedo_board_data_1a83b5e8cf3add3f95148b2d33e5b8da55" kind="variable"><name>gridHeight</name></member>
+    <member refid="class_cluedo_board_data_1a170a3ace59f3f2af91ec92fb757d0191" kind="variable"><name>cellSize</name></member>
+    <member refid="class_cluedo_board_data_1ae809de3baef6be6c45f92371e0ce0f9d" kind="variable"><name>boardOrigin</name></member>
+    <member refid="class_cluedo_board_data_1ae88f39778e38dbfdd00b6c2f05245e03" kind="variable"><name>rooms</name></member>
+    <member refid="class_cluedo_board_data_1aee8d4e9540b6777350b2f5a200fdc92c" kind="variable"><name>blockedCells</name></member>
+    <member refid="class_cluedo_board_data_1ab635efd954efef52ce95ed47d7cf49cb" kind="variable"><name>startPositions</name></member>
+    <member refid="class_cluedo_board_data_1a2fe7fd45d89f21c2e67f8eb6870a749e" kind="function"><name>GridToWorld</name></member>
+    <member refid="class_cluedo_board_data_1a7272cadd03a10ff1c8bdcb92507f3e86" kind="function"><name>WorldToGrid</name></member>
+    <member refid="class_cluedo_board_data_1ad97e169e2e8daf50e72d177ec2a63171" kind="function"><name>GetRoom</name></member>
+  </compound>
+  <compound refid="class_cluedo_board_controller_1_1_cluedo_card" kind="class"><name>CluedoBoardController::CluedoCard</name>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1a455ead285e26a9b6632e6c29aeb5b276" kind="enum"><name>CardType</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1a455ead285e26a9b6632e6c29aeb5b276a06197f478ef19e4e580f3517579137a3" kind="enumvalue"><name>Suspect</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1a455ead285e26a9b6632e6c29aeb5b276a18c83669920215a818638ad0e5421e4b" kind="enumvalue"><name>Weapon</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1a455ead285e26a9b6632e6c29aeb5b276acc3abcf4426bff80257d22999d0eda8f" kind="enumvalue"><name>Room</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1a4ce59689a15d1aa61fd95683ed45ea6b" kind="variable"><name>cardName</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1ae6453210a780e4838cf7f50ea969c73a" kind="variable"><name>type</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1a65a1a7d3197ee1e75dbaec257c958922" kind="variable"><name>suspect</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1a03de6691fba505e280c081b1e2ee233a" kind="variable"><name>weapon</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1a1fcd1b5985d706790bf14a3c7ab22251" kind="variable"><name>room</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1aba6ec8a0a560289c71c3669aaa69c2a4" kind="function"><name>CluedoCard</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1ad852d3f9f28af28a0e078b7d14c2e969" kind="function"><name>CluedoCard</name></member>
+    <member refid="class_cluedo_board_controller_1_1_cluedo_card_1a09222d7c17990879a096995fdd82f1f7" kind="function"><name>CluedoCard</name></member>
+  </compound>
+  <compound refid="class_cluedo_enums" kind="class"><name>CluedoEnums</name>
+    <member refid="class_cluedo_enums_1a00f963ea6adf12e8afb2717f2256e65c" kind="enum"><name>Suspect</name></member>
+    <member refid="class_cluedo_enums_1a00f963ea6adf12e8afb2717f2256e65caa742573743a36042e3d360b88fe68af8" kind="enumvalue"><name>MissScarlett</name></member>
+    <member refid="class_cluedo_enums_1a00f963ea6adf12e8afb2717f2256e65ca4b44d94726ded148a2353b2d6abcba1c" kind="enumvalue"><name>ColMustard</name></member>
+    <member refid="class_cluedo_enums_1a00f963ea6adf12e8afb2717f2256e65ca20813408d110d95c9dc88937644b4fad" kind="enumvalue"><name>MrsWhite</name></member>
+    <member refid="class_cluedo_enums_1a00f963ea6adf12e8afb2717f2256e65cadff85b6e942edeb7806e2bdac3759446" kind="enumvalue"><name>RevGreen</name></member>
+    <member refid="class_cluedo_enums_1a00f963ea6adf12e8afb2717f2256e65ca5db3efe5d0495d7dedca541c1912a4d4" kind="enumvalue"><name>MrsPeacock</name></member>
+    <member refid="class_cluedo_enums_1a00f963ea6adf12e8afb2717f2256e65ca39fd2f6ee051c130b63b9781b0aff8c2" kind="enumvalue"><name>ProfPlum</name></member>
+    <member refid="class_cluedo_enums_1adb814a7b2413a82f8de0894996cc8cf0" kind="enum"><name>Weapon</name></member>
+    <member refid="class_cluedo_enums_1adb814a7b2413a82f8de0894996cc8cf0a5f13640eb2d9a18296a0662051d41a38" kind="enumvalue"><name>Candlestick</name></member>
+    <member refid="class_cluedo_enums_1adb814a7b2413a82f8de0894996cc8cf0ad39d7a2bb6d430fd238a6aedc7f0cee2" kind="enumvalue"><name>Knife</name></member>
+    <member refid="class_cluedo_enums_1adb814a7b2413a82f8de0894996cc8cf0a3cc5a18a3ce193db372905c869be258b" kind="enumvalue"><name>LeadPipe</name></member>
+    <member refid="class_cluedo_enums_1adb814a7b2413a82f8de0894996cc8cf0ae450f76afe9b3844228bdf4846d6f301" kind="enumvalue"><name>Revolver</name></member>
+    <member refid="class_cluedo_enums_1adb814a7b2413a82f8de0894996cc8cf0aa3a77296cc85eb0c3175a09c0f7c3e60" kind="enumvalue"><name>Rope</name></member>
+    <member refid="class_cluedo_enums_1adb814a7b2413a82f8de0894996cc8cf0ad0e410ca11db8103b87c4f66e2659067" kind="enumvalue"><name>Wrench</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524" kind="enum"><name>Room</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524a33fa00a66f2edf0d1c5697a9f8693ba8" kind="enumvalue"><name>Kitchen</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524a99b46ee68598455b26c07178a4e22cf7" kind="enumvalue"><name>Ballroom</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524a44a6fd66cd40d3a08f7228f7b1c4ccb7" kind="enumvalue"><name>Conservatory</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524a89b0665a8c7cc09151fb6f2d48c03887" kind="enumvalue"><name>BilliardRoom</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524a4d70254b3a8e2bc38b6147fa6ee813be" kind="enumvalue"><name>Library</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524a0a3dac2314e66e15240f019afcbd6b0f" kind="enumvalue"><name>Study</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524a75002fe48442a02a55971f48cebbe3e4" kind="enumvalue"><name>Hall</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524ac4d1e675e69e73d60984bad5e7487dca" kind="enumvalue"><name>Lounge</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524aad63dd5fe262a1caba888f03ee74ba65" kind="enumvalue"><name>DiningRoom</name></member>
+    <member refid="class_cluedo_enums_1a6debabeec47e19f0271487c208b2f524a78b14475f6b820d3111037c2f17b5361" kind="enumvalue"><name>Corridor</name></member>
+    <member refid="class_cluedo_enums_1a079d962fd388a662efd35e51a6c3673c" kind="enum"><name>GamePhase</name></member>
+    <member refid="class_cluedo_enums_1a079d962fd388a662efd35e51a6c3673caad2376beebecdcf7846ba973fa1a005b" kind="enumvalue"><name>Setup</name></member>
+    <member refid="class_cluedo_enums_1a079d962fd388a662efd35e51a6c3673caf4920797afb92022a9c6608efcd86317" kind="enumvalue"><name>Rolling</name></member>
+    <member refid="class_cluedo_enums_1a079d962fd388a662efd35e51a6c3673cadefe967ad0373b2274fc298f19125ca7" kind="enumvalue"><name>Moving</name></member>
+    <member refid="class_cluedo_enums_1a079d962fd388a662efd35e51a6c3673ca3089a3b84087bcb487261d6f07ee65c0" kind="enumvalue"><name>MakingSuggestion</name></member>
+    <member refid="class_cluedo_enums_1a079d962fd388a662efd35e51a6c3673cad38cededeb16a2c388b650c922f49534" kind="enumvalue"><name>ResolvingSuggestion</name></member>
+    <member refid="class_cluedo_enums_1a079d962fd388a662efd35e51a6c3673ca4bb540b093ef84b326454133c47e0584" kind="enumvalue"><name>MakingAccusation</name></member>
+    <member refid="class_cluedo_enums_1a079d962fd388a662efd35e51a6c3673ca8f347bc7cebca9fa6d97e70c6bc29eb3" kind="enumvalue"><name>GameOver</name></member>
+  </compound>
+  <compound refid="class_deck" kind="class"><name>Deck</name>
+    <member refid="class_deck_1a4f73d797cbc321e18eb13b2c8dc88297" kind="variable"><name>cards</name></member>
+    <member refid="class_deck_1aabc2a6ab64d1826b5d745e43e5f93d31" kind="variable"><name>random</name></member>
+    <member refid="class_deck_1a8e332c64b066fc51d7b8c5861ea153b5" kind="function"><name>Deck</name></member>
+    <member refid="class_deck_1a04d6ac6ec9d9ff1007a9baf75a122152" kind="function"><name>AddCard</name></member>
+    <member refid="class_deck_1a92476085027cd681edc24aecc7eb624e" kind="function"><name>Shuffle</name></member>
+    <member refid="class_deck_1a172a4cab1a1a51fdc895f02e58a63583" kind="function"><name>DrawCard</name></member>
+    <member refid="class_deck_1ad6d81f8b8c496ef1bcc7843751661212" kind="function"><name>Count</name></member>
+    <member refid="class_deck_1a104b1119c16008e666fe0d67da89e033" kind="function"><name>ToString</name></member>
+  </compound>
+  <compound refid="class_detective_card_entry" kind="class"><name>DetectiveCardEntry</name>
+    <member refid="class_detective_card_entry_1a39ce1f84cca7845926161132df9dd66a" kind="variable"><name>cardName</name></member>
+    <member refid="class_detective_card_entry_1a3f4969b50c8b5a3201e6c13ade915b12" kind="variable"><name>active</name></member>
+    <member refid="class_detective_card_entry_1ac46dff6dd0d51613d0ddff349ff6e737" kind="variable"><name>autoCrossedOut</name></member>
+    <member refid="class_detective_card_entry_1a11e0447b8292c476fd6d072ced620e39" kind="variable"><name>manualCrossedOut</name></member>
+    <member refid="class_detective_card_entry_1a60807f9cbb730aa8f56ee0a321a0972d" kind="variable"><name>knownNotHeld</name></member>
+    <member refid="class_detective_card_entry_1ac3b7e3da4f4b27e9b9db2382910c42ba" kind="function"><name>DetectiveCardEntry</name></member>
+    <member refid="class_detective_card_entry_1a379c0ebe1d674360af6331fc38203631" kind="function"><name>DetectiveCardEntry</name></member>
+    <member refid="class_detective_card_entry_1ac5b2677db9e876cb7fc6fbf51d25162d" kind="function"><name>GetCardName</name></member>
+    <member refid="class_detective_card_entry_1af6e447f805b7d972ab7d8c2cbb22f373" kind="function"><name>GetColumnCount</name></member>
+    <member refid="class_detective_card_entry_1acf42ab18333be7a1741906e3c0c32527" kind="function"><name>IsColumnActive</name></member>
+    <member refid="class_detective_card_entry_1a1bd60df25c7d5ea82e627358a2af1287" kind="function"><name>ShouldDisplayCross</name></member>
+    <member refid="class_detective_card_entry_1ae43e42b32baec0ec6ad9e2ecf4318d6d" kind="function"><name>IsCrossedOut</name></member>
+    <member refid="class_detective_card_entry_1a9830d29be438fd45fd8cf05080d5412a" kind="function"><name>IsAutoCrossedOut</name></member>
+    <member refid="class_detective_card_entry_1a444372ba77ce8f16b4a2f26085884398" kind="function"><name>IsManualCrossedOut</name></member>
+    <member refid="class_detective_card_entry_1a5f1a224fe94a9a406f4a4e64046066a5" kind="function"><name>MarkAuto</name></member>
+    <member refid="class_detective_card_entry_1a331248f860bb934ffa60c84466302a4c" kind="function"><name>MarkNotHeldBy</name></member>
+    <member refid="class_detective_card_entry_1a333b5f45659e97f7fcafa21a61187d89" kind="function"><name>IsKnownNotHeldBy</name></member>
+    <member refid="class_detective_card_entry_1ad0162d1be0ed298cdea30aa4d0b70abc" kind="function"><name>MarkManual</name></member>
+    <member refid="class_detective_card_entry_1a2323eb64d38437699390ba2287cb8a07" kind="function"><name>UndoManual</name></member>
+    <member refid="class_detective_card_entry_1a9a163e6a528724291ea92480cd352969" kind="function"><name>IsAutoCrossedOutAnywhere</name></member>
+    <member refid="class_detective_card_entry_1a98c6d27824fa258c66e5509a448cabe3" kind="function"><name>IsCrossedOutAnywhere</name></member>
+    <member refid="class_detective_card_entry_1ab41c781b8af14b047b6bfdef9168237d" kind="function"><name>IsDefinitelyInEnvelope</name></member>
+    <member refid="class_detective_card_entry_1a4bad59e24ca0ff3ca0409379dbd4c449" kind="function"><name>IsCrossedOut</name></member>
+    <member refid="class_detective_card_entry_1a39ecd110783b68c0ba2e4afdd5d141b7" kind="function"><name>IsAutoCrossedOut</name></member>
+    <member refid="class_detective_card_entry_1ab9de35b93b4ccc69a221e6a08d335c1a" kind="function"><name>IsManualCrossedOut</name></member>
+    <member refid="class_detective_card_entry_1a5c1118c7f12d6df5ff8e5a0c22a03ea5" kind="function"><name>MarkAuto</name></member>
+    <member refid="class_detective_card_entry_1a863f9d3cc9c376df664431d791977da0" kind="function"><name>MarkManual</name></member>
+    <member refid="class_detective_card_entry_1ab9424672f14c646bd46a98a36fd005cc" kind="function"><name>UndoManual</name></member>
+    <member refid="class_detective_card_entry_1a6aa96533ab98bc804acd75fdf7c199fc" kind="function"><name>IsValidIndex</name></member>
+  </compound>
+  <compound refid="class_detective_row_u_i" kind="class"><name>DetectiveRowUI</name>
+    <member refid="class_detective_row_u_i_1a77664c2b26c8b803ffa4b5a48f3558a8" kind="variable"><name>cardNameText</name></member>
+    <member refid="class_detective_row_u_i_1a1b9fe92d688583a738d1e45cfb26f26a" kind="variable"><name>crossButtons</name></member>
+    <member refid="class_detective_row_u_i_1aa972aa85ac089dc66b53d0c698278ec1" kind="variable"><name>xImages</name></member>
+    <member refid="class_detective_row_u_i_1a3d8fecb44ecb49ae194f6dd5ec0dccd8" kind="variable"><name>sheet</name></member>
+    <member refid="class_detective_row_u_i_1afb0e9425ebafab999cd0115a1ca6a831" kind="variable"><name>entry</name></member>
+    <member refid="class_detective_row_u_i_1ab0a0f100db8bae6502acf565a30025d8" kind="function"><name>Setup</name></member>
+    <member refid="class_detective_row_u_i_1aa046b26449c8ce1808f375c0f668c54d" kind="function"><name>Refresh</name></member>
+    <member refid="class_detective_row_u_i_1aaa88008d2da20be7e928f5a625a435f8" kind="function"><name>GetCardName</name></member>
+    <member refid="class_detective_row_u_i_1a8228bd2210698da43d85d4469f4bbe51" kind="function"><name>OnButtonClicked</name></member>
+  </compound>
+  <compound refid="class_detective_sheet" kind="class"><name>DetectiveSheet</name>
+    <member refid="class_detective_sheet_1a3cc48da7c1f3dbdbc9665fd23003b03a" kind="variable"><name>DEFAULT_COLUMN_COUNT</name></member>
+    <member refid="class_detective_sheet_1ad192a0e342f9f7a0a88061e0d340ca38" kind="variable"><name>entries</name></member>
+    <member refid="class_detective_sheet_1a031a8ff6c493660480c58d29f54c9352" kind="variable"><name>columnCount</name></member>
+    <member refid="class_detective_sheet_1a2d29ffa38322a827a96b4f970f60e944" kind="variable"><name>activePlayerCount</name></member>
+    <member refid="class_detective_sheet_1a9a0f1c1abc38678c91a916dda4bfd31a" kind="function"><name>DetectiveSheet</name></member>
+    <member refid="class_detective_sheet_1a8b8de34ab616a21386c9f02bd70d59a4" kind="function"><name>DetectiveSheet</name></member>
+    <member refid="class_detective_sheet_1a3a0e21669372cc6f6cc9bcde31131008" kind="function"><name>DetectiveSheet</name></member>
+    <member refid="class_detective_sheet_1a6e42aed55b85ec9e15940341044cbcb4" kind="function"><name>InitialiseFromHand</name></member>
+    <member refid="class_detective_sheet_1a2ecbb0d11df9d3d5a106b15c4cbcaba5" kind="function"><name>GetEntries</name></member>
+    <member refid="class_detective_sheet_1aa9fedda6a1db3a9f6104f7e305a9cd4c" kind="function"><name>GetColumnCount</name></member>
+    <member refid="class_detective_sheet_1a03d71b546b94e2a04c2ddec9e6708abb" kind="function"><name>GetActivePlayerCount</name></member>
+    <member refid="class_detective_sheet_1a33e606a0b27ac132d3492707f7116aaf" kind="function"><name>GetEntryByName</name></member>
+    <member refid="class_detective_sheet_1a1891461c6250fbd35a368b13b2d63aeb" kind="function"><name>MarkAuto</name></member>
+    <member refid="class_detective_sheet_1a4b402a9f2b8f42b0145c4e334011dbdd" kind="function"><name>MarkAuto</name></member>
+    <member refid="class_detective_sheet_1a18aa5ae15a4d106ddb149773b47d24f8" kind="function"><name>MarkNotHeldBy</name></member>
+    <member refid="class_detective_sheet_1ac2a351426a35f17d82d6948562947373" kind="function"><name>MarkNotHeldBy</name></member>
+    <member refid="class_detective_sheet_1a184000787375d9c2eef481e96c2d56fd" kind="function"><name>ToggleManualCrossOut</name></member>
+    <member refid="class_detective_sheet_1a065ab4733decde73926a651abd317aa1" kind="function"><name>MarkAuto</name></member>
+    <member refid="class_detective_sheet_1a14d582b69ec51dd30b96eb46957e0104" kind="function"><name>MarkAuto</name></member>
+    <member refid="class_detective_sheet_1affb3497ea4585efbe3367c5d586e9062" kind="function"><name>ToggleManualCrossOut</name></member>
+    <member refid="class_detective_sheet_1a5fd5f6cf99e7c837ab73cdb06de897b1" kind="function"><name>IsRuledOutOfEnvelope</name></member>
+    <member refid="class_detective_sheet_1a538224f0019a65480278c52ebcf8f843" kind="function"><name>AddDefaultCards</name></member>
+    <member refid="class_detective_sheet_1a96ba21afe951151533a191fd9a94d85e" kind="function"><name>AddEntry</name></member>
+  </compound>
+  <compound refid="class_detective_sheet_builder" kind="class"><name>DetectiveSheetBuilder</name>
+    <member refid="class_detective_sheet_builder_1acfc8f1425fa2a594760a816cf3a37391" kind="variable"><name>rowPrefab</name></member>
+    <member refid="class_detective_sheet_builder_1aa37a1c553b6a672f91222fc21f205edc" kind="variable"><name>rowsContainer</name></member>
+    <member refid="class_detective_sheet_builder_1aa22c4aafe1aec325fc57c5530f2c7e38" kind="variable"><name>activePlayerCount</name></member>
+    <member refid="class_detective_sheet_builder_1aa346b14b41678547108e9f46c0c202a1" kind="variable"><name>sectionGapHeight</name></member>
+    <member refid="class_detective_sheet_builder_1a51e24a42e9ae7b19f4e168607374397e" kind="variable"><name>sheet</name></member>
+    <member refid="class_detective_sheet_builder_1a92d1ff3d4b1958c811cd6e4d7f18b90f" kind="variable"><name>rows</name></member>
+    <member refid="class_detective_sheet_builder_1ae93470e7a8b5b0543e7b409d7a377760" kind="property"><name>Sheet</name></member>
+    <member refid="class_detective_sheet_builder_1a86c27493730c705a668eea20d1ec4890" kind="function"><name>Start</name></member>
+    <member refid="class_detective_sheet_builder_1ad06a21ebc1cf1a1d93efacff78473294" kind="function"><name>BuildSection</name></member>
+    <member refid="class_detective_sheet_builder_1ad08fe44ebf4fb3ffe47aae32ad017ce4" kind="function"><name>AddGap</name></member>
+    <member refid="class_detective_sheet_builder_1a5acd901c6d6174d3ec1722512aca7691" kind="function"><name>ClearRows</name></member>
+    <member refid="class_detective_sheet_builder_1ad70eaab7f599bc2c36c7cc91281cca75" kind="function"><name>SetSheet</name></member>
+    <member refid="class_detective_sheet_builder_1add25c6a5b5f810b3338534dfca705c13" kind="function"><name>RefreshAll</name></member>
+    <member refid="class_detective_sheet_builder_1a88456afddff031dfa01b065611d5fff9" kind="function"><name>Build</name></member>
+  </compound>
+  <compound refid="class_detective_sheet_manager" kind="class"><name>DetectiveSheetManager</name>
+    <member refid="class_detective_sheet_manager_1a439680e9496aeab83e710a5e4503c1f4" kind="variable"><name>detectiveButton</name></member>
+    <member refid="class_detective_sheet_manager_1a544a441efb79bdd5d03ed57978382be1" kind="variable"><name>animDuration</name></member>
+    <member refid="class_detective_sheet_manager_1a95bc4b82620436e2dd0c280f15e3122d" kind="variable"><name>_rt</name></member>
+    <member refid="class_detective_sheet_manager_1a8b5404aa8bffa85a509d5a3a1375a5d4" kind="variable"><name>_cg</name></member>
+    <member refid="class_detective_sheet_manager_1a84efe69f91665e2cfd1fd50149baa979" kind="variable"><name>_open</name></member>
+    <member refid="class_detective_sheet_manager_1ab2beb440b9b4f446d01b9ce42993720a" kind="variable"><name>_anim</name></member>
+    <member refid="class_detective_sheet_manager_1a07b64b52635f2e43fa267d330a77fe9c" kind="variable"><name>ScaleOpen</name></member>
+    <member refid="class_detective_sheet_manager_1ae9a0a6d6a4872c54de684a19a252eb58" kind="variable"><name>ScaleClosed</name></member>
+    <member refid="class_detective_sheet_manager_1ac4e80ab40ea01c4c4c41ada11f51d1e6" kind="property"><name>IsOpen</name></member>
+    <member refid="class_detective_sheet_manager_1abebb28fdc660261cae97fb0be8ddfa54" kind="function"><name>Awake</name></member>
+    <member refid="class_detective_sheet_manager_1a16813d38c6534cdb16afb2224565ee82" kind="function"><name>AnimateOpen</name></member>
+    <member refid="class_detective_sheet_manager_1a5e0c0983ae3c8c27790e892d5dcf4393" kind="function"><name>AnimateClose</name></member>
+    <member refid="class_detective_sheet_manager_1ae60f9ae14b9c4532922f7e404db93f0f" kind="function"><name>Animate</name></member>
+    <member refid="class_detective_sheet_manager_1a5d372cdedefa7c066782b2b6ed2d8fc2" kind="function"><name>Toggle</name></member>
+    <member refid="class_detective_sheet_manager_1a68c185e189d7ea4a999b4ea318a9f1f1" kind="function"><name>ForceClose</name></member>
+    <member refid="class_detective_sheet_manager_1a74c32459c89a8381e5d8a069964b8e4a" kind="function"><name>ResetAllCells</name></member>
+    <member refid="class_detective_sheet_manager_1aa3fb75b8c95687994558b891e7a1af62" kind="function"><name>EaseOutBack</name></member>
+  </compound>
+  <compound refid="class_dice" kind="class"><name>Dice</name>
+    <member refid="class_dice_1a7cf126ff6fadde1647253181bad02a2c" kind="variable"><name>sides</name></member>
+    <member refid="class_dice_1aff0d5d3ebc301ee43011237bff646a95" kind="variable"><name>random</name></member>
+    <member refid="class_dice_1a74b427d6208be7d82b8b80cf22a977f3" kind="function"><name>Dice</name></member>
+    <member refid="class_dice_1a68e3451284a714cfcb18b58aae96095c" kind="function"><name>Roll</name></member>
+  </compound>
+  <compound refid="class_dice_controller" kind="class"><name>DiceController</name>
+    <member refid="class_dice_controller_1ab86023540971d47e9ae0c1c36e44bb8a" kind="variable"><name>dice</name></member>
+    <member refid="class_dice_controller_1aa64f7fe67bec56f7f1735d08e7645f2c" kind="variable"><name>diceImage1</name></member>
+    <member refid="class_dice_controller_1a4135806ca809ba1397a983d97d35f540" kind="variable"><name>diceImage2</name></member>
+    <member refid="class_dice_controller_1ae90d8fd4a4638dcd2cf8b8884013d1dd" kind="variable"><name>diceSprites</name></member>
+    <member refid="class_dice_controller_1a29b4ea0cc99c22938a7da373537c023f" kind="variable"><name>OnRollComplete</name></member>
+    <member refid="class_dice_controller_1a4f7bb85cdfda833c7b19f6b11a1239f2" kind="function"><name>Start</name></member>
+    <member refid="class_dice_controller_1af7133891008640adff37565c66e75b0b" kind="function"><name>RollAnimation</name></member>
+    <member refid="class_dice_controller_1a98d69b650782976eafae1afa49b5bd03" kind="function"><name>RollDice</name></member>
+  </compound>
+  <compound refid="class_dice_roll_manager" kind="class"><name>DiceRollManager</name>
+    <member refid="class_dice_roll_manager_1a4cd8d3f82b0016e65a14dbcf61a7ff08" kind="variable"><name>die1Image</name></member>
+    <member refid="class_dice_roll_manager_1afb8dde3bb72cc91ec9ad9fc36383084e" kind="variable"><name>die2Image</name></member>
+    <member refid="class_dice_roll_manager_1aba75b1affd8fd5b5055625b94ada83ae" kind="variable"><name>totalLabel</name></member>
+    <member refid="class_dice_roll_manager_1ad67d195262d83d894fa021d6fd1e7dcb" kind="variable"><name>dieSprites</name></member>
+    <member refid="class_dice_roll_manager_1aab534fa06e2e9ebbb8a30a2bf4f3af48" kind="variable"><name>endTurnButton</name></member>
+    <member refid="class_dice_roll_manager_1ad8e564465971b08de86e9b7c407f90c3" kind="variable"><name>tumbleFrames</name></member>
+    <member refid="class_dice_roll_manager_1a8a5e63f6804522b53391c45681a489b7" kind="variable"><name>tumbleInterval</name></member>
+    <member refid="class_dice_roll_manager_1a599892a01fd4a363de6258885f838b60" kind="variable"><name>oneRollPerTurn</name></member>
+    <member refid="class_dice_roll_manager_1a3568b3780cdc23aa30cc1a2df71184fe" kind="property"><name>TotalMoves</name></member>
+    <member refid="class_dice_roll_manager_1aa0b9c3b46e28155fa399f0a49b2a2fc2" kind="property"><name>Die1Value</name></member>
+    <member refid="class_dice_roll_manager_1a98fc13952096e9b862b3d10363a5f850" kind="property"><name>Die2Value</name></member>
+    <member refid="class_dice_roll_manager_1a50baf7891e4560f5722ccc954849616f" kind="variable"><name>_rollButton</name></member>
+    <member refid="class_dice_roll_manager_1ae78d60a0678a280ba11a7a2297658694" kind="variable"><name>_hasRolledThisTurn</name></member>
+    <member refid="class_dice_roll_manager_1afb2f41432e16bf6145978f5286e191db" kind="variable"><name>_rolling</name></member>
+    <member refid="class_dice_roll_manager_1a7484248918dca22bbbeb8db6098157f9" kind="function"><name>Awake</name></member>
+    <member refid="class_dice_roll_manager_1a4afaf27f7d89e60f746fb5730f2e944f" kind="function"><name>AttemptRoll</name></member>
+    <member refid="class_dice_roll_manager_1a8e90b67cb104ce19e9e55c3c571e4a89" kind="function"><name>ResetForNewTurn</name></member>
+    <member refid="class_dice_roll_manager_1add608facd46c6587aead69d3c7a681b7" kind="function"><name>RollRoutine</name></member>
+    <member refid="class_dice_roll_manager_1a2c938e414022d0198ca830276996004e" kind="function"><name>ShowDie</name></member>
+    <member refid="class_dice_roll_manager_1a22273cfc8d4a35501331db665ae0b7e8" kind="function"><name>ClearDisplay</name></member>
+  </compound>
+  <compound refid="class_end_screen_controller" kind="class"><name>EndScreenController</name>
+    <member refid="class_end_screen_controller_1acaff76c09219caa77ef88a9c4e1d23f8" kind="variable"><name>winnerText</name></member>
+    <member refid="class_end_screen_controller_1a57c295ff28bda83541bc22bdf822e00e" kind="function"><name>Start</name></member>
+    <member refid="class_end_screen_controller_1a8c72b33131ae82a9dea5f2da65615916" kind="function"><name>ReturnToMenu</name></member>
+  </compound>
+  <compound refid="class_game_controller" kind="class"><name>GameController</name>
+    <member refid="class_game_controller_1aac192fe5ddbb41345a8402513ed69974" kind="variable"><name>players</name></member>
+    <member refid="class_game_controller_1a22b82d0805d176c1b5cf77c875662b98" kind="variable"><name>deck</name></member>
+    <member refid="class_game_controller_1aa182ac1c744148acab8642e3a371306d" kind="variable"><name>weaponsDeck</name></member>
+    <member refid="class_game_controller_1a1aae798bc7973e574dfb05d6d983c006" kind="variable"><name>roomsDeck</name></member>
+    <member refid="class_game_controller_1adeb6ec4c3b013a6eaab6b6a3157dc77f" kind="variable"><name>charactersDeck</name></member>
+    <member refid="class_game_controller_1ad40db0d90f72715dfb8c61c6aefa60ba" kind="variable"><name>murderEnvelope</name></member>
+    <member refid="class_game_controller_1abe68140a9f65a810a2eb143bd38145b6" kind="variable"><name>currentPlayerIndex</name></member>
+    <member refid="class_game_controller_1aeae400ea0c604655ce5801818a5a44a1" kind="variable"><name>gameOver</name></member>
+    <member refid="class_game_controller_1ab9d3999255699bcc02d28d3abdc974b8" kind="variable"><name>canRoll</name></member>
+    <member refid="class_game_controller_1a33a2a452a99ffd22f8644c57cb4a821d" kind="variable"><name>dice</name></member>
+    <member refid="class_game_controller_1a9132b57288a6dca2b621a7ae7357af48" kind="variable"><name>turnCount</name></member>
+    <member refid="class_game_controller_1a7a3dec1279dd9cc741535fbd0e079a08" kind="variable"><name>diceController</name></member>
+    <member refid="class_game_controller_1afeab5c232ff6da69cfa71ffef3b3d9b4" kind="variable"><name>candlestickCardSprite</name></member>
+    <member refid="class_game_controller_1a3ff38f829692b7a6864f94a4d050ec9a" kind="variable"><name>knifeCardSprite</name></member>
+    <member refid="class_game_controller_1a591590c61b4f96a858d53c5b7ce4c795" kind="variable"><name>leadpipeCardSprite</name></member>
+    <member refid="class_game_controller_1a7cd8708cf9dbfdb2fa1635b6875f2ade" kind="variable"><name>revolverCardSprite</name></member>
+    <member refid="class_game_controller_1a09d4ef3179771f279b4b2418b9a883ab" kind="variable"><name>ropeCardSprite</name></member>
+    <member refid="class_game_controller_1ac589e6924085ced19b901ff45f77c64c" kind="variable"><name>wrenchCardSprite</name></member>
+    <member refid="class_game_controller_1aa9ec17ca978b26a252bf7790e6dc6a88" kind="variable"><name>mustardCardSprite</name></member>
+    <member refid="class_game_controller_1ace64a1dd000659138d85b7e6846a98cf" kind="variable"><name>scarlettCardSprite</name></member>
+    <member refid="class_game_controller_1aeb2321bea263c1f816feda76540b31c3" kind="variable"><name>peacockCardSprite</name></member>
+    <member refid="class_game_controller_1a64fc82fdc03e5c88e07ca6597ab99080" kind="variable"><name>whiteCardSprite</name></member>
+    <member refid="class_game_controller_1aa26659e74ef24fc31a1cfc9c68d968f1" kind="variable"><name>plumCardSprite</name></member>
+    <member refid="class_game_controller_1abd3b62cb69227ec235921a6c2fa41718" kind="variable"><name>greenCardSprite</name></member>
+    <member refid="class_game_controller_1a5ce7fa8eaf0fa74cf4d7796543ce7ec1" kind="variable"><name>ballroomCardSprite</name></member>
+    <member refid="class_game_controller_1a63b8be3c20e95da518a03151a94bc843" kind="variable"><name>billiardsCardSprite</name></member>
+    <member refid="class_game_controller_1a1142a28d0d2c160c873ec6b19d5d8571" kind="variable"><name>conservatoryCardSprite</name></member>
+    <member refid="class_game_controller_1a456a26032dd56de8c93542c3546e5764" kind="variable"><name>diningCardSprite</name></member>
+    <member refid="class_game_controller_1a498b660db222847c4c05735ed1b682a1" kind="variable"><name>hallCardSprite</name></member>
+    <member refid="class_game_controller_1a20bfa3b2e7e5fdbe5eae2925f0900c0b" kind="variable"><name>kitchenCardSprite</name></member>
+    <member refid="class_game_controller_1a2f74bf563abbaf0323a72346c131e4bb" kind="variable"><name>libraryCardSprite</name></member>
+    <member refid="class_game_controller_1afe75b6db22fd4f48fdac2464d7b3a9ce" kind="variable"><name>loungeCardSprite</name></member>
+    <member refid="class_game_controller_1a4bd6694a7d3e8ffb6da85364cd335bb2" kind="variable"><name>studyCardSprite</name></member>
+    <member refid="class_game_controller_1ad73e7b7c496d0869b4db20ce8af56100" kind="variable"><name>maxTurns</name></member>
+    <member refid="class_game_controller_1a7f28cd82188e0134c68c3d8e8ed932a9" kind="variable"><name>winner</name></member>
+    <member refid="class_game_controller_1a97788a7aa0f09c8d748781683e5f045b" kind="function"><name>Start</name></member>
+    <member refid="class_game_controller_1a82d4e7af58d195b7d8241b85656170a3" kind="function"><name>InitialiseGame</name></member>
+    <member refid="class_game_controller_1a766ef2f8dddd965b2144c09e8db2d3a2" kind="function"><name>TakeTurn</name></member>
+    <member refid="class_game_controller_1af5c6d4edd7d02577f12f948abd80fb1c" kind="function"><name>StartGame</name></member>
+    <member refid="class_game_controller_1aefbaffce00bd9929f25c76e126d62390" kind="function"><name>LoadCards</name></member>
+    <member refid="class_game_controller_1ab349d4fa9111268bcbad5336cb80a65e" kind="function"><name>SetupMurderEnvelope</name></member>
+    <member refid="class_game_controller_1a6d81cb19c5bfc62a67dc3061d51f3229" kind="function"><name>SetupMainDeck</name></member>
+    <member refid="class_game_controller_1aa41b73b21f03acf019611d3a9fb5d91d" kind="function"><name>DealCards</name></member>
+    <member refid="class_game_controller_1a874a9e972eba9a694748505260a663db" kind="function"><name>AddAllCards</name></member>
+    <member refid="class_game_controller_1ab8d1a252da9c15af34ee9da68435aad0" kind="function"><name>NextPlayer</name></member>
+    <member refid="class_game_controller_1a24e6c39f6a84db7ae281c6adb8f4e1e7" kind="function"><name>EndTurn</name></member>
+    <member refid="class_game_controller_1a9456fc25148b203e0bd7f01816cc3607" kind="function"><name>EndGame</name></member>
+    <member refid="class_game_controller_1aa669f7a95aafb9c7883d8f1d9054e208" kind="function"><name>HandleDiceResult</name></member>
+    <member refid="class_game_controller_1acb341c07c963e5ebf34ee0bc4a03b8b8" kind="function"><name>HandleSuggestion</name></member>
+    <member refid="class_game_controller_1ae2d96dba63c54569104576d932ec1cd3" kind="function"><name>HandleAccusation</name></member>
+    <member refid="class_game_controller_1ab3567901278947f9ad3af7f196687ada" kind="function"><name>OnRollDicePressed</name></member>
+    <member refid="class_game_controller_1ae0d5f61e0895c3b0f335d6bc310a24eb" kind="function"><name>SetWinner</name></member>
+    <member refid="class_game_controller_1ab0806a6b6afb84538e5461c613df11aa" kind="function"><name>GetWinner</name></member>
+  </compound>
+  <compound refid="class_grid_cell" kind="class"><name>GridCell</name>
+    <member refid="class_grid_cell_1ad76a21a7428b9a8b083cb000e86d8d2f" kind="variable"><name>gridPos</name></member>
+    <member refid="class_grid_cell_1acc84555349c1d41c799064c0f20a88d1" kind="variable"><name>worldPos</name></member>
+    <member refid="class_grid_cell_1a746c87afc5c9c6bcb8b42143e59f5b7e" kind="variable"><name>isWalkable</name></member>
+    <member refid="class_grid_cell_1a54be2872d9acdcd72868b4dc1aa51a82" kind="variable"><name>isDoor</name></member>
+    <member refid="class_grid_cell_1a8bc64f4d59e773e583ea6e5fdf343845" kind="variable"><name>neighbours</name></member>
+    <member refid="class_grid_cell_1ad7d5c2d8ffde3a604243289dbdd058e7" kind="variable"><name>occupant</name></member>
+    <member refid="class_grid_cell_1a1067c4573241f4b8dc6f687fbe97091e" kind="function"><name>GridCell</name></member>
+  </compound>
+  <compound refid="class_grid_manager" kind="class"><name>GridManager</name>
+    <member refid="class_grid_manager_1ae8473023a00818bfcad3b1723a13fad3" kind="variable"><name>width</name></member>
+    <member refid="class_grid_manager_1ae9da8e928b33e983c184e9974bc8be3d" kind="variable"><name>height</name></member>
+    <member refid="class_grid_manager_1abf7c860ea8953dcc08622ad6eedcdf0d" kind="variable"><name>cellSize</name></member>
+    <member refid="class_grid_manager_1aaa1401d78b3eebe3f98be6b5993c8290" kind="variable"><name>grid</name></member>
+    <member refid="class_grid_manager_1a5e227a1e1854618aad6a3cec28a06abd" kind="function"><name>Awake</name></member>
+    <member refid="class_grid_manager_1ab52fb5c1232f1c192ef81cea2b5e0fbe" kind="function"><name>BuildGrid</name></member>
+    <member refid="class_grid_manager_1aaa2d63acfacddca76e11dc4fb74869f5" kind="function"><name>GridToWorld</name></member>
+    <member refid="class_grid_manager_1a8592ab3d38e58c79760bf6750e96d999" kind="function"><name>WorldToGrid</name></member>
+    <member refid="class_grid_manager_1a2f956ea33fc74a12941ec1b23aece464" kind="function"><name>GetCell</name></member>
+    <member refid="class_grid_manager_1af261d20f4f283e806b5728c4551e5da6" kind="function"><name>GetCell</name></member>
+  </compound>
+  <compound refid="class_human_player" kind="class"><name>HumanPlayer</name>
+    <member refid="class_human_player_1a484f22e6ba93fb64e8456d530af47853" kind="function"><name>HumanPlayer</name></member>
+  </compound>
+  <compound refid="class_list_extensions" kind="class"><name>ListExtensions</name>
+    <member refid="class_list_extensions_1a7936b3cc691cd38eb9380656a7687b34" kind="function"><name>Shuffle&lt; T &gt;</name></member>
+  </compound>
+  <compound refid="class_menu_button" kind="class"><name>MenuButton</name>
+    <member refid="class_menu_button_1a3c12933a6bf3af6f427b084eaccb623f" kind="variable"><name>button</name></member>
+    <member refid="class_menu_button_1a75ca532154f2c2448b8eca5e4545eae6" kind="variable"><name>menuUI</name></member>
+    <member refid="class_menu_button_1a134e11ccacc4a7d9deb97254364ff587" kind="variable"><name>assignedPlayerIndex</name></member>
+    <member refid="class_menu_button_1a6f7a50039e0166b5c71c8c9bd1719aeb" kind="function"><name>Start</name></member>
+    <member refid="class_menu_button_1af595351704e29fe204068380392d5b8b" kind="function"><name>UpdateToggleSprite</name></member>
+    <member refid="class_menu_button_1a9bda1b73d0d2d687aa13266a0e86680f" kind="function"><name>IsPlayerAlreadyAssigned</name></member>
+    <member refid="class_menu_button_1aa0032d32cd11fabb2b9099ca6799b048" kind="function"><name>WouldPlayerSelectionBeValid</name></member>
+    <member refid="class_menu_button_1a6944c71a09444230ce63af5237416554" kind="function"><name>StartButtonClick</name></member>
+    <member refid="class_menu_button_1a8aeeccf488a984d9013c850063a35b71" kind="function"><name>QuitButtonClick</name></member>
+    <member refid="class_menu_button_1ad4f93af5bc44a66a165e51a868c9933a" kind="function"><name>PlayerButtonClick</name></member>
+    <member refid="class_menu_button_1a2a8c83581f790193116fe8af61b4907c" kind="function"><name>BackButtonClick</name></member>
+    <member refid="class_menu_button_1ad7268345e210b69404e3db48c8991e63" kind="function"><name>ToggleButtonClick</name></member>
+    <member refid="class_menu_button_1af56f79cb0acf25118836100b13f4d781" kind="function"><name>GetAssignedPlayerIndex</name></member>
+    <member refid="class_menu_button_1a23f90aedea5142b5192076cf3c3700d9" kind="function"><name>BeginButtonClick</name></member>
+  </compound>
+  <compound refid="class_menu_controller" kind="class"><name>MenuController</name>
+    <member refid="class_menu_controller_1a69d19529a7050c45778d164291be4b59" kind="enum"><name>AnimateToDirection</name></member>
+    <member refid="class_menu_controller_1a69d19529a7050c45778d164291be4b59aa4ffdcf0dc1f31b9acaf295d75b51d00" kind="enumvalue"><name>Top</name></member>
+    <member refid="class_menu_controller_1a69d19529a7050c45778d164291be4b59a2ad9d63b69c4a10a5cc9cad923133bc4" kind="enumvalue"><name>Bottom</name></member>
+    <member refid="class_menu_controller_1a69d19529a7050c45778d164291be4b59a945d5e233cf7d6240f6b783b36a374ff" kind="enumvalue"><name>Left</name></member>
+    <member refid="class_menu_controller_1a69d19529a7050c45778d164291be4b59a92b09c7c48c520c3c55e497875da437c" kind="enumvalue"><name>Right</name></member>
+    <member refid="class_menu_controller_1a3de33e8c60ab0c3ee07170ce99e7da4a" kind="variable"><name>menu</name></member>
+    <member refid="class_menu_controller_1a17690ba2ac2b78b13fc8d49c0042c3c0" kind="variable"><name>menuRectTransform</name></member>
+    <member refid="class_menu_controller_1ab1165051f8d2923de2aa5b0f5350e239" kind="variable"><name>menuCanvasGroup</name></member>
+    <member refid="class_menu_controller_1a59cd8c3effb0d1305ba5fcb2995ec7b3" kind="variable"><name>openDirection</name></member>
+    <member refid="class_menu_controller_1a78d71e5ed8256ef20e5279a68f6fef95" kind="variable"><name>closeDirection</name></member>
+    <member refid="class_menu_controller_1a92fba1ad89f6200f47498115ac6ae6f0" kind="variable"><name>distanceToAnimate</name></member>
+    <member refid="class_menu_controller_1ad801a6f1b7eb4f32bec946d2eed6569a" kind="variable"><name>easingCurve</name></member>
+    <member refid="class_menu_controller_1a97faddb4d01746db58b99b957943d196" kind="variable"><name>animationDuration</name></member>
+    <member refid="class_menu_controller_1ad964d360a4d18809459b50445472bd91" kind="variable"><name>isOpen</name></member>
+    <member refid="class_menu_controller_1a699f5df48c5ec12eaa80e88fbd3cb8b7" kind="variable"><name>initialPosition</name></member>
+    <member refid="class_menu_controller_1ae0dc1db420b80cf1b4b3609110c76c37" kind="variable"><name>currentPosition</name></member>
+    <member refid="class_menu_controller_1a35a5423667b5cc2708f4a3ddd3442fe3" kind="variable"><name>upOffset</name></member>
+    <member refid="class_menu_controller_1a12c68548805dd2d9abc55e9ba8c516a0" kind="variable"><name>downOffset</name></member>
+    <member refid="class_menu_controller_1a38575027ac29530781b58338e57b75d1" kind="variable"><name>leftOffset</name></member>
+    <member refid="class_menu_controller_1ac0850ad044525a917061614f097760a2" kind="variable"><name>rightOffset</name></member>
+    <member refid="class_menu_controller_1a2f14bf99dcb303931d653bc8ae0c4fd2" kind="variable"><name>animateMenuCoroutine</name></member>
+    <member refid="class_menu_controller_1a452d65b175bd72c15bcf43d90cffb60e" kind="function"><name>Start</name></member>
+    <member refid="class_menu_controller_1a816cc59269ad78b91368a41ade5c41ab" kind="function"><name>Update</name></member>
+    <member refid="class_menu_controller_1abe4dbe610f48cbd0515982dfc24900d7" kind="function"><name>MenuState</name></member>
+    <member refid="class_menu_controller_1af3ceee7b62b0ea190d650a6c1fca7a55" kind="function"><name>InitializedOffsetPositions</name></member>
+    <member refid="class_menu_controller_1ab801ab8c7a92b891a8d0bb8362ad79bb" kind="function"><name>GetOffset</name></member>
+    <member refid="class_menu_controller_1a9c405c6217d9420be95858f07de9d7ba" kind="function"><name>AnimateMenu</name></member>
+    <member refid="class_menu_controller_1a6d547b0d81c43c0be15f7143921bf63e" kind="function"><name>OnValidate</name></member>
+    <member refid="class_menu_controller_1aac3510e45d81bf68bd56930cb8d81060" kind="function"><name>ToggleOpenClose</name></member>
+    <member refid="class_menu_controller_1a133a0f5c9b0272ac900097798f84ba26" kind="function"><name>OpenMenu</name></member>
+    <member refid="class_menu_controller_1a5899f4e3f397f1b09a94c8bc33fc5b09" kind="function"><name>CloseMenu</name></member>
+    <member refid="class_menu_controller_1a01631aeb928329ef4ff331d7b394659e" kind="function"><name>NextPrevMenu</name></member>
+  </compound>
+  <compound refid="class_menu_u_i" kind="class"><name>MenuUI</name>
+    <member refid="class_menu_u_i_1a2c2848bd52206ec4f56d568c90ba3115" kind="variable"><name>playerNum</name></member>
+    <member refid="class_menu_u_i_1a512e4705499f6c9002e44a658d7330ab" kind="variable"><name>backgroundSprites</name></member>
+    <member refid="class_menu_u_i_1a8838353cea40f0d04d958764ac160a25" kind="variable"><name>toggleSprites</name></member>
+    <member refid="class_menu_u_i_1adc24fd0cc477ce55dbea98390262dcc7" kind="variable"><name>cardSprites</name></member>
+    <member refid="class_menu_u_i_1a2a3387f3ecc9189735578e9868bb3268" kind="function"><name>Start</name></member>
+    <member refid="class_menu_u_i_1a2f78a8c8a395a1cf87e895a83bfe755c" kind="function"><name>Update</name></member>
+    <member refid="class_menu_u_i_1ae18b0c478c84e806b141ea27fdd6dfb9" kind="function"><name>ResetCards</name></member>
+    <member refid="class_menu_u_i_1a78f238afeeaaa627bc0050b907b69c5a" kind="function"><name>ResetToggles</name></member>
+    <member refid="class_menu_u_i_1a3de5ba16897edef486dc816e7867abaf" kind="function"><name>getPlayerNum</name></member>
+    <member refid="class_menu_u_i_1a293eb155e6cd394dee2c5aa8b366389c" kind="function"><name>GetBackgroundSprite</name></member>
+    <member refid="class_menu_u_i_1ab806219259a13cb1cb6fd2c29a96e3bf" kind="function"><name>SetBackground</name></member>
+    <member refid="class_menu_u_i_1a873877f35b74874092b086afe62f3c26" kind="function"><name>GetToggleSprite</name></member>
+    <member refid="class_menu_u_i_1a1382bcf34691b21bf6a46883f19e300f" kind="function"><name>SetToggleSprite</name></member>
+    <member refid="class_menu_u_i_1a0e80db50632f3c47cbf1d3363eb23d3e" kind="function"><name>LoadCards</name></member>
+    <member refid="class_menu_u_i_1a422fc3b710abb9b11ee34e6e41754269" kind="function"><name>ToggleElement</name></member>
+  </compound>
+  <compound refid="class_murder_envelope" kind="class"><name>MurderEnvelope</name>
+    <member refid="class_murder_envelope_1ac301cdca72e5c0de71898070399494eb" kind="variable"><name>characterCard</name></member>
+    <member refid="class_murder_envelope_1a1ada2bfaff931900cbc1a9eacfa61e61" kind="variable"><name>weaponCard</name></member>
+    <member refid="class_murder_envelope_1a12e901558cd37d8013ae6a38b5c88efd" kind="variable"><name>roomCard</name></member>
+    <member refid="class_murder_envelope_1a4955412af51df2fb09a668cc782f1f43" kind="function"><name>SetCards</name></member>
+    <member refid="class_murder_envelope_1a8aa7afc4e292c49a2611c0477100796b" kind="function"><name>CheckAccusation</name></member>
+  </compound>
+  <compound refid="class_cluedo_board_controller_1_1_player" kind="class"><name>CluedoBoardController::Player</name>
+    <member refid="class_cluedo_board_controller_1_1_player_1aa57d6828654905ddd167a0df6608c6a4" kind="variable"><name>playerName</name></member>
+    <member refid="class_cluedo_board_controller_1_1_player_1a000b5cbba1052ece9f5583988c4f0eaa" kind="variable"><name>character</name></member>
+    <member refid="class_cluedo_board_controller_1_1_player_1a3bed11aefb7e78cef064b13075cfb08b" kind="variable"><name>hand</name></member>
+    <member refid="class_cluedo_board_controller_1_1_player_1a68487751b070db8b2d355e7ed907a4fd" kind="variable"><name>currentCell</name></member>
+    <member refid="class_cluedo_board_controller_1_1_player_1afcd5087c5e3f4ce1bbe6cfd11e543f07" kind="variable"><name>isEliminated</name></member>
+    <member refid="class_cluedo_board_controller_1_1_player_1ae130cf2927acd3e38abe7fe5dd97a548" kind="variable"><name>isHuman</name></member>
+    <member refid="class_cluedo_board_controller_1_1_player_1a9c3890b795a1ef6b14d716f813d34e45" kind="function"><name>HasCard</name></member>
+    <member refid="class_cluedo_board_controller_1_1_player_1aa1f7c15fd9fe7980840520c4dadbba80" kind="function"><name>RevealCardFor</name></member>
+  </compound>
+  <compound refid="class_player" kind="class"><name>Player</name>
+    <member refid="class_player_1aaaf699e1ca4510b0a266441c4ea1961a" kind="variable"><name>ID</name></member>
+    <member refid="class_player_1a283f6a50e637f0f96f29096632db4dce" kind="variable"><name>character</name></member>
+    <member refid="class_player_1afdb8ba2752c6eecb3e14c77be0421025" kind="variable"><name>position</name></member>
+    <member refid="class_player_1a05a98e2f68bf3dfce68da9ea30e5ca27" kind="variable"><name>hand</name></member>
+    <member refid="class_player_1a9752a18f5843a2d68a2a13fd9f4eabcf" kind="variable"><name>eliminated</name></member>
+    <member refid="class_player_1a6ad06ede8bab356997b3405692104042" kind="function"><name>Player</name></member>
+    <member refid="class_player_1a5813d403d0c9c7df4debb1b22f5d47df" kind="function"><name>MakeSuggestion</name></member>
+    <member refid="class_player_1a7df9f0b55d07a642922b7ba56960572e" kind="function"><name>MakeAccusation</name></member>
+    <member refid="class_player_1a0032ec613898c49a13b335b23951cc85" kind="function"><name>ShowCard</name></member>
+    <member refid="class_player_1acf7ce683f185917cd37b66d8253026e5" kind="function"><name>CanDisprove</name></member>
+    <member refid="class_player_1ae00202af10917a23aa02f5d9f3b67039" kind="function"><name>Eliminate</name></member>
+    <member refid="class_player_1aeb6268e2f9d53f86e57025229748585b" kind="function"><name>IsEliminated</name></member>
+    <member refid="class_player_1af1b4661f61f8c4a5df96b6b755a43583" kind="function"><name>GetMatchingCard</name></member>
+    <member refid="class_player_1ab5ad1a75d0c48626181eea4038f64d2a" kind="function"><name>GetCharacter</name></member>
+    <member refid="class_player_1a04ea784decdb70930cb753b0826ee0b3" kind="function"><name>AddCard</name></member>
+    <member refid="class_player_1abc5118b6e9ec271505421dce9c7935e3" kind="function"><name>GetHand</name></member>
+    <member refid="class_player_1ab575217647161aeec1c69159b2958a2b" kind="function"><name>Initialise</name></member>
+    <member refid="class_player_1a53e0fb729f4e52aa101ec1935c95d76a" kind="function"><name>OnHandDealt</name></member>
+    <member refid="class_player_1a74e001f9d75f2f273845ea2d5d54c123" kind="function"><name>OnSuggestionMade</name></member>
+    <member refid="class_player_1a64c26e12a5efb5b123fd158b8432f3b2" kind="function"><name>TakeTurn</name></member>
+  </compound>
+  <compound refid="class_player_turn_manager" kind="class"><name>PlayerTurnManager</name>
+    <member refid="class_player_turn_manager_1ae1d72822b52c6b2f6a6a489d4b068a30" kind="variable"><name>characters</name></member>
+    <member refid="class_player_turn_manager_1add8d5b53d0cb5a618301676e6795ca3e" kind="variable"><name>endTurnButton</name></member>
+    <member refid="class_player_turn_manager_1a738efb8fdb640af21c79f3edcd848083" kind="variable"><name>playerCount</name></member>
+    <member refid="class_player_turn_manager_1aee7a7f125c6b5dadcca0fbbbf9d56bf5" kind="variable"><name>activeColour</name></member>
+    <member refid="class_player_turn_manager_1aa81fdbb0a8d34a16b8b7fc0ee2fccffd" kind="variable"><name>inactiveColour</name></member>
+    <member refid="class_player_turn_manager_1a4a3755b31d70fe8cb7135e79ebf5fc56" kind="variable"><name>outlineDistance</name></member>
+    <member refid="class_player_turn_manager_1a4fddd871947bd311997e3a33b4b689ba" kind="variable"><name>_outlines</name></member>
+    <member refid="class_player_turn_manager_1a7151fd660cc0e42aabb691396bfd76ff" kind="variable"><name>_activeIndex</name></member>
+    <member refid="class_player_turn_manager_1ae7984f3baecf1de69a6767ed506a3377" kind="property"><name>ActiveIndex</name></member>
+    <member refid="class_player_turn_manager_1a948de15b16e7c1886bb0c61d8b89cdfd" kind="property"><name>ActiveCharacterName</name></member>
+    <member refid="class_player_turn_manager_1af0235692815925d7248ef07b713a49da" kind="function"><name>Awake</name></member>
+    <member refid="class_player_turn_manager_1a972ca9610b1881adddeb609dbba34cd8" kind="function"><name>SetActivePlayer</name></member>
+    <member refid="class_player_turn_manager_1a8fd3a7aae82eb43c32f361e3b9f2dc47" kind="function"><name>NextTurn</name></member>
+  </compound>
+  <compound refid="class_quit_popup_manager" kind="class"><name>QuitPopupManager</name>
+    <member refid="class_quit_popup_manager_1a0d302d4239d543f0b73e3a9eeba69c9e" kind="variable"><name>quitPopupPanel</name></member>
+    <member refid="class_quit_popup_manager_1a2dcc9a0eb80420422cdf9590b1d64f16" kind="variable"><name>yesButton</name></member>
+    <member refid="class_quit_popup_manager_1a4291dfaef3912041cc983476bf34811c" kind="variable"><name>noButton</name></member>
+    <member refid="class_quit_popup_manager_1a7d0d1523a07a857d2234203541af1044" kind="variable"><name>mainMenuSceneName</name></member>
+    <member refid="class_quit_popup_manager_1a743a09ef5977af768b61d43bdb0b31e9" kind="variable"><name>fadeDuration</name></member>
+    <member refid="class_quit_popup_manager_1a200044685ffc8df637b3b771326e6129" kind="variable"><name>_quitButton</name></member>
+    <member refid="class_quit_popup_manager_1ac170b7cdbf30b8fb9a465b5bfbe44f9f" kind="variable"><name>_cg</name></member>
+    <member refid="class_quit_popup_manager_1ae3402f718b0acfdf398a6607873eab82" kind="function"><name>Awake</name></member>
+    <member refid="class_quit_popup_manager_1a569fa7a52ca24a87ad8d8bfaa8be2246" kind="function"><name>ShowPopup</name></member>
+    <member refid="class_quit_popup_manager_1a10c2b371ca8edb935d446374ac81e1b0" kind="function"><name>OnNo</name></member>
+    <member refid="class_quit_popup_manager_1a1a6cdd7b9d7b5e95ab3b415810f62363" kind="function"><name>OnYes</name></member>
+    <member refid="class_quit_popup_manager_1aeb9c28dbe56984d6aa6eeb67a1d5a08b" kind="function"><name>FadeAndHide</name></member>
+    <member refid="class_quit_popup_manager_1a2f7403b9e35cd4cdd7ccdb50ea5c84ad" kind="function"><name>Fade</name></member>
+  </compound>
+  <compound refid="class_room_card" kind="class"><name>RoomCard</name>
+    <member refid="class_room_card_1ac2b674a7019df51a692d2d59bbac79f3" kind="function"><name>RoomCard</name></member>
+  </compound>
+  <compound refid="class_room_definition" kind="class"><name>RoomDefinition</name>
+    <member refid="class_room_definition_1a69e62a183c941b6c939385ec17bef683" kind="variable"><name>room</name></member>
+    <member refid="class_room_definition_1a6019e3fe0420aa46828fda623a1bdbe7" kind="variable"><name>debugColour</name></member>
+    <member refid="class_room_definition_1adfd49b62a7ccdf717c2b61c8c532fe52" kind="variable"><name>interiorCells</name></member>
+    <member refid="class_room_definition_1a36ea858e797ea1646daca084c7a778f0" kind="variable"><name>doorCells</name></member>
+    <member refid="class_room_definition_1a1c5340e7e36879bfae66c2fa2eccad8b" kind="variable"><name>tokenAnchor</name></member>
+    <member refid="class_room_definition_1ac7028e752bc343e585ddafc1b0c484fe" kind="variable"><name>hasSecretPassage</name></member>
+    <member refid="class_room_definition_1abbebc7547154d81172b5a9ca52b7190e" kind="variable"><name>secretPassageTo</name></member>
+  </compound>
+  <compound refid="class_scene_communication" kind="class"><name>SceneCommunication</name>
+    <member refid="class_scene_communication_1affb52cfc0544daeebf24659cda3b7f4e" kind="variable"><name>playerList</name></member>
+    <member refid="class_scene_communication_1a3013ca5b1a87e69f087223c6a4ce3837" kind="function"><name>AddPlayer</name></member>
+    <member refid="class_scene_communication_1a05a52a23e43e22bbe3544c7452b17c7c" kind="function"><name>GetPlayers</name></member>
+  </compound>
+  <compound refid="class_cluedo_board_controller_1_1_solution" kind="class"><name>CluedoBoardController::Solution</name>
+    <member refid="class_cluedo_board_controller_1_1_solution_1a5b7b108540e3b88708838eace8fb4e8d" kind="variable"><name>suspect</name></member>
+    <member refid="class_cluedo_board_controller_1_1_solution_1a85d77e7325a8ae362301536167ba48c9" kind="variable"><name>weapon</name></member>
+    <member refid="class_cluedo_board_controller_1_1_solution_1a4767daca00a89155b3e956875fa9fdfd" kind="variable"><name>room</name></member>
+    <member refid="class_cluedo_board_controller_1_1_solution_1ab7af6b52523aa0320cdcf733e873a616" kind="function"><name>Matches</name></member>
+  </compound>
+  <compound refid="class_suggestion" kind="class"><name>Suggestion</name>
+    <member refid="class_suggestion_1a4ca5209b65a44079fce09e42dc62c12c" kind="variable"><name>character</name></member>
+    <member refid="class_suggestion_1a250cc9abb5db6fc179eb160548955b7c" kind="variable"><name>weapon</name></member>
+    <member refid="class_suggestion_1adf732f37b185fe6ce5d1c807e2e6a65d" kind="variable"><name>room</name></member>
+    <member refid="class_suggestion_1a4b68348d09bdbe38db0be53b998b47e7" kind="function"><name>Suggestion</name></member>
+    <member refid="class_suggestion_1ad2ec02f556a5b60e5e324aba56364596" kind="function"><name>GetCharacter</name></member>
+    <member refid="class_suggestion_1a3dc76763357dec7f30272c06b6e8d71f" kind="function"><name>GetWeapon</name></member>
+    <member refid="class_suggestion_1afcfae0f3920a652f801d701bc052a7eb" kind="function"><name>GetRoom</name></member>
+  </compound>
+  <compound refid="class_suspect_start" kind="class"><name>SuspectStart</name>
+    <member refid="class_suspect_start_1ae206c9847dc81eed26a38f893112c987" kind="variable"><name>suspect</name></member>
+    <member refid="class_suspect_start_1a850bafa5d5cf1549bb8b68839e9d8a9d" kind="variable"><name>gridPosition</name></member>
+  </compound>
+  <compound refid="class_u_i_click_debugger" kind="class"><name>UIClickDebugger</name>
+    <member refid="class_u_i_click_debugger_1af7d41f7a09479a782fca5181b3c281d3" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="class_a_i_player_1_1_unknown_disproval" kind="class"><name>AIPlayer::UnknownDisproval</name>
+    <member refid="class_a_i_player_1_1_unknown_disproval_1a4cc9fdf7fb083ddf428e126346ea7faa" kind="variable"><name>DisproverIndex</name></member>
+    <member refid="class_a_i_player_1_1_unknown_disproval_1a276fd7c3201a61050b342d910821801f" kind="variable"><name>CardNames</name></member>
+  </compound>
+  <compound refid="class_weapon_card" kind="class"><name>WeaponCard</name>
+    <member refid="class_weapon_card_1a8e47d460a0d67032aaa556b5c27fcb97" kind="function"><name>WeaponCard</name></member>
+  </compound>
+  <compound refid="namespace_n_unit_1_1_framework" kind="namespace"><name>NUnit::Framework</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections" kind="namespace"><name>System::Collections</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
+  </compound>
+  <compound refid="namespace_t_m_pro" kind="namespace"><name>TMPro</name>
+  </compound>
+  <compound refid="namespace_unity_1_1_visual_scripting" kind="namespace"><name>Unity::VisualScripting</name>
+  </compound>
+  <compound refid="namespace_unity_editor" kind="namespace"><name>UnityEditor</name>
+  </compound>
+  <compound refid="namespace_unity_engine" kind="namespace"><name>UnityEngine</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_event_systems" kind="namespace"><name>UnityEngine::EventSystems</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_scene_management" kind="namespace"><name>UnityEngine::SceneManagement</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_u_i" kind="namespace"><name>UnityEngine::UI</name>
+  </compound>
+  <compound refid="_board_image_aligner_8cs" kind="file"><name>BoardImageAligner.cs</name>
+  </compound>
+  <compound refid="_board_piece_8cs" kind="file"><name>BoardPiece.cs</name>
+  </compound>
+  <compound refid="_cell_highlighter_8cs" kind="file"><name>CellHighlighter.cs</name>
+  </compound>
+  <compound refid="_checkbox_cell_8cs" kind="file"><name>CheckboxCell.cs</name>
+  </compound>
+  <compound refid="_cluedo_board_controller_8cs" kind="file"><name>CluedoBoardController.cs</name>
+  </compound>
+  <compound refid="_cluedo_board_data_8cs" kind="file"><name>CluedoBoardData.cs</name>
+  </compound>
+  <compound refid="_cluedo_enums_8cs" kind="file"><name>CluedoEnums.cs</name>
+  </compound>
+  <compound refid="_detective_sheet_manager_8cs" kind="file"><name>DetectiveSheetManager.cs</name>
+  </compound>
+  <compound refid="_dice_roll_manager_8cs" kind="file"><name>DiceRollManager.cs</name>
+  </compound>
+  <compound refid="_grid_cell_8cs" kind="file"><name>GridCell.cs</name>
+  </compound>
+  <compound refid="_grid_manager_8cs" kind="file"><name>GridManager.cs</name>
+  </compound>
+  <compound refid="_player_turn_manager_8cs" kind="file"><name>PlayerTurnManager.cs</name>
+  </compound>
+  <compound refid="_quit_popup_manager_8cs" kind="file"><name>QuitPopupManager.cs</name>
+  </compound>
+  <compound refid="_card_8cs" kind="file"><name>Card.cs</name>
+  </compound>
+  <compound refid="_character_card_8cs" kind="file"><name>CharacterCard.cs</name>
+  </compound>
+  <compound refid="_deck_8cs" kind="file"><name>Deck.cs</name>
+    <member refid="_deck_8cs_1a24953b19d956caa76c403684c71b4e5b" kind="typedef"><name>Random</name></member>
+  </compound>
+  <compound refid="_murder_envelope_8cs" kind="file"><name>MurderEnvelope.cs</name>
+  </compound>
+  <compound refid="_room_card_8cs" kind="file"><name>RoomCard.cs</name>
+  </compound>
+  <compound refid="_weapon_card_8cs" kind="file"><name>WeaponCard.cs</name>
+  </compound>
+  <compound refid="_auto_cross_test_8cs" kind="file"><name>AutoCrossTest.cs</name>
+  </compound>
+  <compound refid="_detective_card_entry_8cs" kind="file"><name>DetectiveCardEntry.cs</name>
+  </compound>
+  <compound refid="_detective_row_u_i_8cs" kind="file"><name>DetectiveRowUI.cs</name>
+  </compound>
+  <compound refid="_detective_sheet_8cs" kind="file"><name>DetectiveSheet.cs</name>
+  </compound>
+  <compound refid="_detective_sheet_builder_8cs" kind="file"><name>DetectiveSheetBuilder.cs</name>
+  </compound>
+  <compound refid="_u_i_click_debugger_8cs" kind="file"><name>UIClickDebugger.cs</name>
+  </compound>
+  <compound refid="_dice_8cs" kind="file"><name>Dice.cs</name>
+  </compound>
+  <compound refid="_dice_controller_8cs" kind="file"><name>DiceController.cs</name>
+  </compound>
+  <compound refid="_end_screen_controller_8cs" kind="file"><name>EndScreenController.cs</name>
+  </compound>
+  <compound refid="_game_controller_8cs" kind="file"><name>GameController.cs</name>
+  </compound>
+  <compound refid="_strategy_type_8cs" kind="file"><name>StrategyType.cs</name>
+    <member refid="_strategy_type_8cs_1a6e77cec487183f9fd5185943dc77e3b1" kind="enum"><name>StrategyType</name></member>
+    <member refid="_strategy_type_8cs_1a6e77cec487183f9fd5185943dc77e3b1ac6eea0560cd6f377e78dff2c85cc9122" kind="enumvalue"><name>Safe</name></member>
+    <member refid="_strategy_type_8cs_1a6e77cec487183f9fd5185943dc77e3b1a159c911beea8f8c2cfddb2fab621b476" kind="enumvalue"><name>Deceptive</name></member>
+  </compound>
+  <compound refid="_suggestion_8cs" kind="file"><name>Suggestion.cs</name>
+  </compound>
+  <compound refid="_a_i_player_8cs" kind="file"><name>AIPlayer.cs</name>
+  </compound>
+  <compound refid="_human_player_8cs" kind="file"><name>HumanPlayer.cs</name>
+  </compound>
+  <compound refid="_player_8cs" kind="file"><name>Player.cs</name>
+  </compound>
+  <compound refid="_menu_button_8cs" kind="file"><name>MenuButton.cs</name>
+  </compound>
+  <compound refid="_menu_controller_8cs" kind="file"><name>MenuController.cs</name>
+  </compound>
+  <compound refid="_menu_u_i_8cs" kind="file"><name>MenuUI.cs</name>
+  </compound>
+  <compound refid="_scene_communication_8cs" kind="file"><name>SceneCommunication.cs</name>
+  </compound>
+  <compound refid="dir_b0e0c55a9e3bd4373f1a0bfdc916dcb2" kind="dir"><name>CluedoSWE/Assets</name>
+  </compound>
+  <compound refid="dir_70f0312fd02fa06ef159ba68a4f60730" kind="dir"><name>CluedoSWE/Assets/GameAssets/Scripts/Game/Board</name>
+  </compound>
+  <compound refid="dir_fd7bc717688b9586f0a8718e6cf7fd9a" kind="dir"><name>CluedoSWE/Assets/GameAssets/Scripts/Game/Cards</name>
+  </compound>
+  <compound refid="dir_930987652f83fadb0cbdfd6845d533d7" kind="dir"><name>CluedoSWE</name>
+  </compound>
+  <compound refid="dir_e025511c412b71d36880a74ef4560c12" kind="dir"><name>CluedoSWE/Assets/GameAssets/Scripts/Game/DetectiveCardEntry</name>
+  </compound>
+  <compound refid="dir_c0add7ffaaf018811225adc512e9b578" kind="dir"><name>CluedoSWE/Assets/GameAssets/Scripts/Game</name>
+  </compound>
+  <compound refid="dir_78fe742ab95f308d05a7cdf0d0993fc2" kind="dir"><name>CluedoSWE/Assets/GameAssets</name>
+  </compound>
+  <compound refid="dir_a9d4709d79b36d0066f264f18cdb1c00" kind="dir"><name>CluedoSWE/Assets/GameAssets/Scripts/MainMenu</name>
+  </compound>
+  <compound refid="dir_d7f4ab8ed4f31a6481564b8855fcb37c" kind="dir"><name>CluedoSWE/Assets/GameAssets/Scripts/Game/Misc</name>
+  </compound>
+  <compound refid="dir_9588d98ea96bf1c090787e1f62011a38" kind="dir"><name>CluedoSWE/Assets/GameAssets/Scripts/Game/Player</name>
+  </compound>
+  <compound refid="dir_613adce03eacf0a93ac8acf107bc4910" kind="dir"><name>CluedoSWE/Assets/GameAssets/Scripts</name>
+  </compound>
+</doxygenindex>

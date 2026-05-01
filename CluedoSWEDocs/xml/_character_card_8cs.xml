@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_character_card_8cs" kind="file" language="C#">
+    <compoundname>CharacterCard.cs</compoundname>
+    <innerclass refid="class_character_card" prot="public">CharacterCard</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="5" refid="class_character_card" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_character_card_1a3b165e4c4dfaef14a28bcb0638d496b8" kindref="member">CharacterCard</ref><sp/>:<sp/><ref refid="class_card_1a0140828bdf9a16c921f4d792cbcd8a3d" kindref="member">Card</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_character_card_1a3b165e4c4dfaef14a28bcb0638d496b8" kindref="member">CharacterCard</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>CardNameIn,<sp/>Sprite<sp/>spriteIn)<sp/>:<sp/>base(CardNameIn,<sp/>spriteIn)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Cards/CharacterCard.cs"/>
+  </compounddef>
+</doxygen>

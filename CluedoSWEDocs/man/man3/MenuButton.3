@@ -1,0 +1,54 @@
+.TH "MenuButton" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MenuButton
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBStartButtonClick\fP ()"
+.br
+.ti -1c
+.RI "void \fBQuitButtonClick\fP ()"
+.br
+.ti -1c
+.RI "void \fBPlayerButtonClick\fP (int players)"
+.br
+.ti -1c
+.RI "void \fBBackButtonClick\fP ()"
+.br
+.ti -1c
+.RI "void \fBToggleButtonClick\fP ()"
+.br
+.RI "Cycles the assignment of this toggle button between AI and valid players\&. Ensures that: "
+.ti -1c
+.RI "int \fBGetAssignedPlayerIndex\fP ()"
+.br
+.ti -1c
+.RI "void \fBBeginButtonClick\fP ()"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void MenuButton\&.ToggleButtonClick ()"
+
+.PP
+Cycles the assignment of this toggle button between AI and valid players\&. Ensures that: 
+.IP "\(bu" 2
+No duplicate human players are assigned
+.IP "\(bu" 2
+\fBPlayer\fP indices remain sequential
+.IP "\(bu" 2
+Ai can be selected multiple times\&. 
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

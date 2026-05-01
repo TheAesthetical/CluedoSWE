@@ -1,0 +1,84 @@
+.TH "PlayerTurnManager" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlayerTurnManager \- Attach to: Character Panel\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetActivePlayer\fP (int index)"
+.br
+.RI "Highlight the player at this index with a yellow outline\&. "
+.ti -1c
+.RI "void \fBNextTurn\fP ()"
+.br
+.RI "Advance to the next player\&. Called automatically by End Turn button\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "GameObject[] \fBcharacters\fP = new GameObject[6]"
+.br
+.ti -1c
+.RI "Button \fBendTurnButton\fP"
+.br
+.ti -1c
+.RI "int \fBplayerCount\fP = 6"
+.br
+.ti -1c
+.RI "Color \fBactiveColour\fP = new Color(1\&.00f, 0\&.92f, 0\&.00f, 1\&.00f)"
+.br
+.ti -1c
+.RI "Color \fBinactiveColour\fP = new Color(0\&.00f, 0\&.00f, 0\&.00f, 0\&.00f)"
+.br
+.ti -1c
+.RI "Vector2 \fBoutlineDistance\fP = new Vector2(4f, \-4f)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBActiveIndex\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "string \fBActiveCharacterName\fP\fR [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Attach to: Character Panel\&. 
+
+No GameManager needed\&. Completely self-contained\&.
+
+.PP
+Highlights the active player's portrait with a bright yellow outline\&. Uses Unity's built-in Outline component — added automatically to each character GameObject so you don't need to add anything manually\&.
+
+.PP
+SETUP:
+.IP "1." 4
+Select "Character Panel" in the Hierarchy\&.
+.IP "2." 4
+Add Component → \fBPlayerTurnManager\fP\&.
+.IP "3." 4
+Set the Size of the Characters array to however many players are in your game (up to 6), then drag each character GameObject in: [0] MissScarlett [1] ReverendGreen [2] ColonelMustard [3] MrsWhite [4] MrsPeacock [5] ProfessorPlum
+.IP "4." 4
+Drag "End Turn Button" (inside Options Panel) into the End Turn Button slot\&. The button stays where it is — this is just a reference so this script can listen for clicks\&.
+.IP "5." 4
+Set \fBPlayer\fP Count to how many players are in this game (1-6)\&. Only that many portraits will be shown; the rest are hidden\&.
+.PP
+
+.PP
+TO CHANGE ACTIVE PLAYER FROM ANOTHER SCRIPT: Find the component and call SetActivePlayer(index) or \fBNextTurn()\fP: FindObjectOfType<\fBPlayerTurnManager\fP>()\&.\fBNextTurn()\fP; 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

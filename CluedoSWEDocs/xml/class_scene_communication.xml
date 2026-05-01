@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_scene_communication" kind="class" language="C#" prot="public">
+    <compoundname>SceneCommunication</compoundname>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_scene_communication_1affb52cfc0544daeebf24659cda3b7f4e" prot="private" static="yes" mutable="no">
+        <type>List&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;</type>
+        <definition>List&lt;Player&gt; SceneCommunication.playerList</definition>
+        <argsstring></argsstring>
+        <name>playerList</name>
+        <qualifiedname>SceneCommunication.playerList</qualifiedname>
+        <initializer>= new()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/SceneCommunication.cs" line="10" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/SceneCommunication.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_scene_communication_1a3013ca5b1a87e69f087223c6a4ce3837" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void SceneCommunication.AddPlayer</definition>
+        <argsstring>(int ID, CharacterCard characterCard, bool human)</argsstring>
+        <name>AddPlayer</name>
+        <qualifiedname>SceneCommunication.AddPlayer</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type><ref refid="class_character_card" kindref="compound">CharacterCard</ref></type>
+          <declname>characterCard</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>human</declname>
+        </param>
+        <briefdescription>
+<para>Adds a player to the playerlist. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player&apos;s ID.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>characterCard</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card the player will be using.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>human</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether the player is human or not.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/SceneCommunication.cs" line="18" column="24" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/SceneCommunication.cs" bodystart="18" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_scene_communication_1a05a52a23e43e22bbe3544c7452b17c7c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;</type>
+        <definition>static List&lt; Player &gt; SceneCommunication.GetPlayers</definition>
+        <argsstring>()</argsstring>
+        <name>GetPlayers</name>
+        <qualifiedname>SceneCommunication.GetPlayers</qualifiedname>
+        <briefdescription>
+<para>Returns the list of players. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The list of players.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/SceneCommunication.cs" line="37" column="24" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/SceneCommunication.cs" bodystart="37" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class <computeroutput> SceneCommunication </computeroutput> is a class which allows information to be passed between the menu and game scenes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/SceneCommunication.cs" line="8" column="15" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/SceneCommunication.cs" bodystart="9" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_scene_communication_1a3013ca5b1a87e69f087223c6a4ce3837" prot="public" virt="non-virtual"><scope>SceneCommunication</scope><name>AddPlayer</name></member>
+      <member refid="class_scene_communication_1a05a52a23e43e22bbe3544c7452b17c7c" prot="public" virt="non-virtual"><scope>SceneCommunication</scope><name>GetPlayers</name></member>
+      <member refid="class_scene_communication_1affb52cfc0544daeebf24659cda3b7f4e" prot="private" virt="non-virtual"><scope>SceneCommunication</scope><name>playerList</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

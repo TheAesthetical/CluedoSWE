@@ -1,0 +1,88 @@
+.TH "DiceRollManager" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DiceRollManager \- Attach to: Roll Button (Canvas > Background > Options Panel > Roll Button)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Image \fBdie1Image\fP"
+.br
+.ti -1c
+.RI "Image \fBdie2Image\fP"
+.br
+.ti -1c
+.RI "TextMeshProUGUI \fBtotalLabel\fP"
+.br
+.ti -1c
+.RI "Sprite[] \fBdieSprites\fP = new Sprite[6]"
+.br
+.ti -1c
+.RI "Button \fBendTurnButton\fP"
+.br
+.ti -1c
+.RI "int \fBtumbleFrames\fP = 12"
+.br
+.ti -1c
+.RI "float \fBtumbleInterval\fP = 0\&.055f"
+.br
+.ti -1c
+.RI "bool \fBoneRollPerTurn\fP = true"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBTotalMoves\fP\fR [get]\fP"
+.br
+.RI "The total of both dice after the last roll\&. 0 if not yet rolled\&. "
+.ti -1c
+.RI "int \fBDie1Value\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "int \fBDie2Value\fP\fR [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Attach to: Roll Button (Canvas > Background > Options Panel > Roll Button)\&. 
+
+No GameManager needed\&. Completely self-contained\&.
+
+.PP
+Rolls 2 dice (each 1-6) giving a total of 2-12 moves\&. Shows a tumbling animation before settling on the final result\&. The Roll button is disabled after rolling and re-enabled when \fBPlayerTurnManager\fP advances to the next turn\&.
+
+.PP
+SETUP:
+.IP "1." 4
+Select "Roll Button" in the Hierarchy\&.
+.IP "2." 4
+Add Component → \fBDiceRollManager\fP\&.
+.IP "3." 4
+Create a small "Dice Panel" somewhere on the Canvas to display results: • Two Image GameObjects for the die faces (Die 1, Die 2)
+.IP "  \(bu" 4
+Optionally assign 6 die-face sprites (index 0 = face 1, index 5 = face 6)
+.IP "  \(bu" 4
+Or leave dieSprites empty: each Image needs a child TMP Text and numbers will be shown as text instead • One TextMeshProUGUI showing the total, e\&.g\&. "Moves: 9"
+.PP
+
+.IP "4." 4
+Drag those objects into the slots below\&.
+.IP "5." 4
+Drag "End Turn Button" into the End Turn Button slot so this script knows when to re-enable rolling for the next turn\&.
+.PP
+
+.PP
+NOTE: End Turn button click is shared between this script and \fBPlayerTurnManager\fP — both listen to the same button independently, so there is no conflict\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

@@ -1,0 +1,41 @@
+.TH "CellHighlighter" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CellHighlighter \- Spawns and destroys highlight overlays on valid destination cells\&. Attach to an empty "CellHighlights" GameObject\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBShowReachable\fP (List< \fBGridCell\fP > cells)"
+.br
+.RI "Show highlights on a set of reachable cells\&. "
+.ti -1c
+.RI "void \fBSetHover\fP (\fBGridCell\fP cell)"
+.br
+.RI "Brighten the cell the mouse is over\&. "
+.ti -1c
+.RI "void \fBClearAll\fP ()"
+.br
+.RI "Remove all highlight overlays\&. "
+.ti -1c
+.RI "\fBGridCell\fP \fBGetHighlightedCellAt\fP (Vector3 worldPos, float tolerance=0\&.5f)"
+.br
+.RI "Returns the highlighted cell at a world position, or null\&. "
+.ti -1c
+.RI "bool \fBIsHighlighted\fP (\fBGridCell\fP cell)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Spawns and destroys highlight overlays on valid destination cells\&. Attach to an empty "CellHighlights" GameObject\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

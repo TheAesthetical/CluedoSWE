@@ -1,0 +1,82 @@
+.TH "Card" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Card \- Class \fR \fBCard\fP \fP is an abstract class that represents a generic card\&. It provides the base for each card type\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBCharacterCard\fP, \fBRoomCard\fP, and \fBWeaponCard\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override string \fBToString\fP ()"
+.br
+.RI "Returns the name of the card\&. "
+.ti -1c
+.RI "Sprite \fBGetSprite\fP ()"
+.br
+.RI "Returns the sprite for this card\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCard\fP (string CardNameIn, Sprite spriteIn)"
+.br
+.RI "Initialises a new instance of the \fBCard\fP class\&. Set to protected as this should not be instantiated directly! "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBCardName\fP\fR [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class \fR \fBCard\fP \fP is an abstract class that represents a generic card\&. It provides the base for each card type\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Card\&.Card (string CardNameIn, Sprite spriteIn)\fR [protected]\fP"
+
+.PP
+Initialises a new instance of the \fBCard\fP class\&. Set to protected as this should not be instantiated directly! 
+.PP
+\fBParameters\fP
+.RS 4
+\fICardNameIn\fP The name of the card 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "Sprite Card\&.GetSprite ()"
+
+.PP
+Returns the sprite for this card\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A sprite\&. 
+.RE
+.PP
+
+.SS "override string Card\&.ToString ()"
+
+.PP
+Returns the name of the card\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Returns a string representing the card name\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

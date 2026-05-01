@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_human_player" kind="class" language="C#" prot="public">
+    <compoundname>HumanPlayer</compoundname>
+    <basecompoundref refid="class_player" prot="public" virt="non-virtual">Player</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_human_player_1a484f22e6ba93fb64e8456d530af47853" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>HumanPlayer.HumanPlayer</definition>
+        <argsstring>(int ID, CharacterCard character)</argsstring>
+        <name>HumanPlayer</name>
+        <qualifiedname>HumanPlayer.HumanPlayer</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type><ref refid="class_character_card" kindref="compound">CharacterCard</ref></type>
+          <declname>character</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/HumanPlayer.cs" line="5" column="8" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/HumanPlayer.cs" bodystart="5" bodyend="7"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>HumanPlayer</label>
+        <link refid="class_human_player"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Player</label>
+        <link refid="class_player"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>HumanPlayer</label>
+        <link refid="class_human_player"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Player</label>
+        <link refid="class_player"/>
+      </node>
+    </collaborationgraph>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/HumanPlayer.cs" line="3" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/HumanPlayer.cs" bodystart="4" bodyend="8"/>
+    <listofallmembers>
+      <member refid="class_player_1a04ea784decdb70930cb753b0826ee0b3" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>AddCard</name></member>
+      <member refid="class_player_1acf7ce683f185917cd37b66d8253026e5" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>CanDisprove</name></member>
+      <member refid="class_player_1ae00202af10917a23aa02f5d9f3b67039" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>Eliminate</name></member>
+      <member refid="class_player_1ab5ad1a75d0c48626181eea4038f64d2a" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>GetCharacter</name></member>
+      <member refid="class_player_1abc5118b6e9ec271505421dce9c7935e3" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>GetHand</name></member>
+      <member refid="class_player_1af1b4661f61f8c4a5df96b6b755a43583" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>GetMatchingCard</name></member>
+      <member refid="class_human_player_1a484f22e6ba93fb64e8456d530af47853" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>HumanPlayer</name></member>
+      <member refid="class_player_1ab575217647161aeec1c69159b2958a2b" prot="public" virt="virtual"><scope>HumanPlayer</scope><name>Initialise</name></member>
+      <member refid="class_player_1aeb6268e2f9d53f86e57025229748585b" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>IsEliminated</name></member>
+      <member refid="class_player_1a7df9f0b55d07a642922b7ba56960572e" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>MakeAccusation</name></member>
+      <member refid="class_player_1a5813d403d0c9c7df4debb1b22f5d47df" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>MakeSuggestion</name></member>
+      <member refid="class_player_1a53e0fb729f4e52aa101ec1935c95d76a" prot="public" virt="virtual"><scope>HumanPlayer</scope><name>OnHandDealt</name></member>
+      <member refid="class_player_1a74e001f9d75f2f273845ea2d5d54c123" prot="public" virt="virtual"><scope>HumanPlayer</scope><name>OnSuggestionMade</name></member>
+      <member refid="class_player_1a6ad06ede8bab356997b3405692104042" prot="protected" virt="non-virtual"><scope>HumanPlayer</scope><name>Player</name></member>
+      <member refid="class_player_1a0032ec613898c49a13b335b23951cc85" prot="public" virt="non-virtual"><scope>HumanPlayer</scope><name>ShowCard</name></member>
+      <member refid="class_player_1a64c26e12a5efb5b123fd158b8432f3b2" prot="public" virt="virtual"><scope>HumanPlayer</scope><name>TakeTurn</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

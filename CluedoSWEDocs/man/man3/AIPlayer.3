@@ -1,0 +1,203 @@
+.TH "AIPlayer" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AIPlayer \- AI-controlled player\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBPlayer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAIPlayer\fP (int ID, \fBCharacterCard\fP character)"
+.br
+.ti -1c
+.RI "override void \fBInitialise\fP (int playerIndex, int totalActivePlayers)"
+.br
+.RI "Set up the Ai\&. Call once before dealing cards\&. "
+.ti -1c
+.RI "void \fBSetStrategy\fP (StrategyType strategy)"
+.br
+.RI "Choose between safe and deceptive (bluff) play styles\&. "
+.ti -1c
+.RI "override void \fBOnHandDealt\fP (List< \fBCard\fP > dealtCards)"
+.br
+.RI "Call once cards are dealt This auto crosses out all cards in player own hand\&. "
+.ti -1c
+.RI "void \fBOnCardShown\fP (\fBCard\fP card, int byPlayerIndex)"
+.br
+.RI "Call when another player shows this AI a card Ai trting to make suggestion that they could disprove\&. "
+.ti -1c
+.RI "override void \fBOnSuggestionMade\fP (int suggestionIndex, \fBSuggestion\fP suggestion, int disproverIndex, \fBCard\fP shownCard)"
+.br
+.RI "Call after every suggestion by anyone Helps the deduction disproverIndex == -1 means nobody could disprove shownCard: only not null if Ai was suggesster/disprover Null being passed means well record the disproval as "unknwn which card"\&. "
+.ti -1c
+.RI "override void \fBTakeTurn\fP (\fBGameController\fP gameController, \fBDice\fP dice)"
+.br
+.RI "Call when its this players turn Override to drive the turn\&. "
+.ti -1c
+.RI "\fBDetectiveSheet\fP \fBGetSheetForDebug\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetSuspectConfidence\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetWeaponConfidence\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetRoomConfidence\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBPlayer\fP
+.in +1c
+.ti -1c
+.RI "\fBSuggestion\fP \fBMakeSuggestion\fP (\fBCharacterCard\fP character, \fBRoomCard\fP room, \fBWeaponCard\fP weapon)"
+.br
+.RI "Makes a suggestion\&. "
+.ti -1c
+.RI "void \fBMakeAccusation\fP ()"
+.br
+.RI "Makes an accusation\&. "
+.ti -1c
+.RI "void \fBShowCard\fP ()"
+.br
+.RI "Shows the card from the suggestion\&. "
+.ti -1c
+.RI "bool \fBCanDisprove\fP (\fBSuggestion\fP suggestion)"
+.br
+.RI "Returns whether the \fBPlayer\fP can disprove the accusation against them\&. "
+.ti -1c
+.RI "void \fBEliminate\fP ()"
+.br
+.RI "Eliminates the \fBPlayer\fP\&. "
+.ti -1c
+.RI "bool \fBIsEliminated\fP ()"
+.br
+.ti -1c
+.RI "\fBCard\fP \fBGetMatchingCard\fP (\fBSuggestion\fP suggestion)"
+.br
+.ti -1c
+.RI "\fBCharacterCard\fP \fBGetCharacter\fP ()"
+.br
+.RI "A method to return the Character card of the current player\&. "
+.ti -1c
+.RI "void \fBAddCard\fP (\fBCard\fP card)"
+.br
+.RI "A method to add a card to the player's hand\&. "
+.ti -1c
+.RI "List< \fBCard\fP > \fBGetHand\fP ()"
+.br
+.RI "Returns the hand\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBPlayer\fP
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP (int ID, \fBCharacterCard\fP character)"
+.br
+.RI "Initialises a new instance of the \fBCard\fP class\&. Set to protected as this should not be instantiated directly! "
+.in -1c
+.SH "Detailed Description"
+.PP 
+AI-controlled player\&. 
+
+As player class not fleshed out yet, some fileds Ill do here, until it done 
+.SH "Member Function Documentation"
+.PP 
+.SS "override void AIPlayer\&.Initialise (int playerIndex, int totalActivePlayers)\fR [virtual]\fP"
+
+.PP
+Set up the Ai\&. Call once before dealing cards\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIplayerIndex\fP \fBPlayer\fP postion
+.br
+\fItotalActivePlayers\fP How many active players
+.RE
+.PP
+
+.PP
+Reimplemented from \fBPlayer\fP\&.
+.SS "void AIPlayer\&.OnCardShown (\fBCard\fP card, int byPlayerIndex)"
+
+.PP
+Call when another player shows this AI a card Ai trting to make suggestion that they could disprove\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcard\fP \fBCard\fP shown
+.br
+\fIbyPlayerIndex\fP \fBPlayer\fP postion
+.RE
+.PP
+
+.SS "override void AIPlayer\&.OnHandDealt (List< \fBCard\fP > dealtCards)\fR [virtual]\fP"
+
+.PP
+Call once cards are dealt This auto crosses out all cards in player own hand\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdealtCards\fP Cards dealt
+.RE
+.PP
+
+.PP
+Reimplemented from \fBPlayer\fP\&.
+.SS "override void AIPlayer\&.OnSuggestionMade (int suggestionIndex, \fBSuggestion\fP suggestion, int disproverIndex, \fBCard\fP shownCard)\fR [virtual]\fP"
+
+.PP
+Call after every suggestion by anyone Helps the deduction disproverIndex == -1 means nobody could disprove shownCard: only not null if Ai was suggesster/disprover Null being passed means well record the disproval as "unknwn which card"\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsuggestionIndex\fP Index of player made the suggestion
+.br
+\fIsuggestion\fP \fBSuggestion\fP made
+.br
+\fIdisproverIndex\fP Index of the disporver or -1 if nobody disproved
+.br
+\fIshownCard\fP The card shown (if Known) or null
+.RE
+.PP
+
+.PP
+Reimplemented from \fBPlayer\fP\&.
+.SS "void AIPlayer\&.SetStrategy (StrategyType strategy)"
+
+.PP
+Choose between safe and deceptive (bluff) play styles\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIstrategy\fP Safe or Deceptive
+.RE
+.PP
+
+.SS "override void AIPlayer\&.TakeTurn (\fBGameController\fP gameController, \fBDice\fP dice)\fR [virtual]\fP"
+
+.PP
+Call when its this players turn Override to drive the turn\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIgameController\fP 
+.br
+\fIdice\fP 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBPlayer\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_a_i_player_1_1_unknown_disproval" kind="class" language="C#" prot="private">
+    <compoundname>AIPlayer::UnknownDisproval</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_a_i_player_1_1_unknown_disproval_1a4cc9fdf7fb083ddf428e126346ea7faa" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int AIPlayer.UnknownDisproval.DisproverIndex</definition>
+        <argsstring></argsstring>
+        <name>DisproverIndex</name>
+        <qualifiedname>AIPlayer.UnknownDisproval.DisproverIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/AIPlayer.cs" line="681" column="20" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/AIPlayer.cs" bodystart="681" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_i_player_1_1_unknown_disproval_1a276fd7c3201a61050b342d910821801f" prot="public" static="no" mutable="no">
+        <type>string[]</type>
+        <definition>string [] AIPlayer.UnknownDisproval.CardNames</definition>
+        <argsstring></argsstring>
+        <name>CardNames</name>
+        <qualifiedname>AIPlayer.UnknownDisproval.CardNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/AIPlayer.cs" line="682" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/AIPlayer.cs" bodystart="682" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/AIPlayer.cs" line="679" column="12" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Player/AIPlayer.cs" bodystart="680" bodyend="683"/>
+    <listofallmembers>
+      <member refid="class_a_i_player_1_1_unknown_disproval_1a276fd7c3201a61050b342d910821801f" prot="public" virt="non-virtual"><scope>AIPlayer::UnknownDisproval</scope><name>CardNames</name></member>
+      <member refid="class_a_i_player_1_1_unknown_disproval_1a4cc9fdf7fb083ddf428e126346ea7faa" prot="public" virt="non-virtual"><scope>AIPlayer::UnknownDisproval</scope><name>DisproverIndex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

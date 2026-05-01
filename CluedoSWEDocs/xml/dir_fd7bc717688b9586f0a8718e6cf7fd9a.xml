@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_fd7bc717688b9586f0a8718e6cf7fd9a" kind="dir">
+    <compoundname>CluedoSWE/Assets/GameAssets/Scripts/Game/Cards</compoundname>
+    <innerfile refid="_card_8cs">Card.cs</innerfile>
+    <innerfile refid="_character_card_8cs">CharacterCard.cs</innerfile>
+    <innerfile refid="_deck_8cs">Deck.cs</innerfile>
+    <innerfile refid="_murder_envelope_8cs">MurderEnvelope.cs</innerfile>
+    <innerfile refid="_room_card_8cs">RoomCard.cs</innerfile>
+    <innerfile refid="_weapon_card_8cs">WeaponCard.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Cards/"/>
+  </compounddef>
+</doxygen>

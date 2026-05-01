@@ -1,0 +1,214 @@
+.TH "Player" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Player \- Class \fR \fBPlayer\fP \fP is an abstract class that represents a generic card\&. It provides the base for each player type\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBAIPlayer\fP, and \fBHumanPlayer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSuggestion\fP \fBMakeSuggestion\fP (\fBCharacterCard\fP character, \fBRoomCard\fP room, \fBWeaponCard\fP weapon)"
+.br
+.RI "Makes a suggestion\&. "
+.ti -1c
+.RI "void \fBMakeAccusation\fP ()"
+.br
+.RI "Makes an accusation\&. "
+.ti -1c
+.RI "void \fBShowCard\fP ()"
+.br
+.RI "Shows the card from the suggestion\&. "
+.ti -1c
+.RI "bool \fBCanDisprove\fP (\fBSuggestion\fP suggestion)"
+.br
+.RI "Returns whether the \fBPlayer\fP can disprove the accusation against them\&. "
+.ti -1c
+.RI "void \fBEliminate\fP ()"
+.br
+.RI "Eliminates the \fBPlayer\fP\&. "
+.ti -1c
+.RI "bool \fBIsEliminated\fP ()"
+.br
+.ti -1c
+.RI "\fBCard\fP \fBGetMatchingCard\fP (\fBSuggestion\fP suggestion)"
+.br
+.ti -1c
+.RI "\fBCharacterCard\fP \fBGetCharacter\fP ()"
+.br
+.RI "A method to return the Character card of the current player\&. "
+.ti -1c
+.RI "void \fBAddCard\fP (\fBCard\fP card)"
+.br
+.RI "A method to add a card to the player's hand\&. "
+.ti -1c
+.RI "List< \fBCard\fP > \fBGetHand\fP ()"
+.br
+.RI "Returns the hand\&. "
+.ti -1c
+.RI "virtual void \fBInitialise\fP (int playerIndex, int totalActivePlayers)"
+.br
+.RI "Sets up the player at game start Call once berfore cards are delt\&. "
+.ti -1c
+.RI "virtual void \fBOnHandDealt\fP (List< \fBCard\fP > cards)"
+.br
+.RI "Call once cards are dealt This auto crosses out all cards in player own hand Override to react to your hand\&. "
+.ti -1c
+.RI "virtual void \fBOnSuggestionMade\fP (int suggesterIndex, \fBSuggestion\fP suggestion, int disproverIndex, \fBCard\fP shownCard)"
+.br
+.RI "Call after every suggestion by anyone Helps the deduction disproverIndex == -1 means nobody could disprove shownCard: only not null if Ai was suggesster/disprover Null being passed means well record the disproval as "unknwn which card" Override to track deduction\&. "
+.ti -1c
+.RI "virtual void \fBTakeTurn\fP (\fBGameController\fP gameController, \fBDice\fP dice)"
+.br
+.RI "Call when its this players turn Override to drive the turn\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP (int ID, \fBCharacterCard\fP character)"
+.br
+.RI "Initialises a new instance of the \fBCard\fP class\&. Set to protected as this should not be instantiated directly! "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class \fR \fBPlayer\fP \fP is an abstract class that represents a generic card\&. It provides the base for each player type\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Player\&.Player (int ID, \fBCharacterCard\fP character)\fR [protected]\fP"
+
+.PP
+Initialises a new instance of the \fBCard\fP class\&. Set to protected as this should not be instantiated directly! 
+.PP
+\fBParameters\fP
+.RS 4
+\fIID\fP The player's ID\&.
+.br
+\fIcharacter\fP The player's \fR\fBCharacterCard\fP\fP\&.
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Player\&.AddCard (\fBCard\fP card)"
+
+.PP
+A method to add a card to the player's hand\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcard\fP The card to be added\&. 
+.RE
+.PP
+
+.SS "bool Player\&.CanDisprove (\fBSuggestion\fP suggestion)"
+
+.PP
+Returns whether the \fBPlayer\fP can disprove the accusation against them\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsuggestion\fP The suggestion being made\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns a bool representing whether the player matches the accusation\&.
+.RE
+.PP
+
+.SS "\fBCharacterCard\fP Player\&.GetCharacter ()"
+
+.PP
+A method to return the Character card of the current player\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A \fBCharacterCard\fP\&. 
+.RE
+.PP
+
+.SS "\fBCard\fP Player\&.GetMatchingCard (\fBSuggestion\fP suggestion)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIsuggestion\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.SS "virtual void Player\&.Initialise (int playerIndex, int totalActivePlayers)\fR [virtual]\fP"
+
+.PP
+Sets up the player at game start Call once berfore cards are delt\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIplayerIndex\fP \fBPlayer\fP index
+.br
+\fItotalActivePlayers\fP How many active players
+.RE
+.PP
+
+.PP
+Reimplemented in \fBAIPlayer\fP\&.
+.SS "virtual void Player\&.OnHandDealt (List< \fBCard\fP > cards)\fR [virtual]\fP"
+
+.PP
+Call once cards are dealt This auto crosses out all cards in player own hand Override to react to your hand\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdealtCards\fP Cards dealt
+.RE
+.PP
+
+.PP
+Reimplemented in \fBAIPlayer\fP\&.
+.SS "virtual void Player\&.OnSuggestionMade (int suggesterIndex, \fBSuggestion\fP suggestion, int disproverIndex, \fBCard\fP shownCard)\fR [virtual]\fP"
+
+.PP
+Call after every suggestion by anyone Helps the deduction disproverIndex == -1 means nobody could disprove shownCard: only not null if Ai was suggesster/disprover Null being passed means well record the disproval as "unknwn which card" Override to track deduction\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsuggestionIndex\fP Index of player made the suggestion
+.br
+\fIsuggestion\fP \fBSuggestion\fP made
+.br
+\fIdisproverIndex\fP Index of the disporver or -1 if nobody disproved
+.br
+\fIshownCard\fP The card shown (if Known) or null
+.RE
+.PP
+
+.PP
+Reimplemented in \fBAIPlayer\fP\&.
+.SS "virtual void Player\&.TakeTurn (\fBGameController\fP gameController, \fBDice\fP dice)\fR [virtual]\fP"
+
+.PP
+Call when its this players turn Override to drive the turn\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIgameController\fP 
+.br
+\fIdice\fP 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBAIPlayer\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

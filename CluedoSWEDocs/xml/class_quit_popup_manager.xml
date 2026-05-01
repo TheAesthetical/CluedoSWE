@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_quit_popup_manager" kind="class" language="C#" prot="public">
+    <compoundname>QuitPopupManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_quit_popup_manager_1a0d302d4239d543f0b73e3a9eeba69c9e" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject QuitPopupManager.quitPopupPanel</definition>
+        <argsstring></argsstring>
+        <name>quitPopupPanel</name>
+        <qualifiedname>QuitPopupManager.quitPopupPanel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="35" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_quit_popup_manager_1a2dcc9a0eb80420422cdf9590b1d64f16" prot="public" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button QuitPopupManager.yesButton</definition>
+        <argsstring></argsstring>
+        <name>yesButton</name>
+        <qualifiedname>QuitPopupManager.yesButton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="38" column="19" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_quit_popup_manager_1a4291dfaef3912041cc983476bf34811c" prot="public" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button QuitPopupManager.noButton</definition>
+        <argsstring></argsstring>
+        <name>noButton</name>
+        <qualifiedname>QuitPopupManager.noButton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="41" column="19" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_quit_popup_manager_1a7d0d1523a07a857d2234203541af1044" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string QuitPopupManager.mainMenuSceneName</definition>
+        <argsstring></argsstring>
+        <name>mainMenuSceneName</name>
+        <qualifiedname>QuitPopupManager.mainMenuSceneName</qualifiedname>
+        <initializer>= &quot;MainMenu&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="45" column="19" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_quit_popup_manager_1a743a09ef5977af768b61d43bdb0b31e9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float QuitPopupManager.fadeDuration</definition>
+        <argsstring></argsstring>
+        <name>fadeDuration</name>
+        <qualifiedname>QuitPopupManager.fadeDuration</qualifiedname>
+        <initializer>= 0.18f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="48" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_quit_popup_manager_1a200044685ffc8df637b3b771326e6129" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button QuitPopupManager._quitButton</definition>
+        <argsstring></argsstring>
+        <name>_quitButton</name>
+        <qualifiedname>QuitPopupManager._quitButton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="51" column="25" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_quit_popup_manager_1ac170b7cdbf30b8fb9a465b5bfbe44f9f" prot="private" static="no" mutable="no">
+        <type>CanvasGroup</type>
+        <definition>CanvasGroup QuitPopupManager._cg</definition>
+        <argsstring></argsstring>
+        <name>_cg</name>
+        <qualifiedname>QuitPopupManager._cg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="52" column="25" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_quit_popup_manager_1ae3402f718b0acfdf398a6607873eab82" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuitPopupManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>QuitPopupManager.Awake</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="54" column="10" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="54" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_quit_popup_manager_1a569fa7a52ca24a87ad8d8bfaa8be2246" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuitPopupManager.ShowPopup</definition>
+        <argsstring>()</argsstring>
+        <name>ShowPopup</name>
+        <qualifiedname>QuitPopupManager.ShowPopup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="77" column="10" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="77" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_quit_popup_manager_1a10c2b371ca8edb935d446374ac81e1b0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuitPopupManager.OnNo</definition>
+        <argsstring>()</argsstring>
+        <name>OnNo</name>
+        <qualifiedname>QuitPopupManager.OnNo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="85" column="10" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_quit_popup_manager_1a1a6cdd7b9d7b5e95ab3b415810f62363" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QuitPopupManager.OnYes</definition>
+        <argsstring>()</argsstring>
+        <name>OnYes</name>
+        <qualifiedname>QuitPopupManager.OnYes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="91" column="10" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="91" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_quit_popup_manager_1aeb9c28dbe56984d6aa6eeb67a1d5a08b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator QuitPopupManager.FadeAndHide</definition>
+        <argsstring>()</argsstring>
+        <name>FadeAndHide</name>
+        <qualifiedname>QuitPopupManager.FadeAndHide</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="98" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="98" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_quit_popup_manager_1a2f7403b9e35cd4cdd7ccdb50ea5c84ad" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator QuitPopupManager.Fade</definition>
+        <argsstring>(float from, float to)</argsstring>
+        <name>Fade</name>
+        <qualifiedname>QuitPopupManager.Fade</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="105" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="105" bodyend="116"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Attach to: Quit Button (Canvas &gt; Quit Button). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>No GameManager needed. Completely self-contained.</para>
+<para>SETUP:<orderedlist>
+<listitem><para>First, build the popup panel in your scene (see steps below).</para>
+</listitem><listitem><para>Select &quot;Quit Button&quot; in the Hierarchy.</para>
+</listitem><listitem><para>Add Component → <ref refid="class_quit_popup_manager" kindref="compound">QuitPopupManager</ref>.</para>
+</listitem><listitem><para>Drag your popup panel into the Quit Popup Panel slot.</para>
+</listitem><listitem><para>Drag the Yes and No buttons (inside the popup) into their slots.</para>
+</listitem><listitem><para>Type your main menu scene name into Main Menu Scene Name. Must match exactly what&apos;s in File &gt; Build Settings.</para>
+</listitem></orderedlist>
+</para>
+<para>HOW TO BUILD THE POPUP PANEL: a. Right-click Canvas → UI → Panel. Rename it &quot;Quit Popup Panel&quot;. b. Give it a dark semi-transparent background colour. c. Resize it to a small centred box (e.g. 400 x 200). d. Inside it, add: • UI &gt; Text (TMP) — write &quot;Do you want to leave the game?&quot; • UI &gt; Button (TMP) — rename &quot;Yes Button&quot;, set label text to &quot;Yes&quot; • UI &gt; Button (TMP) — rename &quot;No Button&quot;, set label text to &quot;No&quot; e. The panel will hide itself automatically on Play via CanvasGroup — you do NOT need to set it inactive in the Inspector. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>QuitPopupManager</label>
+        <link refid="class_quit_popup_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>QuitPopupManager</label>
+        <link refid="class_quit_popup_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" line="31" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/QuitPopupManager.cs" bodystart="32" bodyend="117"/>
+    <listofallmembers>
+      <member refid="class_quit_popup_manager_1ac170b7cdbf30b8fb9a465b5bfbe44f9f" prot="private" virt="non-virtual"><scope>QuitPopupManager</scope><name>_cg</name></member>
+      <member refid="class_quit_popup_manager_1a200044685ffc8df637b3b771326e6129" prot="private" virt="non-virtual"><scope>QuitPopupManager</scope><name>_quitButton</name></member>
+      <member refid="class_quit_popup_manager_1ae3402f718b0acfdf398a6607873eab82" prot="private" virt="non-virtual"><scope>QuitPopupManager</scope><name>Awake</name></member>
+      <member refid="class_quit_popup_manager_1a2f7403b9e35cd4cdd7ccdb50ea5c84ad" prot="private" virt="non-virtual"><scope>QuitPopupManager</scope><name>Fade</name></member>
+      <member refid="class_quit_popup_manager_1aeb9c28dbe56984d6aa6eeb67a1d5a08b" prot="private" virt="non-virtual"><scope>QuitPopupManager</scope><name>FadeAndHide</name></member>
+      <member refid="class_quit_popup_manager_1a743a09ef5977af768b61d43bdb0b31e9" prot="public" virt="non-virtual"><scope>QuitPopupManager</scope><name>fadeDuration</name></member>
+      <member refid="class_quit_popup_manager_1a7d0d1523a07a857d2234203541af1044" prot="public" virt="non-virtual"><scope>QuitPopupManager</scope><name>mainMenuSceneName</name></member>
+      <member refid="class_quit_popup_manager_1a4291dfaef3912041cc983476bf34811c" prot="public" virt="non-virtual"><scope>QuitPopupManager</scope><name>noButton</name></member>
+      <member refid="class_quit_popup_manager_1a10c2b371ca8edb935d446374ac81e1b0" prot="private" virt="non-virtual"><scope>QuitPopupManager</scope><name>OnNo</name></member>
+      <member refid="class_quit_popup_manager_1a1a6cdd7b9d7b5e95ab3b415810f62363" prot="private" virt="non-virtual"><scope>QuitPopupManager</scope><name>OnYes</name></member>
+      <member refid="class_quit_popup_manager_1a0d302d4239d543f0b73e3a9eeba69c9e" prot="public" virt="non-virtual"><scope>QuitPopupManager</scope><name>quitPopupPanel</name></member>
+      <member refid="class_quit_popup_manager_1a569fa7a52ca24a87ad8d8bfaa8be2246" prot="private" virt="non-virtual"><scope>QuitPopupManager</scope><name>ShowPopup</name></member>
+      <member refid="class_quit_popup_manager_1a2dcc9a0eb80420422cdf9590b1d64f16" prot="public" virt="non-virtual"><scope>QuitPopupManager</scope><name>yesButton</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

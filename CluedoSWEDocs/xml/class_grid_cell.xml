@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_grid_cell" kind="class" language="C#" prot="public">
+    <compoundname>GridCell</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_grid_cell_1ad76a21a7428b9a8b083cb000e86d8d2f" prot="public" static="no" mutable="no">
+        <type>Vector2Int</type>
+        <definition>Vector2Int GridCell.gridPos</definition>
+        <argsstring></argsstring>
+        <name>gridPos</name>
+        <qualifiedname>GridCell.gridPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" line="6" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_grid_cell_1acc84555349c1d41c799064c0f20a88d1" prot="public" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 GridCell.worldPos</definition>
+        <argsstring></argsstring>
+        <name>worldPos</name>
+        <qualifiedname>GridCell.worldPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" line="7" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_grid_cell_1a746c87afc5c9c6bcb8b42143e59f5b7e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GridCell.isWalkable</definition>
+        <argsstring></argsstring>
+        <name>isWalkable</name>
+        <qualifiedname>GridCell.isWalkable</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" line="8" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_grid_cell_1a54be2872d9acdcd72868b4dc1aa51a82" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GridCell.isDoor</definition>
+        <argsstring></argsstring>
+        <name>isDoor</name>
+        <qualifiedname>GridCell.isDoor</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" line="9" column="27" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_grid_cell_1a8bc64f4d59e773e583ea6e5fdf343845" prot="public" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_grid_cell" kindref="compound">GridCell</ref> &gt;</type>
+        <definition>List&lt;GridCell&gt; GridCell.neighbours</definition>
+        <argsstring></argsstring>
+        <name>neighbours</name>
+        <qualifiedname>GridCell.neighbours</qualifiedname>
+        <initializer>= new()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" line="11" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_grid_cell_1ad7d5c2d8ffde3a604243289dbdd058e7" prot="public" static="no" mutable="no">
+        <type><ref refid="class_board_piece" kindref="compound">BoardPiece</ref></type>
+        <definition>BoardPiece GridCell.occupant</definition>
+        <argsstring></argsstring>
+        <name>occupant</name>
+        <qualifiedname>GridCell.occupant</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" line="14" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_grid_cell_1a1067c4573241f4b8dc6f687fbe97091e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GridCell.GridCell</definition>
+        <argsstring>(int x, int y, Vector3 world)</argsstring>
+        <name>GridCell</name>
+        <qualifiedname>GridCell.GridCell</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>Vector3</type>
+          <declname>world</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" line="16" column="12" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" bodystart="16" bodyend="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>BoardPiece</label>
+        <link refid="class_board_piece"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>suspect</edgelabel>
+          <edgelabel>weapon</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>CluedoEnums</label>
+      </node>
+      <node id="1">
+        <label>GridCell</label>
+        <link refid="class_grid_cell"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>occupant</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" line="4" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridCell.cs" bodystart="5" bodyend="21"/>
+    <listofallmembers>
+      <member refid="class_grid_cell_1a1067c4573241f4b8dc6f687fbe97091e" prot="public" virt="non-virtual"><scope>GridCell</scope><name>GridCell</name></member>
+      <member refid="class_grid_cell_1ad76a21a7428b9a8b083cb000e86d8d2f" prot="public" virt="non-virtual"><scope>GridCell</scope><name>gridPos</name></member>
+      <member refid="class_grid_cell_1a54be2872d9acdcd72868b4dc1aa51a82" prot="public" virt="non-virtual"><scope>GridCell</scope><name>isDoor</name></member>
+      <member refid="class_grid_cell_1a746c87afc5c9c6bcb8b42143e59f5b7e" prot="public" virt="non-virtual"><scope>GridCell</scope><name>isWalkable</name></member>
+      <member refid="class_grid_cell_1a8bc64f4d59e773e583ea6e5fdf343845" prot="public" virt="non-virtual"><scope>GridCell</scope><name>neighbours</name></member>
+      <member refid="class_grid_cell_1ad7d5c2d8ffde3a604243289dbdd058e7" prot="public" virt="non-virtual"><scope>GridCell</scope><name>occupant</name></member>
+      <member refid="class_grid_cell_1acc84555349c1d41c799064c0f20a88d1" prot="public" virt="non-virtual"><scope>GridCell</scope><name>worldPos</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

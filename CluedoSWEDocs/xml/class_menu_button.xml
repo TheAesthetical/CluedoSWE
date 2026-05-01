@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_menu_button" kind="class" language="C#" prot="public">
+    <compoundname>MenuButton</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_menu_button_1a3c12933a6bf3af6f427b084eaccb623f" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button MenuButton.button</definition>
+        <argsstring></argsstring>
+        <name>button</name>
+        <qualifiedname>MenuButton.button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="11" column="16" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_button_1a75ca532154f2c2448b8eca5e4545eae6" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject MenuButton.menuUI</definition>
+        <argsstring></argsstring>
+        <name>menuUI</name>
+        <qualifiedname>MenuButton.menuUI</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="12" column="20" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_button_1a134e11ccacc4a7d9deb97254364ff587" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MenuButton.assignedPlayerIndex</definition>
+        <argsstring></argsstring>
+        <name>assignedPlayerIndex</name>
+        <qualifiedname>MenuButton.assignedPlayerIndex</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="15" column="13" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_menu_button_1a6f7a50039e0166b5c71c8c9bd1719aeb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuButton.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>MenuButton.Start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="17" column="14" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_button_1af595351704e29fe204068380392d5b8b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuButton.UpdateToggleSprite</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateToggleSprite</name>
+        <qualifiedname>MenuButton.UpdateToggleSprite</qualifiedname>
+        <briefdescription>
+<para>Updates the sprite displayed on the toggle button based on the current assignment. AI is represented by index -1, whilst human players use indices starting from 0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="91" column="14" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="91" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_button_1a9bda1b73d0d2d687aa13266a0e86680f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MenuButton.IsPlayerAlreadyAssigned</definition>
+        <argsstring>(int playerIndex)</argsstring>
+        <name>IsPlayerAlreadyAssigned</name>
+        <qualifiedname>MenuButton.IsPlayerAlreadyAssigned</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>playerIndex</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether a given player index is already assigned to another toggle button. AI (-1) is excluded from this check and can be assigned multiple times. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>playerIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player index to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the player is already assigned, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="110" column="14" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="110" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_button_1aa0032d32cd11fabb2b9099ca6799b048" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MenuButton.WouldPlayerSelectionBeValid</definition>
+        <argsstring>(int proposedIndex)</argsstring>
+        <name>WouldPlayerSelectionBeValid</name>
+        <qualifiedname>MenuButton.WouldPlayerSelectionBeValid</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>proposedIndex</declname>
+        </param>
+        <briefdescription>
+<para>Determines whether assigning a given player index would maintain a valid selection state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A valid state requires that all selected human players form a continuous sequence. Starting from player 1 (index 0) with no gaps.</para>
+<para>AI (-1) is ignored in this validation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>proposedIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The player index being tested </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the resulting selection would be valid, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="140" column="14" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="140" bodyend="176"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_menu_button_1a6944c71a09444230ce63af5237416554" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuButton.StartButtonClick</definition>
+        <argsstring>()</argsstring>
+        <name>StartButtonClick</name>
+        <qualifiedname>MenuButton.StartButtonClick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="23" column="13" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_button_1a8aeeccf488a984d9013c850063a35b71" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuButton.QuitButtonClick</definition>
+        <argsstring>()</argsstring>
+        <name>QuitButtonClick</name>
+        <qualifiedname>MenuButton.QuitButtonClick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="29" column="13" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_button_1ad4f93af5bc44a66a165e51a868c9933a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuButton.PlayerButtonClick</definition>
+        <argsstring>(int players)</argsstring>
+        <name>PlayerButtonClick</name>
+        <qualifiedname>MenuButton.PlayerButtonClick</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>players</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="35" column="13" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="35" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_button_1a2a8c83581f790193116fe8af61b4907c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuButton.BackButtonClick</definition>
+        <argsstring>()</argsstring>
+        <name>BackButtonClick</name>
+        <qualifiedname>MenuButton.BackButtonClick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="45" column="13" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="45" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_button_1ad7268345e210b69404e3db48c8991e63" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuButton.ToggleButtonClick</definition>
+        <argsstring>()</argsstring>
+        <name>ToggleButtonClick</name>
+        <qualifiedname>MenuButton.ToggleButtonClick</qualifiedname>
+        <briefdescription>
+<para>Cycles the assignment of this toggle button between AI and valid players. Ensures that: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>No duplicate human players are assigned</para>
+</listitem><listitem><para><ref refid="class_player" kindref="compound">Player</ref> indices remain sequential</para>
+</listitem><listitem><para>Ai can be selected multiple times. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="60" column="13" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="60" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_button_1af56f79cb0acf25118836100b13f4d781" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int MenuButton.GetAssignedPlayerIndex</definition>
+        <argsstring>()</argsstring>
+        <name>GetAssignedPlayerIndex</name>
+        <qualifiedname>MenuButton.GetAssignedPlayerIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="178" column="12" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_button_1a23f90aedea5142b5192076cf3c3700d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MenuButton.BeginButtonClick</definition>
+        <argsstring>()</argsstring>
+        <name>BeginButtonClick</name>
+        <qualifiedname>MenuButton.BeginButtonClick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="182" column="13" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="182" bodyend="205"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MenuButton</label>
+        <link refid="class_menu_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>MenuButton</label>
+        <link refid="class_menu_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" line="9" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/MainMenu/MenuButton.cs" bodystart="10" bodyend="206"/>
+    <listofallmembers>
+      <member refid="class_menu_button_1a134e11ccacc4a7d9deb97254364ff587" prot="private" virt="non-virtual"><scope>MenuButton</scope><name>assignedPlayerIndex</name></member>
+      <member refid="class_menu_button_1a2a8c83581f790193116fe8af61b4907c" prot="public" virt="non-virtual"><scope>MenuButton</scope><name>BackButtonClick</name></member>
+      <member refid="class_menu_button_1a23f90aedea5142b5192076cf3c3700d9" prot="public" virt="non-virtual"><scope>MenuButton</scope><name>BeginButtonClick</name></member>
+      <member refid="class_menu_button_1a3c12933a6bf3af6f427b084eaccb623f" prot="private" virt="non-virtual"><scope>MenuButton</scope><name>button</name></member>
+      <member refid="class_menu_button_1af56f79cb0acf25118836100b13f4d781" prot="public" virt="non-virtual"><scope>MenuButton</scope><name>GetAssignedPlayerIndex</name></member>
+      <member refid="class_menu_button_1a9bda1b73d0d2d687aa13266a0e86680f" prot="private" virt="non-virtual"><scope>MenuButton</scope><name>IsPlayerAlreadyAssigned</name></member>
+      <member refid="class_menu_button_1a75ca532154f2c2448b8eca5e4545eae6" prot="private" virt="non-virtual"><scope>MenuButton</scope><name>menuUI</name></member>
+      <member refid="class_menu_button_1ad4f93af5bc44a66a165e51a868c9933a" prot="public" virt="non-virtual"><scope>MenuButton</scope><name>PlayerButtonClick</name></member>
+      <member refid="class_menu_button_1a8aeeccf488a984d9013c850063a35b71" prot="public" virt="non-virtual"><scope>MenuButton</scope><name>QuitButtonClick</name></member>
+      <member refid="class_menu_button_1a6f7a50039e0166b5c71c8c9bd1719aeb" prot="private" virt="non-virtual"><scope>MenuButton</scope><name>Start</name></member>
+      <member refid="class_menu_button_1a6944c71a09444230ce63af5237416554" prot="public" virt="non-virtual"><scope>MenuButton</scope><name>StartButtonClick</name></member>
+      <member refid="class_menu_button_1ad7268345e210b69404e3db48c8991e63" prot="public" virt="non-virtual"><scope>MenuButton</scope><name>ToggleButtonClick</name></member>
+      <member refid="class_menu_button_1af595351704e29fe204068380392d5b8b" prot="private" virt="non-virtual"><scope>MenuButton</scope><name>UpdateToggleSprite</name></member>
+      <member refid="class_menu_button_1aa0032d32cd11fabb2b9099ca6799b048" prot="private" virt="non-virtual"><scope>MenuButton</scope><name>WouldPlayerSelectionBeValid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

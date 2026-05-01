@@ -1,0 +1,53 @@
+\doxysection{Quit\+Popup\+Manager Class Reference}
+\hypertarget{class_quit_popup_manager}{}\label{class_quit_popup_manager}\index{QuitPopupManager@{QuitPopupManager}}
+
+
+Attach to:\+ Quit Button (Canvas \texorpdfstring{$>$}{>} Quit Button).  
+
+
+Inheritance diagram for Quit\+Popup\+Manager:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_quit_popup_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_quit_popup_manager_a0d302d4239d543f0b73e3a9eeba69c9e}\label{class_quit_popup_manager_a0d302d4239d543f0b73e3a9eeba69c9e} 
+Game\+Object {\bfseries quit\+Popup\+Panel}
+\item 
+\Hypertarget{class_quit_popup_manager_a2dcc9a0eb80420422cdf9590b1d64f16}\label{class_quit_popup_manager_a2dcc9a0eb80420422cdf9590b1d64f16} 
+Button {\bfseries yes\+Button}
+\item 
+\Hypertarget{class_quit_popup_manager_a4291dfaef3912041cc983476bf34811c}\label{class_quit_popup_manager_a4291dfaef3912041cc983476bf34811c} 
+Button {\bfseries no\+Button}
+\item 
+\Hypertarget{class_quit_popup_manager_a7d0d1523a07a857d2234203541af1044}\label{class_quit_popup_manager_a7d0d1523a07a857d2234203541af1044} 
+string {\bfseries main\+Menu\+Scene\+Name} = "{}Main\+Menu"{}
+\item 
+\Hypertarget{class_quit_popup_manager_a743a09ef5977af768b61d43bdb0b31e9}\label{class_quit_popup_manager_a743a09ef5977af768b61d43bdb0b31e9} 
+float {\bfseries fade\+Duration} = 0.\+18f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Attach to:\+ Quit Button (Canvas \texorpdfstring{$>$}{>} Quit Button). 
+
+No Game\+Manager needed. Completely self-\/contained.
+
+SETUP:\+
+\begin{DoxyEnumerate}
+\item First, build the popup panel in your scene (see steps below).
+\item Select "{}\+Quit Button"{} in the Hierarchy.
+\item Add Component → \doxylink{class_quit_popup_manager}{Quit\+Popup\+Manager}.
+\item Drag your popup panel into the Quit Popup Panel slot.
+\item Drag the Yes and No buttons (inside the popup) into their slots.
+\item Type your main menu scene name into Main Menu Scene Name. Must match exactly what\textquotesingle{}s in File \texorpdfstring{$>$}{>} Build Settings.
+\end{DoxyEnumerate}
+
+HOW TO BUILD THE POPUP PANEL:\+ a. Right-\/click Canvas → UI → Panel. Rename it "{}\+Quit Popup Panel"{}. b. Give it a dark semi-\/transparent background colour. c. Resize it to a small centred box (e.\+g. 400 x 200). d. Inside it, add:\+ • UI \texorpdfstring{$>$}{>} Text (TMP) — write "{}\+Do you want to leave the game?"{} • UI \texorpdfstring{$>$}{>} Button (TMP) — rename "{}\+Yes Button"{}, set label text to "{}\+Yes"{} • UI \texorpdfstring{$>$}{>} Button (TMP) — rename "{}\+No Button"{}, set label text to "{}\+No"{} e. The panel will hide itself automatically on Play via Canvas\+Group — you do NOT need to set it inactive in the Inspector. 
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Cluedo\+SWE/\+\+Assets/\+\+Game\+Assets/\+\+Scripts/\+\+Game/\+\+Board/\+Quit\+Popup\+Manager.\+cs\end{DoxyCompactItemize}

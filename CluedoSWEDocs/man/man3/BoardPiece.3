@@ -1,0 +1,57 @@
+.TH "BoardPiece" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BoardPiece
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBPlaceOn\fP (\fBGridCell\fP cell)"
+.br
+.RI "Instantly place the token on a cell (used during setup)\&. "
+.ti -1c
+.RI "Coroutine \fBSlideTo\fP (\fBGridCell\fP cell)"
+.br
+.RI "Slide smoothly to a single cell\&. "
+.ti -1c
+.RI "Coroutine \fBWalkPath\fP (List< \fBGridCell\fP > path)"
+.br
+.RI "Walk along a multi-cell path, one step at a time\&. "
+.ti -1c
+.RI "void \fBTeleportToRoom\fP (\fBGridCell\fP anchor)"
+.br
+.RI "Teleport to a room anchor (used when pulled in by a suggestion)\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "CluedoEnums\&.Suspect \fBsuspect\fP"
+.br
+.ti -1c
+.RI "bool \fBisWeapon\fP = false"
+.br
+.ti -1c
+.RI "CluedoEnums\&.Weapon \fBweapon\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBGridCell\fP \fBcurrentCell\fP\fR [get]\fP"
+.br
+.ti -1c
+.RI "bool \fBisMoving\fP\fR [get]\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

@@ -1,0 +1,958 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_game_controller" kind="class" language="C#" prot="public">
+    <compoundname>GameController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_game_controller_1aac192fe5ddbb41345a8402513ed69974" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_player" kindref="compound">Player</ref> &gt;</type>
+        <definition>List&lt;Player&gt; GameController.players</definition>
+        <argsstring></argsstring>
+        <name>players</name>
+        <qualifiedname>GameController.players</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="10" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a22b82d0805d176c1b5cf77c875662b98" prot="private" static="no" mutable="no">
+        <type><ref refid="class_deck" kindref="compound">Deck</ref></type>
+        <definition>Deck GameController.deck</definition>
+        <argsstring></argsstring>
+        <name>deck</name>
+        <qualifiedname>GameController.deck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="11" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1aa182ac1c744148acab8642e3a371306d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_deck" kindref="compound">Deck</ref></type>
+        <definition>Deck GameController.weaponsDeck</definition>
+        <argsstring></argsstring>
+        <name>weaponsDeck</name>
+        <qualifiedname>GameController.weaponsDeck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="12" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a1aae798bc7973e574dfb05d6d983c006" prot="private" static="no" mutable="no">
+        <type><ref refid="class_deck" kindref="compound">Deck</ref></type>
+        <definition>Deck GameController.roomsDeck</definition>
+        <argsstring></argsstring>
+        <name>roomsDeck</name>
+        <qualifiedname>GameController.roomsDeck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="13" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1adeb6ec4c3b013a6eaab6b6a3157dc77f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_deck" kindref="compound">Deck</ref></type>
+        <definition>Deck GameController.charactersDeck</definition>
+        <argsstring></argsstring>
+        <name>charactersDeck</name>
+        <qualifiedname>GameController.charactersDeck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="14" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1ad40db0d90f72715dfb8c61c6aefa60ba" prot="private" static="no" mutable="no">
+        <type><ref refid="class_murder_envelope" kindref="compound">MurderEnvelope</ref></type>
+        <definition>MurderEnvelope GameController.murderEnvelope</definition>
+        <argsstring></argsstring>
+        <name>murderEnvelope</name>
+        <qualifiedname>GameController.murderEnvelope</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="16" column="28" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1abe68140a9f65a810a2eb143bd38145b6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameController.currentPlayerIndex</definition>
+        <argsstring></argsstring>
+        <name>currentPlayerIndex</name>
+        <qualifiedname>GameController.currentPlayerIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="18" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1aeae400ea0c604655ce5801818a5a44a1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameController.gameOver</definition>
+        <argsstring></argsstring>
+        <name>gameOver</name>
+        <qualifiedname>GameController.gameOver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="19" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1ab9d3999255699bcc02d28d3abdc974b8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GameController.canRoll</definition>
+        <argsstring></argsstring>
+        <name>canRoll</name>
+        <qualifiedname>GameController.canRoll</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="20" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a33a2a452a99ffd22f8644c57cb4a821d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_dice" kindref="compound">Dice</ref></type>
+        <definition>Dice GameController.dice</definition>
+        <argsstring></argsstring>
+        <name>dice</name>
+        <qualifiedname>GameController.dice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="21" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a9132b57288a6dca2b621a7ae7357af48" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GameController.turnCount</definition>
+        <argsstring></argsstring>
+        <name>turnCount</name>
+        <qualifiedname>GameController.turnCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="22" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a7a3dec1279dd9cc741535fbd0e079a08" prot="private" static="no" mutable="no">
+        <type><ref refid="class_dice_controller" kindref="compound">DiceController</ref></type>
+        <definition>DiceController GameController.diceController</definition>
+        <argsstring></argsstring>
+        <name>diceController</name>
+        <qualifiedname>GameController.diceController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="26" column="29" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1afeab5c232ff6da69cfa71ffef3b3d9b4" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.candlestickCardSprite</definition>
+        <argsstring></argsstring>
+        <name>candlestickCardSprite</name>
+        <qualifiedname>GameController.candlestickCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="29" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a3ff38f829692b7a6864f94a4d050ec9a" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.knifeCardSprite</definition>
+        <argsstring></argsstring>
+        <name>knifeCardSprite</name>
+        <qualifiedname>GameController.knifeCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="30" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a591590c61b4f96a858d53c5b7ce4c795" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.leadpipeCardSprite</definition>
+        <argsstring></argsstring>
+        <name>leadpipeCardSprite</name>
+        <qualifiedname>GameController.leadpipeCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="31" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a7cd8708cf9dbfdb2fa1635b6875f2ade" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.revolverCardSprite</definition>
+        <argsstring></argsstring>
+        <name>revolverCardSprite</name>
+        <qualifiedname>GameController.revolverCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="32" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a09d4ef3179771f279b4b2418b9a883ab" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.ropeCardSprite</definition>
+        <argsstring></argsstring>
+        <name>ropeCardSprite</name>
+        <qualifiedname>GameController.ropeCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="33" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1ac589e6924085ced19b901ff45f77c64c" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.wrenchCardSprite</definition>
+        <argsstring></argsstring>
+        <name>wrenchCardSprite</name>
+        <qualifiedname>GameController.wrenchCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="34" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1aa9ec17ca978b26a252bf7790e6dc6a88" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.mustardCardSprite</definition>
+        <argsstring></argsstring>
+        <name>mustardCardSprite</name>
+        <qualifiedname>GameController.mustardCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="37" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1ace64a1dd000659138d85b7e6846a98cf" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.scarlettCardSprite</definition>
+        <argsstring></argsstring>
+        <name>scarlettCardSprite</name>
+        <qualifiedname>GameController.scarlettCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="38" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1aeb2321bea263c1f816feda76540b31c3" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.peacockCardSprite</definition>
+        <argsstring></argsstring>
+        <name>peacockCardSprite</name>
+        <qualifiedname>GameController.peacockCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="39" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a64fc82fdc03e5c88e07ca6597ab99080" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.whiteCardSprite</definition>
+        <argsstring></argsstring>
+        <name>whiteCardSprite</name>
+        <qualifiedname>GameController.whiteCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="40" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1aa26659e74ef24fc31a1cfc9c68d968f1" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.plumCardSprite</definition>
+        <argsstring></argsstring>
+        <name>plumCardSprite</name>
+        <qualifiedname>GameController.plumCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="41" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1abd3b62cb69227ec235921a6c2fa41718" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.greenCardSprite</definition>
+        <argsstring></argsstring>
+        <name>greenCardSprite</name>
+        <qualifiedname>GameController.greenCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="42" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a5ce7fa8eaf0fa74cf4d7796543ce7ec1" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.ballroomCardSprite</definition>
+        <argsstring></argsstring>
+        <name>ballroomCardSprite</name>
+        <qualifiedname>GameController.ballroomCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="45" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a63b8be3c20e95da518a03151a94bc843" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.billiardsCardSprite</definition>
+        <argsstring></argsstring>
+        <name>billiardsCardSprite</name>
+        <qualifiedname>GameController.billiardsCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="46" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a1142a28d0d2c160c873ec6b19d5d8571" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.conservatoryCardSprite</definition>
+        <argsstring></argsstring>
+        <name>conservatoryCardSprite</name>
+        <qualifiedname>GameController.conservatoryCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="47" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a456a26032dd56de8c93542c3546e5764" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.diningCardSprite</definition>
+        <argsstring></argsstring>
+        <name>diningCardSprite</name>
+        <qualifiedname>GameController.diningCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="48" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a498b660db222847c4c05735ed1b682a1" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.hallCardSprite</definition>
+        <argsstring></argsstring>
+        <name>hallCardSprite</name>
+        <qualifiedname>GameController.hallCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="49" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a20bfa3b2e7e5fdbe5eae2925f0900c0b" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.kitchenCardSprite</definition>
+        <argsstring></argsstring>
+        <name>kitchenCardSprite</name>
+        <qualifiedname>GameController.kitchenCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="50" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a2f74bf563abbaf0323a72346c131e4bb" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.libraryCardSprite</definition>
+        <argsstring></argsstring>
+        <name>libraryCardSprite</name>
+        <qualifiedname>GameController.libraryCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="51" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1afe75b6db22fd4f48fdac2464d7b3a9ce" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.loungeCardSprite</definition>
+        <argsstring></argsstring>
+        <name>loungeCardSprite</name>
+        <qualifiedname>GameController.loungeCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="52" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a4bd6694a7d3e8ffb6da85364cd335bb2" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite GameController.studyCardSprite</definition>
+        <argsstring></argsstring>
+        <name>studyCardSprite</name>
+        <qualifiedname>GameController.studyCardSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="53" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_game_controller_1ad73e7b7c496d0869b4db20ce8af56100" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int GameController.maxTurns</definition>
+        <argsstring></argsstring>
+        <name>maxTurns</name>
+        <qualifiedname>GameController.maxTurns</qualifiedname>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="23" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_controller_1a7f28cd82188e0134c68c3d8e8ed932a9" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_player" kindref="compound">Player</ref></type>
+        <definition>Player GameController.winner</definition>
+        <argsstring></argsstring>
+        <name>winner</name>
+        <qualifiedname>GameController.winner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="57" column="27" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_game_controller_1a97788a7aa0f09c8d748781683e5f045b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>GameController.Start</qualifiedname>
+        <briefdescription>
+<para>Unity Start() method. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="62" column="10" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="62" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a82d4e7af58d195b7d8241b85656170a3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.InitialiseGame</definition>
+        <argsstring>()</argsstring>
+        <name>InitialiseGame</name>
+        <qualifiedname>GameController.InitialiseGame</qualifiedname>
+        <briefdescription>
+<para>Sets up all of the game components and prepares the game. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="73" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="73" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a766ef2f8dddd965b2144c09e8db2d3a2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.TakeTurn</definition>
+        <argsstring>()</argsstring>
+        <name>TakeTurn</name>
+        <qualifiedname>GameController.TakeTurn</qualifiedname>
+        <briefdescription>
+<para>Executes the current player&apos;s turn. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="140" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="140" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1af5c6d4edd7d02577f12f948abd80fb1c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.StartGame</definition>
+        <argsstring>()</argsstring>
+        <name>StartGame</name>
+        <qualifiedname>GameController.StartGame</qualifiedname>
+        <briefdescription>
+<para>Begins the game loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="184" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="184" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1aefbaffce00bd9929f25c76e126d62390" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.LoadCards</definition>
+        <argsstring>()</argsstring>
+        <name>LoadCards</name>
+        <qualifiedname>GameController.LoadCards</qualifiedname>
+        <briefdescription>
+<para>A helper function that initialises the cards. The cards are put into three separate decks that are unshuffled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="285" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="285" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1ab349d4fa9111268bcbad5336cb80a65e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.SetupMurderEnvelope</definition>
+        <argsstring>()</argsstring>
+        <name>SetupMurderEnvelope</name>
+        <qualifiedname>GameController.SetupMurderEnvelope</qualifiedname>
+        <briefdescription>
+<para>A helper function that shuffles the three decks, and draws one card from each, and setting the contents of the murderEnvelope. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="320" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="320" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a6d81cb19c5bfc62a67dc3061d51f3229" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.SetupMainDeck</definition>
+        <argsstring>()</argsstring>
+        <name>SetupMainDeck</name>
+        <qualifiedname>GameController.SetupMainDeck</qualifiedname>
+        <briefdescription>
+<para>Helper function to setup the main deck. Should only be called AFTER setting up Murder Envelope. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="339" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="339" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1aa41b73b21f03acf019611d3a9fb5d91d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.DealCards</definition>
+        <argsstring>()</argsstring>
+        <name>DealCards</name>
+        <qualifiedname>GameController.DealCards</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="350" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="350" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a874a9e972eba9a694748505260a663db" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.AddAllCards</definition>
+        <argsstring>(Deck target, Deck source)</argsstring>
+        <name>AddAllCards</name>
+        <qualifiedname>GameController.AddAllCards</qualifiedname>
+        <param>
+          <type><ref refid="class_deck" kindref="compound">Deck</ref></type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type><ref refid="class_deck" kindref="compound">Deck</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Helper function to add all cards from one deck into another. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>target</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination of the cards. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source of the cards. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="391" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="391" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1ab8d1a252da9c15af34ee9da68435aad0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.NextPlayer</definition>
+        <argsstring>()</argsstring>
+        <name>NextPlayer</name>
+        <qualifiedname>GameController.NextPlayer</qualifiedname>
+        <briefdescription>
+<para>Moves to the next player. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="404" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="404" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a24e6c39f6a84db7ae281c6adb8f4e1e7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.EndTurn</definition>
+        <argsstring>()</argsstring>
+        <name>EndTurn</name>
+        <qualifiedname>GameController.EndTurn</qualifiedname>
+        <briefdescription>
+<para>Moves to the next player, and starts the next turn. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="412" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="412" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1a9456fc25148b203e0bd7f01816cc3607" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.EndGame</definition>
+        <argsstring>(Player winnerIn)</argsstring>
+        <name>EndGame</name>
+        <qualifiedname>GameController.EndGame</qualifiedname>
+        <param>
+          <type><ref refid="class_player" kindref="compound">Player</ref></type>
+          <declname>winnerIn</declname>
+        </param>
+        <briefdescription>
+<para>Ends the game and announces the winner. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>winnerIn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The winning <ref refid="class_player" kindref="compound">Player</ref>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="422" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="422" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1aa669f7a95aafb9c7883d8f1d9054e208" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.HandleDiceResult</definition>
+        <argsstring>(int roll)</argsstring>
+        <name>HandleDiceResult</name>
+        <qualifiedname>GameController.HandleDiceResult</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>roll</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="430" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="430" bodyend="442"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_game_controller_1acb341c07c963e5ebf34ee0bc4a03b8b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.HandleSuggestion</definition>
+        <argsstring>(int suggesterIndex, Suggestion suggestion)</argsstring>
+        <name>HandleSuggestion</name>
+        <qualifiedname>GameController.HandleSuggestion</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>suggesterIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="class_suggestion" kindref="compound">Suggestion</ref></type>
+          <declname>suggestion</declname>
+        </param>
+        <briefdescription>
+<para>Handles a player&apos;s suggestion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>suggesterIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the player who made the suggestion.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>suggestion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <computeroutput><ref refid="class_suggestion" kindref="compound">Suggestion</ref></computeroutput> the player makes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="195" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="195" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1ae2d96dba63c54569104576d932ec1cd3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.HandleAccusation</definition>
+        <argsstring>(Player currentPlayer, Suggestion accusation)</argsstring>
+        <name>HandleAccusation</name>
+        <qualifiedname>GameController.HandleAccusation</qualifiedname>
+        <param>
+          <type><ref refid="class_player" kindref="compound">Player</ref></type>
+          <declname>currentPlayer</declname>
+        </param>
+        <param>
+          <type><ref refid="class_suggestion" kindref="compound">Suggestion</ref></type>
+          <declname>accusation</declname>
+        </param>
+        <briefdescription>
+<para>Handles a player&apos;s accusation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentPlayer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current player. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>accusation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <computeroutput><ref refid="class_suggestion" kindref="compound">Suggestion</ref></computeroutput> class is used to represent the Accusation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="245" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="245" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1ab3567901278947f9ad3af7f196687ada" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameController.OnRollDicePressed</definition>
+        <argsstring>()</argsstring>
+        <name>OnRollDicePressed</name>
+        <qualifiedname>GameController.OnRollDicePressed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="444" column="17" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="444" bodyend="452"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_game_controller_1ae0d5f61e0895c3b0f335d6bc310a24eb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void GameController.SetWinner</definition>
+        <argsstring>(Player player)</argsstring>
+        <name>SetWinner</name>
+        <qualifiedname>GameController.SetWinner</qualifiedname>
+        <param>
+          <type><ref refid="class_player" kindref="compound">Player</ref></type>
+          <declname>player</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="454" column="24" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="454" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_controller_1ab0806a6b6afb84538e5461c613df11aa" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_player" kindref="compound">Player</ref></type>
+        <definition>static Player GameController.GetWinner</definition>
+        <argsstring>()</argsstring>
+        <name>GetWinner</name>
+        <qualifiedname>GameController.GetWinner</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="459" column="26" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="459" bodyend="462"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class <computeroutput><ref refid="class_game_controller" kindref="compound">GameController</ref></computeroutput> controls the flow of the game, including the setup, turns and win conditions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GameController</label>
+        <link refid="class_game_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>GameController</label>
+        <link refid="class_game_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" line="8" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Misc/GameController.cs" bodystart="9" bodyend="464"/>
+    <listofallmembers>
+      <member refid="class_game_controller_1a874a9e972eba9a694748505260a663db" prot="private" virt="non-virtual"><scope>GameController</scope><name>AddAllCards</name></member>
+      <member refid="class_game_controller_1a5ce7fa8eaf0fa74cf4d7796543ce7ec1" prot="private" virt="non-virtual"><scope>GameController</scope><name>ballroomCardSprite</name></member>
+      <member refid="class_game_controller_1a63b8be3c20e95da518a03151a94bc843" prot="private" virt="non-virtual"><scope>GameController</scope><name>billiardsCardSprite</name></member>
+      <member refid="class_game_controller_1afeab5c232ff6da69cfa71ffef3b3d9b4" prot="private" virt="non-virtual"><scope>GameController</scope><name>candlestickCardSprite</name></member>
+      <member refid="class_game_controller_1ab9d3999255699bcc02d28d3abdc974b8" prot="private" virt="non-virtual"><scope>GameController</scope><name>canRoll</name></member>
+      <member refid="class_game_controller_1adeb6ec4c3b013a6eaab6b6a3157dc77f" prot="private" virt="non-virtual"><scope>GameController</scope><name>charactersDeck</name></member>
+      <member refid="class_game_controller_1a1142a28d0d2c160c873ec6b19d5d8571" prot="private" virt="non-virtual"><scope>GameController</scope><name>conservatoryCardSprite</name></member>
+      <member refid="class_game_controller_1abe68140a9f65a810a2eb143bd38145b6" prot="private" virt="non-virtual"><scope>GameController</scope><name>currentPlayerIndex</name></member>
+      <member refid="class_game_controller_1aa41b73b21f03acf019611d3a9fb5d91d" prot="private" virt="non-virtual"><scope>GameController</scope><name>DealCards</name></member>
+      <member refid="class_game_controller_1a22b82d0805d176c1b5cf77c875662b98" prot="private" virt="non-virtual"><scope>GameController</scope><name>deck</name></member>
+      <member refid="class_game_controller_1a33a2a452a99ffd22f8644c57cb4a821d" prot="private" virt="non-virtual"><scope>GameController</scope><name>dice</name></member>
+      <member refid="class_game_controller_1a7a3dec1279dd9cc741535fbd0e079a08" prot="private" virt="non-virtual"><scope>GameController</scope><name>diceController</name></member>
+      <member refid="class_game_controller_1a456a26032dd56de8c93542c3546e5764" prot="private" virt="non-virtual"><scope>GameController</scope><name>diningCardSprite</name></member>
+      <member refid="class_game_controller_1a9456fc25148b203e0bd7f01816cc3607" prot="private" virt="non-virtual"><scope>GameController</scope><name>EndGame</name></member>
+      <member refid="class_game_controller_1a24e6c39f6a84db7ae281c6adb8f4e1e7" prot="private" virt="non-virtual"><scope>GameController</scope><name>EndTurn</name></member>
+      <member refid="class_game_controller_1aeae400ea0c604655ce5801818a5a44a1" prot="private" virt="non-virtual"><scope>GameController</scope><name>gameOver</name></member>
+      <member refid="class_game_controller_1ab0806a6b6afb84538e5461c613df11aa" prot="public" virt="non-virtual"><scope>GameController</scope><name>GetWinner</name></member>
+      <member refid="class_game_controller_1abd3b62cb69227ec235921a6c2fa41718" prot="private" virt="non-virtual"><scope>GameController</scope><name>greenCardSprite</name></member>
+      <member refid="class_game_controller_1a498b660db222847c4c05735ed1b682a1" prot="private" virt="non-virtual"><scope>GameController</scope><name>hallCardSprite</name></member>
+      <member refid="class_game_controller_1ae2d96dba63c54569104576d932ec1cd3" prot="public" virt="non-virtual"><scope>GameController</scope><name>HandleAccusation</name></member>
+      <member refid="class_game_controller_1aa669f7a95aafb9c7883d8f1d9054e208" prot="private" virt="non-virtual"><scope>GameController</scope><name>HandleDiceResult</name></member>
+      <member refid="class_game_controller_1acb341c07c963e5ebf34ee0bc4a03b8b8" prot="public" virt="non-virtual"><scope>GameController</scope><name>HandleSuggestion</name></member>
+      <member refid="class_game_controller_1a82d4e7af58d195b7d8241b85656170a3" prot="private" virt="non-virtual"><scope>GameController</scope><name>InitialiseGame</name></member>
+      <member refid="class_game_controller_1a20bfa3b2e7e5fdbe5eae2925f0900c0b" prot="private" virt="non-virtual"><scope>GameController</scope><name>kitchenCardSprite</name></member>
+      <member refid="class_game_controller_1a3ff38f829692b7a6864f94a4d050ec9a" prot="private" virt="non-virtual"><scope>GameController</scope><name>knifeCardSprite</name></member>
+      <member refid="class_game_controller_1a591590c61b4f96a858d53c5b7ce4c795" prot="private" virt="non-virtual"><scope>GameController</scope><name>leadpipeCardSprite</name></member>
+      <member refid="class_game_controller_1a2f74bf563abbaf0323a72346c131e4bb" prot="private" virt="non-virtual"><scope>GameController</scope><name>libraryCardSprite</name></member>
+      <member refid="class_game_controller_1aefbaffce00bd9929f25c76e126d62390" prot="private" virt="non-virtual"><scope>GameController</scope><name>LoadCards</name></member>
+      <member refid="class_game_controller_1afe75b6db22fd4f48fdac2464d7b3a9ce" prot="private" virt="non-virtual"><scope>GameController</scope><name>loungeCardSprite</name></member>
+      <member refid="class_game_controller_1ad73e7b7c496d0869b4db20ce8af56100" prot="private" virt="non-virtual"><scope>GameController</scope><name>maxTurns</name></member>
+      <member refid="class_game_controller_1ad40db0d90f72715dfb8c61c6aefa60ba" prot="private" virt="non-virtual"><scope>GameController</scope><name>murderEnvelope</name></member>
+      <member refid="class_game_controller_1aa9ec17ca978b26a252bf7790e6dc6a88" prot="private" virt="non-virtual"><scope>GameController</scope><name>mustardCardSprite</name></member>
+      <member refid="class_game_controller_1ab8d1a252da9c15af34ee9da68435aad0" prot="private" virt="non-virtual"><scope>GameController</scope><name>NextPlayer</name></member>
+      <member refid="class_game_controller_1ab3567901278947f9ad3af7f196687ada" prot="public" virt="non-virtual"><scope>GameController</scope><name>OnRollDicePressed</name></member>
+      <member refid="class_game_controller_1aeb2321bea263c1f816feda76540b31c3" prot="private" virt="non-virtual"><scope>GameController</scope><name>peacockCardSprite</name></member>
+      <member refid="class_game_controller_1aac192fe5ddbb41345a8402513ed69974" prot="private" virt="non-virtual"><scope>GameController</scope><name>players</name></member>
+      <member refid="class_game_controller_1aa26659e74ef24fc31a1cfc9c68d968f1" prot="private" virt="non-virtual"><scope>GameController</scope><name>plumCardSprite</name></member>
+      <member refid="class_game_controller_1a7cd8708cf9dbfdb2fa1635b6875f2ade" prot="private" virt="non-virtual"><scope>GameController</scope><name>revolverCardSprite</name></member>
+      <member refid="class_game_controller_1a1aae798bc7973e574dfb05d6d983c006" prot="private" virt="non-virtual"><scope>GameController</scope><name>roomsDeck</name></member>
+      <member refid="class_game_controller_1a09d4ef3179771f279b4b2418b9a883ab" prot="private" virt="non-virtual"><scope>GameController</scope><name>ropeCardSprite</name></member>
+      <member refid="class_game_controller_1ace64a1dd000659138d85b7e6846a98cf" prot="private" virt="non-virtual"><scope>GameController</scope><name>scarlettCardSprite</name></member>
+      <member refid="class_game_controller_1a6d81cb19c5bfc62a67dc3061d51f3229" prot="private" virt="non-virtual"><scope>GameController</scope><name>SetupMainDeck</name></member>
+      <member refid="class_game_controller_1ab349d4fa9111268bcbad5336cb80a65e" prot="private" virt="non-virtual"><scope>GameController</scope><name>SetupMurderEnvelope</name></member>
+      <member refid="class_game_controller_1ae0d5f61e0895c3b0f335d6bc310a24eb" prot="public" virt="non-virtual"><scope>GameController</scope><name>SetWinner</name></member>
+      <member refid="class_game_controller_1a97788a7aa0f09c8d748781683e5f045b" prot="private" virt="non-virtual"><scope>GameController</scope><name>Start</name></member>
+      <member refid="class_game_controller_1af5c6d4edd7d02577f12f948abd80fb1c" prot="private" virt="non-virtual"><scope>GameController</scope><name>StartGame</name></member>
+      <member refid="class_game_controller_1a4bd6694a7d3e8ffb6da85364cd335bb2" prot="private" virt="non-virtual"><scope>GameController</scope><name>studyCardSprite</name></member>
+      <member refid="class_game_controller_1a766ef2f8dddd965b2144c09e8db2d3a2" prot="private" virt="non-virtual"><scope>GameController</scope><name>TakeTurn</name></member>
+      <member refid="class_game_controller_1a9132b57288a6dca2b621a7ae7357af48" prot="private" virt="non-virtual"><scope>GameController</scope><name>turnCount</name></member>
+      <member refid="class_game_controller_1aa182ac1c744148acab8642e3a371306d" prot="private" virt="non-virtual"><scope>GameController</scope><name>weaponsDeck</name></member>
+      <member refid="class_game_controller_1a64fc82fdc03e5c88e07ca6597ab99080" prot="private" virt="non-virtual"><scope>GameController</scope><name>whiteCardSprite</name></member>
+      <member refid="class_game_controller_1a7f28cd82188e0134c68c3d8e8ed932a9" prot="private" virt="non-virtual"><scope>GameController</scope><name>winner</name></member>
+      <member refid="class_game_controller_1ac589e6924085ced19b901ff45f77c64c" prot="private" virt="non-virtual"><scope>GameController</scope><name>wrenchCardSprite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_grid_manager" kind="class" language="C#" prot="public">
+    <compoundname>GridManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_grid_manager_1ae8473023a00818bfcad3b1723a13fad3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GridManager.width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>GridManager.width</qualifiedname>
+        <initializer>= 24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="7" column="16" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_grid_manager_1ae9da8e928b33e983c184e9974bc8be3d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GridManager.height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>GridManager.height</qualifiedname>
+        <initializer>= 25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="8" column="16" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_grid_manager_1abf7c860ea8953dcc08622ad6eedcdf0d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GridManager.cellSize</definition>
+        <argsstring></argsstring>
+        <name>cellSize</name>
+        <qualifiedname>GridManager.cellSize</qualifiedname>
+        <initializer>= 1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="9" column="18" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_grid_manager_1aaa1401d78b3eebe3f98be6b5993c8290" prot="private" static="no" mutable="no">
+        <type><ref refid="class_grid_cell" kindref="compound">GridCell</ref>[,]</type>
+        <definition>GridCell [,] GridManager.grid</definition>
+        <argsstring></argsstring>
+        <name>grid</name>
+        <qualifiedname>GridManager.grid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="11" column="22" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_grid_manager_1a5e227a1e1854618aad6a3cec28a06abd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GridManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>GridManager.Awake</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="13" column="10" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_grid_manager_1ab52fb5c1232f1c192ef81cea2b5e0fbe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GridManager.BuildGrid</definition>
+        <argsstring>()</argsstring>
+        <name>BuildGrid</name>
+        <qualifiedname>GridManager.BuildGrid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="18" column="10" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="18" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_grid_manager_1aaa2d63acfacddca76e11dc4fb74869f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Vector3</type>
+        <definition>Vector3 GridManager.GridToWorld</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>GridToWorld</name>
+        <qualifiedname>GridManager.GridToWorld</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="38" column="20" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="38" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_grid_manager_1a8592ab3d38e58c79760bf6750e96d999" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Vector2Int</type>
+        <definition>Vector2Int GridManager.WorldToGrid</definition>
+        <argsstring>(Vector3 worldPos)</argsstring>
+        <name>WorldToGrid</name>
+        <qualifiedname>GridManager.WorldToGrid</qualifiedname>
+        <param>
+          <type>Vector3</type>
+          <declname>worldPos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="41" column="23" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_grid_manager_1a2f956ea33fc74a12941ec1b23aece464" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_grid_cell" kindref="compound">GridCell</ref></type>
+        <definition>GridCell GridManager.GetCell</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>GetCell</name>
+        <qualifiedname>GridManager.GetCell</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="45" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="45" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_grid_manager_1af261d20f4f283e806b5728c4551e5da6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_grid_cell" kindref="compound">GridCell</ref></type>
+        <definition>GridCell GridManager.GetCell</definition>
+        <argsstring>(Vector2Int pos)</argsstring>
+        <name>GetCell</name>
+        <qualifiedname>GridManager.GetCell</qualifiedname>
+        <param>
+          <type>Vector2Int</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="51" column="21" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="51" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GridManager</label>
+        <link refid="class_grid_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>GridManager</label>
+        <link refid="class_grid_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" line="4" column="7" bodyfile="CluedoSWE/Assets/GameAssets/Scripts/Game/Board/GridManager.cs" bodystart="5" bodyend="52"/>
+    <listofallmembers>
+      <member refid="class_grid_manager_1a5e227a1e1854618aad6a3cec28a06abd" prot="private" virt="non-virtual"><scope>GridManager</scope><name>Awake</name></member>
+      <member refid="class_grid_manager_1ab52fb5c1232f1c192ef81cea2b5e0fbe" prot="private" virt="non-virtual"><scope>GridManager</scope><name>BuildGrid</name></member>
+      <member refid="class_grid_manager_1abf7c860ea8953dcc08622ad6eedcdf0d" prot="public" virt="non-virtual"><scope>GridManager</scope><name>cellSize</name></member>
+      <member refid="class_grid_manager_1a2f956ea33fc74a12941ec1b23aece464" prot="public" virt="non-virtual"><scope>GridManager</scope><name>GetCell</name></member>
+      <member refid="class_grid_manager_1af261d20f4f283e806b5728c4551e5da6" prot="public" virt="non-virtual"><scope>GridManager</scope><name>GetCell</name></member>
+      <member refid="class_grid_manager_1aaa1401d78b3eebe3f98be6b5993c8290" prot="private" virt="non-virtual"><scope>GridManager</scope><name>grid</name></member>
+      <member refid="class_grid_manager_1aaa2d63acfacddca76e11dc4fb74869f5" prot="public" virt="non-virtual"><scope>GridManager</scope><name>GridToWorld</name></member>
+      <member refid="class_grid_manager_1ae9da8e928b33e983c184e9974bc8be3d" prot="public" virt="non-virtual"><scope>GridManager</scope><name>height</name></member>
+      <member refid="class_grid_manager_1ae8473023a00818bfcad3b1723a13fad3" prot="public" virt="non-virtual"><scope>GridManager</scope><name>width</name></member>
+      <member refid="class_grid_manager_1a8592ab3d38e58c79760bf6750e96d999" prot="public" virt="non-virtual"><scope>GridManager</scope><name>WorldToGrid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

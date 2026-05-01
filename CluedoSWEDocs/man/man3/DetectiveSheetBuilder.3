@@ -1,0 +1,41 @@
+.TH "DetectiveSheetBuilder" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DetectiveSheetBuilder \- Builds the detective sheet UI by creating a row object for the cards Also adds section gaps between each group\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetSheet\fP (\fBDetectiveSheet\fP externalSheet)"
+.br
+.RI "Supply an externally created sheet (e\&.g\&. from \fBGameController\fP) before Start runs if you call this after Start, also call Build() yourself to rebuild\&. "
+.ti -1c
+.RI "void \fBRefreshAll\fP ()"
+.br
+.RI "Tells every row to redraw from the data Call when the sheets contents cahnge from the outside the UI e\&.g auto crossed\&. "
+.ti -1c
+.RI "void \fBBuild\fP ()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBDetectiveSheet\fP \fBSheet\fP\fR [get]\fP"
+.br
+.RI "The shared \fBDetectiveSheet\fP driving this UI\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Builds the detective sheet UI by creating a row object for the cards Also adds section gaps between each group\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.

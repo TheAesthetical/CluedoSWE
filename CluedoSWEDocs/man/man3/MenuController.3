@@ -1,0 +1,60 @@
+.TH "MenuController" 3 "CluedoSWE" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MenuController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits MonoBehaviour\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnimateToDirection\fP { \fBTop\fP, \fBBottom\fP, \fBLeft\fP, \fBRight\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBToggleOpenClose\fP ()"
+.br
+.RI "Toggles whether the menu is open or closed\&. "
+.ti -1c
+.RI "void \fBOpenMenu\fP ()"
+.br
+.RI "Opens the menu\&. "
+.ti -1c
+.RI "void \fBCloseMenu\fP ()"
+.br
+.RI "Closes the menu\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBNextPrevMenu\fP (string tag, bool direction)"
+.br
+.RI "Changes the menu to either the next or previous one\&. "
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void MenuController\&.NextPrevMenu (string tag, bool direction)\fR [static]\fP"
+
+.PP
+Changes the menu to either the next or previous one\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItag\fP The tag of the current menu
+.br
+\fIdirection\fP True = next menu, False = previous menu
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for CluedoSWE from the source code\&.
