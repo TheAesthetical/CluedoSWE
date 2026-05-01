@@ -6,6 +6,8 @@ public class GridCell
     public Vector2Int gridPos;
     public Vector3    worldPos;
     public bool       isWalkable = true;
+        public bool       isDoor = true;
+
     public List<GridCell> neighbours = new();
 
     // Optional: track which piece is here

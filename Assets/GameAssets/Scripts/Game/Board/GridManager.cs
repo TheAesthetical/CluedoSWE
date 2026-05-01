@@ -25,7 +25,6 @@ public class GridManager : MonoBehaviour
             grid[x, y] = new GridCell(x, y, GridToWorld(x, y));
         }
 
-        // Wire up neighbours AFTER all cells exist
         for (int x = 0; x < width; x++)
         for (int y = 0; y < height; y++)
         {
@@ -36,11 +35,9 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    // Convert grid coords → Unity world position (centred on cell)
     public Vector3 GridToWorld(int x, int y)
         => new Vector3(x * cellSize + cellSize * 0.5f, 0f, y * cellSize + cellSize * 0.5f);
 
-    // Convert world position → grid coords
     public Vector2Int WorldToGrid(Vector3 worldPos)
         => new Vector2Int(Mathf.FloorToInt(worldPos.x / cellSize),
                           Mathf.FloorToInt(worldPos.z / cellSize));

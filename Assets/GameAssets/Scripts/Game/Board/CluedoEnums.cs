@@ -35,7 +35,7 @@ public static class CluedoEnums
         Hall,
         Lounge,
         DiningRoom,
-        Corridor   // Any non-room cell
+        Corridor   
     }
 
     public enum GamePhase
