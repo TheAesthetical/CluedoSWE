@@ -15,7 +15,7 @@ MonoBehaviour:
   gridWidth: 24
   gridHeight: 25
   cellSize: 0.46
-  boardOrigin: {x: 994.4, y: 494.3, z: 0}
+  boardOrigin: {x: 0.75, y: -1.75, z: 0}
   rooms:
   - room: 2
     debugColour: {r: 0.30651888, g: 0.8396226, b: 0.2415895, a: 0}
