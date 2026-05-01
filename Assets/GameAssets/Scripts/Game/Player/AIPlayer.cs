@@ -597,7 +597,7 @@ public class AIPlayer : Player
 
     private void MakeSuggestion(Suggestion suggestion)
     {
-        Debug.Log("[AI ]" + ownPlayerIndex + "] suggestion: " +
+        Debug.Log("[AI " + ownPlayerIndex + "] suggestion: " +
         Safe(suggestion.GetCharacter()) + ", " +
         Safe(suggestion.GetWeapon()) + ", " +
         Safe(suggestion.GetRoom()));
@@ -606,7 +606,7 @@ public class AIPlayer : Player
 
     private void MakeAccusation(Suggestion suggestion)
     {
-        Debug.Log("[AI ]" + ownPlayerIndex + "] ACCUSATION: " +
+        Debug.Log("[AI " + ownPlayerIndex + "] ACCUSATION: " +
         Safe(suggestion.GetCharacter()) + ", " +
         Safe(suggestion.GetWeapon()) + ", " +
         Safe(suggestion.GetRoom()));
