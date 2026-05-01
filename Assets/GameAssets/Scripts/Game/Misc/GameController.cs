@@ -181,6 +181,27 @@ public class GameController : MonoBehaviour
         //Tells every player that a suggestion was made
         //For each player: shownCard is only set when they know it (they are suggester or the disprover)
         //Everyone else passed null
+        for (int offset = 1; offset < players.Count; offset++)
+        {
+            int idx = (suggesterIndex + offset) % players.Count;
+            Card matched = players[idx].GetMatchingCard(suggestion);
+            if (matched != null)
+            {
+                disproverIndex = idx;
+                shownCard = matched;
+                Debug.Log("Player " + idx + " (" + players[idx].GetCharacter() +
+                    ") disproves suggestion with: " + matched);
+                break;
+            }
+
+        }
+
+        if (disproverIndex == -1)
+        {
+            Debug.Log("No player could disprove the suggestion.");
+        }
+
+        //Only suggester and ispovrver cna see shownCard
         for (int i = 0; i < players.Count; i++)
         {
             Card visibleToThisPlayer = null;
@@ -201,16 +222,37 @@ public class GameController : MonoBehaviour
     public void HandleAccusation(Player currentPlayer, Suggestion accusation)
     {   
 
-        bool correct = murderEnvelope.CheckAccusation(accusation.GetCharacter(), accusation.GetWeapon(), accusation.GetRoom());
+        bool correct = murderEnvelope.CheckAccusation(
+            accusation.GetCharacter(), accusation.GetWeapon(), accusation.GetRoom());
 
         if (correct)
         {
+            Debug.Log("Player " + currentPlayer.GetCharacter() + " accused correctly and won the game");
             EndGame(currentPlayer);
-        } else
+            return;
+
+        } 
+        else
         {
-            //TODO:
-            // - Eliminate the player
-            
+            //Elim
+            Debug.Log("Player " + currentPlayer.GetCharacter() + " accused incorrectly and is eliminated");
+            currentPlayer.Eliminate();
+        }
+
+        int aliveCount = 0;
+        Player lastAlive = null;
+        foreach (Player p in players)
+        {
+            if (!p.IsEliminated())
+            {
+                aliveCount++;
+                lastAlive = p;
+            }
+        }
+        if (aliveCount == 1 && lastAlive != null)
+        {
+            Debug.Log("Last player standing: " + lastAlive.GetCharacter() + " wins by elimination!");
+            EndGame(lastAlive);
         }
     }
 
