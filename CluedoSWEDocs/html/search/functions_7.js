@@ -7,7 +7,8 @@ var searchData=
   ['iscolumnactive_4',['IsColumnActive',['../class_detective_card_entry.html#acf42ab18333be7a1741906e3c0c32527',1,'DetectiveCardEntry']]],
   ['iscrossedout_5',['IsCrossedOut',['../class_detective_card_entry.html#ae43e42b32baec0ec6ad9e2ecf4318d6d',1,'DetectiveCardEntry']]],
   ['iscrossedoutanywhere_6',['IsCrossedOutAnywhere',['../class_detective_card_entry.html#a98c6d27824fa258c66e5509a448cabe3',1,'DetectiveCardEntry']]],
-  ['isknownnotheldby_7',['IsKnownNotHeldBy',['../class_detective_card_entry.html#a333b5f45659e97f7fcafa21a61187d89',1,'DetectiveCardEntry']]],
-  ['ismanualcrossedout_8',['IsManualCrossedOut',['../class_detective_card_entry.html#a444372ba77ce8f16b4a2f26085884398',1,'DetectiveCardEntry']]],
-  ['isruledoutofenvelope_9',['IsRuledOutOfEnvelope',['../class_detective_sheet.html#a5fd5f6cf99e7c837ab73cdb06de897b1',1,'DetectiveSheet']]]
+  ['iseliminated_7',['IsEliminated',['../class_player.html#aeb6268e2f9d53f86e57025229748585b',1,'Player']]],
+  ['isknownnotheldby_8',['IsKnownNotHeldBy',['../class_detective_card_entry.html#a333b5f45659e97f7fcafa21a61187d89',1,'DetectiveCardEntry']]],
+  ['ismanualcrossedout_9',['IsManualCrossedOut',['../class_detective_card_entry.html#a444372ba77ce8f16b4a2f26085884398',1,'DetectiveCardEntry']]],
+  ['isruledoutofenvelope_10',['IsRuledOutOfEnvelope',['../class_detective_sheet.html#a5fd5f6cf99e7c837ab73cdb06de897b1',1,'DetectiveSheet']]]
 ];

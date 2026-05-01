@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['walkpath_0',['WalkPath',['../class_board_piece.html#a9b7bfef8ca1729415576c3ceb29c487c',1,'BoardPiece']]],
-  ['weaponcard_1',['WeaponCard',['../class_weapon_card.html',1,'WeaponCard'],['../class_weapon_card.html#a8e47d460a0d67032aaa556b5c27fcb97',1,'WeaponCard.WeaponCard()']]]
+  ['uiclickdebugger_0',['UIClickDebugger',['../class_u_i_click_debugger.html',1,'']]],
+  ['undomanual_1',['UndoManual',['../class_detective_card_entry.html#a2323eb64d38437699390ba2287cb8a07',1,'DetectiveCardEntry']]]
 ];

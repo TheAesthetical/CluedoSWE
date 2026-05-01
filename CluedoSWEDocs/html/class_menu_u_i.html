@@ -125,15 +125,13 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight"><b>SetBackground</b> (int spriteNum)</td></tr>
 <tr class="memitem:a873877f35b74874092b086afe62f3c26" id="r_a873877f35b74874092b086afe62f3c26"><td class="memItemLeft">Sprite&#160;</td><td class="memItemRight"><a class="el" href="#a873877f35b74874092b086afe62f3c26">GetToggleSprite</a> (int spriteNum)</td></tr>
 <tr class="memdesc:a873877f35b74874092b086afe62f3c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the toggle sprite corresponding to the int passed in.  <br /></td></tr>
-<tr class="memitem:a1382bcf34691b21bf6a46883f19e300f" id="r_a1382bcf34691b21bf6a46883f19e300f"><td class="memItemLeft"><a id="a1382bcf34691b21bf6a46883f19e300f" name="a1382bcf34691b21bf6a46883f19e300f"></a>
-void&#160;</td><td class="memItemRight"><b>SetToggleSprite</b> (int spriteNum)</td></tr>
-<tr class="memitem:a0e80db50632f3c47cbf1d3363eb23d3e" id="r_a0e80db50632f3c47cbf1d3363eb23d3e"><td class="memItemLeft"><a id="a0e80db50632f3c47cbf1d3363eb23d3e" name="a0e80db50632f3c47cbf1d3363eb23d3e"></a>
-void&#160;</td><td class="memItemRight"><b>LoadCards</b> (int cardNum)</td></tr>
+<tr class="memitem:a0e80db50632f3c47cbf1d3363eb23d3e" id="r_a0e80db50632f3c47cbf1d3363eb23d3e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0e80db50632f3c47cbf1d3363eb23d3e">LoadCards</a> (int cardNum)</td></tr>
+<tr class="memdesc:a0e80db50632f3c47cbf1d3363eb23d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the correct number of cards onto the menu screen.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a422fc3b710abb9b11ee34e6e41754269" id="r_a422fc3b710abb9b11ee34e6e41754269"><td class="memItemLeft"><a id="a422fc3b710abb9b11ee34e6e41754269" name="a422fc3b710abb9b11ee34e6e41754269"></a>
-static void&#160;</td><td class="memItemRight"><b>ToggleElement</b> (GameObject element, bool state)</td></tr>
+<tr class="memitem:a422fc3b710abb9b11ee34e6e41754269" id="r_a422fc3b710abb9b11ee34e6e41754269"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a422fc3b710abb9b11ee34e6e41754269">ToggleElement</a> (GameObject element, bool state)</td></tr>
+<tr class="memdesc:a422fc3b710abb9b11ee34e6e41754269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles whether an element is visible or not.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class <code><a class="el" href="class_menu_u_i.html" title="Class MenuUI represents the highest level of the menu UI, containing attributes to be used across the...">MenuUI</a></code> represents the highest level of the menu UI, containing attributes to be used across the main menu. </p>
@@ -207,6 +205,69 @@ static void&#160;</td><td class="memItemRight"><b>ToggleElement</b> (GameObject 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The toggle sprite corresponding to the int passed in.</dd></dl>
+
+</div>
+</div>
+<a id="a0e80db50632f3c47cbf1d3363eb23d3e" name="a0e80db50632f3c47cbf1d3363eb23d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e80db50632f3c47cbf1d3363eb23d3e">&#9670;&#160;</a></span>LoadCards()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuUI.LoadCards </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cardNum</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads the correct number of cards onto the menu screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cardNum</td><td>Number of cards to load.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a422fc3b710abb9b11ee34e6e41754269" name="a422fc3b710abb9b11ee34e6e41754269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a422fc3b710abb9b11ee34e6e41754269">&#9670;&#160;</a></span>ToggleElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuUI.ToggleElement </td>
+          <td>(</td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>element</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Toggles whether an element is visible or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>The element to toggle.</td></tr>
+    <tr><td class="paramname">state</td><td>The state to set the element to.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
