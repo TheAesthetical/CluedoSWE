@@ -177,12 +177,12 @@ public class AIPlayer : Player
             if (ShouldMakeAccusation())
             {
                 Suggestion accusation = BuildAccusation();
-                MakeAccusation(accusation);
+                MakeAccusation(gameController, accusation);
             }
             else
             {
                 Suggestion suggestion = BuildSuggestion();
-                MakeSuggestion(suggestion);
+                MakeSuggestion(gameController,suggestion);
             }
         }
 
@@ -595,22 +595,22 @@ public class AIPlayer : Player
         return false; // TODO: board tile detection
     }
 
-    private void MakeSuggestion(Suggestion suggestion)
+    private void MakeSuggestion(GameController gameController,Suggestion suggestion)
     {
         Debug.Log("[AI " + ownPlayerIndex + "] suggestion: " +
         Safe(suggestion.GetCharacter()) + ", " +
         Safe(suggestion.GetWeapon()) + ", " +
         Safe(suggestion.GetRoom()));
-        // TODO: gameController.HandleSuggestion(suggestion) when public
+        gameController.HandleSuggestion(ownPlayerIndex, suggestion);
     }
 
-    private void MakeAccusation(Suggestion suggestion)
+    private void MakeAccusation(GameController gameController, Suggestion suggestion)
     {
         Debug.Log("[AI " + ownPlayerIndex + "] ACCUSATION: " +
         Safe(suggestion.GetCharacter()) + ", " +
         Safe(suggestion.GetWeapon()) + ", " +
         Safe(suggestion.GetRoom()));
-        // TODO: gameController.HandleAccusation(this, accusation) when public
+        gameController.HandleAccusation(this, suggestion);
     }
 
     private string Safe(object o) { return o!= null ? o.ToString() : "(null)";}
